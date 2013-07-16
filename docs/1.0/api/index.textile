@@ -1,0 +1,18 @@
+---
+layout: default
+title: "- REST API V1.0 Resources"
+---
+
+h1. REST API v1.0 Resources
+
+h2. Customers &amp; Leads
+
+
+|_. Type |_. Description |
+|"GET customer/:id":customer/#get|Returns all the information about the customer|
+|"DELETE customer/:id":customer/#delete|Deletes a customer or a lead|
+|"PUT customer/:id":customer/#put|Update the customer|
+|"GET customers":customers/#get|Returns the list of customers|
+|"POST customers":customers/#post|Create a customer|
+
+p. paragraph

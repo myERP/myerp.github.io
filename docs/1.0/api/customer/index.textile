@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+h3. Get customer
+
+h3. Delete customer
+
+h3. Put customer

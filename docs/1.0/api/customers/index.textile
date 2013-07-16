@@ -1,0 +1,7 @@
+---
+layout: default
+---
+
+h3. Get customer
+
+h3. Post customer
