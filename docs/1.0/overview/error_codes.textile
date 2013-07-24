@@ -1,0 +1,8 @@
+---
+layout: default
+title: "- Overview - Error Codes and Responses"
+---
+
+h1. Error Codes and Responses
+
+p. In order to provide more informative error responses, our API attempts to return appropriate HTTP status codes for every request and return errors via a JSON error object containing error_code and error_message attributes.
