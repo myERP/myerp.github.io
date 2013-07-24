@@ -8,12 +8,14 @@ body {
     margin: 0 auto;
     line-height: 1.7em;
     color:#555;
+    font-size: 0.9em;
 }
 
 a:link {color:#2e90c8;text-decoration: none;}      /* unvisited link */
 a:visited {color:#2e90c8;}  /* visited link */
 a:hover {color:#2e90c8; text-decoration: underline}  /* mouse over link */
 a:active {color:#2e90c8;}  /* selected link */
+.justify {text-align: justify;}
 aside{
     background: rgb(202, 60, 60);
     padding: 0.3em 1em;
