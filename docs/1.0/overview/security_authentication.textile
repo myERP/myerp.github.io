@@ -1,0 +1,8 @@
+---
+layout: default
+title: "- Overview - Security and authentication"
+---
+
+h1. Security and Authentication
+
+p. The API is for a private usage only. We will keep you in touch when the API will be public.
