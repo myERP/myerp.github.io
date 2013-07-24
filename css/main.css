@@ -84,20 +84,52 @@ body .primary-button {
         text-align: left;
     }
 
-    table{
-        border-top: 1px solid #EEE;
-        margin: 0 0 3em 0;
+
+    table {
+        *border-collapse: collapse; /* IE7 and lower */
+        margin: 0 auto;
         width: 100%;
         border-collapse: collapse; 
-        border-spacing: 2px;
-        border-color: gray;
+        font-size: 90%; 
     }
-         
-    tr {
-        display: table-row;
-        vertical-align: inherit;
-        border-color: inherit;
-    }
+
+        .thead { 
+            border-top: none;
+            font-weight: bold;
+        }
+  
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit; 
+        }
+
+     
+        tr:hover {
+            background: #EBEBEB;
+            -o-transition: all 0.1s ease-in-out;
+            -webkit-transition: all 0.1s ease-in-out;
+            -moz-transition: all 0.1s ease-in-out;
+            -ms-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;     
+        }    
+    
+        td, .thead {
+            border-bottom: 1px solid #eee;
+            border-top: 1px solid #eee;
+            padding: 2px;
+            text-align: left;    
+        }
+
+        p.caption{
+            font-size: 85%;
+            margin: 0;
+        }
+        p.title{
+            font-size: 130%;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
 
 
 .footer {
@@ -111,4 +143,7 @@ body .primary-button {
     width:100%;
 }
 
+.blue{
+    background-color: blue;
+}
 

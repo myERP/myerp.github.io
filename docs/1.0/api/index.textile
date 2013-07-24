@@ -5,14 +5,24 @@ title: "- REST API V1.0 Resources"
 
 h1. REST API v1.0 Resources
 
-h2. Customers &amp; Leads
+p(title). Accounts
 
+p(caption). Accounts are collections of leads and customers.
 
-|_. Type |_. Description |
+|_(thead). Type |_(thead). Description |
 |"GET customer/:id":customer/#get|Returns all the information about the customer|
 |"DELETE customer/:id":customer/#delete|Deletes a customer or a lead|
 |"PUT customer/:id":customer/#put|Update the customer|
 |"GET customers":customers/#get|Returns the list of customers|
 |"POST customers":customers/#post|Create a customer|
 
-p. paragraph
+p(title). Projects
+
+p(caption). Projects are used to group a list of tasks.
+
+|_(thead). Type |_(thead). Description |
+|"GET project/:id":project/#get|Returns all the information about the project|
+|"DELETE project/:id":project/#delete|Deletes a project|
+|"PUT project/:id":project/#put|Update the project|
+|"GET projects":projects/#get|Returns the list of projects|
+|"POST projects":projects/#post|Create a project|
