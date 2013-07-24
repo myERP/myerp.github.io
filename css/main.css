@@ -7,6 +7,7 @@
 body {
     margin: 0 auto;
     line-height: 1.7em;
+    color:#555;
 }
 
 a:link {color:#2e90c8;text-decoration: none;}      /* unvisited link */
