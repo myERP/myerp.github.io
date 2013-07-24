@@ -1,9 +1,15 @@
 ---
 layout: default
+title: "- REST API V1.0 Resources - Customer"
 ---
 
-h3. Get customer
+h2. Get customer
 
-h3. Delete customer
+{% highlight bash %}
+curl -XGET {{ site.api.base_url }}{{ site.api.account_pattern}}customers {{site.api.auth_pattern}}
+{% endhighlight %}
 
-h3. Put customer
+
+h2. Delete customer
+
+h2. Put customer

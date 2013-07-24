@@ -3,3 +3,8 @@ markdown: redcarpet
 safe: true
 lsi: false
 pygments: true
+
+api:
+  base_url:    http://app.myerp.com/api
+  account_pattern:   /account/:account_id/
+  auth_pattern: -u "email:api-key"
