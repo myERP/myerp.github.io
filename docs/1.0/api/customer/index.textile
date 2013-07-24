@@ -5,6 +5,16 @@ title: "- REST API V1.0 Resources - Customer"
 
 h1(blue newsection#get). Get customer
 
+p. Returns all the information about the customerReturns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: GET
+* Response Format: JSON 
+
+
 h3. Example Request
 
 {% highlight bash %}
