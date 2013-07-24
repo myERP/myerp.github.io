@@ -52,7 +52,12 @@ aside{
             border: none;
             color: #aaa;
         }
-
+    .header-right{
+        float:right;
+        text-align:right;
+        font-size:70%;
+    }
+    
 body .primary-button {
     background: #2e90c8;
     color: #fff;
@@ -140,15 +145,3 @@ body .primary-button {
     .newsection{
         padding-top: 4em;
     }
-
-.footer {
-    background: #2e2e2e;
-    color: #666;
-    text-align: center;
-    padding: 1em;
-    font-size: 80%;
-    position: absolute; 
-    bottom: 0;
-    width:100%;
-}
-
