@@ -21,9 +21,6 @@ aside{
     text-align:center;
 }
 
-.first{
-    margin: 7em auto 0; 
-}
 .l-box {
     padding: 1em;
 }
@@ -71,20 +68,35 @@ body .primary-button {
         font-size: 150%;
     }
 
-
-.content .content-subhead {
-    color: #999;
-    padding-bottom: 0.3em;
-    text-transform: uppercase;
-    margin: 0;
-    border-bottom: 2px solid #eee;
-    display: inline-block;
-}
-
+ 
 .content .content-ribbon {
-    margin: 0 5em;
-    border-bottom: 1px solid #eee;
+    margin: 0 auto;
+    border: 1px solid #eee;
 }
+
+.content-wrapper {
+    margin-top: 7em; 
+    text-align: center; 
+}
+
+    .content{
+        text-align: left;
+    }
+
+    table{
+        border-top: 1px solid #EEE;
+        margin: 0 0 3em 0;
+        width: 100%;
+        border-collapse: collapse; 
+        border-spacing: 2px;
+        border-color: gray;
+    }
+         
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
 
 
 .footer {
@@ -99,23 +111,3 @@ body .primary-button {
 }
 
 
-table{
-  border-top: 1px solid #EEE;
-  margin: 0 0 3em 0;
-  width: 100%;
-  border-collapse: collapse; 
-border-spacing: 2px;
-border-color: gray;
-}
-
-thead, tbody {
-display: table-header-group;
-vertical-align: middle;
-border-color: inherit;
-}
-
-tr {
-display: table-row;
-vertical-align: inherit;
-border-color: inherit;
-}

@@ -3,16 +3,13 @@
     <head>
         {% include head.html %}  
     </head>
-    <body> 
-        <div class="content pure-g-r ">
+    <body>  
             {% include header.html %} 
-            <div class="content pure-u-1 first">  
-                <div class="content-ribbon">       
-                    {{ content }}
-                </div> 
+            <div class="pure-g-r content-wrapper">
+                <div class="pure-u-2-3 content">  
+                        {{ content }}
+                </div>
             </div>
-
-            {% include footer.html %}
-        </div>  
+            {% include footer.html %} 
     </body>
 </html>
