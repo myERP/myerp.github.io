@@ -11,6 +11,11 @@ body {
     font-size: 0.9em;
 }
 
+
+.blue{
+    color: #2e90c8;
+}
+
 a:link {color:#2e90c8;text-decoration: none;}      /* unvisited link */
 a:visited {color:#2e90c8;}  /* visited link */
 a:hover {color:#2e90c8; text-decoration: underline}  /* mouse over link */
@@ -132,7 +137,9 @@ body .primary-button {
             font-weight: bold;
             margin-bottom: 0;
         }
-
+    .newsection{
+        padding-top: 4em;
+    }
 
 .footer {
     background: #2e2e2e;
@@ -143,9 +150,5 @@ body .primary-button {
     position: absolute; 
     bottom: 0;
     width:100%;
-}
-
-.blue{
-    background-color: blue;
 }
 

@@ -3,13 +3,47 @@ layout: default
 title: "- REST API V1.0 Resources - Customer"
 ---
 
-h2. Get customer
+h1(blue newsection#get). Get customer
+
+h3. Example Request
 
 {% highlight bash %}
 curl -XGET {{ site.api.base_url }}{{ site.api.account_pattern}}customers {{site.api.auth_pattern}}
 {% endhighlight %}
 
+p. JSON response
 
-h2. Delete customer
+{% highlight bash %}JSON response
+{% endhighlight %}
 
-h2. Put customer
+
+h1(blue newsection#delete).  Delete customer
+
+
+h3. Example Request
+
+{% highlight bash %}
+ 
+{% endhighlight %}
+
+p. JSON response
+
+{% highlight bash %} 
+
+{% endhighlight %}
+
+h1(blue newsection#put). Put customer
+
+
+h3. Example Request
+
+{% highlight bash %}
+
+{% endhighlight %}
+
+p. JSON response
+
+{% highlight bash %} 
+
+{% endhighlight %}
+
