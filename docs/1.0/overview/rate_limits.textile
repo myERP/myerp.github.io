@@ -1,0 +1,8 @@
+---
+layout: default
+title: "- Overview - Rate Limiting and limits"
+---
+
+h1. Rate Limiting and limits
+
+p. This API is rate limited; we only allow a certain number of requests per minute. We reserve the right to adjust the rate limit for given endpoints in order to provide a high quality of service for all clients.
