@@ -18,7 +18,7 @@ h3. Account Format
 
 h4. All Accounts
 
-|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+|_. {{ site.api.format.field_name }} |_. {{ site.api.format.description }} |_. {{ site.api.format.type }} |_. {{ site.api.format.values }} |_. {{ site.api.format.mandatory }} |_. {{ site.api.format.read_only }} |
 | id | Code | Long |  | X |  |
 | type | Company or Individual | Long | 1: Company, 2: Individual | X | X |
 | status | Lead or Customer | Long | 1: Customer, 2: Lead | X | X |
@@ -38,7 +38,7 @@ h4. All Accounts
 
 h4. Company only
 
-|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+|_. {{ site.api.format.field_name }} |_. {{ site.api.format.description }} |_. {{ site.api.format.type }} |_. {{ site.api.format.values }} |_. {{ site.api.format.mandatory }} |_. {{ site.api.format.read_only }} |
 | companyName | Company Name | String[] |  | X |  |
 | employeeCount | Employee Count | Integer |  |  |  |
 | industry | Industry | Long | Codes of Industry from your domain |  |  |
@@ -48,14 +48,14 @@ h4. Company only
 
 h4. Individual only
 
-|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+|_. {{ site.api.format.field_name }} |_. {{ site.api.format.description }} |_. {{ site.api.format.type }} |_. {{ site.api.format.values }} |_. {{ site.api.format.mandatory }} |_. {{ site.api.format.read_only }} |
 | firstname | First Name | String[] |  |  |  |
 | lastname | Last Name | String[] |  | X |  |
 | middlename | Middle Name | String[] |  |  |  |
 
 h4. Lead only
 
-|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+|_. {{ site.api.format.field_name }} |_. {{ site.api.format.description }} |_. {{ site.api.format.type }} |_. {{ site.api.format.values }} |_. {{ site.api.format.mandatory }} |_. {{ site.api.format.read_only }} |
 | rating | Rating | Long | Codes of Ratings from your domain |  |  | 
 
 h3. Example Request

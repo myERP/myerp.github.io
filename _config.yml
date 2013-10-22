@@ -8,3 +8,11 @@ api:
   base_url:    http://app.myerp.com/api
   account_pattern:   /account/:account_id/
   auth_pattern: -u "email:api-key"
+  format:
+    field_name: Field Name
+    description: Description
+    type: Type
+    values: Values
+    mandatory: Mandatory
+    read_only: Read only
+  
