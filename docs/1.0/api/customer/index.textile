@@ -3,17 +3,60 @@ layout: default
 title: "- REST API V1.0 Resources - Customer"
 ---
 
-h1(blue newsection#get). Get customer
+h1(blue newsection#get). Get account
 
-p. Returns all the information about the customerReturns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer. Returns all the information about the customer.
+p. Returns all the information about the account.
 
 h3. Resource Information
 
 * Rate limited: No
 * Authentication: Required
 * HTTP Methods: GET
-* Response Format: JSON 
+* Response Format: JSON
 
+h3. Account Format
+
+h4. All Accounts
+
+|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+| id | Code | Long |  | X |  |
+| type | Company or Individual | Long | 1: Company, 2: Individual | X | X |
+| status | Lead or Customer | Long | 1: Customer, 2: Lead | X | X |
+| full_name | Name | String |  |  | X |
+| address | Main address | Address |  |  |  |
+| shipping_address | Shipping address |  |  |  |
+| phone_number | Phone Number | String[] |  |  |  |
+| email | Email address | String[] |  |  |  |
+| website | Website URL | String[] |  |  |  |
+| customer_contacts | List of this account's contact | Contact |  |  | X |
+| payment_terms | Payment Terms | Long | Codes of Payment terms from your domain |  |  |
+| currency | Currency | String[] | ISO Codes of currency from your domain |  |  |
+| sales_tax | Sales Tax | Long | Sales Tax codes from your domain |  |  |
+| user_code | Customer Number | String[] | Anything that is not already in use in your domain |  |  |
+| opt_in_to_emails | Opt-in to Emails | Boolean | true to accept emails, false otherwise |  |  |
+| comment | Notes | Text |  |  |  |
+
+h4. Company only
+
+|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+| companyName | Company Name | String[] |  | X |  |
+| employeeCount | Employee Count | Integer |  |  |  |
+| industry | Industry | Long | Codes of Industry from your domain |  |  |
+| incorporationStatus | Incorporation Status | Long | Codes of Incorporation Status from your domain |  |  |
+| TaxpayerIdNumber | Taxpayer ID Number | String[] |  |  |  |
+| siret | Siret | String[] |  |  |  |
+
+h4. Individual only
+
+|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+| firstname | First Name | String[] |  |  |  |
+| lastname | Last Name | String[] |  | X |  |
+| middlename | Middle Name | String[] |  |  |  |
+
+h4. Lead only
+
+|_. Field name |_. Description. |_. Type |_. Values |_. Mandatory |_. Read only |
+| rating | Rating | Long | Codes of Ratings from your domain |  |  | 
 
 h3. Example Request
 
