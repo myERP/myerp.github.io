@@ -8,11 +8,27 @@ api:
   base_url:    http://app.myerp.com/api
   account_pattern:   /account/:account_id/
   auth_pattern: -u "email:api-key"
-  format:
+
+format:
+  header:
     field_name: Field Name
     description: Description
     type: Type
     values: Values
-    mandatory: Mandatory
-    read_only: Read only
+    default: Default
+    non_editable: Non editable
+  type:
+    string: String
+    string4: String ^4^
+    string64: String ^64^
+    string255: String ^255^
+    text: Text
+    integer: Integer
+    long: Long
+    boolean: Boolean
+    address: Address
+    account_contact: Account Contact
+  mandatory: Mandatory
+  non_editable: X
+  non_available: '-'
   
