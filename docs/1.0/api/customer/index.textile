@@ -14,6 +14,60 @@ h3. Resource Information
 * HTTP Methods: GET
 * Response Format: JSON
 
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account.url}}:id {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response sample
+
+{% highlight bash %}
+{
+  "id": 146800,
+  "type": 1,
+  "status": 1,
+  "full_name": "myERP",
+  "address": {
+    "label1": "567  Sutter St.",
+    "label2": "",
+    "label3": "",
+    "zipcode": "94102",
+    "city": "San Francisco",
+    "country": "United States",
+    "localisation": "California",
+    "short_localisation": "CA",
+    "full_address": "567  Sutter St. San Francisco CA 94102 United States"
+  },
+  "shipping_address": {
+    "label1": "567  Sutter St.",
+    "label2": "",
+    "label3": "",
+    "zipcode": "94102",
+    "city": "San Francisco",
+    "country": "United States",
+    "localisation": "California",
+    "short_localisation": "CA",
+    "full_address": "567  Sutter St. San Francisco CA 94102 United States"
+  },
+  "phone_number": "(415) 779-6536",
+  "email": "support@myerp.com",
+  "website": "www.myerp.com",
+  "payment_terms": 2,
+  "currency": "USD",
+  "sales_tax": 3,
+  "user_code": "CUS-018",
+  "opt_in_to_emails": false,
+  "comment": "- myERP -\nRun your business in the Cloud",
+  "company_name": "myERP",
+  "employee_count": 15,
+  "industry": 12,
+  "incorporation_status": 3,
+  "taxpayer_id_number": "777 898EA",
+  "siret": ""
+}
+{% endhighlight %}
+
 h3. Account Format
 
 h4. All Accounts
@@ -62,40 +116,24 @@ h4. Lead only
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |_. {{ site.format.header.default }} |_. {{ site.format.header.non_editable }} |
 | rating | Rating | {{ site.format.type.long }} | Codes of Ratings from your domain | Miscellaneous |   |
 
-h3. Example Request
-
-{% highlight bash %}
-curl -XGET {{ site.api.base_url }}{{ site.api.account_pattern}}customers {{site.api.auth_pattern}}
-{% endhighlight %}
-
-p. JSON response
-
-{% highlight bash %}JSON response
-{% endhighlight %}
-
-
 h1(blue newsection#delete).  Delete customer
 
-
 h3. Example Request
 
 {% highlight bash %}
- 
+curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account.url}}:id {{site.api.auth_pattern}}
 {% endhighlight %}
 
 p. JSON response
 
-{% highlight bash %} 
-
-{% endhighlight %}
+The json of the account you've just deleted.
 
 h1(blue newsection#put). Put customer
 
-
 h3. Example Request
 
 {% highlight bash %}
-
+curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T jsonFile.json
 {% endhighlight %}
 
 p. JSON response

@@ -5,9 +5,15 @@ lsi: false
 pygments: true
 
 api:
-  base_url:    http://app.myerp.com/api
-  account_pattern:   /account/:account_id/
+  v1: /v1     
+  base_url: http://app.myerp.com/api
   auth_pattern: -u "email:api-key"
+  
+resource:
+  account:
+    url: /account/
+  accounts:
+    url: /accounts
 
 format:
   header:
