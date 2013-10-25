@@ -3,18 +3,79 @@ layout: default
 title: "- REST API V1.0 Resources"
 ---
 
+h1. REST API : General
+
+h2. Resources
+
+There's two kind of resources in myERP. Actual Datas from your domain, and those who refers to a kind of data as a whole.
+
+h3. Actual Data
+
+They end with the *id* of the actual data they refer to.
+
+p. Sample
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account.url}}55002 {{site.api.auth_pattern}}
+{% endhighlight %}
+*55002* is the *id* of the account you are trying to get. Within myERP, you can find this id at the end of this account URI edition mode:
+{% highlight bash %}
+https://app.myerp.com/index.jsp?locale=en_US#account/55002
+{% endhighlight %}
+
+Those are often used for GET (to retrieve a data), PUT (to edit a data) or DELETE (to delete a data) request.
+
+h3. Data type
+
+There's no id into them, and they got a *s* at the end.
+
+p. Sample
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}}
+{% endhighlight %}
+This will retrieve the whole list of your accounts.
+
+Those are used to create new data of this kind, using POST request.
+They are also usefull when you want to create or delete several datas of a specific kind in a row.
+
+
+h2. JSON Fields
+
+h3. Missing fields
+
+* Creation: if the missing field is mandatory, an error message will be returned. Otherwise, the default value will be applied.
+* Edition: the missing field is ignored, and no changes will be performed on it.
+
+h3. Non existant fields
+
+If your JSON contains any fields that are not managed by the resource, those fields will be ignored.
+
+h3. Duplicates fields
+
+If a field is duplicate within the JSON or a resource, the value of last one will prevail.
+
+h3. Wrong values
+
+* Bad type: If any value of a wrong type stands into your JSON, the parsing of the JSON will turn wrong and an error message will be returned.
+* Wrong value: Some fields only accept certain values. If the value of such a field is wrong in your JSON, an error message will be returned.
+* Non editable: While editing a resource, if any field that is not editable stands within your JSON, and tries to perform an actual modification, an error message will be returned.
+
+
 h1. REST API v1.0 Resources
 
-p(title). Accounts
+p(title). "Accounts":account/#format
 
-p(caption). Accounts are collections of leads and customers.
+p(caption). Accounts are collections of accounts (leads and customers).
 
 |_(thead). Type |_(thead). Description |
-|"GET customer/:id":customer/#get|Returns all the information about the customer|
-|"DELETE customer/:id":customer/#delete|Deletes a customer or a lead|
-|"PUT customer/:id":customer/#put|Update the customer|
-|"GET customers":customers/#get|Returns the list of customers|
-|"POST customers":customers/#post|Create a customer|
+|"GET account/:id":account/#get|Returns all the information about the account|
+|"DELETE account/:id":account/#delete|Deletes the account|
+|"PUT account/:id":account/#put|Update the account|
+|"GET accounts":accounts/#get|Returns the list of all your accounts|
+|"POST accounts":accounts/#post|Create a new account|
+|"PUT accounts":accounts/#put|Create several accounts in a row|
+|"DELETE accounts":accounts/#delete|Delete several accounts in a row|
 
 p(title). Projects
 
