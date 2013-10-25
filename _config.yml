@@ -24,14 +24,14 @@ format:
     default: Default
     non_editable: Non editable
   type:
-    string: String
-    string4: String ^4^
-    string64: String ^64^
-    string255: String ^255^
-    text: Text
-    integer: Integer
-    long: Long
-    boolean: Boolean
+    string: '"String":../../glossary/#string'
+    string4: '"String ^4^":../../glossary/#string4'
+    string64: '"String ^64^":../../glossary/#string64'
+    string255: '"String ^255^":../../glossary/#string255'
+    text: '"Text":../../glossary/#text'
+    integer: '"Integer":../../glossary/#integer'
+    long: '"Long":../../glossary/#long'
+    boolean: '"Boolean":../../glossary/#boolean'
     address: Address
     account_contact: Account Contact
   mandatory: Mandatory

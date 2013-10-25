@@ -1,0 +1,17 @@
+---
+layout: default
+title: "- REST API V1.0 - Glossary"
+---
+
+h1(#types). Types
+
+p(caption). 
+
+(#string).| *String* | Any chain of characters. Carriage returns will be ignored. |
+(#string4).| *String ^4^* | Any chain up to *4* characters. Carriage returns will be ignored. |
+(#string64).| *String ^64^* | Any chain up to *64* characters. Carriage returns will be ignored. |
+(#string255).| *String ^255^* | Any chain up to *255* characters. Carriage returns will be ignored. |
+(#text).| *Text* | Any chain of characters, including carriage returns, with no size limit. |
+(#integer).| *Integer* | Any positive integer. |
+(#long).| *Long* | Any integer, positive or negative. |
+(#boolean).| *Boolean* | _false_ or _true_ / _0_ or _1_. |

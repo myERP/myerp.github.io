@@ -3,7 +3,7 @@ layout: default
 title: "- REST API V1.0 Resources"
 ---
 
-h1. REST API : General
+h1(#general). REST API : General
 
 h2. Resources
 
@@ -62,7 +62,7 @@ h3. Wrong values
 * Non editable: While editing a resource, if any field that is not editable stands within your JSON, and tries to perform an actual modification, an error message will be returned.
 
 
-h1. REST API v1.0 Resources
+h1(#resources). REST API v1.0 Resources
 
 p(title). "Accounts":account/#format
 
