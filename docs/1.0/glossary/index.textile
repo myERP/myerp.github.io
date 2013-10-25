@@ -5,7 +5,7 @@ title: "- REST API V1.0 - Glossary"
 
 h1(#types). Types
 
-p(caption). 
+p(caption). Data type that can be send within JSON files.
 
 (#string).| *String* | Any chain of characters. Carriage returns will be ignored. |
 (#string4).| *String ^4^* | Any chain up to *4* characters. Carriage returns will be ignored. |
