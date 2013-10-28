@@ -14,6 +14,10 @@ resource:
     url: /account/
   accounts:
     url: /accounts
+  account_contact:
+    url: /account_contact/
+  account_contacts:
+    url: /account_contacts
 
 format:
   header:
@@ -35,8 +39,9 @@ format:
     long: '"Long":/docs/1.0/glossary/#long'
     boolean: '"Boolean":/docs/1.0/glossary/#boolean'
     address: '"Address":/docs/1.0/glossary/#address'
-    account_contact: Account Contact
+    account_contact: '"Account Contact":/docs/1.0/api/account_contact/#get'
   mandatory: Mandatory
   non_editable: X
   non_available: '-'
+  read_only: Read only
   

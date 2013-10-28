@@ -13,7 +13,7 @@ h3. All Accounts
 2: Individual | {{ site.format.mandatory }} |  |
 | status | Lead or Customer | {{ site.format.type.long }} | 1: Customer
 2: Lead | {{ site.format.mandatory }} |  |
-| full_name | The full name of this account | {{ site.format.type.string }} | Read-only | {{ site.format.non_available }} |=. {{ site.format.non_editable }} |
+| full_name | The full name of this account | {{ site.format.type.string }} | {{ site.format.read_only }} | {{ site.format.non_available }} |=. {{ site.format.non_editable }} |
 | address | Main address | {{ site.format.type.address }} |  | An empty address |  |
 | shipping_address | Shipping address | {{ site.format.type.address }} |  | An empty address |  |
 | phone_number | Phone Number | {{ site.format.type.string64 }} |  | Empty string |  |
@@ -138,7 +138,7 @@ curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url
 
 p. JSON response
 
-The complete JSON of the customer you've just created.
+The complete JSON of the account you've just created.
 
 
 h1(blue newsection#delete).  Delete account
