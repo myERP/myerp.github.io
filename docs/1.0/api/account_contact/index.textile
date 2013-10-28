@@ -17,8 +17,8 @@ h1(blue newsection#format). Account's Contact Format
 | email | Email | {{ site.format.type.string255 }} |  | Empty String |  |
 | address | Address | {{ site.format.type.address }} |  | Empty Address |  |
 | notes | Notes | {{ site.format.type.text }} |  | Empty String |  |
-| department | Department | {{ site.format.type.long }} | IDs from Department |  |  |
-| position | Position | {{ site.format.type.long }} | IDs from Position |  |  |
+| department | Department | {{ site.format.type.long }} | IDs from Department | None |  |
+| position | Position | {{ site.format.type.long }} | IDs from Position | None |  |
 
 
 h1(blue newsection#get). Get account
