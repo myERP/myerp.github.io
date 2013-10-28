@@ -129,6 +129,7 @@ h3. Resource Information
 * HTTP Methods: PUT
 * Body Format: JSON
 * Response Format: JSON
+* Mandatory fields: type, status, company_name (for Company)/lastname (for Individual)
 
 h3. Example Request
 

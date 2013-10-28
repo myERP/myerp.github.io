@@ -79,6 +79,7 @@ h3. Resource Information
 * HTTP Methods: PUT
 * Body Format: JSON
 * Response Format: JSON
+* Mandatory fields: lastname, customer_id
 
 h3. Example Request
 
