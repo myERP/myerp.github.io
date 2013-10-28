@@ -92,11 +92,7 @@ p(caption). Account contacts are collections of account contacts.
 
 p(title). Projects
 
-p(caption). Projects are used to group a list of tasks.
+p(caption). Projects are currently read-only in the API.
 
 |_(thead). Type |_(thead). Description |
 |"GET project/:id":project/#get|Returns all the information about the project|
-|"DELETE project/:id":project/#delete|Deletes a project|
-|"PUT project/:id":project/#put|Update the project|
-|"GET projects":projects/#get|Returns the list of projects|
-|"POST projects":projects/#post|Create a project|

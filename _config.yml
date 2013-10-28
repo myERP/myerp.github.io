@@ -18,6 +18,8 @@ resource:
     url: /account_contact/
   account_contacts:
     url: /account_contacts
+  project:
+    url: /project/
 
 format:
   header:
