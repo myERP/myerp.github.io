@@ -32,11 +32,11 @@ false: No | No |  |
 h3. Company only
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |_. {{ site.format.header.default }} |_. {{ site.format.header.non_editable }} |
-| companyName | Company Name | {{ site.format.type.string255 }} |  | {{ site.format.mandatory }} |  |
-| employeeCount | Employee Count | {{ site.format.type.integer }} |  | 1 |  |
+| company_name | Company Name | {{ site.format.type.string255 }} |  | {{ site.format.mandatory }} |  |
+| employee_count | Employee Count | {{ site.format.type.integer }} |  | 1 |  |
 | industry | Industry | {{ site.format.type.long }} | IDs from Industries | None |  |
-| incorporationStatus | Incorporation Status | {{ site.format.type.long }} | IDs from Incorporation Status | None |  |
-| TaxpayerIdNumber | Taxpayer ID Number | {{ site.format.type.string64 }} |  | Empty String |  |
+| incorporation_status | Incorporation Status | {{ site.format.type.long }} | IDs from Incorporation Status | None |  |
+| Taxpayer_id_number | Taxpayer ID Number | {{ site.format.type.string64 }} |  | Empty String |  |
 | siret | Siret | {{ site.format.type.string64 }} |  | Empty String |  |
 
 h3. Individual only
