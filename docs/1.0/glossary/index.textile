@@ -9,9 +9,12 @@ p(caption). Data type that can be send within JSON files.
 
 (#string).| *String* | Any chain of characters. Carriage returns will be ignored. |
 (#string4).| *String ^4^* | Any chain up to *4* characters. Carriage returns will be ignored. |
+(#string10).| *String ^10^* | Any chain up to *10* characters. Carriage returns will be ignored. |
 (#string64).| *String ^64^* | Any chain up to *64* characters. Carriage returns will be ignored. |
+(#string128).| *String ^128^* | Any chain up to *128* characters. Carriage returns will be ignored. |
 (#string255).| *String ^255^* | Any chain up to *255* characters. Carriage returns will be ignored. |
 (#text).| *Text* | Any chain of characters, including carriage returns, with no size limit. |
 (#integer).| *Integer* | Any positive integer. |
 (#long).| *Long* | Any integer, positive or negative. |
 (#boolean).| *Boolean* | _false_ or _true_ / _0_ or _1_. |
+(#address).| *Address* | In the API, Addresses got their own JSON format. Cick "here":/docs/1.0/api/address/#format for further details.  |

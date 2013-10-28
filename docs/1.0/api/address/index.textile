@@ -1,0 +1,41 @@
+---
+layout: default
+title: "- REST API V1.0 Resources - Address"
+---
+
+h1(blue newsection). General
+
+p. In myERP, addresses are used at several places. Accounts, Suppliers, Contacts... So, in the API, addresses are embeded into their own JSON format, and follow the same rules everywhere.
+
+
+h1(blue newsection#format). Address Format
+
+|_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |_. {{ site.format.header.default }} |_. {{ site.format.header.non_editable }} |
+| label1 | First line of the address | {{ site.format.type.string255 }} |  | Empty String |  |
+| label2 | Second line of the address | {{ site.format.type.string255 }} |  | Empty String |  |
+| label3 | Third line of the address | {{ site.format.type.string255 }} |  | Empty String |  |
+| zipcode | The zipcode code | {{ site.format.type.string128 }} |  | Empty String |  |
+| city | The city name | {{ site.format.type.string128 }} |  | Empty String |  |
+| country | The country name | {{ site.format.type.string128 }} |  | Empty String |  |
+| localisation | The Country/County | {{ site.format.type.string255 }} | Limited to the one from your country. | Other |  |
+| short_localisation | The short code for the Country | {{ site.format.type.string10 }} | Read Only | {{ site.format.non_available }} |  |
+| full_address | The full formated adress 
+as it should appears on documents | {{ site.format.type.string }} | Read Only | {{ site.format.non_available }} |=. X |
+
+p. JSON sample
+
+{% highlight bash %}
+{
+  "label1": "567  Sutter St.",
+  "label2": "",
+  "label3": "",
+  "zipcode": "94102",
+  "city": "San Francisco",
+  "country": "United States",
+  "localisation": "California",
+  "short_localisation": "CA",
+  "full_address": "567  Sutter St. San Francisco CA 94102 United States"
+}
+{% endhighlight %}
+
+

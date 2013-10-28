@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "- REST API V1.0 Resources - Customer"
+title: "- REST API V1.0 Resources - Account"
 ---
 
 h1(blue newsection#format). Account Format

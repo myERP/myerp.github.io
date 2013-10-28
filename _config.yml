@@ -24,15 +24,17 @@ format:
     default: Default
     non_editable: Non editable
   type:
-    string: '"String":../../glossary/#string'
-    string4: '"String ^4^":../../glossary/#string4'
-    string64: '"String ^64^":../../glossary/#string64'
-    string255: '"String ^255^":../../glossary/#string255'
-    text: '"Text":../../glossary/#text'
-    integer: '"Integer":../../glossary/#integer'
-    long: '"Long":../../glossary/#long'
-    boolean: '"Boolean":../../glossary/#boolean'
-    address: Address
+    string: '"String":/docs/1.0/glossary/#string'
+    string4: '"String ^4^":/docs/1.0/glossary/#string4'
+    string10: '"String ^10^":/docs/1.0/glossary/#string10'
+    string64: '"String ^64^":/docs/1.0/glossary/#string64'
+    string128: '"String ^128^":/docs/1.0/glossary/#string128'
+    string255: '"String ^255^":/docs/1.0/glossary/#string255'
+    text: '"Text":/docs/1.0/glossary/#text'
+    integer: '"Integer":/docs/1.0/glossary/#integer'
+    long: '"Long":/docs/1.0/glossary/#long'
+    boolean: '"Boolean":/docs/1.0/glossary/#boolean'
+    address: '"Address":/docs/1.0/glossary/#address'
     account_contact: Account Contact
   mandatory: Mandatory
   non_editable: X
