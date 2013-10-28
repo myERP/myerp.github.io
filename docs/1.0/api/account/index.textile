@@ -52,7 +52,9 @@ h3. Lead only
 | rating | Rating | {{ site.format.type.long }} | Codes of Ratings from your domain | Miscellaneous |   |
 
 
-h1(blue newsection#get). Get account
+h1(blue newsection#account). account/:id
+
+h2(#account_get). GET account/:id
 
 p. Returns all the information about the account.
 
@@ -118,9 +120,9 @@ p. JSON response sample
 {% endhighlight %}
 
 
-h1(blue newsection#put). Put account
+h2(#account_put). PUT account/:id
 
-p. Create a new account.
+p. Update a single account.
 
 h3. Resource Information
 
@@ -129,22 +131,22 @@ h3. Resource Information
 * HTTP Methods: PUT
 * Body Format: JSON
 * Response Format: JSON
-* Mandatory fields: type, status, company_name (for Company)/lastname (for Individual)
+* Non editable fields: id, full_name, customer_contacts
 
 h3. Example Request
 
 {% highlight bash %}
-curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T jsonFile.json
+curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account.url}}:id {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T fieldsToUpdate.json
 {% endhighlight %}
 
 p. JSON response
 
-The complete JSON of the account you've just created.
+The up-to-date JSON of the account you've just modfied.
 
 
-h1(blue newsection#delete).  Delete account
+h2(#account_delete). DELETE account/:id
 
-p. Delete a single account.
+p. Deletes a single account.
 
 h3. Resource Information
 
@@ -162,3 +164,98 @@ curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account.u
 p. JSON response
 
 The JSON of the account you've just deleted.
+
+
+h1(blue newsection#accounts). accounts
+
+h2(#accounts_get).  GET accounts
+
+p. Returns the list of all your accounts.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: GET
+* Body Format: JSON
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response
+
+The list of all your accounts, in a JSON format.
+
+
+h2(#accounts_post). POST accounts
+
+p. Create a single account.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: POST
+* Body Format: JSON
+* Response Format: JSON
+* Mandatory fields: type, status, company_name (for Company)/lastname (for Individual)
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X POST {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T newAccount.json
+{% endhighlight %}
+
+p. JSON response
+
+The complete JSON of the account, as it was created by the system.
+
+
+h2(#accounts_put). PUT accounts
+
+p. Create or Update several accounts in a row.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: PUT
+* Body Format: JSON
+* Response Format: JSON
+* Mandatory fields for creation: type, status, company_name (for Company)/lastname (for Individual)
+* Non editable fields for edition: id, full_name, customer_contacts
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfAccounts.json
+{% endhighlight %}
+
+p. JSON response
+
+A JSON list made of up-to-date info of accounts successfully edited or created, and error messages for unsuccessful ones.
+
+
+h2(#accounts_delete).  DELETE accounts
+
+p. Delete several accounts in a row
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: DELETE
+* Body Format: JSON
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfIDsToDelete.json
+{% endhighlight %}
+
+p. JSON response
+
+A JSON list made of the complete info of accounts successfully deleted, and error messages for unsuccessful ones.

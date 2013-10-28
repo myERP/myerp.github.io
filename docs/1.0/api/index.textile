@@ -69,13 +69,13 @@ p(title). "Accounts":account/#format
 p(caption). Accounts are collections of accounts (leads and customers).
 
 |_(thead). Type |_(thead). Description |
-|"GET account/:id":account/#get|Returns all the information about the account|
-|"DELETE account/:id":account/#delete|Deletes the account|
-|"PUT account/:id":account/#put|Update the account|
-|"GET accounts":accounts/#get|Returns the list of all your accounts|
-|"POST accounts":accounts/#post|Create a new account|
-|"PUT accounts":accounts/#put|Create several accounts in a row|
-|"DELETE accounts":accounts/#delete|Delete several accounts in a row|
+|"GET account/:id":account/#account_get|Returns all the information about the account|
+|"PUT account/:id":account/#account_put|Update a single account|
+|"DELETE account/:id":account/#account_delete|Deletes a single account|
+|"GET accounts":account/#accounts_get|Returns the list of all your accounts|
+|"POST accounts":account/#accounts_post|Create a single account|
+|"PUT accounts":account/#accounts_put|Create or Update several accounts in a row|
+|"DELETE accounts":account/#accounts_delete|Delete several accounts in a row|
 
 p(title). "Account Contacts":account_contact/#format
 
