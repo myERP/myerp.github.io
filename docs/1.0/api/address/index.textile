@@ -18,7 +18,7 @@ h1(blue newsection#format). Address Format
 | city | The city name | {{ site.format.type.string128 }} |  | Empty String |  |
 | country | The country name | {{ site.format.type.string128 }} |  | Empty String |  |
 | localisation | The Country/County | {{ site.format.type.string255 }} | Limited to the one from your country. | Other |  |
-| short_localisation | The short code for the Country | {{ site.format.type.string10 }} | Read Only | {{ site.format.non_available }} |  |
+| short_localisation | The short code for the Country | {{ site.format.type.string10 }} | Read Only | {{ site.format.non_available }} |=. X |
 | full_address | The full formated adress 
 as it should appears on documents | {{ site.format.type.string }} | Read Only | {{ site.format.non_available }} |=. X |
 
