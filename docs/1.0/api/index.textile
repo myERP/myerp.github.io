@@ -74,7 +74,7 @@ p(caption). Accounts are collections of accounts (leads and customers).
 |"DELETE account/:id":account/#account_delete|Deletes a single account|
 |"GET accounts":account/#accounts_get|Returns the list of all your accounts|
 |"POST accounts":account/#accounts_post|Create a single account|
-|"PUT accounts":account/#accounts_put|Create or Update several accounts in a row|
+|"PUT accounts":account/#accounts_put|Create and Update several accounts in a row|
 |"DELETE accounts":account/#accounts_delete|Delete several accounts in a row|
 
 p(title). "Account Contacts":account_contact/#format
@@ -82,13 +82,13 @@ p(title). "Account Contacts":account_contact/#format
 p(caption). Account contacts are collections of account contacts.
 
 |_(thead). Type |_(thead). Description |
-|"GET account_contact/:id":account_contact/#get|Returns all the information about the account contact|
-|"DELETE account_contact/:id":account_contact/#delete|Deletes the account contact|
-|"PUT account_contact/:id":account_contact/#put|Update the account contact|
-|"GET account_contacts":account_contacts/#get|Returns the list of all your account contacts|
-|"POST account_contacts":account_contacts/#post|Create a new account contact|
-|"PUT account_contacts":account_contacts/#put|Create several account contacts in a row|
-|"DELETE account_contacts":account_contacts/#delete|Delete several account contacts in a row|
+|"GET account_contact/:id":account_contact/#account_contact_get|Returns all the information about the account contact|
+|"PUT account_contact/:id":account_contact/#account_contact_put|Update a single account contact|
+|"DELETE account_contact/:id":account_contact/#account_contact_delete|Deletes a single account contact|
+|"GET account_contacts":account_contact/#account_contacts_get|Returns the list of all your account contacts|
+|"POST account_contacts":account_contact/#account_contacts_post|Create a single account contact|
+|"PUT account_contacts":account_contact/#account_contacts_put|Create and update several account contacts in a row|
+|"DELETE account_contacts":account_contact/#account_contacts_delete|Delete several account contacts in a row|
 
 p(title). Projects
 

@@ -21,7 +21,9 @@ h1(blue newsection#format). Account's Contact Format
 | position | Position | {{ site.format.type.long }} | IDs from Position | None |  |
 
 
-h1(blue newsection#get). Get account
+h1(blue newsection#account_contact_). account_contact/:id
+
+h2(#account_contact_get). GET account_contact/:id
 
 p. Returns all the information about the account contact.
 
@@ -68,9 +70,9 @@ p. JSON response sample
 {% endhighlight %}
 
 
-h1(blue newsection#put). Put account contact
+h2(#account_contact_put). PUT account_contact/:id
 
-p. Create a new account's contact.
+p. Update a single account contact.
 
 h3. Resource Information
 
@@ -79,22 +81,22 @@ h3. Resource Information
 * HTTP Methods: PUT
 * Body Format: JSON
 * Response Format: JSON
-* Mandatory fields: lastname, customer_id
+* Non editable fields: id, customer_id
 
 h3. Example Request
 
 {% highlight bash %}
-curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account_contacts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T jsonFile.json
+curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account_contact.url}}:id {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T fieldsToUpdate.json
 {% endhighlight %}
 
 p. JSON response
 
-The complete JSON of the account contact you've just created.
+The up-to-date JSON of the account contact you've just modfied.
 
 
-h1(blue newsection#delete).  Delete account contact
+h2(#account_contact_delete).  DELETE account_contact/:id
 
-p. Delete a single account contact.
+p. Deletes a single account contact.
 
 h3. Resource Information
 
@@ -112,3 +114,98 @@ curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account_c
 p. JSON response
 
 The JSON of the account contact you've just deleted.
+
+
+h1(blue newsection#account_contacts). account_contacts
+
+h2(#account_contacts_get).  GET account_contacts
+
+p. Returns the list of all your account contacts.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: GET
+* Body Format: JSON
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account_contacts.url}} {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response
+
+The list of all your account contacts, in a JSON format.
+
+
+h2(#account_contacts_post). POST account_contacts
+
+p. Create a single account contact.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: POST
+* Body Format: JSON
+* Response Format: JSON
+* Mandatory fields: lastname, customer_id
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X POST {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account_contacts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T newAccountContact.json
+{% endhighlight %}
+
+p. JSON response
+
+The complete JSON of the account contact, as it was created by the system.
+
+
+h2(#account_contacts_put). PUT account_contacts
+
+p. Create and Update several account contacts in a row.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: PUT
+* Body Format: JSON
+* Response Format: JSON
+* Mandatory fields for creation: lastname, customer_id
+* Non editable fields for edition: id, customer_id
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account_contacts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfAccountContacts.json
+{% endhighlight %}
+
+p. JSON response
+
+The complete JSON of the account contact you've just created.
+
+
+h2(#account_contacts_delete).  DELETE account_contacts
+
+p. Delete several account contacts in a row
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: DELETE
+* Body Format: JSON
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfIDsToDelete.json
+{% endhighlight %}
+
+p. JSON response
+
+A JSON list made of the complete info of account contacts successfully deleted, and error messages for unsuccessful ones.

@@ -217,7 +217,7 @@ The complete JSON of the account, as it was created by the system.
 
 h2(#accounts_put). PUT accounts
 
-p. Create or Update several accounts in a row.
+p. Create and Update several accounts in a row.
 
 h3. Resource Information
 
