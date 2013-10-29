@@ -11,7 +11,9 @@ h1(blue newsection#format). Project Format
 | description | Description | {{ site.format.type.text }} |
 
 
-h1(blue newsection#get). Get Project
+h1(blue newsection#project). project/:id
+
+h2(#project_get). GET project/:id
 
 p. Returns all the information about the project.
 
@@ -37,3 +39,25 @@ p. JSON response sample
   "description": "A wonderful project ! Let's make money."
 }
 {% endhighlight %}
+
+
+h2(#project_delete). DELETE project/:id
+
+p. Deletes a single project.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: DELETE
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.project.url}}:id {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response
+
+The JSON of the project you've just deleted.

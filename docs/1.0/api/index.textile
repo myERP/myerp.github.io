@@ -90,9 +90,10 @@ p(caption). Account contacts are collections of account contacts.
 |"PUT account_contacts":account_contact/#account_contacts_put|Create and update several account contacts in a row|
 |"DELETE account_contacts":account_contact/#account_contacts_delete|Delete several account contacts in a row|
 
-p(title). Projects
+p(title). "Projects":project/#format
 
 p(caption). Projects are currently read-only in the API.
 
 |_(thead). Type |_(thead). Description |
-|"GET project/:id":project/#get|Returns all the information about the project|
+|"GET project/:id":project/#project_get|Returns all the information about the project|
+|"DELETE project/:id":project/#project_delete|Deletes a single project|
