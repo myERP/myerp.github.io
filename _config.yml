@@ -40,8 +40,8 @@ format:
     integer: '"Integer":/docs/1.0/glossary/#integer'
     long: '"Long":/docs/1.0/glossary/#long'
     boolean: '"Boolean":/docs/1.0/glossary/#boolean'
-    address: '"Address":/docs/1.0/glossary/#address'
-    account_contact: '"Account Contact":/docs/1.0/api/account_contact/#get'
+    address: '"Address":/docs/1.0/api/address/#format'
+    account_contact: '"Account Contact":docs/1.0/api/account_contact/#format'
   mandatory: Mandatory
   non_editable: X
   non_available: '-'
