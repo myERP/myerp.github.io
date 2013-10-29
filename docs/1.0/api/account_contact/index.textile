@@ -10,7 +10,7 @@ h1(blue newsection#format). Account's Contact Format
 | firstname | First Name | {{ site.format.type.string255 }} |  | Empty String |  |
 | lastname | Last Name | {{ site.format.type.string255 }} |  | {{ site.format.mandatory }} |  |
 | full_name | The full name of this contact | {{ site.format.type.string }} | {{ site.format.read_only }} |  |
-| customer_id | The Customer this contact is linked to | {{ site.format.type.long }} | IDs from "Accounts":/docs/1.0/api/account/#get | {{ site.format.mandatory }} |=. {{ site.format.non_editable }} |
+| customer_id | The Customer this contact is linked to | {{ site.format.type.long }} | IDs from "Accounts":/docs/1.0/api/account/#accounts_get | {{ site.format.mandatory }} |=. {{ site.format.non_editable }} |
 | cell_number | Cell Phone | {{ site.format.type.string128 }} |  | Empty String |  |
 | work_phone | Work Phone | {{ site.format.type.string128 }} |  | Empty String |  |
 | home_phone | Home Phone | {{ site.format.type.string128 }} |  | Empty String |  |
