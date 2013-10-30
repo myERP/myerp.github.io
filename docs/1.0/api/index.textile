@@ -97,3 +97,11 @@ p(caption). Projects are currently read-only in the API.
 |_(thead). Type |_(thead). Description |
 |"GET project/:id":project/#project_get|Returns all the information about the project|
 |"DELETE project/:id":project/#project_delete|Deletes a single project|
+
+p(title). "Sales Order":sales_order/#format
+
+p(caption). The way to register and track orders from your customers.
+
+|_(thead). Type |_(thead). Description |
+|"GET sales_order/:id":sales_order/#sales_order_get|Returns all the information about the sales order|
+|"DELETE sales_order/:id":sales_order/#sales_order_delete|Deletes a single sales order|
