@@ -92,11 +92,16 @@ p(caption). Account contacts are collections of account contacts.
 
 p(title). "Projects":project/#format
 
-p(caption). Projects are currently read-only in the API.
+p(caption). Projects are an easy way to organize your tasks and documents towards a common objective.
 
 |_(thead). Type |_(thead). Description |
 |"GET project/:id":project/#project_get|Returns all the information about the project|
+|"PUT project/:id":project/#project_put|Update a single project|
 |"DELETE project/:id":project/#project_delete|Deletes a single project|
+|"GET projects":project/#projects_get|Returns the list of all your projects|
+|"POST projects":project/#projects_post|Create a single project|
+|"PUT projects":project/#projects_put|Create and update several projects in a row|
+|"DELETE projects":project/#projects_delete|Delete several projects in a row|
 
 p(title). "Sales Order":sales_order/#format
 
