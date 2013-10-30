@@ -20,7 +20,7 @@ curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account.url}
 {% endhighlight %}
 *55002* is the *id* of the account you are trying to get. Within myERP, you can find this id at the end of this account URI edition mode:
 {% highlight bash %}
-https://app.myerp.com/index.jsp?locale=en_US#account/55002
+https://app.myerp.com/index.jsp?locale=en_US#account/55002/edit
 {% endhighlight %}
 
 Those are often used for GET (to retrieve a data), PUT (to edit a data) or DELETE (to delete a data) request.
