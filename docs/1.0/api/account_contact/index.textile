@@ -21,7 +21,7 @@ h1(blue newsection#format). Account's Contact Format
 | position | Position | {{ site.format.type.long }} | IDs from Position | None |  |
 
 
-h1(blue newsection#account_contact_). account_contact/:id
+h1(blue newsection#account_contact). account_contact/:id
 
 h2(#account_contact_get). GET account_contact/:id
 
@@ -203,7 +203,7 @@ p. Delete several account contacts in a row
 h3. Example Request
 
 {% highlight bash %}
-curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfIDsToDelete.json
+curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.account_contacts.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfIDsToDelete.json
 {% endhighlight %}
 
 p. JSON response
