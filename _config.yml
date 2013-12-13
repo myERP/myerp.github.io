@@ -10,18 +10,14 @@ api:
   auth_pattern: -u "email:api-key"
   
 resource:
-  account:
-    url: /account/
   accounts:
     url: /accounts
-  account_contact:
-    url: /account_contact/
-  account_contacts:
-    url: /account_contacts
-  project:
-    url: /project/
+  contacts:
+    url: /contacts
   projects:
     url: /projects
+  sales_orders:
+    url: /sales_orders
 
 format:
   header:
@@ -44,7 +40,7 @@ format:
     boolean: '"Boolean":/docs/1.0/glossary/#boolean'
     date: '"Date":/docs/1.0/glossary/#date'
     address: '"Address":/docs/1.0/api/address/#format'
-    account_contact: '"Account Contact":docs/1.0/api/account_contact/#format'
+    account_contact: '"Account Contact":/docs/1.0/api/account_contact/#format'
     order_line: '"Order Line":/docs/1.0/api/order_line/#format'
   mandatory: Mandatory
   non_editable: X

@@ -11,9 +11,9 @@ h1(blue newsection#format). Project Format
 | description | Description | {{ site.format.type.text }} |  | Empty String |  |
 
 
-h1(blue newsection#project). project/:id
+h1(blue newsection#project). projects/:id
 
-h2(#project_get). GET project/:id
+h2(#project_get). GET projects/:id
 
 p. Returns all the information about the project.
 
@@ -27,7 +27,7 @@ h3. Resource Information
 h3. Example Request
 
 {% highlight bash %}
-curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.project.url}}:id {{site.api.auth_pattern}}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.projects.url}}/:id {{site.api.auth_pattern}}
 {% endhighlight %}
 
 p. JSON response sample
@@ -41,7 +41,7 @@ p. JSON response sample
 {% endhighlight %}
 
 
-h2(#project_put). PUT project/:id
+h2(#project_put). PUT projects/:id
 
 p. Update a single project.
 
@@ -57,7 +57,7 @@ h3. Resource Information
 h3. Example Request
 
 {% highlight bash %}
-curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.project.url}}:id {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T fieldsToUpdate.json
+curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.projects.url}}/:id {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T fieldsToUpdate.json
 {% endhighlight %}
 
 p. JSON response
@@ -65,7 +65,7 @@ p. JSON response
 The up-to-date JSON of the project you've just modfied.
 
 
-h2(#project_delete).  DELETE project/:id
+h2(#project_delete).  DELETE projects/:id
 
 p. Deletes a single project.
 
@@ -79,7 +79,7 @@ h3. Resource Information
 h3. Example Request
 
 {% highlight bash %}
-curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.project.url}}:id {{site.api.auth_pattern}}
+curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.projects.url}}/:id {{site.api.auth_pattern}}
 {% endhighlight %}
 
 p. JSON response
