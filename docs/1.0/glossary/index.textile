@@ -16,6 +16,7 @@ p(caption). Data type that can be send within JSON files.
 (#text).| *Text* | Any chain of characters, including carriage returns, with no size limit. |
 (#integer).| *Integer* | Any positive integer. |
 (#long).| *Long* | Any integer, positive or negative. |
+(#double).| *Double* | Any decimal number, positive or negative. |
 (#boolean).| *Boolean* | _false_ or _true_. Not case sensitive. |
 (#date).| *Date* | Date format that should match dd-MM-yyyy. e.g. 26-06-2013. |
 (#address).| *Address* | In the API, Addresses got their own JSON format.

@@ -37,6 +37,7 @@ format:
     text: '"Text":/docs/1.0/glossary/#text'
     integer: '"Integer":/docs/1.0/glossary/#integer'
     long: '"Long":/docs/1.0/glossary/#long'
+    double: '"Double":/docs/1.0/glossary/#double'
     boolean: '"Boolean":/docs/1.0/glossary/#boolean'
     date: '"Date":/docs/1.0/glossary/#date'
     address: '"Address":/docs/1.0/api/address/#format'
