@@ -209,7 +209,7 @@ h3. Resource Information
 h3. Example Request
 
 {% highlight bash %}
-curl -X POST {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_orders.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T newAccount.json
+curl -X POST {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_orders.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T newSalesOrders.json
 {% endhighlight %}
 
 p. JSON response
@@ -234,7 +234,7 @@ h3. Resource Information
 h3. Example Request
 
 {% highlight bash %}
-curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_orders.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfAccounts.json
+curl -X PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_orders.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfSalesOrders.json
 {% endhighlight %}
 
 p. JSON response
