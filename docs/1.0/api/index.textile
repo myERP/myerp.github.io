@@ -117,6 +117,19 @@ p(caption). Projects are an easy way to organize your tasks and documents toward
 |"PUT projects":project/#projects_put|Create and update several projects in a row|
 |"DELETE projects":project/#projects_delete|Delete several projects in a row|
 
+p(title). "Items":item/#format
+
+p(caption). Items are collections of items (services and products).
+
+|_(thead). Type |_(thead). Description |
+|"GET items/:id":item/#item_get|Returns all the information about the item.|
+|"PUT items/:id":item/#item_put|Update a single item.|
+|"DELETE items/:id":item/#item_delete|Deletes a single item.|
+|"GET items":item/#items_get|Returns the list of all your items.|
+|"POST items":item/#items_post|Create a single item.|
+|"PUT items":item/#items_put|Create and Update several items in a row.|
+|"DELETE items":item/#items_delete|Delete several items in a row.|
+
 p(title). "Sales Orders":sales_order/#format
 
 p(caption). The way to register and track orders from your customers.

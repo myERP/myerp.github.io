@@ -21,5 +21,5 @@ p(caption). Data type that can be send within JSON files.
 (#date).| *Date* | Date format that should match dd-MM-yyyy. e.g. 26-06-2013. |
 (#address).| *Address* | In the API, Addresses got their own JSON format.
 Cick "here":/docs/1.0/api/address/#format for further details.  |
-(#order_line).| *Order Line* | In the API, Order Lines got their own JSON format, and stay the same either for Estimate, Orders, Invoices, etc...
+(#order_line).| *Order Line* | In the API, Order Lines got their own JSON format, and share it for Estimate, Orders, Invoices, etc...
 Cick "here":/docs/1.0/api/order_line/#format for further details.  |
