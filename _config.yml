@@ -22,6 +22,8 @@ resource:
     url: /order_lines
   items:
     url: /items
+  payment_terms:
+    url: /payment_terms
 
 format:
   header:

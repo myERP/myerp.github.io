@@ -156,3 +156,14 @@ While adding, removing or updating an order line, related values on the contextu
 |"POST ../order_lines":order_line/#order_lines_post|Add a single order line to the contextual document. |
 |"PUT ../order_lines":order_line/#order_lines_put|Update and Add several order lines to the contextual document in a row. |
 |"DELETE ../order_lines":order_line/#order_lines_delete|Remove several order lines in a row from the contextual document. |
+
+
+h3. Read only resources
+
+p(title). "Payment terms":payment_term/#format
+
+p(caption). Payment terms are use in sales and purchase documents and defines how and when the payments are suppose to be done.
+
+|_(thead). Type |_(thead). Description |
+|"GET payment_terms/:id":payment_term/#payment_term_get|Returns the code and the name of the payment term.|
+|"GET payment_terms":payment_term/#payment_terms_get|Returns the list of all your payment terms.|

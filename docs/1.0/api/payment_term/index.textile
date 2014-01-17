@@ -1,0 +1,64 @@
+---
+layout: default
+title: "- REST API V1.0 Resources - Payment Term"
+---
+
+h1(blue newsection#format). Payment Term Format
+
+|_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |
+| id | Code | {{ site.format.type.long }} |
+| name | Name | {{ site.format.type.string64 }} |
+
+
+h1(blue newsection#payment_term). payment_terms/:id
+
+h2(#payment_term_get). GET payment_terms/:id
+
+p. Returns the code and the name of the payment term.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: GET
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payment_terms.url}}/:id {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response sample
+
+{% highlight bash %}
+{
+  "id": 4,
+  "name": "In two installments"
+}
+{% endhighlight %}
+
+
+h1(blue newsection#payment_terms). payment_terms
+
+h2(#payment_terms_get).  GET payment_terms
+
+p. Returns the list of all your payment terms.
+
+h3. Resource Information
+
+* Rate limited: No
+* Authentication: Required
+* HTTP Methods: GET
+* Body Format: JSON
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payment_terms.url}} {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response
+
+The list of all your payment terms, in a JSON format.

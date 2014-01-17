@@ -22,7 +22,7 @@ h1(blue newsection#format). Sales Order Format
 | shipping_date | Shipping Date | {{ site.format.type.date }} |  | Date of the day |  |
 | shipping_contact | Shipping Contact | {{ site.format.type.long }} | IDs from "Account Contacts":/docs/1.0/api/account_contact/#account_contacts_get from any account | None |  |
 | shipping_address | Shipping Address | {{ site.format.type.address }} | {{ site.format.read_only }} | The shipping contact or customer ones |  |
-| payment_terms | Payment Terms | {{ site.format.type.long }} | IDs from Payment terms | Due on receipt |  |
+| payment_terms | Payment Terms | {{ site.format.type.long }} | IDs from "Payment terms":/docs/1.0/api/payment_term/#payment_terms_get | Due on receipt |  |
 | project | Project | {{ site.format.type.long }} | IDs from "Projects":/docs/1.0/api/project/#projects_get | None |  |
 | employee | Employee | {{ site.format.type.long }} | IDs from Employees | The authenticated user |  |
 | private_note | Private Comment | {{ site.format.type.text }} |  | Empty String |  |

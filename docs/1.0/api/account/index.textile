@@ -21,7 +21,7 @@ h3. All Accounts
 | email | Email address | {{ site.format.type.string255 }} |  | Empty string |  |
 | website | Website URL | {{ site.format.type.string255 }} |  | Empty string |  |
 | contacts | List of this account's contact | {{ site.format.type.account_contact }} |  | No Contact |=. {{ site.format.non_editable }} |
-| payment_terms | Payment Terms | {{ site.format.type.long }} | IDs from Payment terms | Due on receipt |  |
+| payment_terms | Payment Terms | {{ site.format.type.long }} | IDs from "Payment terms":/docs/1.0/api/payment_term/#payment_terms_get | Due on receipt |  |
 | currency | Currency | {{ site.format.type.string4 }} | ISO Code from your Currencies | Your domain main currency |  |
 | sales_tax | Sales Tax | {{ site.format.type.long }} | IDs from Sales Tax | None |  |
 | user_code | Customer Number | {{ site.format.type.string64 }} | Anything that does not already
