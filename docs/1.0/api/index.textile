@@ -167,3 +167,12 @@ p(caption). Payment terms are use in sales and purchase documents and defines ho
 |_(thead). Type |_(thead). Description |
 |"GET payment_terms/:id":payment_term/#payment_term_get|Returns the code and the name of the payment term.|
 |"GET payment_terms":payment_term/#payment_terms_get|Returns the list of all your payment terms.|
+
+p(title). "Item families":item_family/#format
+
+p(caption). Item Families helps you to categorize your products and services, making them easier to search or filter.
+
+|_(thead). Type |_(thead). Description |
+|"GET item_families/:id":item_family/#item_family_get|Returns the code and the name of the item family.|
+|"GET item_families":item_family/#item_families_get|Returns the list of all your item families.|
+

@@ -24,6 +24,8 @@ resource:
     url: /items
   payment_terms:
     url: /payment_terms
+  item_families:
+    url: /item_families
 
 format:
   header:
