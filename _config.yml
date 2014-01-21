@@ -26,6 +26,8 @@ resource:
     url: /payment_terms
   item_families:
     url: /item_families
+  currencies:
+    url: /currencies
 
 format:
   header:

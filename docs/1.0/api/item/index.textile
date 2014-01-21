@@ -171,7 +171,7 @@ p. JSON response
 The complete JSON of the item, as it was created by the system.
 
 
-h2(#items_put). PUT accounts
+h2(#items_put). PUT items
 
 p. Create and Update several items in a row.
 

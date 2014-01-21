@@ -130,6 +130,19 @@ p(caption). Items are collections of items (services and products).
 |"PUT items":item/#items_put|Create and Update several items in a row.|
 |"DELETE items":item/#items_delete|Delete several items in a row.|
 
+p(title). "Item families":item_family/#format
+
+p(caption). Item Families helps you to categorize your products and services, making them easier to search or filter.
+
+|_(thead). Type |_(thead). Description |
+|"GET item_families/:id":item_family/#item_family_get|Returns the code and the name of the item family.|
+|"PUT item_families/:id":item_family/#item_family_put|Update a single item family.|
+|"DELETE item_families/:id":item_family/#item_family_delete|Deletes a single item family.|
+|"GET item_families":item_family/#item_families_get|Returns the list of all your item families.|
+|"POST item_families":item_family/#item_families_post|Create a single item family.|
+|"PUT item_families":item_family/#item_familyies_put|Create and Update several item families in a row.|
+|"DELETE item_families":item_family/#item_families_delete|Delete several item families in a row.|
+
 p(title). "Sales Orders":sales_order/#format
 
 p(caption). The way to register and track orders from your customers.
@@ -168,11 +181,11 @@ p(caption). Payment terms are use in sales and purchase documents and defines ho
 |"GET payment_terms/:id":payment_term/#payment_term_get|Returns the code and the name of the payment term.|
 |"GET payment_terms":payment_term/#payment_terms_get|Returns the list of all your payment terms.|
 
-p(title). "Item families":item_family/#format
+p(title). "Currencies":currency/#format
 
-p(caption). Item Families helps you to categorize your products and services, making them easier to search or filter.
+p(caption). Especially usefull when you are dealing with several currencies. Restraint to the currencies you have actually added to your domain.
 
 |_(thead). Type |_(thead). Description |
-|"GET item_families/:id":item_family/#item_family_get|Returns the code and the name of the item family.|
-|"GET item_families":item_family/#item_families_get|Returns the list of all your item families.|
+|"GET currencies/:id":currency/#currency_get|Returns the list of currencies you have added to your domain.|
+|"GET currencies":currency/#currencies_get|Returns the list of all currencies that you are allowed to be used.|
 
