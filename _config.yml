@@ -28,6 +28,8 @@ resource:
     url: /item_families
   currencies:
     url: /currencies
+  accounting_transactions:
+    url: /accounting_transactions
 
 format:
   header:
@@ -53,6 +55,7 @@ format:
     address: '"Address":/docs/1.0/api/address/#format'
     account_contact: '"Account Contact":/docs/1.0/api/account_contact/#format'
     order_line: '"Order Line":/docs/1.0/api/order_line/#format'
+    accounting_entry: '"Accounting Entry":/docs/1.0/api/accounting_entry/#format'
   mandatory: Mandatory
   non_editable: X
   non_available: '-'

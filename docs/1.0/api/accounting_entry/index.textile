@@ -1,0 +1,34 @@
+---
+layout: default
+title: "- REST API V1.0 Resources - Accounting Entry"
+---
+
+h1(blue newsection). General
+
+p. Accounting entries are the main content of any Accounting transaction. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable.
+
+
+h1(blue newsection#format). Accounting Entry Format
+
+|_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |_. {{ site.format.header.default }} |
+| label | Description of that entry | {{ site.format.type.string128 }} |  | Empty String |
+| amount | This entry's amount | {{ site.format.type.double }} | Positive, will be rounded to two decimal places | {{ site.format.mandatory }} |
+| way | Defines if the amount is a Debit or a Credit | {{ site.format.type.string }} | "debit" or "credit" | {{ site.format.mandatory }} |
+| account | The accounting account | {{ site.format.type.long }} | IDs from the Chart of Accounts | {{ site.format.mandatory }} |
+| account_label | The number and label of the accounting account | {{ site.format.type.string }} | {{ site.format.read_only }} | {{ site.format.non_available }} |
+| lettering | The lettering of this entry | {{ site.format.type.string64 }} |  | Empty String |
+
+p. JSON sample
+
+{% highlight bash %}
+{
+  "label": "Invoice Payment",
+  "amount": 17578.65,
+  "way": "debit",
+  "account": 21,
+  "account_label": "11100  ( Accounts Receivable - Trade )",
+  "lettering": "CINV-237"
+}
+{% endhighlight %}
+
+
