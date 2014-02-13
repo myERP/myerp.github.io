@@ -36,7 +36,7 @@ h3. Example Request
 curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounting_transactions.url}}/:id {{site.api.auth_pattern}}
 {% endhighlight %}
 
-p. JSON response sample (Company with no Contacts)
+p. JSON response sample
 
 {% highlight bash %}
 {
