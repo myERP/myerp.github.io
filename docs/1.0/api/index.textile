@@ -108,8 +108,8 @@ Using the API, you can't edit any Accounting transaction, but you can create new
 In order to delete other transactions, you need to deleted the related document (Invoice, Payment, etc...). |
 |"GET ../accounting_transactions":accounting_transaction/#accounting_transactions_get|Returns the list of all your accounting transactions. |
 |"POST ../accounting_transactions":accounting_transaction/#accounting_transactions_post|Create a single accounting transaction. |
-|"DELETE ../order_lines":accounting_transaction/#accounting_transactions_delete|Delete several accounting transactions in a row. Only manual accounting transactions can be deleted.
-In order to delete other transactions, you need to deleted the related document (Invoice, Payment, etc...). |
+|"DELETE ../accounting_transactions":accounting_transaction/#accounting_transactions_delete|Delete several accounting transactions in a row. Only manual accounting transactions can be deleted.
+In order to delete other transactions, you need to delete the related document (Invoice, Payment, etc...). |
 
 
 h3. Read only resources
