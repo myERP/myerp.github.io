@@ -67,7 +67,7 @@ p(caption). Item Families helps you to categorize your products and services, ma
 |"DELETE item_families/:id":item_family/#item_family_delete|Deletes a single item family.|
 |"GET item_families":item_family/#item_families_get|Returns the list of all your item families.|
 |"POST item_families":item_family/#item_families_post|Create a single item family.|
-|"PUT item_families":item_family/#item_familyies_put|Create and Update several item families in a row.|
+|"PUT item_families":item_family/#item_families_put|Create and Update several item families in a row.|
 |"DELETE item_families":item_family/#item_families_delete|Delete several item families in a row.|
 
 p(title). "Sales Orders":sales_order/#format
