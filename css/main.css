@@ -173,3 +173,9 @@ body .primary-button {
     .newsection{
         padding-top: 4em;
     }
+    .anchor{
+        display: block;
+        height: 75px;  
+        margin-top: -75px;
+        visibility: hidden;
+    }
