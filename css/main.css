@@ -18,7 +18,7 @@ body {
 
 a:link {color:#2e90c8;text-decoration: none;}      /* unvisited link */
 a:visited {color:#2e90c8;}  /* visited link */
-a:hover {color:#2e90c8; text-decoration: underline}  /* mouse over link */
+a:hover {color:#2e90c8; } /*text-decoration: underline}  /* mouse over link */
 a:active {color:#2e90c8;}  /* selected link */
 .justify {text-align: justify;}
 aside{
@@ -48,9 +48,8 @@ aside{
 
         .header .pure-menu li a:hover,
         .header .pure-menu li a:focus {
-            background: none;
-            border: none;
-            color: #aaa;
+            background: #2e90c8;
+            color: white;
         }
     .header-right{
         float:right;
