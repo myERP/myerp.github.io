@@ -3,12 +3,13 @@ layout: default
 title: "- REST API V1.0 Resources - Address"
 ---
 
-h1(blue newsection). General
+
+span(anchor#format). ~ 
+
+h1(blue). Address Format
 
 p. In myERP, addresses are used at several places. Accounts, Suppliers, Contacts... So, in the API, addresses are embeded into their own JSON format, and follow the same rules everywhere.
 
-
-h1(blue newsection#format). Address Format
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |_. {{ site.format.header.default }} |_. {{ site.format.header.non_editable }} |
 | label1 | First line of the address | {{ site.format.type.string255 }} |  | Empty String |  |
