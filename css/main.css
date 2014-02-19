@@ -137,6 +137,10 @@ body .primary-button {
             border-top: none;
             font-weight: bold;
         }
+
+        .thead.first {
+            width: 35%;
+        }
   
         tr {
             display: table-row;
