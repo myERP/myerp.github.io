@@ -102,9 +102,28 @@ body .primary-button {
 
     .content{
         text-align: left;
-        margin: 0 auto;
+        margin: 0 auto 50px auto        ;
     }
 
+    .overview.resources {
+        padding: 0;
+    }
+
+        .overview.resources li {
+            float:left;
+            display:block; 
+            width: 33%;
+        }
+
+            .overview.resources li a {
+                display:block; 
+                padding: 2px;
+            }
+            .overview.resources li a:hover {
+                background-color: #2e90c8;
+                color: white;
+                text-decoration: none;
+            }
 
     table {
         *border-collapse: collapse; /* IE7 and lower */
