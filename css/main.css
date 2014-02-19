@@ -61,16 +61,23 @@ aside{
 body .primary-button {
     background: #2e90c8;
     color: #fff;
+    text-decoration: none;
 }
 
 .splash {
     margin: 2em auto 0;
     padding: 7em 2.5em 1em;
 }
+    .splash .pure-g-r {
+        letter-spacing: 0em !important;
+    }
+    .splash .splash-image {
+        text-align: center;
+    }
     .splash .splash-head {
         font-size: 300%;
         margin: 0em 0;
-        line-height: 1.2em;
+       
     }
     .splash .splash-subhead {
         color: #999;
@@ -85,7 +92,9 @@ body .primary-button {
 .content .content-ribbon {
     margin: 0 auto;
     border: 1px solid #eee;
+    max-width: 960px;
 }
+
 
 .content-wrapper {
     margin-top: 6em; 
