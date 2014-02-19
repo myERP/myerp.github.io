@@ -92,7 +92,6 @@ body .primary-button {
 .content .content-ribbon {
     margin: 0 auto;
     border: 1px solid #eee;
-    max-width: 960px;
 }
 
 
@@ -103,6 +102,7 @@ body .primary-button {
 
     .content{
         text-align: left;
+        margin: 0 auto;
     }
 
 
