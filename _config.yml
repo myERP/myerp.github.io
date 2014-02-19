@@ -6,7 +6,7 @@ pygments: true
 
 api:
   v1: /v1     
-  base_url: http://app.myerp.com/api
+  base_url: https://app.myerp.com/api
   auth_pattern: -u "email:api-key"
   
 resource:
