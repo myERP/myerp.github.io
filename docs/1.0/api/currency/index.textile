@@ -3,7 +3,10 @@ layout: default
 title: "- REST API V1.0 Resources - Currency"
 ---
 
-h1(blue newsection#format). Currency Format
+
+span(anchor#format). ~ 
+
+h1(blue). Currency Format
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |
 | id | Code | {{ site.format.type.long }} |
@@ -12,9 +15,10 @@ h1(blue newsection#format). Currency Format
 | main_currency | Is this currency the main accounting for this domain | {{ site.format.type.boolean }} |
 
 
-h1(blue newsection#currency). currencies/:id
 
-h2(#currency_get). GET currencies/:id
+span(anchor#currency_get). ~ 
+
+h2. GET currencies/:id
 
 p. Returns all the information about the currency.
 
@@ -43,9 +47,10 @@ p. JSON response sample
 {% endhighlight %}
 
 
-h1(blue newsection#currencies). currencies
 
-h2(#currencies_get).  GET currencies
+span(anchor#currencies_get). ~ 
+
+h2.  GET currencies
 
 p. Returns the list of currencies you have added to your domain.
 
