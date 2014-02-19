@@ -63,6 +63,21 @@ body .primary-button {
     text-decoration: none;
 }
 
+.outlined-button {
+    border: 1px solid #ddd;
+    background: white;
+    color: black;
+}
+
+.outlined-button.green-button {
+    border: 1px solid rgb(28, 184, 65);
+    color: rgb(28, 184, 65);
+}
+.outlined-button.green-button:hover {
+    background: white;
+    cursor: default;
+}
+
 .splash {
     margin: 2em auto 0;
     padding: 7em 2.5em 1em;
