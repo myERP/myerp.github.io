@@ -154,6 +154,7 @@ p. Create and Update several item families in a row.
 h3. Resource Information
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -179,6 +180,7 @@ h2.  DELETE item_families
 p. Delete several item families in a row
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

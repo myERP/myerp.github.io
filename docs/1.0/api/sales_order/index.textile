@@ -239,6 +239,7 @@ p. Create (with order lines) and Update (but not order lines) several sales orde
 h3. Resource Information
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -265,6 +266,7 @@ h2.  DELETE sales_orders
 p. Delete several sales orders and their order lines in a row.
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

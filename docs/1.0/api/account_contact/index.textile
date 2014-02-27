@@ -184,6 +184,7 @@ p. Create and Update several account contacts in a row. All should or will belon
 h3. Resource Information
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -209,6 +210,7 @@ h2.  DELETE accounts/:account_id/contacts
 p. Delete several account contacts in a row. Those contacts should belongs to the account _account_id_.
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

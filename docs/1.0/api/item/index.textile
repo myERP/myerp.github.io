@@ -188,6 +188,7 @@ p. Create and Update several items in a row.
 h3. Resource Information
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -212,6 +213,7 @@ h2.  DELETE items
 p. Delete several items in a row
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

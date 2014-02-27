@@ -158,6 +158,7 @@ h2.  DELETE accounting_transactions
 p. Delete several accounting transactions in a row. Only manual accounting transactions can be deleted. In order to delete other transactions, you need to deleted the related document (Invoice, Payment, etc...).
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

@@ -4,7 +4,7 @@ title: "- REST API V1.0 Resources - Order Line"
 ---
 
 
-span(anchor#format). ~ 
+span(anchor#format). ~
 
 h1(blue). Order Line Format
 
@@ -14,7 +14,7 @@ p. In myERP, order lines are used in several places to register an order of a pr
 
 h3. Context
 
-p. Order lines don't exist on their own. They exist within a context. They are _inner objects_ embeded into other data and in order to access them you have to declare the context within the URI, like _invoices/154/order_lines/257_. 
+p. Order lines don't exist on their own. They exist within a context. They are _inner objects_ embeded into other data and in order to access them you have to declare the context within the URI, like _invoices/154/order_lines/257_.
 
 h3. Available contexts
 
@@ -39,7 +39,7 @@ false: The _tax_ is ignored | false |  |
 
 
 
-span(anchor#order_line_get). ~ 
+span(anchor#order_line_get). ~
 
 h2. GET ../order_lines/:id
 
@@ -76,7 +76,7 @@ p. JSON response sample
 
 
 
-span(anchor#order_line_put). ~ 
+span(anchor#order_line_put). ~
 
 h2. PUT ../order_lines/:id
 
@@ -102,7 +102,7 @@ p. JSON response
 The up-to-date JSON of the order line you've just modfied.
 
 
-span(anchor#order_line_delete). ~ 
+span(anchor#order_line_delete). ~
 
 h2. DELETE ../order_lines/:id
 
@@ -126,7 +126,7 @@ p. JSON response
 The JSON of the order line you've just deleted.
 
 
-span(anchor#order_lines_get). ~ 
+span(anchor#order_lines_get). ~
 
 h2.  GET ../order_lines
 
@@ -151,7 +151,7 @@ p. JSON response
 The list of all the order lines from the contextual document, in a JSON format.
 
 
-span(anchor#order_lines_post). ~ 
+span(anchor#order_lines_post). ~
 
 h2. POST ../order_lines
 
@@ -177,7 +177,7 @@ p. JSON response
 The complete JSON of the order line, as it was created by the system.
 
 
-span(anchor#order_lines_put). ~ 
+span(anchor#order_lines_put). ~
 
 h2. PUT ../order_lines
 
@@ -186,6 +186,7 @@ p. Update and Add several order lines to the contextual document in a row. Relat
 h3. Resource Information
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -204,13 +205,14 @@ p. JSON response
 A JSON list made of up-to-date info of order lines successfully edited or added, and error messages for unsuccessful ones.
 
 
-span(anchor#order_lines_delete). ~ 
+span(anchor#order_lines_delete). ~
 
 h2.  DELETE ../order_lines
 
 p. Remove several order lines in a row from the contextual document. Related values on the contextual document will be updated accordingly.
 
 * Rate limited: Yes
+* Batch limit: {{ site.api.batch_limit }}
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

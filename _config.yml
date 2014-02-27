@@ -5,10 +5,11 @@ lsi: false
 pygments: true
 
 api:
-  v1: /v1     
+  v1: /v1
   base_url: https://app.myerp.com/api
   auth_pattern: -u "email:api-key"
-  
+  batch_limit: 25
+
 resource:
   accounts:
     url: /accounts
@@ -60,4 +61,3 @@ format:
   non_editable: X
   non_available: '-'
   read_only: Read only
-  
