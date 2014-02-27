@@ -7,16 +7,14 @@ h1. Error Codes and Responses
 
 p. In order to provide more informative error responses, our API attempts to return appropriate HTTP status codes for every request and return errors via a JSON error object containing error_code and error_message attributes.
 
-|_. Code |_. myERP status |_. Http Status |_. Message |
-| 001 | UNAUTHORIZED_NO_TOKEN | CLIENT_ERROR_UNAUTHORIZED | The request requires user authentication. Please provide a token. |
-| 002 | UNAUTHORIZED_INVALID_TOKEN | CLIENT_ERROR_UNAUTHORIZED | The request requires user authentication. The authentication failed. |
-| 003 | NOT_FOUND | CLIENT_ERROR_NOT_FOUND | The resource was not found. |
-| 004 | BAD_REQUEST | CLIENT_ERROR_BAD_REQUEST | You need to specify your account. |
-| 005 | BAD_FORMAT | CLIENT_ERROR_UNPROCESSABLE_ENTITY | The JSON request was not parsed. Please double-check the content of the request. |
-| 006 | TOO_LARGE | CLIENT_ERROR_UNPROCESSABLE_ENTITY | The JSON request is too big. Please double-check the documentation to see the current limitation. |
-| 007 | INTERNAL_ERROR | SERVER_ERROR_INTERNAL | Oops something went wrong. Please contact us so the MyERP team can investigate. |
-| 008 | FAIL_ON_DELETE | CLIENT_ERROR_CONFLICT | This object cannot be deleted. |
-| 009 | OBJECT_CANNOT_BE_SERIALIZED | SERVER_ERROR_INTERNAL | The object cannot be serialized. |
-| 010 | FIELD_MANTATORY_IS_MISSING | CLIENT_ERROR_PRECONDITION_FAILED | A mandatory field is missing in your JSON. |
-| 011 | FIELD_UNEDITABLE | CLIENT_ERROR_CONFLICT | You are trying to edit a field that is not editable. |
-| 012 | FIELD_DATA_OUT_OF_RANGE | CLIENT_ERROR_NOT_FOUND | Data out of range. |
+|_. myERP Code |_. HTTP Code |_. Message |
+| 003 | <a href="https://tools.ietf.org/html/rfc2616#section-10.4.5" target="_blank">404</a> | The resource was not found. |
+| 004 | <a href="https://tools.ietf.org/html/rfc2616#section-10.4.1" target="_blank">400</a>  | You need to specify your account. |
+| 005 | <a href="http://www.webdav.org/specs/rfc2518.html#STATUS_422" target="_blank">422</a>| The JSON request was not parsed. Please double-check the content of the request. |
+| 006 | <a href="http://www.webdav.org/specs/rfc2518.html#STATUS_422" target="_blank">422</a> | The JSON request is too big. Please double-check the documentation to see the current limitation. |
+| 007 | <a href="https://tools.ietf.org/html/rfc2616#section-10.5.1" target="_blank">500</a> | Oops something went wrong. Please contact us so the MyERP team can investigate. |
+| 008 | <a href="https://tools.ietf.org/html/rfc2616#section-10.4.10" target="_blank">409</a> | This object cannot be deleted. |
+| 009 | <a href="https://tools.ietf.org/html/rfc2616#section-10.5.1" target="_blank">500</a> | The object cannot be serialized. |
+| 010 | <a href="https://tools.ietf.https://tools.ietf.org/html/rfc2616#section-10.4.13" target="_blank">412</a> | A mandatory field is missing in your JSON. |
+| 011 | <a href="https://tools.ietf.org/html/rfc2616#section-10.4.10" target="_blank">409</a> | You are trying to edit a field that is not editable. |
+| 012 | <a href="https://tools.ietf.org/html/rfc2616#section-10.4.5" target="_blank">404</a> | Data out of range. |
