@@ -20,7 +20,7 @@ p. Returns the code and the name of the payment term.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Response Format: JSON
@@ -49,7 +49,7 @@ p. Returns the list of all your payment terms.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Body Format: JSON

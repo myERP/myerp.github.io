@@ -64,7 +64,7 @@ p. Returns all the information about the account.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Response Format: JSON
@@ -133,7 +133,7 @@ p. Update a single account.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -159,7 +159,7 @@ p. Deletes a single account. Also delete all of his contacts.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Response Format: JSON
@@ -183,7 +183,7 @@ p. Returns the list of all your accounts.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Body Format: JSON
@@ -208,7 +208,7 @@ p. Create a single account.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: POST
 * Body Format: JSON
@@ -233,7 +233,7 @@ p. Create and Update several accounts in a row.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -258,7 +258,7 @@ h2.  DELETE accounts
 
 p. Delete several accounts in a row
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

@@ -32,7 +32,7 @@ p. Returns all the information about the account contact. This contact should be
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Response Format: JSON
@@ -82,7 +82,7 @@ p. Update a single account contact. This contact should belongs to the account _
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -108,7 +108,7 @@ p. Deletes a single account contact. This contact should belongs to the account 
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Response Format: JSON
@@ -132,7 +132,7 @@ p. Returns all the contacts that belongs to the account _account_id_.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Body Format: JSON
@@ -157,7 +157,7 @@ p. Create a single account contact. This contact will belongs to the account _ac
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: POST
 * Body Format: JSON
@@ -183,7 +183,7 @@ p. Create and Update several account contacts in a row. All should or will belon
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -208,7 +208,7 @@ h2.  DELETE accounts/:account_id/contacts
 
 p. Delete several account contacts in a row. Those contacts should belongs to the account _account_id_.
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

@@ -24,7 +24,7 @@ p. Returns all the information about the currency.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Response Format: JSON
@@ -56,7 +56,7 @@ p. Returns the list of currencies you have added to your domain.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Body Format: JSON

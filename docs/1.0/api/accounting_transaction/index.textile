@@ -26,7 +26,7 @@ p. Returns all the information about the accounting transaction.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Response Format: JSON
@@ -82,7 +82,7 @@ p. Deletes a single accounting transaction. Only manual accounting transactions 
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Response Format: JSON
@@ -106,7 +106,7 @@ p. Returns the list of all your accounting transactions.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Body Format: JSON
@@ -132,7 +132,7 @@ p. Create a single accounting transaction.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: POST
 * Body Format: JSON
@@ -157,7 +157,7 @@ h2.  DELETE accounting_transactions
 
 p. Delete several accounting transactions in a row. Only manual accounting transactions can be deleted. In order to delete other transactions, you need to deleted the related document (Invoice, Payment, etc...).
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

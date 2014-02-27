@@ -47,7 +47,7 @@ p. Returns all the information about a single order line.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Response Format: JSON
@@ -84,7 +84,7 @@ p. Update a single order line. Related values on the contextual document will be
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -110,7 +110,7 @@ p. Removes a single order line from the contextual document. Related values on t
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Response Format: JSON
@@ -134,7 +134,7 @@ p. Returns the list of all order lines that belongs to the contextual document.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Body Format: JSON
@@ -159,7 +159,7 @@ p. Add a single order line to the contextual document. Related values on the con
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: POST
 * Body Format: JSON
@@ -185,7 +185,7 @@ p. Update and Add several order lines to the contextual document in a row. Relat
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -210,7 +210,7 @@ h2.  DELETE ../order_lines
 
 p. Remove several order lines in a row from the contextual document. Related values on the contextual document will be updated accordingly.
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON

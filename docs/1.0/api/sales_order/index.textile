@@ -43,7 +43,7 @@ p. Returns all the information about the sales order, including its order lines.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Response Format: JSON
@@ -136,7 +136,7 @@ p. Update a single sales order. Use ../order_lines/:id to edit order lines.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -162,7 +162,7 @@ p. Deletes a single sales order and all its order lines.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Response Format: JSON
@@ -186,7 +186,7 @@ p. Returns the list of all your sales orders, with their order lines.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: GET
 * Body Format: JSON
@@ -211,7 +211,7 @@ p. Create a single sales order and its order lines.
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: POST
 * Body Format: JSON
@@ -238,7 +238,7 @@ p. Create (with order lines) and Update (but not order lines) several sales orde
 
 h3. Resource Information
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: PUT
 * Body Format: JSON
@@ -264,7 +264,7 @@ h2.  DELETE sales_orders
 
 p. Delete several sales orders and their order lines in a row.
 
-* Rate limited: No
+* Rate limited: Yes
 * Authentication: Required
 * HTTP Methods: DELETE
 * Body Format: JSON
