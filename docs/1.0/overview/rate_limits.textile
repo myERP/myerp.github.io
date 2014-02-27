@@ -11,7 +11,7 @@ p. This API is rate limited; we only allow a certain number of requests per minu
 
 h3. 15 Minute Windows
 
-p. Rate limits in version 1.0 of the API are divided into 15 minute intervals. Additionally, all 1.0 endpoints require authentication. API v1.0's rate limiting model allows for a wider ranger of requests through per-method request limits. There is one initial bucket available: **180 calls every 15 minutes**.
+p. Rate limits in version 1.0 of the API are divided into 15 minute intervals. Additionally, all 1.0 endpoints require authentication. API v1.0's rate limiting model allows for a wider ranger of requests through per-method request limits. There is one initial bucket available: **1800 calls every 15 minutes**.
 
 h3. Batching
 
