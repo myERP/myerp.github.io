@@ -114,6 +114,14 @@ In order to delete other transactions, you need to delete the related document (
 
 h3. Read only resources
 
+p(title). "Chart of Accounts":chart_of_accounts/#format
+
+p(caption). Chart of Accounts is the list of all accounting accounts. Non family accounts can be use to input "accounting transactions":/docs/1.0/api/accounting_transaction/#format.
+
+|_(thead first). Type |_(thead). Description |
+|"GET chart_of_accounts/:id":chart_of_accounts/#chart_of_account_get|Returns infos about a particular account from the Chart of Accounts.|
+|"GET chart_of_accounts":chart_of_accounts/#chart_of_accounts_get|Returns the whole Chart of Accounts.|
+
 p(title). "Payment terms":payment_term/#format
 
 p(caption). Payment terms are use in sales and purchase documents and defines how and when the payments are suppose to be done.

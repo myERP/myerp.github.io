@@ -1,0 +1,73 @@
+---
+layout: default
+title: "- REST API V1.0 Resources - Chart of Accounts"
+---
+
+span(anchor#format). ~ 
+
+h1(blue). Chart of Accounts Format
+
+|_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |
+| id | Code | {{ site.format.type.long }} |  |
+| number | Number | {{ site.format.type.string64 }} |  |
+| name | Name | {{ site.format.type.string128 }} |  |
+| is_family | The kind of account | {{ site.format.type.boolean }} | false: Detail account
+true: Family account |
+| family_id | Code of this account's family | {{ site.format.type.long }} | IDs from "Chart of Accounts":/docs/1.0/api/chart_of_accounts/#chart_of_accounts_get |
+
+
+span(anchor#chart_of_account_get). ~ 
+
+h2. GET chart_of_accounts/:id
+
+p. Returns infos about a particular account from the Chart of Accounts.
+
+h3. Resource Information
+
+* Rate limited: Yes
+* Authentication: Required
+* HTTP Methods: GET
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.chart_of_accounts.url}}/:id {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response sample
+
+{% highlight bash %}
+{
+  "id": 100,
+  "number": "56100",
+  "name": "Freight Charges",
+  "is_family": false,
+  "family_id": 13
+}
+{% endhighlight %}
+
+
+span(anchor#chart_of_accounts_get). ~ 
+
+h2.  GET chart_of_accounts
+
+p. Returns the whole Chart of Accounts.
+
+h3. Resource Information
+
+* Rate limited: Yes
+* Authentication: Required
+* HTTP Methods: GET
+* Body Format: JSON
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.chart_of_accounts.url}} {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response
+
+The list of all accounts from the Chart of Accounts, in a JSON format.

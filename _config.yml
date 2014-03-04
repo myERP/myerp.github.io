@@ -31,6 +31,8 @@ resource:
     url: /currencies
   accounting_transactions:
     url: /accounting_transactions
+  chart_of_accounts:
+    url: /chart_of_accounts
 
 format:
   header:
