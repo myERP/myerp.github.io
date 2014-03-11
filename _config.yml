@@ -29,8 +29,8 @@ resource:
     url: /item_families
   currencies:
     url: /currencies
-  accounting_transactions:
-    url: /accounting_transactions
+  transactions:
+    url: /transactions
   chart_of_accounts:
     url: /chart_of_accounts
 
