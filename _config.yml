@@ -11,8 +11,8 @@ api:
   batch_limit: 25
 
 resource:
-  accounts:
-    url: /accounts
+  customers:
+    url: /customers
   contacts:
     url: /contacts
   projects:
@@ -56,7 +56,7 @@ format:
     boolean: '"Boolean":/docs/1.0/glossary/#boolean'
     date: '"Date":/docs/1.0/glossary/#date'
     address: '"Address":/docs/1.0/api/address/#format'
-    account_contact: '"Account Contact":/docs/1.0/api/account_contact/#format'
+    customer_contact: '"Customer Contact":/docs/1.0/api/customer_contact/#format'
     order_line: '"Order Line":/docs/1.0/api/order_line/#format'
     accounting_entry: '"Accounting Entry":/docs/1.0/api/accounting_entry/#format'
   mandatory: Mandatory
