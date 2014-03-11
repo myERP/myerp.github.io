@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "- REST API V1.0 Resources - Chart of Accounts"
+title: "- REST API V1.0 Resources - Accounts"
 ---
 
 span(anchor#format). ~ 
 
-h1(blue). Chart of Accounts Format
+h1(blue). Accounts Format
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |
 | id | Code | {{ site.format.type.long }} |  |
@@ -13,14 +13,14 @@ h1(blue). Chart of Accounts Format
 | name | Name | {{ site.format.type.string128 }} |  |
 | is_family | The kind of account | {{ site.format.type.boolean }} | false: Detail account
 true: Family account |
-| family_id | Code of this account's family | {{ site.format.type.long }} | IDs from "Chart of Accounts":/docs/1.0/api/chart_of_accounts/#chart_of_accounts_get |
+| family_id | Code of this account's family | {{ site.format.type.long }} | IDs from "Accounts":/docs/1.0/api/accounts/#accounts_get (isFamily = true only) |
 
 
-span(anchor#chart_of_account_get). ~ 
+span(anchor#account_get). ~ 
 
-h2. GET chart_of_accounts/:id
+h2. GET accounts/:id
 
-p. Returns infos about a particular account from the Chart of Accounts.
+p. Returns infos about a particular account.
 
 h3. Resource Information
 
@@ -32,7 +32,7 @@ h3. Resource Information
 h3. Example Request
 
 {% highlight bash %}
-curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.chart_of_accounts.url}}/:id {{site.api.auth_pattern}}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}}/:id {{site.api.auth_pattern}}
 {% endhighlight %}
 
 p. JSON response sample
@@ -48,11 +48,11 @@ p. JSON response sample
 {% endhighlight %}
 
 
-span(anchor#chart_of_accounts_get). ~ 
+span(anchor#accounts_get). ~ 
 
-h2.  GET chart_of_accounts
+h2.  GET accounts
 
-p. Returns the whole Chart of Accounts.
+p. Returns all Accounts.
 
 h3. Resource Information
 
@@ -65,9 +65,9 @@ h3. Resource Information
 h3. Example Request
 
 {% highlight bash %}
-curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.chart_of_accounts.url}} {{site.api.auth_pattern}}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}}
 {% endhighlight %}
 
 p. JSON response
 
-The list of all accounts from the Chart of Accounts, in a JSON format.
+The list of all accounts, in a JSON format.
