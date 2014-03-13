@@ -17,8 +17,6 @@ resource:
     url: /projects
   sales_orders:
     url: /sales_orders
-  order_lines:
-    url: /order_lines
   items:
     url: /items
   payment_terms:
