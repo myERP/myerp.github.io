@@ -16,6 +16,10 @@ body {
     color: #2e90c8;
 }
 
+.green{
+    color: #2ECC40;
+}
+
 a:link {color:#2e90c8;text-decoration: none;}      /* unvisited link */
 a:visited {color:#2e90c8;}  /* visited link */
 a:hover {color:#2e90c8; } /*text-decoration: underline}  /* mouse over link */
@@ -56,7 +60,7 @@ aside{
         text-align:right;
         font-size:70%;
     }
-    
+
 body .primary-button {
     background: #2e90c8;
     color: #fff;
@@ -91,7 +95,7 @@ body .primary-button {
     .splash .splash-head {
         font-size: 300%;
         margin: 0em 0;
-       
+
     }
     .splash .splash-subhead {
         color: #999;
@@ -102,7 +106,7 @@ body .primary-button {
         font-size: 150%;
     }
 
- 
+
 .content .content-ribbon {
     margin: 0 auto;
     border: 1px solid #eee;
@@ -110,8 +114,8 @@ body .primary-button {
 
 
 .content-wrapper {
-    margin-top: 6em; 
-    text-align: center; 
+    margin-top: 6em;
+    text-align: center;
 }
 
     .content{
@@ -125,12 +129,12 @@ body .primary-button {
 
         .overview.resources li {
             float:left;
-            display:block; 
+            display:block;
             width: 33%;
         }
 
             .overview.resources li a {
-                display:block; 
+                display:block;
                 padding: 2px;
             }
             .overview.resources li a:hover {
@@ -143,11 +147,11 @@ body .primary-button {
         *border-collapse: collapse; /* IE7 and lower */
         margin: 0 auto;
         width: 100%;
-        border-collapse: collapse; 
-        font-size: 90%; 
+        border-collapse: collapse;
+        font-size: 90%;
     }
 
-        .thead { 
+        .thead {
             border-top: none;
             font-weight: bold;
         }
@@ -155,28 +159,28 @@ body .primary-button {
         .thead.first {
             width: 35%;
         }
-  
+
         tr {
             display: table-row;
             vertical-align: inherit;
-            border-color: inherit; 
+            border-color: inherit;
         }
 
-     
+
         tr:hover {
             background: #EBEBEB;
             -o-transition: all 0.1s ease-in-out;
             -webkit-transition: all 0.1s ease-in-out;
             -moz-transition: all 0.1s ease-in-out;
             -ms-transition: all 0.1s ease-in-out;
-            transition: all 0.1s ease-in-out;     
-        }    
-    
+            transition: all 0.1s ease-in-out;
+        }
+
         td, .thead {
             border-bottom: 1px solid #eee;
             border-top: 1px solid #eee;
             padding: 2px;
-            text-align: left;    
+            text-align: left;
         }
 
         p.caption{
@@ -193,7 +197,16 @@ body .primary-button {
     }
     .anchor{
         display: block;
-        height: 75px;  
+        height: 75px;
         margin-top: -75px;
         visibility: hidden;
     }
+.official {
+    color: green;
+    font-size: 90%;
+    font-weight: 300;
+    letter-spacing:0.1em;
+}
+.official:before {
+   content: "✓ ";
+}
