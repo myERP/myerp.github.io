@@ -90,9 +90,9 @@ contacts: [
   },
   {
     "id": 49,
-    "first_name": "Jonh",
-    "last_name": "Doh",
-    "email": "jonh.doh@myerp.com"
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@myerp.com"
   }
 ]
 {% endhighlight %}
@@ -106,11 +106,11 @@ contacts: [
     "email": "new.email@myerp.com"
   },
   {
-    "first_name": "Patrick",
-    "last_name": "Martin",
-    "email": "patrick.martin@myerp.com"
+    "first_name": "James",
+    "last_name": "Brown",
+    "email": "james.brown@myerp.com"
   }
 ]
 {% endhighlight %}
 
-...will delete contact 48 (Ed Smith), edit the email of contact 49 (Jonh Doh), and create the brand new contact Patrick Martin.
+...will delete contact 48 (Ed Smith), edit the email of contact 49 (John Doe), and create the brand new contact James Brown.
