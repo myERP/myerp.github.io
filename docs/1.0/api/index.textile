@@ -18,19 +18,6 @@ p(caption). Customers are collections of customers and leads.
 |"PUT customers":customer/#customers_put|Create and Update several customers or leads in a row.|
 |"DELETE customers":customer/#customers_delete|Delete several customers or leads in a row.|
 
-p(title). "Customer Contacts":customer_contact/#format
-
-p(caption). Customer contacts belongs to a particular customer. The _account_id_ in the URI defines which customer.
-
-|_(thead first). Type |_(thead). Description |
-|"GET customers/:account_id/contacts/:id":customer_contact/#customer_contact_get|Returns all the information about the account contact. This contact should belongs to the account _account_id_.|
-|"PUT customers/:account_id/contacts/:id":customer_contact/#customer_contact_put|Update a single account contact. This contact should belongs to the account _account_id_.|
-|"DELETE customers/:account_id/contacts/:id":customer_contact/#customer_contact_delete|Deletes a single account contact. This contact should belongs to the account _account_id_.|
-|"GET customers/:account_id/contacts":customer_contact/#customer_contacts_get|Returns all the contacts that belongs to the account _account_id_.|
-|"POST customers/:account_id/contacts":customer_contact/#customer_contacts_post|Create a single account contact. This contact will belongs to the account _account_id_.|
-|"PUT customers/:account_id/contacts":customer_contact/#customer_contacts_put|Create and Update several account contacts in a row. All should or will belongs to the account _account_id_.|
-|"DELETE customers/:account_id/contacts":customer_contact/#customer_contacts_delete|Delete several account contacts in a row. Those contacts should belongs to the account _account_id_.|
-
 p(title). "Projects":project/#format
 
 p(caption). Projects are an easy way to organize your tasks and documents towards a common objective.

@@ -13,8 +13,6 @@ api:
 resource:
   customers:
     url: /customers
-  contacts:
-    url: /contacts
   projects:
     url: /projects
   sales_orders:
