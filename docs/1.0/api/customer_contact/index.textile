@@ -48,8 +48,6 @@ p. JSON response sample
     "localisation": "California",
     "full_address": "21 Backer street Building D Fifth Floor San Francisco CA 94109 USA"
   },
-  "notes": "A contact that worth to know.\nLike to surf.",
-  "department": 1,
-  "position": 1
+  "notes": "A contact that worth to know.\nLike to surf."
 }
 {% endhighlight %}

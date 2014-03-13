@@ -109,8 +109,6 @@ p. JSON response sample (Company with no Contacts)
   "comment": "- myERP -\nRun your business in the Cloud",
   "company_name": "myERP",
   "employee_count": 15,
-  "industry": 12,
-  "incorporation_status": 3,
   "taxpayer_id_number": "777 898EA",
   "siret": ""
 }
