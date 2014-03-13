@@ -40,20 +40,6 @@ Those are used to create new data of this kind, using POST request.
 They are also usefull when you want to create or delete several datas of a specific kind in a row.
 
 
-h2. Inner data
-
-Some data are what we call _inner data_. Those are datas that are embeded into another one. Like contacts into customer. For those datas, URI are longer since they start by their container.
-
-p. Sample
-
-{% highlight bash %}
-curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}}/55002/{{ site.resource.account_contacts_.url}} {{site.api.auth_pattern}}
-{% endhighlight %}
-This will retrieve all the contacts of the account *55002*.
-
-There's not that much of this kind, mostly contacts (on accounts and vendors) and order lines (on either purchases or sales documents).
-
-
 h2. JSON Fields
 
 h3. Missing fields
@@ -74,3 +60,57 @@ h3. Wrong values
 * Bad type: If any value of a wrong type stands into your JSON, the parsing of the JSON will turn wrong and an error message will be returned.
 * Wrong value: Some fields only accept certain values. If the value of such a field is wrong in your JSON, an error message will be returned.
 * Non editable: While editing a resource, if any field that is not editable stands within your JSON, and tries to perform an actual modification, an error message will be returned.
+
+h3. Lists
+
+A field can consist in a list of data of another kind, with their own JSON format (like customer's contact list).
+While editing such a list, the list you send will become the whole new list. Which means the following :
+
+* Data that don't appear anymore in the new list will be deleted.
+* Data that are in both the old and new list will be edited.
+* Data that are only in the new list will be created.
+
+Also, please notice that :
+
+* Matching are performed on data's ID.
+* Sending an empty list will *delete the whole list*.
+* Like other fields, omitting the field wont perform any changes on the list.
+
+p. Example on customer contacts list field
+
+If the current contact list is :
+
+{% highlight bash %}
+contacts: [
+  {
+    "id": 48,
+    "first_name": "Ed",
+    "last_name": "Smith",
+    "email": "ed.smith@myerp.com"
+  },
+  {
+    "id": 49,
+    "first_name": "Jonh",
+    "last_name": "Doh",
+    "email": "jonh.doh@myerp.com"
+  }
+]
+{% endhighlight %}
+
+The following POST...
+
+{% highlight bash %}
+contacts: [
+  {
+    "id": 49,
+    "email": "new.email@myerp.com"
+  },
+  {
+    "first_name": "Patrick",
+    "last_name": "Martin",
+    "email": "patrick.martin@myerp.com"
+  }
+]
+{% endhighlight %}
+
+...will delete contact 48 (Ed Smith), edit the email of contact 49 (Jonh Doh), and create the brand new contact Patrick Martin.
