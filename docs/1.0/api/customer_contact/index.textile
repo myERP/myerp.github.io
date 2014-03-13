@@ -16,7 +16,6 @@ p. Customer contacts are used only within "Customers":/docs/1.0/api/customer/#cu
 | first_name | First Name | {{ site.format.type.string255 }} |  | Empty String |  |
 | last_name | Last Name | {{ site.format.type.string255 }} |  | {{ site.format.mandatory }} |  |
 | full_name | The full name of this contact | {{ site.format.type.string }} | {{ site.format.read_only }} | {{ site.format.non_available }} |=. {{ site.format.non_editable }} |
-| customer_id | The Customer this contact belongs to | {{ site.format.type.long }} | _customer_id_ from the URI | {{ site.format.read_only }} |=. {{ site.format.non_editable }} |
 | cell_number | Cell Phone | {{ site.format.type.string128 }} |  | Empty String |  |
 | work_phone | Work Phone | {{ site.format.type.string128 }} |  | Empty String |  |
 | home_phone | Home Phone | {{ site.format.type.string128 }} |  | Empty String |  |
@@ -33,7 +32,6 @@ p. JSON response sample
   "first_name": "François",
   "last_name": "Nadal",
   "full_name": "François Nadal",
-  "customer_id": 146,
   "cell_number": "(415) 555-1234",
   "work_phone": "(415) 555-5678",
   "home_phone": "(415) 555-0000",
