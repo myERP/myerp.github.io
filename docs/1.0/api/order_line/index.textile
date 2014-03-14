@@ -13,7 +13,7 @@ h3. General
 p. Order lines are product or service lines that are embeded within sales or purchases documents. They contain infos like price, quantity, description, etc...
 While adding, removing or updating an order line, related values on the contextual document will be updated accordingly.
 
-You can find Order Line into "Sales Orders":sales_order/#format.
+You can find Order Line into "Sales Orders":/docs/1.0/api/sales_order/#sales_order_format.
 
 
 h3. Format
