@@ -54,7 +54,7 @@ format:
     address: '"Address":/docs/1.0/api/address/#format'
     customer_contact: '"Customer Contact":/docs/1.0/api/customer_contact/#format'
     order_line: '"Order Line":/docs/1.0/api/order_line/#format'
-    accounting_entry: '"Accounting Entry":/docs/1.0/api/accounting_entry/#format'
+    entry: '"Entry":/docs/1.0/api/entry/#format'
   mandatory: Mandatory
   non_editable: X
   non_available: '-'

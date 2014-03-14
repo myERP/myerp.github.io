@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "- REST API V1.0 Resources - Accounting Entry"
+title: "- REST API V1.0 Resources - Entry"
 ---
 
 span(anchor#format). ~ 
 
-h1(blue). Accounting Entry Format
+h1(blue). Entry Format
 
-p. Accounting entries are the main content of any Accounting transaction. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable.
+p. Entries are the main content of any "Transaction":/docs/1.0/api/transaction/#transaction_format. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable.
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |_. {{ site.format.header.default }} |
 | label | Description of that entry | {{ site.format.type.string128 }} |  | Empty String |

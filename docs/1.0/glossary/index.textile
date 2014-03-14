@@ -23,5 +23,5 @@ p(caption). Data type that can be send within JSON files.
 Cick "here":/docs/1.0/api/address/#format for further details.  |
 (#order_line).| *Order Line* | In the API, Order Lines got their own JSON format, and share it for Estimate, Orders, Invoices, etc...
 Cick "here":/docs/1.0/api/order_line/#format for further details.  |
-(#accounting_entry).| *Accounting Entry* | Accounting entries are the main content of any Accounting transaction. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable.
-Cick "here":/docs/1.0/api/accounting_entry/#format for further details.  |
+(#entry).| *Entry* | Entries are the main content of any "Transaction":/docs/1.0/api/transaction/#transaction_format. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable.
+Cick "here":/docs/1.0/api/entry/#format for further details.  |

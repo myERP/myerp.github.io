@@ -15,7 +15,7 @@ p. Transaction are not editable, but you can still create new ones.
 | date | Date | {{ site.format.type.date }} |  | Date of the day |
 | journal | Recording Journal | {{ site.format.type.long }} | IDs from Journal | 5: Miscellaneous Operations |
 | piece_number | A custom code | {{ site.format.type.string64 }} |  | {{ site.format.mandatory }} |
-| entries | List of this transaction's entries | {{ site.format.type.accounting_entry }} |  | {{ site.format.mandatory }} |
+| entries | List of this transaction's entries | {{ site.format.type.entry }} |  | {{ site.format.mandatory }} |
 
 
 span(anchor#transaction_get). ~
