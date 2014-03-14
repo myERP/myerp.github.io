@@ -13,7 +13,7 @@ p. Entries are the main content of any "Transaction":/docs/1.0/api/transaction/#
 | label | Description of that entry | {{ site.format.type.string128 }} |  | Empty String |
 | amount | This entry's amount | {{ site.format.type.double }} | Positive, will be rounded to two decimal places | {{ site.format.mandatory }} |
 | way | Defines if the amount is a Debit or a Credit | {{ site.format.type.string }} | "debit" or "credit" | {{ site.format.mandatory }} |
-| account | The accounting account | {{ site.format.type.long }} | IDs from "Accounts":/docs/1.0/api/accounts/#accounts_get (isFamily = false only) | {{ site.format.mandatory }} |
+| account_id | The accounting account | {{ site.format.type.long }} | IDs from "Accounts":/docs/1.0/api/accounts/#accounts_get (isFamily = false only) | {{ site.format.mandatory }} |
 | account_label | The number and label of the accounting account | {{ site.format.type.string }} | {{ site.format.read_only }} | {{ site.format.non_available }} |
 | lettering | The lettering of this entry | {{ site.format.type.string64 }} |  | Empty String |
 
@@ -24,7 +24,7 @@ p. JSON sample
   "label": "Invoice Payment",
   "amount": 17578.65,
   "way": "debit",
-  "account": 21,
+  "account_id": 21,
   "account_label": "11100  ( Accounts Receivable - Trade )",
   "lettering": "CINV-237"
 }
