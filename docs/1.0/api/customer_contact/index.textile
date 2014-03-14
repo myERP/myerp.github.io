@@ -40,7 +40,7 @@ p. JSON response sample
     "label1": "21 Backer street",
     "label2": "Building D",
     "label3": "Fifth Floor",
-    "zipcode": "94109",
+    "zip_code": "94109",
     "city": "San Francisco",
     "country": "USA",
     "localisation": "California",
