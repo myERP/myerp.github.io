@@ -18,7 +18,7 @@ p(caption). Data type that can be send within JSON files.
 (#long).| *Long* | Any integer, positive or negative. |
 (#double).| *Double* | Any decimal number, positive or negative. |
 (#boolean).| *Boolean* | _false_ or _true_. Not case sensitive. |
-(#date).| *Date* | Date format that should match dd-MM-yyyy. e.g. 26-06-2013. |
+(#date).| *Date* | Date format that should match yyyy-MM-dd. e.g. 2013-06-26. |
 (#address).| *Address* | In the API, Addresses got their own JSON format.
 Cick "here":/docs/1.0/api/address/#format for further details.  |
 (#order_line).| *Order Line* | In the API, Order Lines got their own JSON format, and share it for Estimate, "Sales Orders":/docs/1.0/api/sales_order/#sales_order_format, Invoices, etc...
