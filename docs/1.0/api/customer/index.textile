@@ -15,7 +15,7 @@ h3. Customers and Leads
 | type | Company or Individual | {{ site.format.type.long }} | 1: Company
 2: Individual | {{ site.format.mandatory }} |  |
 | status | Lead or Customer | {{ site.format.type.long }} | 1: Customer
-2: Lead | {{ site.format.mandatory }} |  |
+2: Lead | Customer |  |
 | full_name | The full name of this customer | {{ site.format.type.string }} | {{ site.format.read_only }} | {{ site.format.non_available }} |=. {{ site.format.non_editable }} |
 | address | Main address | {{ site.format.type.address }} |  | An empty address |  |
 | shipping_address | Shipping address | {{ site.format.type.address }} |  | An empty address |  |
