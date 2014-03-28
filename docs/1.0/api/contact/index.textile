@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "- REST API V1.0 Resources - Customer Contact"
+title: "- REST API V1.0 Resources - Contact"
 ---
 
 span(anchor#format). ~
 
-h1(blue). Customer Contact Format
+h1(blue). Contact Format
 
-p. Customer contacts are used only within "Customers":/docs/1.0/api/customer/#customer_format, as a contact's list.
+p. Contacts are used within "Customers":/docs/1.0/api/customer/#customer_format as a contact's list.
 
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |_. {{ site.format.header.default }} |_. {{ site.format.header.non_editable }} |
