@@ -18,6 +18,19 @@ p(caption). Customers are collections of customers and leads.
 |"PUT customers":customer/#customers_put|Create and Update several customers or leads in a row.|
 |"DELETE customers":customer/#customers_delete|Delete several customers or leads in a row.|
 
+p(title). "Vendors":vendor/#format
+
+p(caption). Vendors are collections of vendors.
+
+|_(thead first). Type |_(thead). Description |
+|"GET vendors/:id":vendor/#vendor_get|Returns all the information about the vendor.|
+|"PUT vendors/:id":vendor/#vendor_put|Update a single vendor.|
+|"DELETE vendors/:id":vendor/#vendor_delete|Deletes a single vendor or lead. Also delete all of his contacts.|
+|"GET vendors":vendor/#vendors_get|Returns the list of all your vendors.|
+|"POST vendors":vendor/#vendors_post|Create a single vendor.|
+|"PUT vendors":vendor/#vendors_put|Create and Update several vendors in a row.|
+|"DELETE vendors":vendor/#vendors_delete|Delete several vendors in a row.|
+
 p(title). "Projects":project/#format
 
 p(caption). Projects are an easy way to organize your tasks and documents towards a common objective.
