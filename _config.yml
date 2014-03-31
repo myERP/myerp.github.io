@@ -31,6 +31,8 @@ resource:
     url: /transactions
   accounts:
     url: /accounts
+  units:
+    url: /units
 
 format:
   header:

@@ -15,7 +15,7 @@ h3. Services and Products
 | type | Service or Product | {{ site.format.type.long }} | 1: Service
 2: Product | {{ site.format.mandatory }} |  |
 | name | Item Name | {{ site.format.type.string255 }} |  | {{ site.format.mandatory }} |  |
-| unit_id | Unit | {{ site.format.type.long }} | IDs from Measurement Unit | Service: Day
+| unit_id | Unit | {{ site.format.type.long }} | IDs from "Measurement Unit":/docs/1.0/api/unit/#units_get | Service: Day
 Product: Piece |  |
 | sales_price | Sales Price | {{ site.format.type.double }} |  | 0.00 |  |
 | item_number | Item Number | {{ site.format.type.string64 }} | Anything that does not already
@@ -32,7 +32,7 @@ h3. Products only
 | width | Width | {{ site.format.type.double }} |  | 0.00 |  |
 | length | Length | {{ site.format.type.double }} |  | 0.00 |  |
 | height | Height | {{ site.format.type.double }} |  | 0.00 |  |
-| dimension_unit_id | Dimension Unit | {{ site.format.type.long }} | IDs from Measurement Unit
+| dimension_unit_id | Dimension Unit | {{ site.format.type.long }} | IDs from "Measurement Unit":/docs/1.0/api/unit/#units_get
 of dimension type | Meter |  |
 
 span(anchor#item_get). ~

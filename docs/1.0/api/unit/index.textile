@@ -1,0 +1,73 @@
+---
+layout: default
+title: "- REST API V1.0 Resources - Unit"
+---
+
+span(anchor#format). ~ 
+
+h1(blue). Unit Format
+
+|_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |
+| id | Code | {{ site.format.type.long }} |  |
+| name | Name | {{ site.format.type.string64 }} |  |
+| type_id | Describe the kind of unit | {{ site.format.type.long }} | 1: Piece
+2: Weight
+3: Dimension
+4: Surface
+5: Volume
+6: Time |
+
+
+span(anchor#unit_get). ~ 
+
+h2. GET units/:id
+
+p. Returns infos about a particular unit.
+
+h3. Resource Information
+
+* Rate limited: Yes
+* Authentication: Required
+* HTTP Methods: GET
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.units.url}}/:id {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response sample
+
+{% highlight bash %}
+{
+  "id": 8,
+  "name": "Day",
+  "type_id": 6
+}
+{% endhighlight %}
+
+
+span(anchor#units_get). ~ 
+
+h2.  GET units
+
+p. Returns all Units.
+
+h3. Resource Information
+
+* Rate limited: Yes
+* Authentication: Required
+* HTTP Methods: GET
+* Body Format: JSON
+* Response Format: JSON
+
+h3. Example Request
+
+{% highlight bash %}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.units.url}} {{site.api.auth_pattern}}
+{% endhighlight %}
+
+p. JSON response
+
+The list of all units, in a JSON format.

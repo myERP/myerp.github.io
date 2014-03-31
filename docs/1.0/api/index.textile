@@ -124,3 +124,10 @@ p(caption). Especially usefull when you are dealing with several currencies. Res
 |"GET currencies/:id":currency/#currency_get|Returns the list of currencies you have added to your domain.|
 |"GET currencies":currency/#currencies_get|Returns the list of all currencies that you are allowed to be used.|
 
+p(title). "Units":unit/#format
+
+p(caption). Units are used to define the kind of some metrics, like size, weigth or quantity. They are mostly use to define "products":/docs/1.0/api/item/#format.
+
+|_(thead first). Type |_(thead). Description |
+|"GET units/:id":unit/#unit_get|Returns infos about a particular unit.|
+|"GET units":unit/#units_get|Returns all Units.|
