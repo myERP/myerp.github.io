@@ -18,7 +18,7 @@ h1(blue). Sales Order Format
 | po_number | Customer own Order Reference | {{ site.format.type.string64 }} |  | Empty String |  |
 | date | Date | {{ site.format.type.date }} |  | Date of the day |  |
 | tax_id | Sales Tax rate | {{ site.format.type.long }} | IDs from Sales Tax | None |  |
-| currency | Currency | {{ site.format.type.long }} | ISO Code of your Currencies | Your domain main currency |  |
+| currency | Currency | {{ site.format.type.long }} | ISO Code from "your Currencies":/docs/1.0/api/currency/#currencies_get | Your domain main currency |  |
 | reduce_rate | Reduce rate | {{ site.format.type.double }}  |  | 0.00 |  |
 | order_lines | List of ordered items | {{ site.format.type.order_line }} |  | No lines |  |
 | public_note | Comment that will be printed | {{ site.format.type.text }} |  | Empty String |  |
