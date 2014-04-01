@@ -124,6 +124,14 @@ p(caption). Especially usefull when you are dealing with several currencies. Res
 |"GET currencies/:id":currency/#currency_get|Returns the list of currencies you have added to your domain.|
 |"GET currencies":currency/#currencies_get|Returns the list of all currencies that you are allowed to be used.|
 
+p(title). "Taxes":tax/#format
+
+p(caption). Depending on your country, taxes can adopt different behavior. But at the end they are all the same : a name and a rate.
+
+|_(thead first). Type |_(thead). Description |
+|"GET taxes/:id":tax/#tax_get|Returns infos about a particular tax.|
+|"GET taxes":tax/#taxes_get|Returns all Taxes.|
+
 p(title). "Units":unit/#format
 
 p(caption). Units are used to define the kind of some metrics, like size, weigth or quantity. They are mostly use to define "products":/docs/1.0/api/item/#format.

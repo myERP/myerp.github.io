@@ -33,6 +33,8 @@ resource:
     url: /accounts
   units:
     url: /units
+  taxes:
+    url: /taxes
 
 format:
   header:
