@@ -6,7 +6,7 @@ pygments: true
 
 api:
   v1: /v1
-  base_url: https://app.myerp.com/api
+  base_url: https://api.myerp.com
   auth_pattern: -u "email:api-key"
   batch_limit: 25
 
