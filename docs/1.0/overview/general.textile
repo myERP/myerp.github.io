@@ -16,12 +16,9 @@ They end with the *id* of the actual data they refer to. They describe a single 
 p. Sample
 
 {% highlight bash %}
-curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}}/55002 {{site.api.auth_pattern}}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}}/55002 {{site.api.auth_pattern}}
 {% endhighlight %}
-*55002* is the *id* of the account you are trying to get. Within myERP, you can find this id at the end of this account URI edition mode:
-{% highlight bash %}
-https://app.myerp.com/index.jsp?locale=en_US#account/55002/edit
-{% endhighlight %}
+*55002* is the *id* of the customer you are trying to get.
 
 Those are mostly used for GET (to retrieve a data), PUT (to edit a data) or DELETE (to delete a data) request.
 
@@ -32,9 +29,9 @@ There's no id into them. They describe a type of data as a whole.
 p. Sample
 
 {% highlight bash %}
-curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {{site.api.auth_pattern}}
+curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}} {{site.api.auth_pattern}}
 {% endhighlight %}
-This will retrieve the list of all your accounts.
+This will retrieve the list of all your customers.
 
 Those are used to create new data of this kind, using POST request.
 They are also usefull when you want to create or delete several datas of a specific kind in a row.

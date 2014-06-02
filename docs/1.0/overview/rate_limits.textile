@@ -13,10 +13,6 @@ h3. 15 Minute Windows
 
 p. Rate limits in version 1.0 of the API are divided into 15 minute intervals. Additionally, all 1.0 endpoints require authentication. API v1.0's rate limiting model allows for a wider ranger of requests through per-method request limits. There is one initial bucket available: **1800 calls every 15 minutes**.
 
-h3. Batching
-
-p. Please note that a batched request counts for two regular calls.
-
 h2. HTTP Response Code
 
 p. If the rate limit is exceeded, myERP will respond with a **HTTP 429 Too Many Requests** response code and a body that details the reason for the rate limiter kicking in. You should anticipate this in your API client for the smoothest possible ride.
@@ -28,9 +24,3 @@ p. The tips below are there to help you code defensively and reduce the possibil
 h3. Caching
 
 p. Store API responses in your application or on your site if you expect a lot of use. For example, don't try to call the myERP API on every page load of your website landing page. Instead, call the API infrequently and load the response into a local cache. When users hit your website load the cached version of the results.
-
-h3. Batching
-
-p. If your application needs the ability to access significant amounts of data in a single go - or you need to make changes to several objects at once, it is often more efficient to batch your queries rather than make multiple individual HTTP requests.
-
-Batching allows you to pass instructions for several operations in a single HTTP request. myERP will process each of your independent operations in parallel and will process your dependent operations sequentially. Once all operations have been completed, a consolidated response will be passed back to you and the HTTP connection will be closed.
