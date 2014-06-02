@@ -5,8 +5,9 @@ title: "- REST API V1.0 Resources - Currency"
 
 
 span(anchor#format). ~ 
+h1(blue). Format
 
-h1(blue). Currency Format
+h3. Currencies
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |
 | id | Code | {{ site.format.type.long }} |
@@ -18,7 +19,7 @@ h1(blue). Currency Format
 
 span(anchor#currency_get). ~ 
 
-h2. GET currencies/:id
+h2(blue). GET currencies/:id
 
 p. Returns all the information about the currency.
 
@@ -50,7 +51,7 @@ p. JSON response sample
 
 span(anchor#currencies_get). ~ 
 
-h2.  GET currencies
+h2(blue).  GET currencies
 
 p. Returns the list of currencies you have added to your domain.
 

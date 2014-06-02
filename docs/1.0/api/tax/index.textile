@@ -5,7 +5,9 @@ title: "- REST API V1.0 Resources - Tax"
 
 span(anchor#format). ~ 
 
-h1(blue). Tax Format
+h1(blue). Format
+
+h3. Tax
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |
 | id | Code | {{ site.format.type.long }} |
@@ -15,7 +17,7 @@ h1(blue). Tax Format
 
 span(anchor#tax_get). ~ 
 
-h2. GET taxes/:id
+h2(blue). GET taxes/:id
 
 p. Returns infos about a particular tax.
 
@@ -45,7 +47,7 @@ p. JSON response sample
 
 span(anchor#taxes_get). ~ 
 
-h2.  GET taxes
+h2(blue).  GET taxes
 
 p. Returns all Taxes.
 

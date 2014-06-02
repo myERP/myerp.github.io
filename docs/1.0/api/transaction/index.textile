@@ -5,7 +5,9 @@ title: "- REST API V1.0 Resources - Transaction"
 
 span(anchor#format). ~
 
-h1(blue). Transaction Format
+h1(blue). Format
+
+h3. Transactions
 
 p. Transaction are not editable, but you can still create new ones.
 
@@ -20,7 +22,7 @@ p. Transaction are not editable, but you can still create new ones.
 
 span(anchor#transaction_get). ~
 
-h2. GET transactions/:id
+h2(blue). GET transactions/:id
 
 p. Returns all the information about the transaction.
 
@@ -76,7 +78,7 @@ p. JSON response sample
 
 span(anchor#transaction_delete). ~
 
-h2. DELETE transactions/:id
+h2(blue). DELETE transactions/:id
 
 p. Deletes a single transaction. Only manual transactions can be deleted. In order to delete other transactions, you need to deleted the related document (Invoice, Payment, etc...).
 
@@ -100,7 +102,7 @@ The JSON of the transaction you've just deleted.
 
 span(anchor#transactions_get). ~
 
-h2.  GET transactions
+h2(blue).  GET transactions
 
 p. Returns the list of all your transactions.
 
@@ -126,7 +128,7 @@ The list of all your transactions, in a JSON format.
 
 span(anchor#transactions_post). ~
 
-h2. POST transactions
+h2(blue). POST transactions
 
 p. Create a single transaction.
 
@@ -148,28 +150,3 @@ curl -X POST {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.transaction
 p. JSON response
 
 The complete JSON of the transaction, as it was created by the system.
-
-
-span(anchor#transactions_delete). ~
-
-
-h2.  DELETE transactions
-
-p. Delete several transactions in a row. Only manual transactions can be deleted. In order to delete other transactions, you need to deleted the related document (Invoice, Payment, etc...).
-
-* Rate limited: Yes
-* Batch limit: {{ site.api.batch_limit }}
-* Authentication: Required
-* HTTP Methods: DELETE
-* Body Format: JSON
-* Response Format: JSON
-
-h3. Example Request
-
-{% highlight bash %}
-curl -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.transactions.url}} {{site.api.auth_pattern}} -H 'Content-Type: application/json' -T listOfIDsToDelete.json
-{% endhighlight %}
-
-p. JSON response
-
-A JSON list made of the complete info of transactions successfully deleted, and error messages for unsuccessful ones.

@@ -5,7 +5,9 @@ title: "- REST API V1.0 Resources - Accounts"
 
 span(anchor#format). ~ 
 
-h1(blue). Accounts Format
+h1(blue). Format
+
+h3. Accounts
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |
 | id | Code | {{ site.format.type.long }} |  |
@@ -18,7 +20,7 @@ true: Family account |
 
 span(anchor#account_get). ~ 
 
-h2. GET accounts/:id
+h2(blue). GET accounts/:id
 
 p. Returns infos about a particular account.
 
@@ -50,7 +52,7 @@ p. JSON response sample
 
 span(anchor#accounts_get). ~ 
 
-h2.  GET accounts
+h2(blue).  GET accounts
 
 p. Returns all Accounts.
 

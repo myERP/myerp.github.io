@@ -6,7 +6,9 @@ title: "- REST API V1.0 Resources - Address"
 
 span(anchor#format). ~ 
 
-h1(blue). Address Format
+h1(blue). Format
+
+h3. Address
 
 p. In myERP, addresses are used at several places. Accounts, Suppliers, Contacts... So, in the API, addresses are embeded into their own JSON format, and follow the same rules everywhere.
 

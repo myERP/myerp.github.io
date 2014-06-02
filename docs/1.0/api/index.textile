@@ -15,8 +15,6 @@ p(caption). Customers are collections of customers and leads.
 |"DELETE customers/:id":customer/#customer_delete|Deletes a single customer or lead. Also delete all of his contacts.|
 |"GET customers":customer/#customers_get|Returns the list of all your customers and leads.|
 |"POST customers":customer/#customers_post|Create a single customer or lead.|
-|"PUT customers":customer/#customers_put|Create and Update several customers or leads in a row.|
-|"DELETE customers":customer/#customers_delete|Delete several customers or leads in a row.|
 
 p(title). "Vendors":vendor/#format
 
@@ -28,8 +26,6 @@ p(caption). Vendors are collections of vendors.
 |"DELETE vendors/:id":vendor/#vendor_delete|Deletes a single vendor or lead. Also delete all of his contacts.|
 |"GET vendors":vendor/#vendors_get|Returns the list of all your vendors.|
 |"POST vendors":vendor/#vendors_post|Create a single vendor.|
-|"PUT vendors":vendor/#vendors_put|Create and Update several vendors in a row.|
-|"DELETE vendors":vendor/#vendors_delete|Delete several vendors in a row.|
 
 p(title). "Projects":project/#format
 
@@ -41,8 +37,6 @@ p(caption). Projects are an easy way to organize your tasks and documents toward
 |"DELETE projects/:id":project/#project_delete|Deletes a single project|
 |"GET projects":project/#projects_get|Returns the list of all your projects|
 |"POST projects":project/#projects_post|Create a single project|
-|"PUT projects":project/#projects_put|Create and update several projects in a row|
-|"DELETE projects":project/#projects_delete|Delete several projects in a row|
 
 p(title). "Items":item/#format
 
@@ -54,8 +48,6 @@ p(caption). Items are collections of items (services and products).
 |"DELETE items/:id":item/#item_delete|Deletes a single item.|
 |"GET items":item/#items_get|Returns the list of all your items.|
 |"POST items":item/#items_post|Create a single item.|
-|"PUT items":item/#items_put|Create and Update several items in a row.|
-|"DELETE items":item/#items_delete|Delete several items in a row.|
 
 p(title). "Item families":item_family/#format
 
@@ -67,8 +59,6 @@ p(caption). Item Families helps you to categorize your products and services, ma
 |"DELETE item_families/:id":item_family/#item_family_delete|Deletes a single item family.|
 |"GET item_families":item_family/#item_families_get|Returns the list of all your item families.|
 |"POST item_families":item_family/#item_families_post|Create a single item family.|
-|"PUT item_families":item_family/#item_families_put|Create and Update several item families in a row.|
-|"DELETE item_families":item_family/#item_families_delete|Delete several item families in a row.|
 
 p(title). "Sales Orders":sales_order/#format
 
@@ -80,8 +70,6 @@ p(caption). The way to register and track orders from your customers.
 |"DELETE sales_orders/:id":sales_order/#sales_order_delete|Deletes a single sales order and all its order lines.|
 |"GET sales_orders":sales_order/#sales_orders_get|Returns the list of all your sales orders, with their order lines.|
 |"POST sales_orders":sales_order/#sales_orders_post|Create a single sales order and its order lines.|
-|"PUT sales_orders":sales_order/#sales_orders_put|Create (with order lines) and Update (but not order lines) several sales orders in a row.|
-|"DELETE sales_orders":sales_order/#sales_orders_delete|Delete several sales orders and their order lines in a row.|
 
 p(title). "Transactions":transaction/#format
 
@@ -94,8 +82,6 @@ Using the API, you can't edit any Accounting transaction, but you can create new
 In order to delete other transactions, you need to deleted the related document (Invoice, Payment, etc...). |
 |"GET ../transactions":transaction/#transactions_get|Returns the list of all your accounting transactions. |
 |"POST ../transactions":transaction/#transactions_post|Create a single accounting transaction. |
-|"DELETE ../transactions":transaction/#transactions_delete|Delete several accounting transactions in a row. Only manual accounting transactions can be deleted.
-In order to delete other transactions, you need to delete the related document (Invoice, Payment, etc...). |
 
 
 h3. Read only resources

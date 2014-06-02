@@ -5,7 +5,9 @@ title: "- REST API V1.0 Resources - Contact"
 
 span(anchor#format). ~
 
-h1(blue). Contact Format
+h1(blue). Format
+
+h3. Contacts
 
 p. Contacts are used within "Customers":/docs/1.0/api/customer/#customer_format or "Vendors":/docs/1.0/api/vendor/#vendor_format as a contact's list.
 

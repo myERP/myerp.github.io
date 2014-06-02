@@ -5,7 +5,9 @@ title: "- REST API V1.0 Resources - Unit"
 
 span(anchor#format). ~ 
 
-h1(blue). Unit Format
+h1(blue). Format
+
+h3. Unit
 
 |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |
 | id | Code | {{ site.format.type.long }} |  |
@@ -20,7 +22,7 @@ h1(blue). Unit Format
 
 span(anchor#unit_get). ~ 
 
-h2. GET units/:id
+h2(blue). GET units/:id
 
 p. Returns infos about a particular unit.
 
@@ -50,7 +52,7 @@ p. JSON response sample
 
 span(anchor#units_get). ~ 
 
-h2.  GET units
+h2(blue).  GET units
 
 p. Returns all Units.
 

@@ -5,7 +5,9 @@ title: "- REST API V1.0 Resources - Entry"
 
 span(anchor#format). ~ 
 
-h1(blue). Entry Format
+h1(blue). Format
+
+h3. Transaction entries
 
 p. Entries are the main content of any "Transaction":/docs/1.0/api/transaction/#transaction_format. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable.
 
