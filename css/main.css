@@ -151,19 +151,17 @@ body .primary-button {
         font-size: 90%;
     }
 
-        .thead {
-            border-top: none;
-            font-weight: bold;
-        }
 
-        .thead.first {
-            width: 35%;
+        th {
+            background-color: #EBEBEB;
+            padding: 2px;
+            border: 1px solid #bbb;
+            text-align: center;
         }
 
         tr {
             display: table-row;
             vertical-align: inherit;
-            border-color: inherit;
         }
 
 
@@ -176,9 +174,8 @@ body .primary-button {
             transition: all 0.1s ease-in-out;
         }
 
-        td, .thead {
-            border-bottom: 1px solid #eee;
-            border-top: 1px solid #eee;
+        td {
+            border: 1px solid #ddd;
             padding: 2px;
             text-align: left;
         }
