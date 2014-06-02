@@ -72,7 +72,6 @@ p. JSON response sample (Company with no Contacts)
 {% highlight bash %}
 {
   "id": 146800,
-  "external_id": "EXT-420",
   "type": 1,
   "status": 1,
   "full_name": "myERP",
