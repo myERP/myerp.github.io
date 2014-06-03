@@ -60,17 +60,6 @@ p(caption). Item Families helps you to categorize your products and services, ma
 |"GET item_families":item_family/#item_families_get|Returns the list of all your item families.|
 |"POST item_families":item_family/#item_families_post|Create a single item family.|
 
-p(title). "Sales Orders":sales_order/#format
-
-p(caption). The way to register and track orders from your customers.
-
-|_(thead first). Type |_(thead). Description |
-|"GET sales_orders/:id":sales_order/#sales_order_get|Returns all the information about the sales order, including its order lines.|
-|"PUT sales_orders/:id":sales_order/#sales_order_put|Update a single sales order. Use ../order_lines/:id to edit order lines.|
-|"DELETE sales_orders/:id":sales_order/#sales_order_delete|Deletes a single sales order and all its order lines.|
-|"GET sales_orders":sales_order/#sales_orders_get|Returns the list of all your sales orders, with their order lines.|
-|"POST sales_orders":sales_order/#sales_orders_post|Create a single sales order and its order lines.|
-
 p(title). "Transactions":transaction/#format
 
 p(caption). Accounting transactions are mostly generated in myERP, along with Invoices, Payments, etc... but you can also create new ones from scratch.
