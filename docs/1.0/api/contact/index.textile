@@ -29,7 +29,6 @@ p. JSON response sample
 {% highlight bash %}
 {
   "id": 48,
-  "external_id": "EXT-036",
   "first_name": "François",
   "last_name": "Nadal",
   "full_name": "François Nadal",
