@@ -1,12 +1,68 @@
 <div id="java">
 
-<h2 class="blue">Java: myERP API wrapper</h2>
+<h3>Java: myERP API wrapper</h3>
 
 <p>The JAVA client library for myERP's API.</p>
 
 <p>
-    <a href="https://github.com/myERP/myerp-java-api-client" target="_blank" class="pure-button primary-button">View library</a>
+    <a href="https://github.com/myERP/myerp-java-api-client" target="_blank" class="btn btn-success">View library</a>
     <span class="official">Official</span>
 </p>
+
+
+{% highlight java %}
+//SAMPLE
+public class Example {
+
+  public static final String API_EMAIL = ".....";
+  public static final String API_KEY = ".......";
+
+  public static void main(final String[] args) throws MyERPException, IOException {
+
+    // initiate a client
+    final MyERPClient client = new MyERPClient(API_EMAIL, API_KEY);
+
+    // retrieve all the customers
+    List<Customer> customers = client.customersAPI().findAll();
+    for (Customer customer : customers) {
+      System.out.println(customer.full_name + " [id=" + customer.id + "]");
+    }
+
+    // retrieve a customer
+    Customer customer = client.customersAPI().find(1337);
+    System.out.println(customer.full_name + " [id=" + customer.id + "]");
+
+    // create a customer
+    Customer john = new Customer();
+    john.status = 1;
+    john.type = 2;
+    john.first_name = "John";
+    john.last_name = "Doe";
+    john.address = new Address();
+    john.address.label1 = "1 powell street";
+    john.address.zip_code = "94102";
+    john.address.city = "San Francisco";
+    john.address.country = "United States";
+    john.address.localisation = "California";
+    Contact contact1 = new Contact();
+    contact1.first_name = "Jane";
+    contact1.last_name = "Doe";
+    john.contacts = Arrays.asList(contact1);
+    john = client.customersAPI().save(john); //save
+    System.out.println(john.full_name + " created [id=" + john.id + ", contacts=" + john.contacts + "]");
+
+    // update a customer
+    john.first_name = "Johnny";
+    john.contacts.get(0).first_name = "Martha";
+    john = client.customersAPI().save(john);
+    System.out.println(john.full_name + " updated [id=" + john.id + ", contacts=" + john.contacts + "]");
+
+    // delete a customer
+    john = client.customersAPI().delete(john);
+    System.out.println(john.full_name + " deleted [id=" + john.id + "]");
+  }
+}
+{% endhighlight %}
+
 
 </div>

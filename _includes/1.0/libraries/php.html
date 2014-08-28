@@ -1,12 +1,49 @@
 <div id="php">
 
-<h2 class="blue">PHP: myERP API wrapper</h2>
+<h3>PHP: myERP API wrapper</h3>
 
 <p>The official PHP client library for myERP's API.</p>
 
 <p>
-    <a href="https://github.com/myERP/myerp-php-api-client" target="_blank" class="pure-button primary-button">View library</a>
+    <a href="https://github.com/myERP/myerp-php-api-client" target="_blank" class="btn btn-success">View library</a>
     <span class="official">Official</span>
 </p>
+
+
+{% highlight PHP %}
+//SAMPLE
+<?php
+use MyERP\MyERP;
+$myERP = new MyERP('API_EMAIL', 'API_KEY');
+
+// Get all the customers and leads
+$customers = $myERP->customers()->findAll();
+var_dump($customers);
+
+// Get a specific customer/lead
+$customer = $myERP->customers()->find(261367);
+echo $customer['full_name'] . ' [id=#' . $customer['id'] . ']' . "\n";
+
+// create a customer
+$jane = [
+    "type" => 2, //individual
+    "status" => 1, //customer
+    "first_name" => "Jane",
+    "last_name" => "Doe",
+    "email" => "jane.doe@mail.com"
+];
+$jane = $myERP->customers()->save($jane);
+echo $jane['full_name'] . ' created [id=#' . $jane['id'] . ', email=' . $jane['email'] . ']' . "\n";
+
+// update some fields
+$jane['email'] = 'newemail@mail.com';
+$jane = $myERP->customers()->save($jane);
+echo $jane['full_name'] . ' updated [id=#' . $jane['id'] . ', email=' . $jane['email'] . ']' . "\n";
+
+// delete a customer
+$byeJane = $myERP->customers()->delete(261368);
+echo $byeJane['full_name'] . ' deleted [id=#' . $byeJane['id'] . ', email=' . $byeJane['email'] . ']' . "\n";
+
+{% endhighlight %}
 
 </div>
