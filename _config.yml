@@ -37,31 +37,22 @@ resource:
     url: /taxes
 
 format:
-  header:
-    field_name: Field Name
-    description: Description
-    type: Type
-    values: Values
-    default: Default
-    non_editable: Non editable
   type:
-    string: '<a href="/docs/1.0/overview/#string" alt=""/>String</a>'
-    string4: '<a href="/docs/1.0/overview/#string4" alt=""/>String<sup>4</sup></a>'
-    string10: '<a href="/docs/1.0/overview/#string10" alt=""/>String<sup>10</sup></a>'
-    string64: '<a href="/docs/1.0/overview/#string64" alt=""/>String<sup>64</sup></a>'
-    string128: '<a href="/docs/1.0/overview/#string128" alt=""/>String<sup>128</sup></a>'
-    string255: '<a href="/docs/1.0/overview/#string255" alt=""/>String<sup>255</sup></a>'
-    text: '<a href="/docs/1.0/overview/#text" alt=""/>Text</a>'
-    integer: '<a href="/docs/1.0/overview/#integer" alt=""/>Integer</a>'
-    long: '<a href="/docs/1.0/overview/#long" alt=""/>Long</a>'
-    double: '<a href="/docs/1.0/overview/#double" alt=""/>Double</a>'
-    boolean: '<a href="/docs/1.0/overview/#boolean" alt=""/>Boolean</a>'
-    date: '<a href="/docs/1.0/overview/#date" alt=""/>Date</a>'
+    string: '<a href="/docs/1.0/overview/#string" alt=""/>string</a>'
+    string4: '<a href="/docs/1.0/overview/#string4" alt=""/>string<sup>4</sup></a>'
+    string10: '<a href="/docs/1.0/overview/#string10" alt=""/>string<sup>10</sup></a>'
+    string64: '<a href="/docs/1.0/overview/#string64" alt=""/>string<sup>64</sup></a>'
+    string128: '<a href="/docs/1.0/overview/#string128" alt=""/>string<sup>128</sup></a>'
+    string255: '<a href="/docs/1.0/overview/#string255" alt=""/>string<sup>255</sup></a>'
+    text: '<a href="/docs/1.0/overview/#text" alt=""/>text</a>'
+    integer: '<a href="/docs/1.0/overview/#integer" alt=""/>integer</a>'
+    double: '<a href="/docs/1.0/overview/#double" alt=""/>double</a>'
+    boolean: '<a href="/docs/1.0/overview/#boolean" alt=""/>boolean</a>'
+    date: '<a href="/docs/1.0/overview/#date" alt=""/>date</a>'
     address: '<a href="/docs/1.0/api/address/#format" alt=""/>Address</a>'
     contact: '<a href="/docs/1.0/api/contact/#format" alt=""/>Contact</a>'
     order_line: '<a href="/docs/1.0/api/order_line/#format" alt=""/>Order Line</a>'
     entry: '<a href="/docs/1.0/api/entry/#format" alt=""/>Entry</a>'
   mandatory: Mandatory
   non_editable: Yes
-  non_available: '-'
-  read_only: Read only
+  non_available: '-'  

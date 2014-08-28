@@ -268,7 +268,10 @@ th.values {
 th.default {
     width: 200px;
 }
-th.non_editable {
+th.read-only {
+    width: 101px;
+}
+th.mandatory {
     width: 101px;
 }
 .ribbon {
