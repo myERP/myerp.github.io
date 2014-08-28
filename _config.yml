@@ -2,7 +2,7 @@ name: myERP Developers
 markdown: redcarpet
 safe: true
 lsi: false
-pygments: true
+highlighter: pygments
 
 api:
   v1: /v1
