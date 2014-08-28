@@ -1,0 +1,41 @@
+{
+    "id": 146800,
+    "type": 1,
+    "status": 1,
+    "full_name": "myERP",
+    "address": {
+        "label1": "567 Sutter St.",
+        "label2": "",
+        "label3": "",
+        "zip_code": "94102",
+        "city": "San Francisco",
+        "country": "United States",
+        "localisation": "California",
+        "short_localisation": "CA",
+        "full_address": "567 Sutter St. San Francisco CA 94102 United States"
+    },
+    "shipping_address": {
+        "label1": "567 Sutter St.",
+        "label2": "",
+        "label3": "",
+        "zip_code": "94102",
+        "city": "San Francisco",
+        "country": "United States",
+        "localisation": "California",
+        "short_localisation": "CA",
+        "full_address": "567 Sutter St. San Francisco CA 94102 United States"
+    },
+    "phone_number": "(415) 779-6536",
+    "email": "support@myerp.com",
+    "website": "www.myerp.com",
+    "payment_terms_id": 2,
+    "currency": "USD",
+    "sales_tax_id": 3,
+    "user_code_iso_code": "CUS-018",
+    "opt_in_to_emails": false,
+    "comment": "- myERP -\nRun your business in the Cloud",
+    "company_name": "myERP",
+    "employee_count": 15,
+    "taxpayer_id_number": "777 898EA",
+    "siret": ""
+}

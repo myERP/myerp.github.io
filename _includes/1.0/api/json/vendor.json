@@ -1,0 +1,49 @@
+{
+  "id": 132,
+  "type": 1,
+  "full_name": "Regular Vendor",
+  "address": {
+    "label1": "Regular street",
+    "label2": "Block G",
+    "label3": "Floor 5",
+    "zip_code": "77 837",
+    "city": "San Francisco",
+    "country": "USA",
+    "localisation": "California",
+    "short_localisation": "CA",
+    "full_address": "Regular street Block G Floor 5 San Francisco CA 77 837 USA"
+  },
+  "phone_number": "555 7890 888",
+  "email": "regular.vendor@gmail.com",
+  "website": "regularvendor.com",
+  "contacts": [
+    {
+      "id": 65,
+      "first_name": "Regular",
+      "last_name": "Vendor",
+      "full_name": "Regular Vendor",
+      "cell_number": "",
+      "work_phone": "888 7654 333",
+      "home_phone": "",
+      "email": "r.vendor@mail.com",
+      "address": {
+        "label1": "",
+        "label2": "",
+        "label3": "",
+        "zip_code": "",
+        "city": "",
+        "country": "",
+        "localisation": "N/A",
+        "short_localisation": "N/A",
+        "full_address": ""
+      },
+      "notes": "This contact is pretty regular."
+    }
+  ],
+  "currency": "USD",
+  "payment_terms_id": 1,
+  "taxpayer_id_number": "SE OIU 90",
+  "user_code": "SUP-002",
+  "notes": "This vendor is pretty regular.",
+  "company_name": "Regular Vendor"
+}

@@ -1,0 +1,31 @@
+{
+  "id": 509878,
+  "transaction_code": 1639,
+  "date": "31-01-2014",
+  "journal_id": 7,
+  "piece_number": "CINV-237",
+  "entries": [
+    {
+      "label": "Invoice Payment",
+      "amount": 17578.65,
+      "way": "debit",
+      "account_id": 21,
+      "account_label": "11100  ( Accounts Receivable - Trade )",
+      "lettering": "CINV-237"
+    },
+    {
+      "label": "Invoice Payment - Before taxes",
+      "amount": 16238.92,
+      "way": "credit",
+      "account_id": 85,
+      "account_label": "40150  ( Sales - Miscellaneous )"
+    },
+    {
+      "label": "Invoice Payment - Taxes",
+      "amount": 1339.73,
+      "way": "credit",
+      "account_id": 57,
+      "account_label": "21100  ( Sales Tax Payable )"
+    }
+  ]
+}

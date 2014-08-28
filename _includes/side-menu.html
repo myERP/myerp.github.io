@@ -4,40 +4,165 @@
 <li>
     <a class="category" href="/docs/1.0/overview/">Overview</a>
     <ul class="nav nav-stacked">
-        <li><a href="#general">How to use the myERP API</a></li>
-        <li><a href="#security">Security and Authentication</a></li>
-        <li><a href="#ratelimiting">Rate Limiting and limits</a></li>
-        <li><a href="#errorcode">Error Code and Responses</a></li>
-        <li><a href="#glossary">Glossary</a></li>
-        <li><a href="#support">Support</a></li>
+        <li><a href="#general">How to use the myERP API</a>
+        </li>
+        <li><a href="#security">Security and Authentication</a>
+        </li>
+        <li><a href="#ratelimiting">Rate Limiting and limits</a>
+        </li>
+        <li><a href="#errorcode">Error Code and Responses</a>
+        </li>
+        <li><a href="#glossary">Glossary</a>
+        </li>
+        <li><a href="#support">Support</a>
+        </li>
     </ul>
 </li>
 <li>
     <a class="category" href="/docs/1.0/libraries/">Libraries</a>
     <ul class="nav nav-stacked">
-        <li><a href="#ruby">Ruby</a></li>
-        <li><a href="#java">Java</a></li>
-        <li><a href="#php">PHP</a></li>
+        <li><a href="#ruby">Ruby</a>
+        </li>
+        <li><a href="#java">Java</a>
+        </li>
+        <li><a href="#php">PHP</a>
+        </li>
     </ul>
 </li>
 <li>
     <a class="category" href="/docs/1.0/api/">REST API</a>
     <ul class="nav nav-stacked">
-        <li><a href="#account">Account</a></li>
-        <li><a href="#address">Address</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#currency">Currency</a></li>
-        <li><a href="#customer">Customer</a></li>
-        <li><a href="#entry">Entry</a></li>
-        <li><a href="#item">Product and Service</a></li>
-        <li><a href="#item_family">Product and Service Family</a></li>
-        <li><a href="#order_line">Order Line</a></li>
-        <li><a href="#payment_term">Payment Term</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#sales_order">Sales Order</a></li>
-        <li><a href="#tax">Tax</a></li>
-        <li><a href="#transaction">Transaction</a></li>
-        <li><a href="#unit">Unit</a></li>
-        <li><a href="#vendor">Vendor</a></li>
+        <!-- customers -->
+        <li>
+            <a href="#customer">Customers</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#customerjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#customerjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#customeravailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- vendors -->
+        <li>
+            <a href="#vendor">Vendors</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#vendorjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#vendorjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#vendoravailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- productservices -->
+        <li>
+            <a href="#productservice">Products and Services</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#productservicejsonformat">JSON Format</a>
+                </li>
+                <li><a href="#productservicejsonexample">JSON Example</a>
+                </li>
+                <li><a href="#productserviceavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- productservicefamilies -->
+        <li>
+            <a href="#productservicefamily">Products and Services Families</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#productservicefamilyjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#productservicefamilyjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#productservicefamilyavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- projects -->
+        <li>
+            <a href="#project">Projects</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#projectjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#projectjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#projectavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- transactions -->
+        <li>
+            <a href="#transaction">Accounting Transactions</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#transactionjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#transactionjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#transactionavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- accounts -->
+        <li>
+            <a href="#account">Accounts <span>(Read-only)</span></a>
+            <ul class="nav nav-stacked">
+                <li><a href="#accountjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#accountjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#accountavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- paymentterms -->
+        <li>
+            <a href="#paymentterm">Payment Terms <span>(Read-only)</span></a>
+            <ul class="nav nav-stacked">
+                <li><a href="#paymenttermjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#paymenttermjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#paymenttermavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- taxes -->
+        <li>
+            <a href="#tax">Taxes <span>(Read-only)</span></a>
+            <ul class="nav nav-stacked">
+                <li><a href="#taxjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#taxjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#taxavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- currencies -->
+        <li>
+            <a href="#currency">Currencies <span>(Read-only)</span></a>
+            <ul class="nav nav-stacked">
+                <li><a href="#currencyjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#currencyjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#currencyavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+        <!-- units -->
+        <li>
+            <a href="#unit">Units <span>(Read-only)</span></a>
+            <ul class="nav nav-stacked">
+                <li><a href="#unitjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#unitjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#unitavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
     </ul>
 </li>

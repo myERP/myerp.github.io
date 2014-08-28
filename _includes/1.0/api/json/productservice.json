@@ -1,0 +1,17 @@
+{
+  "id": 230071,
+  "type": 2,
+  "name": "Nintendo Wii",
+  "unit_id": 2,
+  "sales_price": 199.0,
+  "purchase_price": 159.0,
+  "item_number": "ITM-012",
+  "description": "A video game console.",
+  "family_id": 3,
+  "private_note": "I got one !",
+  "net_weight": 1.740,
+  "width": 0.157,
+  "length": 0.215,
+  "height": 0.440,
+  "dimension_unit_id": 3
+}

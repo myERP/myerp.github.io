@@ -1,0 +1,37 @@
+<div id="currency" class="group">
+
+    <h2>Currencies</h2>
+    <h3 id="currencyjsonformat">JSON Format</h3>
+    <p>Currencies are represented as JSON objects which have the following keys:</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="name">{{ site.format.header.field_name }}</th>
+                <th class="type">{{ site.format.header.type }}</th>
+                <th class="values">{{ site.format.header.values }}</th>
+                <th class="default">{{ site.format.header.default }}</th>
+                <th class="non_editable">{{ site.format.header.non_editable }}</th>
+                <th class="description">{{ site.format.header.description }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            
+|_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |
+| id | Code | {{ site.format.type.long }} |
+| iso_code | Iso Code of this currency (ISO 4217) | {{ site.format.type.string4 }} |
+| name | Name | {{ site.format.type.string64 }} |
+| main_currency | Is this currency the main accounting for this domain | {{ site.format.type.boolean }} |
+</tr>
+
+        </tbody>
+    </table>
+
+    <h3 id="currencyjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/currency.json %} {% endhighlight %}
+
+    <h3 id="currencyavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/readonly.html %}
+</div>

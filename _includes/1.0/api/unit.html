@@ -1,0 +1,39 @@
+<div id="unit" class="group">
+
+    <h2>Units</h2>
+    <h3 id="unitjsonformat">JSON Format</h3>
+    <p>Units are represented as JSON objects which have the following keys:</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="name">{{ site.format.header.field_name }}</th>
+                <th class="type">{{ site.format.header.type }}</th>
+                <th class="values">{{ site.format.header.values }}</th>
+                <th class="default">{{ site.format.header.default }}</th>
+                <th class="non_editable">{{ site.format.header.non_editable }}</th>
+                <th class="description">{{ site.format.header.description }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+               |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |
+| id | Code | {{ site.format.type.long }} |  |
+| name | Name | {{ site.format.type.string64 }} |  |
+| type | Describe the kind of unit | {{ site.format.type.long }} | 1: Piece
+2: Weight
+3: Dimension
+4: Surface
+5: Volume
+6: Time |</tr>
+
+        </tbody>
+    </table>
+
+    <h3 id="unitjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/unit.json %} {% endhighlight %}
+
+    <h3 id="unitavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/readonly.html %}
+</div>
