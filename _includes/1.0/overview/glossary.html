@@ -1,34 +1,54 @@
 <div id="glossary" class="group">
-<h2>Glossary</h2>
+    <h2>Glossary</h2>
 
 
-<h3>Types</h3>
+    <h3>Types</h3>
 
-<p>Data type that can be send within JSON files.</p>
+    <p>Data type that can be send within JSON files.</p>
 
 
-<table class="table table-bordered table-striped">
-  <tbody>
-
-<tr id="string"><td> <b>String</b> </td><td> Any chain of characters. Carriage returns will be ignored.</td></tr>
-<tr id="string4"><td> <b>String<sup>4</sup></b> </td><td> Any chain up to <b>4</b> characters. Carriage returns will be ignored.</td></tr>
-<tr id="string10"><td> <b>String<sup>10</sup></b> </td><td> Any chain up to <b>10</b> characters. Carriage returns will be ignored.</td></tr>
-<tr id="string64"><td> <b>String<sup>64</sup></b> </td><td> Any chain up to <b>64</b> characters. Carriage returns will be ignored.</td></tr>
-<tr id="string128"><td> <b>String<sup>128</sup></b> </td><td> Any chain up to <b>128</b> characters. Carriage returns will be ignored.</td></tr>
-<tr id="string255"><td> <b>String<sup>255</sup></b> </td><td> Any chain up to <b>255</b> characters. Carriage returns will be ignored.</td></tr>
-<tr id="text"><td> <b>Text</b> </td><td> Any chain of characters, including carriage returns, with no size limit.</td></tr>
-<tr id="integer"><td> <b>Integer</b> </td><td> Any positive integer.</td></tr>
-<tr id="long"><td> <b>Long</b> </td><td> Any integer, positive or negative.</td></tr>
-<tr id="double"><td> <b>Double</b> </td><td> Any decimal number, positive or negative.</td></tr>
-<tr id="boolean"><td> <b>Boolean</b> </td><td> <b>false</b> or <b>true</b>. Not case sensitive.</td></tr>
-<tr id="date"><td> <b>Date</b> </td><td> Date format that should match yyyy-MM-dd. e.g. 2013-06-26.</td></tr>
-<tr id="address"><td> <b>Address</b> </td><td> In the API, Addresses got their own JSON format.
-Cick "here":/docs/1.0/api/address/#format for further details.</td></tr>
-<tr id="order_line"><td> <b>Order Line</b> </td><td> In the API, Order Lines got their own JSON format, and share it for Estimate, "Sales Orders":/docs/1.0/api/sales_order/#sales_order_format, Invoices, etc...
-Cick "here":/docs/1.0/api/order_line/#format for further details.</td></tr>
-<tr id="entry"><td> <b>Entry</b> </td><td> Entries are the main content of any "Transaction":/docs/1.0/api/transaction/#transaction_format. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable.
-Cick "here":/docs/1.0/api/entry/#format for further details.</td></tr>
-  </tbody>
-</table>
+    <table class="table table-bordered table-striped">
+        <tbody>
+            <tr id="string">
+                <td> <b>String</b> 
+                </td>
+                <td>Any chain of characters.
+                    <tr id="integer">
+                        <td> <b>Integer</b> 
+                        </td>
+                        <td>Any positive integer.</td>
+                    </tr>
+                    <tr id="double">
+                        <td> <b>Double</b> 
+                        </td>
+                        <td>Any decimal number, positive or negative.</td>
+                    </tr>
+                    <tr id="boolean">
+                        <td> <b>Boolean</b> 
+                        </td>
+                        <td> <b>false</b> or <b>true</b>. Not case sensitive.</td>
+                    </tr>
+                    <tr id="date">
+                        <td> <b>Date</b> 
+                        </td>
+                        <td>Date format that should match yyyy-MM-dd. e.g. 2013-06-26.</td>
+                    </tr>
+                    <tr id="address">
+                        <td> <b>Address</b> 
+                        </td>
+                        <td>In the API, Addresses got their own JSON format. Cick "here":/docs/1.0/api/address/#format for further details.</td>
+                    </tr>
+                    <tr id="order_line">
+                        <td> <b>Order Line</b> 
+                        </td>
+                        <td>In the API, Order Lines got their own JSON format, and share it for Estimate, "Sales Orders":/docs/1.0/api/sales_order/#sales_order_format, Invoices, etc... Cick "here":/docs/1.0/api/order_line/#format for further details.</td>
+                    </tr>
+                    <tr id="entry">
+                        <td> <b>Entry</b> 
+                        </td>
+                        <td>Entries are the main content of any "Transaction":/docs/1.0/api/transaction/#transaction_format. They mostly define the amount of the transaction (rounded to two decimal places). They are not editable. Cick "here":/docs/1.0/api/entry/#format for further details.</td>
+                    </tr>
+        </tbody>
+    </table>
 
 </div>
