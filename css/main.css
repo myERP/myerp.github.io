@@ -286,4 +286,12 @@ body .primary-button {
 .official:before {
    content: "✓ ";
 }
+ 
 
+.ribbon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+}
