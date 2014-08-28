@@ -276,15 +276,15 @@ body .primary-button {
 }
 
 
-/* Libraries buttons */
-.official {
+/* Libraries */
+.libraries .highlight {max-height: initial;}
+.libraries .btn {color:white;}
+.libraries .official:before {content: "✓ ";}
+.libraries .official {
     color: green;
     font-size: 90%;
     font-weight: 300;
     letter-spacing:0.1em;
-}
-.official:before {
-   content: "✓ ";
 }
  
 
