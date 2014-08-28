@@ -46,6 +46,8 @@ section h2{color: #2e90c8; font-size: 3em;}
 #home .box p.more {text-align: right;}
 #home .box .btn {color: white;}
 #home .splash-image {   text-align: center;}
+#home .jumbotron { background: transparent; padding: 0;}
+#home .jumbotron .container { max-width: 1126px; padding: 2em; border: 1px solid #ccc; border-radius: 4px;}
 #home .jumbotron h1 { font-size: 300%;margin: 0.2em 0;}
 #home .jumbotron p.subhead {font-weight: 300; line-height: 1.4em;margin: 0.4em 0;}
 #home .jumbotron p .btn {color: white;}
@@ -187,7 +189,7 @@ body .primary-button {
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #fefefe;
+    background: #efefef;
     border-right: 1px solid #999;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -253,8 +255,8 @@ body .primary-button {
 }
 .bs-docs-sidebar .logo {
     color: #444;
-    background: white;
-    text-align: left;
+    background: #efefef;
+    text-align: center;
     width: 100%;
     display: block;
     padding: 1em;
