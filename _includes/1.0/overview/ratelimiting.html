@@ -1,0 +1,23 @@
+<div id="ratelimiting" class="group">
+<h2>Rate Limiting and limits</h2>
+
+<h3> General</h3>
+
+<p>This API is rate limited; we only allow a certain number of requests per minute. We reserve the right to adjust the rate limit for given endpoints in order to provide a high quality of service for all clients. Rate limiting in version 1.0 of the API is primarily considered on a per-user basis — or more accurately described, per API key in your control.</p>
+
+<h4>15 Minute Windows</h4>
+
+<p> Rate limits in version 1.0 of the API are divided into 15 minute intervals. Additionally, all 1.0 endpoints require authentication. API v1.0's rate limiting model allows for a wider ranger of requests through per-method request limits. There is one initial bucket available: **1800 calls every 15 minutes**.</p>
+
+<h3> HTTP Response Code</h3>
+
+<p>If the rate limit is exceeded, myERP will respond with a **HTTP 429 Too Many Requests** response code and a body that details the reason for the rate limiter kicking in. You should anticipate this in your API client for the smoothest possible ride.</p>
+
+<h3> Tips to avoid being Rate Limited</h3>
+
+<p> The tips below are there to help you code defensively and reduce the possibility of being rate limited. Some application features that you may want to provide are simply impossible in light of rate limiting, especially around the freshness of results.</p>
+
+<h4> Caching</h4>
+
+<p> Store API responses in your application or on your site if you expect a lot of use. For example, don't try to call the myERP API on every page load of your website landing page. Instead, call the API infrequently and load the response into a local cache. When users hit your website load the cached version of the results. </p>
+</div>

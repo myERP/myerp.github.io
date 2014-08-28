@@ -5,23 +5,22 @@
 
         <!-- syntax highlighting CSS -->
         <link rel="stylesheet" href="/css/syntax.css">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+		
+		<script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="/css/main.css">
-		<script src="http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js"></script>
 
+        <script type="text/javascript">//<![CDATA[ 
+            $(window).load(function(){
+                $('body').scrollspy({
+                    target: '.bs-docs-sidebar',
+                    offset: 60
+                });
 
-        <script>
-			YUI({
-			    classNamePrefix: 'pure'
-			}).use('gallery-sm-menu', function (Y) {
-			    var menu = new Y.Menu({
-			        container : '#menu',
-			        sourceNode: '#menu-data',
-				    orientation       : 'horizontal',
-				    hideOnOutsideClick: false,
-				    hideOnClick       : false
-			    });
-
-			    menu.render().show();
-			});
-			</script>
+                if ($(location).attr('pathname') === '/') {
+                    $('a#home-menu').addClass('selected');
+                }
+            });//]]>  
+        </script>

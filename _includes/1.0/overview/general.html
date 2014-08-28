@@ -1,19 +1,16 @@
----
-layout: default
-title: "- General"
----
+<div id="general" class="group">
 
-h1(#general). REST API : General
+<h2>REST API : General</h2>
 
-h2. Resources
+<p>This is the documentation for the MyERP v1 API. Read the contents of this page carefully, including the authentication process and the rate &amp; limits described below, to understand how to be a good API citizen and to understand general restrictions and concerns. </p>
 
-There's two kind of resources in myERP. Actual Datas from your domain, and those who refers to a kind of data as a whole.
 
-h3. Actual Data
+<h3>Resources</h3>
 
-They end with the *id* of the actual data they refer to. They describe a single data.
+There's two kind of resources in myERP. The Actual Data from your domain, and those who refers to a kind of data as a whole.
 
-p. Sample
+<br />
+<p><b>Actual Data</b>: They end with the *id* of the actual data they refer to. They describe a single data.</p>
 
 {% highlight bash %}
 curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}}/55002 {{site.api.auth_pattern}}
@@ -21,12 +18,8 @@ curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.ur
 *55002* is the *id* of the customer you are trying to get.
 
 Those are mostly used for GET (to retrieve a data), PUT (to edit a data) or DELETE (to delete a data) request.
-
-h3. Data type
-
-There's no id into them. They describe a type of data as a whole.
-
-p. Sample
+<br />
+<p><b>Data Type</b>: There's no id into them. They describe a type of data as a whole.</p>
 
 {% highlight bash %}
 curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}} {{site.api.auth_pattern}}
@@ -34,31 +27,31 @@ curl -X GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.ur
 This will retrieve the list of all your customers.
 
 Those are used to create new data of this kind, using POST request.
-They are also usefull when you want to create or delete several datas of a specific kind in a row.
+They are also useful when you want to create or delete several datas of a specific kind in a row.
 
 
-h2. JSON Fields
+<h3>JSON Fields</h3>
 
-h3. Missing fields
+<h4>Missing fields</h4>
 
 * Creation: if the missing field is mandatory, an error message will be returned. Otherwise, the default value will be applied.
 * Edition: the missing field is ignored, and no changes will be performed on it. If you want to edit a single field, just send this single one.
 
-h3. Non existant fields
+<h4> Non existant fields</h4>
 
 If your JSON contains any fields that are not managed by the resource, those fields will be ignored. So, beware of any typo.
 
-h3. Duplicates fields
+<h4>Duplicates fields</h4>
 
 If a field is duplicate within the JSON or a resource, the value of the last one will prevail.
 
-h3. Wrong values
+<h4> Wrong values</h4>
 
 * Bad type: If any value of a wrong type stands into your JSON, the parsing of the JSON will turn wrong and an error message will be returned.
 * Wrong value: Some fields only accept certain values. If the value of such a field is wrong in your JSON, an error message will be returned.
 * Non editable: While editing a resource, if any field that is not editable stands within your JSON, and tries to perform an actual modification, an error message will be returned.
 
-h3. Lists
+<h4> Lists</h4>
 
 A field can consist in a list of data of another kind, with their own JSON format (like customer's contact list).
 While editing such a list, the list you send will become the whole new list. Which means the following :
@@ -73,7 +66,7 @@ Also, please notice that :
 * Sending an empty list will *delete the whole list*.
 * Like other fields, omitting the field wont perform any changes on the list.
 
-p. Example on customer contacts list field
+ Example on customer contacts list field
 
 If the current contact list is :
 
@@ -111,3 +104,5 @@ contacts: [
 {% endhighlight %}
 
 ...will delete contact 48 (Ed Smith), edit the email of contact 49 (John Doe), and create the brand new contact James Brown.
+
+</div>

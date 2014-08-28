@@ -4,11 +4,22 @@
         {% include head.html %}  
     </head>
     <body>  
-            {% include header.html %} 
-            <div class="pure-g-r content-wrapper">
-                <div class="pure-u-2-3 content">  
-                        {{ content }}
-                </div>
+    <div id="wrapper">
+        <!--Nav Bar -->
+        <nav class="bs-docs-sidebar"  role="navigation">
+            <a class="logo" href="/">
+                <img src="https://d2wni7o1grq1fg.cloudfront.net/201307030346/resources/images/common/myerp_logo_black.png" alt="myERP"/>Developers
+            </a>
+            <ul id="sidebar" class="nav nav-stacked fixed">
+                {% include side-menu.html %}
+            </ul>
+            <div class="love">Made with ♥<br /> by the myERP Team</div>
+        </nav>
+        <!--Main Content -->
+        <div class="page-content-wrapper">
+            <div class="container-fluid">
+                    {{ content }}
             </div>
+        </div>
     </body>
 </html>
