@@ -7,30 +7,39 @@
 
     <table class="table table-bordered table-striped">
         <thead>
-            <tr>
-                <th class="name">{{ site.format.header.field_name }}</th>
-                <th class="type">{{ site.format.header.type }}</th>
-                <th class="values">{{ site.format.header.values }}</th>
-                <th class="default">{{ site.format.header.default }}</th>
-                <th class="non_editable">{{ site.format.header.non_editable }}</th>
-                <th class="description">{{ site.format.header.description }}</th>
-            </tr>
+            {% include table-header.html %}
         </thead>
         <tbody>
             <tr>
-               |_. {{ site.format.header.field_name }} |_. {{ site.format.header.description }} |_. {{ site.format.header.type }} |_. {{ site.format.header.values }} |
-| id | Code | {{ site.format.type.integer }} |  |
-| name | Name | {{ site.format.type.string64 }} |  |
-| type | Describe the kind of unit | {{ site.format.type.integer }} | 1: Piece
-2: Weight
-3: Dimension
-4: Surface
-5: Volume
-6: Time |</tr>
-
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string64 }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>The Unit Name</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{ site.format.type.string255 }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Describe the kind of unit
+                    <br />1: Piece
+                    <br />2: Weight
+                    <br />3: Dimension
+                    <br />4: Surface
+                    <br />5: Volume
+                    <br />6: Time
+                </td>
+            </tr>
         </tbody>
     </table>
-
     <h3 id="unitjsonexample">JSON Example</h3>
     {% highlight bash %} {% include 1.0/api/json/unit.json %} {% endhighlight %}
 
