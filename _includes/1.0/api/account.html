@@ -1,9 +1,8 @@
 <div id="account" class="group">
 
     <h2>Accounts</h2>
-    {% highlight bash %}
-    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}}
-    {% endhighlight %}
+    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {% endhighlight %}
+    <p class="message bg-primary">This API is read only.</p>
     <h3 id="accountjsonformat">JSON Format</h3>
     <p>Accounts are represented as JSON objects which have the following keys:</p>
 
@@ -48,8 +47,8 @@
                 <td>Code of this account's family</td>
             </tr>
         </tbody>
-    </table>  
- 
+    </table>
+
     <h3 id="accountjsonexample">JSON Example</h3>
     {% highlight bash %} {% include 1.0/api/json/account.json %} {% endhighlight %}
 

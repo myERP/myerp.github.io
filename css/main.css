@@ -51,6 +51,11 @@ section h2 {
     color: #2e90c8;
     font-size: 3em;
 }
+
+p.message {
+    padding: 15px;
+}
+
 .page-content-wrapper {
     width: 100%;
     padding: 15px 15px 15px 285px;
