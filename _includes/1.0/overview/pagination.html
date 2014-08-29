@@ -1,0 +1,35 @@
+<div id="pagination" class="group">
+
+    <h2>Pagination</h2>
+    <p>Requests that return multiple elements <b>will be paginated to 100 items by default</b>.</p>
+
+    <p>Most APIs that list resources are paginated. Pagination is consistent across all APIs that require it. You can use the offset and limit parameters to page through query results.</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>offset</td>
+                <td>integer</td>
+                <td>no</td>
+                <td>The offset of the first record returned. Default is 0.</td>
+            </tr>
+            <tr>
+                <td>limit</td>
+                <td>integer</td>
+                <td>no</td>
+                <td>The number of records returned. Default (and max limit) is 100.</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
