@@ -1,6 +1,9 @@
 <div id="vendor" class="group">
 
     <h2>Vendors</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.vendors.url}}
+    {% endhighlight %}
     <h3 id="vendorjsonformat">JSON Format</h3>
     <p>Vendors are represented as JSON objects which have the following keys:</p>
 

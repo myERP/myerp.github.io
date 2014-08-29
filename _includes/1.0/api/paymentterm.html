@@ -1,6 +1,9 @@
 <div id="paymentterm" class="group">
 
     <h2>Payment Terms</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payment_terms.url}}
+    {% endhighlight %}
     <h3 id="paymenttermjsonformat">JSON Format</h3>
     <p>Payment Terms are represented as JSON objects which have the following keys:</p>
 

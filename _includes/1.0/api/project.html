@@ -1,6 +1,9 @@
 <div id="project" class="group">
 
     <h2>Projects</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.projects.url}}
+    {% endhighlight %}
     <h3 id="projectjsonformat">JSON Format</h3>
     <p>Projects are represented as JSON objects which have the following keys:</p>
 

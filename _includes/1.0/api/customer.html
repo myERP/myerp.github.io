@@ -1,6 +1,12 @@
 <div id="customer" class="group">
 
     <h2>Customers</h2>
+
+
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}}
+    {% endhighlight %}
+
     <h3 id="customerjsonformat">JSON Format</h3>
     <p>Customers are represented as JSON objects which have the following keys:</p>
 

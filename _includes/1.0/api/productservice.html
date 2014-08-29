@@ -1,6 +1,9 @@
 <div id="productservice" class="group">
 
     <h2>Products and Services</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.items.url}}
+    {% endhighlight %}
     <h3 id="productservicejsonformat">JSON Format</h3>
     <p>Products and Services are represented as JSON objects which have the following keys:</p>
 

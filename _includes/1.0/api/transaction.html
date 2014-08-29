@@ -1,6 +1,9 @@
 <div id="transaction" class="group">
 
     <h2>Accounting Transactions</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.transactions.url}}
+    {% endhighlight %}
     <h3 id="transactionjsonformat">JSON Format</h3>
     <p>Accounting Transactions are represented as JSON objects which have the following keys:</p>
 
