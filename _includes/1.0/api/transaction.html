@@ -1,0 +1,148 @@
+<div id="transaction" class="group">
+
+    <h2>Accounting Transactions</h2>
+    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.transactions.url}} {% endhighlight %}
+    <h3 id="transactionjsonformat">JSON Format</h3>
+    <p>Accounting Transactions are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating Transactions</td>
+            </tr>
+            <tr>
+                <td>transaction_code</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically generated</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Today by default.
+                    <br />Format: {{ site.format.date }}</td>
+            </tr>
+            <tr>
+                <td>journal_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ID of the recording journal
+                    <br />5: Miscellaneous Operations is selected by default</td>
+            </tr>
+            <tr>
+                <td>piece_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>A unique user-facing id of the document linked to this transaction</td>
+            </tr>
+            <tr>
+                <td>entries</td>
+                <td>{{ site.format.type.entry }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The list of the transaction's entries. <b>The entries must be balanced</b>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    <h4 id="entry">Transaction Entry Format</h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>label</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The description of the Entry</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The amount of the Entry. Positive, will be rounded to two decimal places</td>
+            </tr>
+            <tr>
+                <td>way</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>Defines if the amount is a Debit or a Credit
+                    <br />"debit" or "credit"</td>
+            </tr>
+            <tr>
+                <td>account_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The id of the accounting account where isFamily = false only</td>
+            </tr>
+            <tr>
+                <td>account_label</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>number and label of the accounting account</td>
+            </tr>
+            <tr>
+                <td>lettering</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The lettering of this entry</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <h3 id="transactionjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/transaction.json %} {% endhighlight %}
+
+    <h3 id="transactionavailablemethods">Available Methods</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="type">HTTP Verb</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GET</td>
+                <td>Retrieve a resource, you have to specify an id</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>Delete a resource, you have to specify an id</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>Create a resource</td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>Retrieve the list of resources</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

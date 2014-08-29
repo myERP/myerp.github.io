@@ -1,0 +1,169 @@
+<div id="nestedelements">
+    <div id="address" class="group">
+        <h2>Address</h2>
+        <p>In myERP, addresses are used at several places. Accounts, Suppliers, Contacts... So, in the API, addresses are embeded into their own JSON format, and follow the same rules everywhere.</p>
+        <h3>JSON Format</h3>
+        <p>Addresses are represented as JSON objects which have the following keys:</p>
+
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                {% include table-header.html %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>label1</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>First line of the address</td>
+                </tr>
+                <tr>
+                    <td>label2</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Second line of the address</td>
+                </tr>
+                <tr>
+                    <td>label3</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Third line of the address</td>
+                </tr>
+                <tr>
+                    <td>zip_code</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The zip code of the address</td>
+                </tr>
+                <tr>
+                    <td>city</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The city of the address</td>
+                </tr>
+                <tr>
+                    <td>country</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The country of the address</td>
+                </tr>
+                <tr>
+                    <td>localisation</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The localisaton of the address (limited to the one from the country selected)</td>
+                </tr>
+                <tr>
+                    <td>short_localisation</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>The short code for the Country</td>
+                </tr>
+                <tr>
+                    <td>full_address</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>The full formated adress as it should appears on documents</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>JSON Example</h3>
+        {% highlight bash %} {% include 1.0/api/json/address.json %} {% endhighlight %}
+    </div>
+
+
+    <div id="contact" class="group">
+        <h2>Contact</h2>
+        <h3>JSON Format</h3>
+        <p>Contacts are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+                {% include table-header.html %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>Automatically assigned</td>
+                </tr>
+                <tr>
+                    <td>first_name</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The First Name of the contact</td>
+                </tr>
+                <tr>
+                    <td>last_name</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>yes</td>
+                    <td>no</td>
+                    <td>The Last Name of the contact</td>
+                </tr>
+                <tr>
+                    <td>full_name</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>The full name of this contact</td>
+                </tr>
+                <tr>
+                    <td>cell_number</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The Cell phone of this contact</td>
+                </tr>
+                <tr>
+                    <td>work_phone</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The Work phone of this contact</td>
+                </tr>
+                <tr>
+                    <td>home_phone</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The Home phone of this contact</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The Email address of this contact</td>
+                </tr>
+                <tr>
+                    <td>address</td>
+                    <td>{{ site.format.type.address }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The address of this contact</td>
+                </tr>
+                <tr>
+                    <td>notes</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>A note about this contact</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>JSON Example</h3>
+        {% highlight bash %} {% include 1.0/api/json/contact.json %} {% endhighlight %}
+    </div>
+</div>

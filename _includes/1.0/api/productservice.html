@@ -1,0 +1,147 @@
+<div id="productservice" class="group">
+
+    <h2>Products and Services</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.items.url}}
+    {% endhighlight %}
+    <h3 id="productservicejsonformat">JSON Format</h3>
+    <p>Products and Services are represented as JSON objects which have the following keys:</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating Transactions</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The type
+                    <br />1: Service
+                    <br />2: Product</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The name</td>
+            </tr>
+            <tr>
+                <td>unit_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ID of the <a href="#unit" title="">Unit</a>
+                    <br/>Default:
+                    <br />Service: Day
+                    <br />Product: Piece
+                </td>
+            </tr>
+            <tr>
+                <td>sales_price</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Sales Price, 0.0 by default</td>
+            </tr>
+            <tr>
+                <td>item_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A unique user-facing id (i.e. ITM-012) If you don't specify a product number, it will be automatically generated</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A description of the product or the service</td>
+            </tr>
+            <tr>
+                <td>family_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>IDs from <a href="#productservicefamily" title="">Item's Families</a>
+                    <br/>Miscellaneous, by default</td>
+            </tr>
+            <tr>
+                <td>private_note</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A private note about the product or the service</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>Products only</h4>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>purchase_price</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Purchase Price of the product. 0.0 by default</td>
+            </tr>
+            <tr>
+                <td>net_weight</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Net Weight of the product. 0.0 by default</td>
+            </tr>
+            <tr>
+                <td>width</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Width of the product. 0.0 by default</td>
+            </tr>
+            <tr>
+                <td>length</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Length of the product. 0.0 by default</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Height of the product. 0.0 by default</td>
+            </tr>
+            <tr>
+                <td>dimension_unit_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The id of the <a href="#unit" title="">Dimension Unit</a> of the product. Meter by default</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="productservicejsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/productservice.json %} {% endhighlight %}
+
+    <h3 id="productserviceavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>

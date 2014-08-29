@@ -3,63 +3,12 @@ layout: default
 title: "- Overview"
 ---
 
-<h1>Overview</h1>
-
-<div class="pure-g-r">
-    <div class="pure-u-1 justify title">
-    	This is the documentation for the MyERP v1 API. Read the contents of this page carefully, including the authentication process and the rate &amp; limits described below, to understand how to be a good API citizen and to understand general restrictions and concerns.
-    </div>
-    <div class="pure-u-1-2">
-        <div class="l-box">
-            <h3><a href="general.html" title="">How to use the myERP API</a></h3>
-            <p>
-              A short introduction to the myERP API. <a href="general.html" title="">Learn more.</a>
-            </p>
-        </div>
-        <div class="l-box">
-            <h3><a href="security_authentication.html" title="">Security and Authentication</a></h3>
-            <p>
-               This API is an SSL-only API, regardless of how you may have your account configured. You can authorize against the API using basic authentication with your API email and an API key. Read this section to learn how to obtain your API key and how to authorize against the API. <a href="security_authentication.html" title="">Learn more.</a>
-            </p>
-        </div>
-        <div class="l-box">
-            <h3><a href="support.html" title="">Support</a></h3>
-            <p>
-               If you are having trouble, check this section out to find the recommended plan of action.  <a href="support.html" title="">Learn more.</a>
-            </p>
-        </div>
-
-    </div>
-
-    <div class="pure-u-1-2">
-        <div class="l-box">
-            <h3><a href="/docs/1.0/glossary/" title="">Glossary</a></h3>
-            <p>
-                Every term you may find in this documentation. <a href="support.html" title="">Learn more.</a>
-            </p>
-        </div>
-        <div class="l-box">
-            <h3><a href="rate_limits.html" title="">Rate Limiting &amp; limits</a></h3>
-            <p>
-                This API is rate limited; we only allow a certain number of requests per minute. We reserve the right to adjust the rate limit for given endpoints in order to provide a high quality of service for all clients. Please read carefully this section. <a href="rate_limits.html" title="">Learn more.</a>
-            </p>
-        </div><div class="l-box">
-            <h3><a href="error_codes.html" title="">Error Codes &amp; Responses</a></h3>
-            <p>
-                In order to provide more informative error responses, our API attempts to return appropriate HTTP status codes for every request and return errors via a JSON error object containing error_code and error_message attributes. <a href="error_codes.html" title="">Learn more.</a>
-            </p>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<h1>REST API Resources</h1>
-
-<div class="pure-u-1">
-    <ul class="overview resources">
-      {% include list_resources.html %}
-    </ul>
-</div>
+<section id="overview">
+    {% include 1.0/overview/general.html %}
+    {% include 1.0/overview/security.html %}
+    {% include 1.0/overview/pagination.html %}
+    {% include 1.0/overview/ratelimiting.html %}
+    {% include 1.0/overview/errorcode.html %}
+    {% include 1.0/overview/changepolicy.html %}
+    {% include 1.0/overview/support.html %}
+</section> 

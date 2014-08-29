@@ -1,0 +1,50 @@
+<div id="unit" class="group">
+
+    <h2>Units</h2>
+    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.units.url}} {% endhighlight %}
+    <p class="message bg-primary">This API is read only.</p>
+    <h3 id="unitjsonformat">JSON Format</h3>
+    <p>Units are represented as JSON objects which have the following keys:</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>The Unit Name</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Describe the kind of unit
+                    <br />1: Piece
+                    <br />2: Weight
+                    <br />3: Dimension
+                    <br />4: Surface
+                    <br />5: Volume
+                    <br />6: Time
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="unitjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/unit.json %} {% endhighlight %}
+
+    <h3 id="unitavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/readonly.html %}
+</div>

@@ -1,27 +1,43 @@
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>myERP Developers {{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>myERP Developers {{ page.title }}</title>
+<meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
-        <link rel="stylesheet" href="/css/main.css">
-		<script src="http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js"></script>
+<!-- syntax highlighting CSS -->
+<link rel="stylesheet" href="/css/syntax.css">
 
+<script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-        <script>
-			YUI({
-			    classNamePrefix: 'pure'
-			}).use('gallery-sm-menu', function (Y) {
-			    var menu = new Y.Menu({
-			        container : '#menu',
-			        sourceNode: '#menu-data',
-				    orientation       : 'horizontal',
-				    hideOnOutsideClick: false,
-				    hideOnClick       : false
-			    });
+<link rel="stylesheet" href="/css/main.css">
 
-			    menu.render().show();
-			});
-			</script>
+<script type="text/javascript">
+//<![CDATA[ 
+$(window).load(function() {
+    $('body').scrollspy({
+        target: '.bs-docs-sidebar',
+        offset: 60
+    });
+
+    if ($(location).attr('pathname') === '/') {
+        $('a#home-menu').addClass('selected');
+    }
+
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    history.pushState({}, '', this.hash);
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+}); //]]>
+</script>

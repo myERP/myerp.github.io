@@ -1,0 +1,64 @@
+<div id="errorcode" class="group">
+
+<h2> Error Codes and Responses</h2>
+
+<p>In order to provide more informative error responses, our API attempts to return appropriate HTTP status codes for every request and return errors via a JSON error object containing error_code and error_message attributes.</p>
+
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>myERP Code</th>
+      <th>HTTP Status Code</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>003</td>
+      <td><a href="https://tools.ietf.org/html/rfc2616#section-10.4.5" target="_blank">404</a></td>
+      <td>The resource was not found.</td>
+    </tr>
+    <tr>
+      <td>005</td>
+      <td><a href="http://www.webdav.org/specs/rfc2518.html#STATUS_422" target="_blank">422</a></td>
+      <td>The JSON request was not parsed. Please double-check the content of the request.</td>
+    </tr>
+    <tr>
+      <td>006</td>
+      <td><a href="http://www.webdav.org/specs/rfc2518.html#STATUS_422" target="_blank">422</a></td>
+      <td>The JSON request is too big. Please double-check the documentation to see the current limitation.</td>
+    </tr>
+    <tr>
+      <td>007</td>
+      <td><a href="https://tools.ietf.org/html/rfc2616#section-10.5.1" target="_blank">500</a> </td>
+      <td>Oops something went wrong. Please contact us so the MyERP team can investigate.</td>
+    </tr>
+    <tr>
+      <td>008</td>
+      <td><a href="https://tools.ietf.org/html/rfc2616#section-10.4.10" target="_blank">409</a></td>
+      <td>This object cannot be deleted.</td>
+    </tr>
+    <tr>
+      <td>009</td>
+      <td><a href="https://tools.ietf.org/html/rfc2616#section-10.5.1" target="_blank">500</a></td>
+      <td>The object cannot be serialized.</td>
+    </tr>
+    <tr>
+      <td>010</td>
+      <td><a href="https://tools.ietf.https://tools.ietf.org/html/rfc2616#section-10.4.13" target="_blank">412</a></td>
+      <td>A mandatory field is missing in your JSON.</td>
+    </tr>
+    <tr>
+      <td>011</td>
+      <td><a href="https://tools.ietf.org/html/rfc2616#section-10.4.10" target="_blank">409</a></td>
+      <td> You are trying to edit a field that is not editable.</td>
+    </tr>
+    <tr>
+      <td>012</td>
+      <td><a href="https://tools.ietf.org/html/rfc2616#section-10.4.5" target="_blank">404</a></td>
+      <td>Data out of range.</td>
+    </tr>
+  </tbody>
+</table>
+</div>

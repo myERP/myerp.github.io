@@ -1,0 +1,227 @@
+<div id="customer" class="group">
+
+    <h2>Customers</h2>
+
+
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}}
+    {% endhighlight %}
+
+    <h3 id="customerjsonformat">JSON Format</h3>
+    <p>Customers are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating customers</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The type of the customer
+                    <br />1: Company
+                    <br />2: Individual</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>1: Customer (default)
+                    <br />2: Lead</td>
+            </tr>
+            <tr>
+                <td>full_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The full name of this customer (automatically generated)</td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The main address of the customer</td>
+            </tr>
+            <tr>
+                <td>shipping_address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The shipping address of the customer</td>
+            </tr>
+            <tr>
+                <td>phone_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The phone number of this customer</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Email address of this customer</td>
+            </tr>
+            <tr>
+                <td>website</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The URL of the customer's website</td>
+            </tr>
+            <tr>
+                <td>contacts</td>
+                <td>{{ site.format.type.contact }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>An array containing the contacts of the customer</td>
+            </tr>
+            <tr>
+                <td>payment_terms_id</td>
+                <td>{{ site.format.type.integer}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ID of the <a href="/docs/1.0/api/#paymentterm" title="">Payment terms</a>
+                    <br/>by default, Due on receipt will be selected.
+                </td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ISO Code of one of <a href="/docs/1.0/api/#currency" title="">your Currencies</a>
+                    <br/>by default, the domain currency will be selected.
+                </td>
+            </tr>
+            <tr>
+                <td>sales_tax_id</td>
+                <td>{{ site.format.type.integer}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>IDs from <a href="/docs/1.0/api/#tax" title="">Taxes</a>
+                </td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The number assigned to this customer (i.e. CUS-002). If you don't specify a customer number, it will be automatically generated</td>
+            </tr>
+            <tr>
+                <td>opt_in_to_emails</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Opt-in to Emails. Default: false</td>
+            </tr>
+            <tr>
+                <td>comment</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A comment about this customer</td>
+            </tr>
+            <tr>
+                <td>employee_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ID of the employee. The authenticated user by default</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <h4>Company only</h4>
+    If your customer is a company, the JSON object will have the following keys:
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>company_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The name of the company</td>
+            </tr>
+            <tr>
+                <td>employee_count</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The number of employees in the company. Default 1</td>
+            </tr>
+            <tr>
+                <td>taxpayer_id_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Taxpayer ID Number</td>
+            </tr>
+            <tr>
+                <td>siret</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Siret number</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h4>Individual only</h4>
+    If your customer is an individual, the JSON object will have the following keys:
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>first_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The First Name of the customer</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The Last Name of the customer</td>
+            </tr>
+            <tr>
+                <td>middle_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Middle Name of the customer</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="customerjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/customer.json %} {% endhighlight %}
+
+    <h3 id="customeravailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>

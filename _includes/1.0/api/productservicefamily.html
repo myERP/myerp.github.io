@@ -1,0 +1,45 @@
+<div id="productservicefamily" class="group">
+
+    <h2>Products and Services Families</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.item_families.url}}
+    {% endhighlight %}
+    <h3 id="productservicefamilyjsonformat">JSON Format</h3>
+    <p>Products and Services Families are represented as JSON objects which have the following keys:</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating Families</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The Family Name</td>
+            </tr>
+            <tr>
+                <td>code</td>
+                <td>{{ site.format.type.text }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The Short Code of the Family. Automatically generated</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="productservicefamilyjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/productservicefamily.json %} {% endhighlight %}
+
+    <h3 id="productservicefamilyavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>

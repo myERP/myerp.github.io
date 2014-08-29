@@ -1,0 +1,44 @@
+<div id="project" class="group">
+
+    <h2>Projects</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.projects.url}}
+    {% endhighlight %}
+    <h3 id="projectjsonformat">JSON Format</h3>
+    <p>Projects are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating projects</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The Project Name</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>{{ site.format.type.text }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Project Description</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="projectjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/project.json %} {% endhighlight %}
+
+    <h3 id="projectavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>

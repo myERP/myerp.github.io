@@ -1,56 +1,46 @@
 ---
-layout: homepage
+layout: default
+title: "- Home"
 ---
+<section id="home">
 
- <div class="splash content-ribbon">
-    <div class="pure-g-r"> 
-        <div class="l-box splash-image">
+    <div class="jumbotron">
+      <div class="container">
+
+        <div class="splash-image">
             <img src="img/love_apis.png">
         </div>  
-
-
-        <div class="l-box splash-text">
-            <h1 class="splash-head">
-                Be connected.
-            </h1>
-
-            <h2 class="splash-subhead">
-                Use our API to easily manage your business, enhance your productivity throughout the day and create seamless integrations.
-            </h2>
-
-            <p>
-                <a href="/docs/1.0/overview" class="pure-button primary-button">Get Started</a>
-            </p>
-        </div> 
+        <h1>Be connected.</h1>
+        <p class="subhead">Use our API to easily manage your business, enhance your productivity throughout the day and create seamless integrations.</p>
+        <p><a class="btn btn-primary btn-lg" href="/docs/1.0/overview/" role="button">Get Started!</a></p>
+      </div>
     </div>
-</div>
-
-
-<div class="pure-g-r content-ribbon">
-    <div class="pure-u-1-3">
-        <div class="l-box">
-            <h3>Get your API key</h3>
-            <p>
-                You need an API key to start using the myERP API. Click here to learn how to retrieve it from your Settings Panel. <a href="/docs/1.0/overview/security_authentication.html" title="">Learn more...</a>
-            </p>
+ 
+    <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+                <div class="box">
+                  <h3>Get your API key</h3>
+                  <p>You need an API key to start using the myERP API. Click here to learn how to retrieve it from your Settings Panel.
+                  </p>
+                  <p class="more"><a class="btn btn-primary" href="/docs/1.0/overview/#security" role="button">Learn more »</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                  <h3>REST API</h3>
+                  <p>The REST API provides simple interfaces for most myERP functionality. Check out the list of all the available resources.</p>
+                  <p class="more"><a class="btn btn-primary" href="/docs/1.0/api/" role="button">Learn more »</a></p>
+               </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box">
+                  <h3>Official clients</h3>
+                  <p>myERP makes it easy to use the myERP API in your programming language of choice. We provide you with official myERP libraries.</p>
+                  <p class="more"><a class="btn btn-primary" href="/docs/1.0/libraries/" role="button">Learn more »</a></p>
+                </div>
+            </div>
+          </div>
         </div>
     </div>
-
-    <div class="pure-u-1-3">
-        <div class="l-box">
-            <h3>REST API</h3>
-            <p>
-                The REST API provides simple interfaces for most myERP functionality. Check out the list of all the available resources. <a href="/docs/1.0/api" title="">Learn more...</a>
-            </p>
-        </div>
-    </div>
-
-    <div class="pure-u-1-3">
-        <div class="l-box">
-            <h3>Official clients</h3>
-            <p>
-                myERP makes it easy to use the myERP API in your programming language of choice. We provide you with official myERP libraries. <a href="/docs/1.0/libraries/" title="">Learn more...</a>
-            </p>
-        </div>
-    </div>
-</div>
+</section>

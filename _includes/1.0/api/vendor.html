@@ -1,0 +1,175 @@
+<div id="vendor" class="group">
+
+    <h2>Vendors</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.vendors.url}}
+    {% endhighlight %}
+    <h3 id="vendorjsonformat">JSON Format</h3>
+    <p>Vendors are represented as JSON objects which have the following keys:</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating customers</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The type of the vendor
+                    <br />1: Company
+                    <br />2: Individual</td>
+            </tr>
+            <tr>
+                <td>full_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The full name of this customer (automatically generated)</td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The main address of the vendor</td>
+            </tr>
+            <tr>
+                <td>phone_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The phone number of this vendor</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Email address of this vendor</td>
+            </tr>
+            <tr>
+                <td>website</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The URL of the vendor's website</td>
+            </tr>
+            <tr>
+                <td>contacts</td>
+                <td>{{ site.format.type.contact }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>An array containing the contacts of the vendor</td>
+            </tr>
+            <tr>
+                <td>payment_terms_id</td>
+                <td>{{ site.format.type.integer}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ID of the <a href="/docs/1.0/api/#paymentterm" title="">Payment terms</a>
+                    <br/>by default, Due on receipt will be selected.
+                </td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ISO Code of one of <a href="/docs/1.0/api/#currency" title="">your Currencies</a>
+                    <br/>by default, the domain currency will be selected.
+                </td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The number assigned to this vendor (i.e. SUP-002). If you don't specify a vendor number, it will be automatically generated</td>
+            </tr>
+            <tr>
+                <td>notes</td>
+                <td>{{ site.format.type.text }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A note about this vendor</td>
+            </tr>
+            <tr>
+                <td>taxpayer_id_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Taxpayer ID Number</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <h4>Company only</h4>
+    If your vendor is a company, the JSON object will have the following keys:
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>company_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The name of the company</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h4>Individual only</h4>
+    If your vendor is an individual, the JSON object will have the following keys:
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>first_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The First Name of the vendor</td>
+            </tr>
+            <tr>
+                <td>last_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The Last Name of the vendor</td>
+            </tr>
+            <tr>
+                <td>middle_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Middle Name of the vendor</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h3 id="vendorjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/vendor.json %} {% endhighlight %}
+
+    <h3 id="vendoravailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>
