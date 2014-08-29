@@ -38,12 +38,12 @@ resource:
 
 format:
   type:
-    string: '<a href="/docs/1.0/overview/#string" alt=""/>string</a>'
-    integer: '<a href="/docs/1.0/overview/#integer" alt=""/>integer</a>'
-    double: '<a href="/docs/1.0/overview/#double" alt=""/>double</a>'
-    boolean: '<a href="/docs/1.0/overview/#boolean" alt=""/>boolean</a>'
-    date: '<a href="/docs/1.0/overview/#date" alt=""/>date</a>'
+    string: string
+    integer: integer
+    double: double
+    boolean: boolean
+    date: date
     address: '<a href="/docs/1.0/api/#address" alt=""/>Address</a>'
-    contact: '<a href="/docs/1.0/api/#contact" alt=""/>Contact</a>'
+    contact: array['<a href="/docs/1.0/api/#contact" alt=""/>Contact</a>']
     order_line: '<a href="/docs/1.0/api/order_line/#format" alt=""/>Order Line</a>'
     entry: '<a href="/docs/1.0/api/#entry" alt=""/>Entry</a>'
