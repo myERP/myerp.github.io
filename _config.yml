@@ -37,6 +37,7 @@ resource:
     url: /taxes
 
 format:
+  date: yyyy-MM-dd (e.g. 2013-06-26)
   type:
     string: string
     integer: integer
