@@ -45,28 +45,27 @@
         </tbody>
     </table>
 
-    <p><b>Note:</b> All the resources are following this schema unless specific informations in the resource documentation page itself (i.e. read-only resources).</p>
+    <p><b>Note:</b> All the resources follow this schema unless specified otherwise in the resource documentation page itself (i.e. read-only resources).</p>
 
 
     <h3>How we parse the JSON</h3>
-    This is how we parse and interpret the JSON input you send to us, please read these rules carefully:
+    This is how we parse and interpret the JSON input you send to us. Please read these rules carefully:
 
     <h4>Missing fields</h4>
 
     <ul>
-        <li><b>Creation</b>: if the missing field is mandatory, an error message will be returned. Otherwise, the default value will be applied.</li>
-        <li><b>Edition</b>: the missing field is ignored, and no changes will be performed on it. If you want to edit a single field, just send this single one.</li>
+        <li><b>Edition Mode</b>: the missing field is ignored, and no changes will be performed on it. If you want to edit a single field, just send this single one.</li>
     </ul>
 
     <h4>Non existant fields</h4>
     <ul>
-        <li>If your JSON contains any fields that are not managed by the resource, those fields will be ignored. So, beware of any typo.</li>
+        <li>If your JSON contains fields that are not part of the resource, those will be silently ignored.</li>
     </ul>
 
 
-    <h4>Duplicates fields</h4>
+    <h4>Duplicated fields</h4>
     <ul>
-        <li>If a field is duplicate within the JSON or a resource, the value of the last one will prevail.</li>
+        <li>If a field appears more than once in the JSON, the value of the last one will prevail.</li>
     </ul>
 
 
@@ -79,28 +78,30 @@
         <li><b>Non editable</b>: While editing a resource, if any field that is not editable stands within your JSON, and tries to perform an actual modification, an error message will be returned.
         </li>
     </ul>
+
+    
     <h4>Lists</h4>
 
-    A field can consist in a list of data of another kind, with their own JSON format (like customer's contact list). While editing such a list, the list you send will become the whole new list. Which means the following:
+    A field consists in a list of data of another kind, with their own JSON format (like customer's contact list). While editing such a list, the list you send will become the whole new list. Which means the following:
     <ul>
         <li>Data that don't appear anymore in the new list will be deleted.</li>
-        <li>Data that are in both the old and new list will be edited.</li>
+        <li>Data that are in both the old and the new list will be updated.</li>
         <li>Data that are only in the new list will be created.</li>
     </ul>
 
-    Also, please notice that:
+    Also, please remember that:
     <ul>
-        <li>Matching are performed on data's ID.</li>
-        <li>Sending an empty list will <b>delete the whole list</b>
+        <li>Sending an empty list will <b>delete all the elements</b>.
         </li>
         <li>Like other fields, omitting the field wont perform any changes on the list.</li>
     </ul>
 
 
-    Example on customer contacts list field If the current contact list is : 
+    Example on customer contacts list field.<br />
+    If the current contact list is: 
     {% highlight bash %} contacts: [ { "id": 48, "first_name": "Ed", "last_name": "Smith", "email": "ed.smith@myerp.com" }, { "id": 49, "first_name": "John", "last_name": "Doe", "email": "john.doe@myerp.com" } ] {% endhighlight %} 
     The following POST... 
     {% highlight bash %} contacts: [ { "id": 49, "email": "new.email@myerp.com" }, { "first_name": "James", "last_name": "Brown", "email": "james.brown@myerp.com" } ] {% endhighlight %} 
-    ...will delete contact 48 (Ed Smith), edit the email of contact 49 (John Doe), and create the brand new contact James Brown.
+    ...will delete contact 48 (Ed Smith), update the email of contact 49 (John Doe), and create the brand new contact James Brown.
 
 </div>
