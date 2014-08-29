@@ -1,0 +1,8 @@
+{
+  "label": "Invoice Payment",
+  "amount": 17578.65,
+  "way": "debit",
+  "account_id": 21,
+  "account_label": "11100  ( Accounts Receivable - Trade )",
+  "lettering": "CINV-237"
+}
