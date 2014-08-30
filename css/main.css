@@ -81,11 +81,14 @@ p.message {
 #home .splash-image {
     text-align: center;
 }
+#home .splash-image img {
+    max-width: 100%;
+}
 #home .jumbotron {
     background: transparent;
     padding: 0;
 }
-#home .jumbotron .container {
+#home .jumbotron .container-fluid {
     max-width: 1126px;
     padding: 2em;
     border: 1px solid #ccc;
