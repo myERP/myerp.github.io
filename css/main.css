@@ -38,6 +38,7 @@ a:active {
 .highlight {
     padding: 4px;
     margin: 1em auto;
+    overflow-x: hidden; 
     max-height: initial;
 }
 pre {
