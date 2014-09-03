@@ -33,7 +33,7 @@
     "sales_tax_id": 3,
     "user_code_iso_code": "CUS-018",
     "opt_in_to_emails": false,
-    "comment": "- myERP -\nRun your business in the Cloud",
+    "note": "- myERP -\nRun your business in the Cloud",
     "employee_id": 42,
     "company_name": "myERP"
 }

@@ -37,13 +37,13 @@
         "short_localisation": "N/A",
         "full_address": ""
       },
-      "notes": "This contact is pretty regular."
+      "note": "This contact is pretty regular."
     }
   ],
   "currency": "USD",
   "payment_terms_id": 1,
   "taxpayer_id_number": "SE OIU 90",
   "user_code": "SUP-002",
-  "notes": "This vendor is pretty regular.",
+  "note": "This vendor is pretty regular.",
   "company_name": "Regular Vendor"
 }
