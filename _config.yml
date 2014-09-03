@@ -35,6 +35,8 @@ resource:
     url: /units
   taxes:
     url: /taxes
+  bank_entries:
+    url: /bank_entries
 
 format:
   date: yyyy-MM-dd (e.g. 2013-06-26)

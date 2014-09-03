@@ -1,0 +1,11 @@
+{
+  "id": 353,
+  "external_id": "EXT-API-093",
+  "bank_account_id": 4,
+  "posted_date": "2014-05-05",
+  "transaction_date": "2014-06-12",
+  "amount": -133.94,
+  "currency_iso_code": "USD",
+  "description": "Walmart - Credit card payment",
+  "payment_method_id": 2
+}
