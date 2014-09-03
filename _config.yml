@@ -47,4 +47,4 @@ format:
     address: '<a href="/docs/1.0/api/#address" alt=""/>Address</a>'
     contact: 'array[<a href="/docs/1.0/api/#contact" alt=""/>Contact</a>]'
     order_line: '<a href="/docs/1.0/api/order_line/#format" alt=""/>Order Line</a>'
-    entry: '<a href="/docs/1.0/api/#entry" alt=""/>Entry</a>'
+    entry: 'array[<a href="/docs/1.0/api/#entry" alt=""/>Entry</a>]'
