@@ -2,5 +2,5 @@
   "id": 133,
   "iso_code": "USD",
   "name": "U.S. Dollar",
-  "main_currency": true
+  "is_main_currency": true
 }
