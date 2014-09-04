@@ -13,17 +13,17 @@
         ...
     }],
     "errors": [{
-        "status": 422,
         "id": 12,
         "error": {
+            "status": 422,
             "code": "3",
             "message": "This object cannot be deleted.",
             "reason": "The item cannot be deleted because it is referenced by: Incoming Payment"
         }
     }, {
-        "status": 404,
         "id": 1337,
         "error": {
+            "status": 404,
             "code": "2",
             "message": "The resource was not found."
         }
