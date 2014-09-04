@@ -283,6 +283,9 @@ th.read-only {
 th.mandatory {
     width: 101px;
 }
+th.id {
+    width: 50px;
+}
 .ribbon {
     position: absolute;
     right: 0px;
