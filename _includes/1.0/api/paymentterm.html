@@ -8,21 +8,17 @@
 
     <table class="table table-bordered table-striped">
         <thead>
-            {% include table-header.html %}
+            {% include table-header-readonly.html %}
         </thead>
         <tbody>
             <tr>
                 <td>id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>no</td>
-                <td>yes</td>
                 <td>Automatically assigned</td>
             </tr>
             <tr>
                 <td>name</td>
                 <td>{{ site.format.type.string }}</td>
-                <td>yes</td>
-                <td>yes</td>
                 <td>The Payment Term Name. 64 characters max.</td>
             </tr>
         </tbody>

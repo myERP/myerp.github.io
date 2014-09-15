@@ -3,7 +3,7 @@
   "first_name": "François",
   "last_name": "Nadal",
   "full_name": "François Nadal",
-  "cell_number": "(415) 555-1234",
+  "cell_phone": "(415) 555-1234",
   "work_phone": "(415) 555-5678",
   "home_phone": "(415) 555-0000",
   "email": "francois.nadal@myerp.com",
@@ -17,5 +17,5 @@
     "localisation": "California",
     "full_address": "21 Backer street Building D Fifth Floor San Francisco CA 94109 USA"
   },
-  "notes": "A contact that worth to know.\nLike to surf."
+  "note": "A contact that worth to know.\nLike to surf."
 }

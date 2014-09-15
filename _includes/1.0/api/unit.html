@@ -9,28 +9,22 @@
 
     <table class="table table-bordered table-striped">
         <thead>
-            {% include table-header.html %}
+            {% include table-header-readonly.html %}
         </thead>
         <tbody>
             <tr>
                 <td>id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>no</td>
-                <td>yes</td>
                 <td>Automatically assigned</td>
             </tr>
             <tr>
                 <td>name</td>
                 <td>{{ site.format.type.string }}</td>
-                <td>yes</td>
-                <td>yes</td>
                 <td>The Unit Name. 64 characters max.</td>
             </tr>
             <tr>
                 <td>type</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>no</td>
-                <td>yes</td>
                 <td>Describe the kind of unit
                     <br />1: Piece
                     <br />2: Weight
