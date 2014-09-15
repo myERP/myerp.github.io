@@ -8,7 +8,7 @@ api:
   v1: /v1
   base_url: https://api.myerp.com
   auth_pattern: -u "email:api-key"
-  batch_limit: 25
+  bulk_deletion_limit: 50
 
 resource:
   customers:

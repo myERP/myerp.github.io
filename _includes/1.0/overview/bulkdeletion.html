@@ -1,0 +1,18 @@
+<div id="bulkdeletion" class="group">
+
+    <h2>Bulk Deletion</h2>
+
+    <p>If you make a lot of API requests in a short amount of time, you may bump into the myERP rate limit for requests. When you reach the limit, myERP stops processing any more requests until a certain amount of time has passed.
+    </p>
+    <p>We provide you a bulk deletion method for each resource. You can delete up to <b>{{site.api.bulk_deletion_limit}} elements</b> at the time by passing a comma-separated list of ids in the query string. The <b>ids</b> parameter accepts only integers separated by commas. If this parameter is missing or contains any wrong characters, you will get a <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1" target="_blank" title="400">400</a>.
+    </p>
+    <p>The API returns a list of errors and a list of successes. The bulk deletion API <b>does not</b> stop when an element cannot be deleted, this element is added to the errors list with the explanation. The successes list contains all the elements deleted.</p>
+
+    <h3>Example</h3>
+    {% highlight bash %} CURL -X DELETE {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}}?ids=12,42,1337 {{site.api.auth_pattern}} {% endhighlight %}
+
+
+    <h3>Response</h3>
+    {% highlight json %} {% include 1.0/overview/bulkdeletion.json%} {% endhighlight %}
+
+</div>

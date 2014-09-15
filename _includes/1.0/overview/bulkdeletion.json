@@ -1,0 +1,31 @@
+{
+    "success_count": 1,
+    "error_count": 2,
+    "successes": [{
+        "id": 42,
+        "type": 1,
+        "status": 1,
+        ...
+        "phone_number": "",
+        "email": "",
+        "comment": "",
+        "company_name": "ACME",
+        ...
+    }],
+    "errors": [{
+        "id": 12,
+        "error": {
+            "status": 422,
+            "code": "3",
+            "message": "This object cannot be deleted.",
+            "reason": "The item cannot be deleted because it is referenced by: Incoming Payment"
+        }
+    }, {
+        "id": 1337,
+        "error": {
+            "status": 404,
+            "code": "2",
+            "message": "The resource was not found."
+        }
+    }]
+}
