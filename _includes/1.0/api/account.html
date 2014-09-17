@@ -2,38 +2,47 @@
 
     <h2>Accounts</h2>
     {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.accounts.url}} {% endhighlight %}
-    <p class="message bg-primary">This API is read only.</p>
     <h3 id="accountjsonformat">JSON Format</h3>
     <p>Accounts are represented as JSON objects which have the following keys:</p>
 
     <table class="table table-bordered table-striped">
         <thead>
-            {% include table-header-readonly.html %}
+            {% include table-header.html %}
         </thead>
         <tbody>
             <tr>
                 <td>id</td>
                 <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
                 <td>Automatically assigned</td>
             </tr>
             <tr>
                 <td>number</td>
                 <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
                 <td>The Number of this account. 64 characters max.</td>
             </tr>
             <tr>
                 <td>name</td>
                 <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
                 <td>The Name of this account. 128 characters max.</td>
             </tr>
             <tr>
                 <td>is_family</td>
                 <td>{{ site.format.type.boolean }}</td>
+                <td>yes</td>
+                <td>yes</td>
                 <td>Is this account a family account.</td>
             </tr>
             <tr>
                 <td>family_id</td>
                 <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>no</td>
                 <td>Code of this account's family</td>
             </tr>
         </tbody>
@@ -43,5 +52,5 @@
     {% highlight bash %} {% include 1.0/api/json/account.json %} {% endhighlight %}
 
     <h3 id="accountavailablemethods">Available Methods</h3>
-    {% include 1.0/api/methods/readonly.html %}
+    {% include 1.0/api/methods/full.html %}
 </div>
