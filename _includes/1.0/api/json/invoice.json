@@ -1,0 +1,83 @@
+{
+  "id": 19,
+  "customer_id": 2,
+  "billing_contact_id": 1,
+  "billing_address": {
+    "street_line1": "57 Benjamin Franklin Street",
+    "street_line2": "",
+    "street_line3": "",
+    "postal_code": "",
+    "city": "San Francisco",
+    "country": "USA",
+    "locality": "California",
+    "short_locality": "CA",
+    "full_address": "57 Benjamin Franklin Street San Francisco CA USA"
+  },
+  "user_code": "CINV-015",
+  "po_number": "WC-SO-32492-XCT",
+  "date": "2014-05-07",
+  "tax_id": 2,
+  "currency_iso_code": "USD",
+  "reduce_rate": 3.5,
+  "order_lines": [
+    {
+      "id": 69,
+      "item_id": 1,
+      "description": "",
+      "quantity": 50.0,
+      "unit_price_wt": 15.0,
+      "discount_rate": 0.0,
+      "tax_id": 2,
+      "is_taxable": true,
+      "total": 750.0
+    },
+    {
+      "id": 70,
+      "item_id": 3,
+      "description": "10 random stickers for WC2014 album.",
+      "quantity": 100.0,
+      "unit_price_wt": 1.5,
+      "discount_rate": 5.0,
+      "tax_id": 2,
+      "is_taxable": true,
+      "total": 142.5
+    },
+    {
+      "id": 71,
+      "item_id": 2,
+      "description": "A beautiful stickers album about Soccer.\n- Limited Edition -",
+      "quantity": 20.0,
+      "unit_price_wt": 9.99,
+      "discount_rate": 0.0,
+      "tax_id": 0,
+      "is_taxable": false,
+      "total": 199.8
+    }
+  ],
+  "public_note": "All in one rhythm - Juntos num só ritmo",
+  "shipping_address": {
+    "street_line1": "Rue Henri Delaunay",
+    "street_line2": "",
+    "street_line3": "",
+    "postal_code": "93210",
+    "city": "Saint-Denis",
+    "country": "France",
+    "locality": "N/A",
+    "short_locality": "N/A",
+    "full_address": "Rue Henri Delaunay Saint-Denis 93210 France"
+  },
+  "payment_terms_id": 4,
+  "employee_id": 1,
+  "private_note": "Needs to be ready for the opening !",
+  "subtotal": 1092.3,
+  "reduce_amount": 38.23,
+  "tax_amount": 86.13,
+  "total": 1140.2,
+  "paid": 770.1,
+  "unpaid": 370.1,
+  "delivery_status": 1,
+  "payments_id": [
+    32,
+    33
+  ]
+}
