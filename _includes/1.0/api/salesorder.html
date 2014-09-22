@@ -1,0 +1,206 @@
+<div id="salesorder" class="group">
+
+    <h2>Sales Order</h2>
+    {% highlight bash %}
+    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_orders.url}}
+    {% endhighlight %}
+    <h3 id="salesorderjsonformat">JSON Format</h3>
+    <p>Sales order are represented as JSON objects which have the following keys:</p>
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned.</td>
+            </tr>
+            <tr>
+                <td>customer_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#customer" title="">Customer.</a></td>
+            </tr>
+            <tr>
+                <td>billing_contact_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to bill.<br />Should belong to that order's Customer.</td>
+            </tr>
+            <tr>
+                <td>billing_address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The billing address. The Contact address if any, the Customer one otherwise.</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The number assigned to this sales order (i.e. SO-002). If you don't specify an order number, it will be automatically generated.<br />64 characters max.</td>
+            </tr>
+            <tr>
+                <td>po_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The Customer own Order Reference.<br />64 characters max.</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date that will be printed.<br />Format: {{ site.format.date }}<br />Default: date of the day.</td>
+            </tr>
+            <tr>
+                <td>tax_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>US only.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply on that order.</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ISO code of the currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>. 4 characters max.<br />That currency should have been previously added into your company settings.<br />Default: your company's currency.</td>
+            </tr>
+            <tr>
+                <td>reduce_rate</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The reduce rate (%) to apply. From 0 to 100.<br />Default: 0.00</td>
+            </tr>
+            <tr>
+                <td>order_lines</td>
+                <td>{{ site.format.type.order_line }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>An array containing the order lines of the order.</td>
+            </tr>
+            <tr>
+                <td>public_note</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Comment that will be printed on the final document.</td>
+            </tr>
+            <tr>
+                <td>shipping_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date before which the goods should be delivered, if any.<br />Format: {{ site.format.date }}</a></td>
+            </tr>
+            <tr>
+                <td>shipping_contact_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> the goods should be shipped to, if different than the Customer.<br />Could be any Contact from any Customer.</td>
+            </tr>
+            <tr>
+                <td>shipping_address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The shipping address. The shpping Contact address if any, the Customer one otherwise.</td>
+            </tr>
+            <tr>
+                <td>payment_terms_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a> to apply once that order will be billed.</td>
+            </tr>
+            <tr>
+                <td>project_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#project" title="">Project</a> related to that order, if any.</td>
+            </tr>
+            <tr>
+                <td>employee_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the Employee assigned to that order.<br />Default: the authenticated user.</td>
+            </tr>
+            <tr>
+                <td>private_note</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A private note that won't be printed.</td>
+            </tr>
+            <tr>
+                <td>subtotal</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Total before taxes and reduce. Based on the content of the order lines.</td>
+            </tr>
+            <tr>
+                <td>reduce_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Amount of the reduce, based on the subtotal and reduce rate.</td>
+            </tr>
+            <tr>
+                <td>tax_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Overall tax amount. Inludes all taxes, discounts and reduce.</td>
+            </tr>
+            <tr>
+                <td>total</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The final total the customer needs to pay. All include (taxes, discounts, reduce).</td>
+            </tr>
+            <tr>
+                <td>delivery_status</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The delivery status, among :<br />
+				    1: Not Delivered (default)<br />
+				    2: Partially Delivered<br />
+				    3: Delivered</td>
+            </tr>
+            <tr>
+                <td>invoice_status</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The invoice status, among :<br />
+					1: Not invoiced (default)<br />
+				    2: Invoiced<br />
+				    3: Cancelled</td>
+            </tr>		
+        </tbody>
+    </table>
+			
+    <h3 id="salesorderjsonexample">JSON Example</h3>
+	<p>That example describe a US sales order.</p>
+    {% highlight bash %} {% include 1.0/api/json/salesorder.json %} {% endhighlight %}
+
+    <h3 id="salesorderavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>
