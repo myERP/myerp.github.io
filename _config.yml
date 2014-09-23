@@ -21,6 +21,8 @@ resource:
     url: /sales_orders
   invoices:
     url: /invoices
+  payments:
+    url: /payments
   items:
     url: /items
   payment_terms:
