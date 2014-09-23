@@ -1,11 +1,11 @@
 {
-  "label1": "567  Sutter St.",
-  "label2": "",
-  "label3": "",
-  "zip_code": "94102",
+  "street_line1": "567  Sutter St.",
+  "street_line2": "",
+  "street_line3": "",
+  "postal_code": "94102",
   "city": "San Francisco",
   "country": "United States",
-  "localisation": "California",
-  "short_localisation": "CA",
+  "locality": "California",
+  "short_locality": "CA",
   "full_address": "567  Sutter St. San Francisco CA 94102 United States"
 }
