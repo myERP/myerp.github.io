@@ -8,13 +8,14 @@
   "home_phone": "(415) 555-0000",
   "email": "francois.nadal@myerp.com",
   "address": {
-    "label1": "21 Backer street",
-    "label2": "Building D",
-    "label3": "Fifth Floor",
-    "zip_code": "94109",
+    "street_line1": "21 Backer street",
+    "street_line2": "Building D",
+    "street_line3": "Fifth Floor",
+    "postal_code": "94109",
     "city": "San Francisco",
     "country": "USA",
-    "localisation": "California",
+    "locality": "California",
+    "short_locality": "CA",
     "full_address": "21 Backer street Building D Fifth Floor San Francisco CA 94109 USA"
   },
   "note": "A contact that worth to know.\nLike to surf."
