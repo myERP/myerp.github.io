@@ -162,8 +162,86 @@
                 </tr>
             </tbody>
         </table>
-
         <h3>JSON Example</h3>
         {% highlight bash %} {% include 1.0/api/json/contact.json %} {% endhighlight %}
+    </div>
+
+    <div id="orderline" class="group">
+        <h2>Order Line</h2>
+    	<p>Order lines are product or service lines that are embeded within sales or purchases documents. They contain infos like price, quantity, description, etc...<br />While adding, removing or updating an order line, related values (such as total, tax amount...) on the contextual document will be updated accordingly.</p>
+        <h3>JSON Format</h3>
+        <p>Order lines are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+                {% include table-header.html %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>Automatically assigned</td>
+                </tr>
+                <tr>
+                    <td>item_id</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>yes</td>
+                    <td>yes</td>
+                    <td>Id of the ordered <a href="/docs/1.0/api/#productservice" title="">Product or Service.</a></td>
+                </tr>
+                <tr>
+                    <td>description</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>A description of the ordered Product or Service.<br />Default: The Product or Service default description</td>
+                </tr>
+                <tr>
+                    <td>quantity</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The ordered quantity.<br />Default: 1.00</td>
+                </tr>
+                <tr>
+                    <td>unit_price_wt</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Unit Price before Taxes<br />Default: The Product or Service default sales price</td>
+                </tr>
+                <tr>
+                    <td>discount_rate</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Discount rate for this line.<br />Default: 0.00</td>
+                </tr>
+                <tr>
+                    <td>tax_id</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Not available for US.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply.</td>
+                </tr>
+                <tr>
+                    <td>is_taxable</td>
+                    <td>{{ site.format.type.boolean }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>US only.<br />Shall the tax be applied ?</td>
+                </tr>
+                <tr>
+                    <td>total</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>Total before taxes and discount.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>JSON Example</h3>
+        {% highlight bash %} {% include 1.0/api/json/orderline.json %} {% endhighlight %}
     </div>
 </div>

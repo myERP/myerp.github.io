@@ -1,0 +1,11 @@
+{
+  "id": 56,
+  "item_id": 130,
+  "description": "Red Wine - high quality",
+  "quantity": 12.0,
+  "unit_price_wt": 49.99,
+  "discount_rate": 5.0,
+  "tax_id": 2,
+  "is_taxable": false,
+  "total": 569.89
+}

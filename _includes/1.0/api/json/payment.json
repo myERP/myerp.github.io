@@ -1,0 +1,11 @@
+{
+  "id": 25,
+  "user_code": "IPAY-025",
+  "invoice_id": 14,
+  "date": "2014-07-25",
+  "amount": 330.0,
+  "currency_iso_code": "USD",
+  "payment_method_id": 1,
+  "bank_reference": "BK-XCT-094843904 PAY",
+  "bank_id": 5
+}

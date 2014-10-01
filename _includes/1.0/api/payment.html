@@ -1,0 +1,114 @@
+<div id="payment" class="group">
+
+    <h2>Payment</h2>
+    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payments.url}} {% endhighlight %}
+	<p>Payment creation is restraint to Invoice's payments into the API. You have to provide an <i>invoice_id</i> while performing a POST request.
+		<br />That new payment will be applied on the first open settlement of that invoice. If all settlements are paid, an error message will be returned and the payment won't be created.
+		<br />Also, that new payment currency will be determined by the invoice's one.
+		<br />
+		<br />Unlike creation, GET requests are not restraint to invoice's payments only and returns any kind of payments.</p>
+    <h3 id="paymentjsonformat">JSON Format</h3>
+    <p>Payments are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating Payment</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The number that was automatically assigned to this payment (i.e. IPAY-002).</td>
+            </tr>
+            <tr>
+                <td>invoice_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Id of the <a href="/docs/1.0/api/#invoice" title="">Invoice</a> that payment is about, if any.</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The date the payment has occured.<br />Format: {{ site.format.date }}<br />Default: date of the day.</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Amount of the payment.<br />Should not be 0.00</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The ISO code of that payment currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.</td>
+            </tr>
+            <tr>
+                <td>payment_method_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Id of the Payment method.<br />Default: the one of the settlement that payment has been applied.</td>
+            </tr>
+            <tr>
+                <td>bank_reference</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>A bank reference label that can freely be assigned. Could be a bank statement reference, a PayPal ID, etc...</td>
+            </tr>
+            <tr>
+                <td>bank_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Id of the bank account that payment was made on.<br />That bank account currency should match the payment one.<br />Default: no Bank. Use the application to perform the bank deposit later on.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="paymentjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/payment.json %} {% endhighlight %}
+
+    <h3 id="paymentavailablemethods">Available Methods</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="type">HTTP Verb</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>GET</td>
+                <td>Retrieve a resource, you have to specify an id</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>Delete a resource, you have to specify an id</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>Create a resource<br />Restraint to invoice's payments only</td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>Retrieve the list of resources</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
