@@ -1,0 +1,85 @@
+<div id="bankentry" class="group">
+
+    <h2>Bank Entries</h2>
+    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.bank_entries.url}} {% endhighlight %}
+    <p class="message bg-primary">This API doesn't handle PUT requests.</p>
+    <h3 id="bankentryjsonformat">JSON Format</h3>
+    <p>Bank entries are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned.</td>
+            </tr>
+            <tr>
+                <td>external_id</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Use primilary for Sync.<br /></td>
+            </tr>
+            <tr>
+                <td>bank_account_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Code of the Bank Account that entry belongs to.<br /></td>
+            </tr>
+            <tr>
+                <td>posted_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>The date that entry was posted.<br />Format: {{site.format.date}}</td>
+            </tr>
+            <tr>
+                <td>transaction_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>The date the bank transaction was actually performed.<br />Format: {{site.format.date}}</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Amount of the bank transaction. Use negative amount for debit.<br />Should not be 0.00</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The ISO Code of the bank account.</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Short description.</td>
+            </tr>
+            <tr>
+                <td>payment_method_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Code of the payment method.<br />Default: 1 (check)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="bankentryjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/bankentry.json %} {% endhighlight %}
+
+    <h3 id="bankentryavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/noput.html %}
+</div>
