@@ -1,6 +1,6 @@
 <div id="payment" class="group">
 
-    <h2>Payment</h2>
+    <h2>Payments</h2>
     {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payments.url}} {% endhighlight %}
 	<p>Payment creation is restraint to Invoice's payments into the API. You have to provide an <i>invoice_id</i> while performing a POST request.
 		<br />That new payment will be applied on the first open settlement of that invoice. If all settlements are paid, an error message will be returned and the payment won't be created.
