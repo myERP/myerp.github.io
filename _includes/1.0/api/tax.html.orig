@@ -1,0 +1,41 @@
+<div id="tax" class="group">
+
+    <h2>Taxes</h2>
+    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.taxes.url}} {% endhighlight %}
+    <p class="message bg-primary">This API is read only.</p>
+    <h3 id="taxjsonformat">JSON Format</h3>
+    <p>Taxes are represented as JSON objects which have the following keys:</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header-readonly.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Automatically assigned</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string }}</td>
+<<<<<<< HEAD
+                <td>yes</td>
+                <td>yes</td>
+                <td>The Tax Name. 128 characters max.</td>
+=======
+                <td>The Tax Name</td>
+>>>>>>> api_small_fixes
+            </tr>
+            <tr>
+                <td>rate</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The Tax Rate</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3 id="taxjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/tax.json %} {% endhighlight %}
+
+    <h3 id="taxavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/readonly.html %}
+</div>

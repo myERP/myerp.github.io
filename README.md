@@ -1,4 +1,4 @@
-myERP.github.io
+OneUp.github.io
 ===============
 
 powered by jekyll

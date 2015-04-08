@@ -1,4 +1,4 @@
-name: myERP Developers
+name: OneUp Developers
 markdown: redcarpet
 safe: true
 lsi: false
@@ -6,7 +6,7 @@ highlighter: pygments
 
 api:
   v1: /v1
-  base_url: https://api.myerp.com
+  base_url: https://api.oneup.com
   auth_pattern: -u "email:api-key"
   bulk_deletion_limit: 50
 

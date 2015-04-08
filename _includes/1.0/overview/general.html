@@ -2,9 +2,9 @@
 
     <h3>Introduction</h3>
 
-    <p>This is the documentation for the myERP v1 API. Read the contents of this page carefully, including the authentication process and the rate &amp; limits described below, to understand how to be a good API citizen and to understand general restrictions and concerns.</p>
+    <p>This is the documentation for the OneUp v1 API. Read the contents of this page carefully, including the authentication process and the rate &amp; limits described below, to understand how to be a good API citizen and to understand general restrictions and concerns.</p>
 
-    <p>Your use and access to the API is expressly conditioned on your compliance with the policies, restrictions and other provisions related to the API set forth in our API Restrictions and Responsibilities and the other documentation we provide you. You must also comply with the restrictions set forth in the <a href="https://myerp.com/en/term-of-use-US.html" target="_blank" title="">myERP Terms of Service</a> and the <a href="https://myerp.com/en/privacy-policy.html" title="" target="_blank">myERP Privacy Policy</a>, in all uses of the API. If myERP believes that you have or attempted to violate any term, condition or the spirit of these policies or agreements, your right to access and use the API may be temporarily or permanently revoked.</p>
+    <p>Your use and access to the API is expressly conditioned on your compliance with the policies, restrictions and other provisions related to the API set forth in our API Restrictions and Responsibilities and the other documentation we provide you. You must also comply with the restrictions set forth in the <a href="https://oneup.com/en/term-of-use-US.html" target="_blank" title="">OneUp Terms of Service</a> and the <a href="https://oneup.com/en/privacy-policy.html" title="" target="_blank">OneUp Privacy Policy</a>, in all uses of the API. If OneUp believes that you have or attempted to violate any term, condition or the spirit of these policies or agreements, your right to access and use the API may be temporarily or permanently revoked.</p>
 
     <h2>Getting Started</h2>
 
@@ -99,9 +99,9 @@
 
     Example on customer contacts list field.<br />
     If the current contact list is: 
-    {% highlight bash %} contacts: [ { "id": 48, "first_name": "Ed", "last_name": "Smith", "email": "ed.smith@myerp.com" }, { "id": 49, "first_name": "John", "last_name": "Doe", "email": "john.doe@myerp.com" } ] {% endhighlight %} 
+    {% highlight bash %} contacts: [ { "id": 48, "first_name": "Ed", "last_name": "Smith", "email": "ed.smith@oneup.com" }, { "id": 49, "first_name": "John", "last_name": "Doe", "email": "john.doe@oneup.com" } ] {% endhighlight %} 
     The following POST... 
-    {% highlight bash %} contacts: [ { "id": 49, "email": "new.email@myerp.com" }, { "first_name": "James", "last_name": "Brown", "email": "james.brown@myerp.com" } ] {% endhighlight %} 
+    {% highlight bash %} contacts: [ { "id": 49, "email": "new.email@oneup.com" }, { "first_name": "James", "last_name": "Brown", "email": "james.brown@oneup.com" } ] {% endhighlight %} 
     ...will delete contact 48 (Ed Smith), update the email of contact 49 (John Doe), and create the brand new contact James Brown.
 
 </div>
