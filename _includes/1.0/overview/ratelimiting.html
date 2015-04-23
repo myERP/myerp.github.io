@@ -11,7 +11,7 @@
 
     <h3>HTTP Response Code</h3>
 
-    <p>If the rate limit is exceeded, myERP will respond with a **HTTP 429 Too Many Requests** response code and a body that details the reason for the rate limiter kicking in. You should anticipate this in your API client for the smoothest possible ride.</p>
+    <p>If the rate limit is exceeded, OneUp will respond with a **HTTP 429 Too Many Requests** response code and a body that details the reason for the rate limiter kicking in. You should anticipate this in your API client for the smoothest possible ride.</p>
 
     <h3>Tips to avoid being Rate Limited</h3>
 
@@ -19,7 +19,7 @@
 
     <h4>Caching</h4>
 
-    <p>Store API responses in your application or on your site if you expect a lot of use. For example, don't try to call the myERP API on every page load of your website landing page. Instead, call the API infrequently and load the response into a local cache. When users hit your website load the cached version of the results.</p>
+    <p>Store API responses in your application or on your site if you expect a lot of use. For example, don't try to call the OneUp API on every page load of your website landing page. Instead, call the API infrequently and load the response into a local cache. When users hit your website load the cached version of the results.</p>
 
     <h4>Bulk Deletion</h4>
     <p>You can delete up to {{ site.api.bulk_deletion_limit }} elements of any resources by using the bulk deletion. <a href="#bulkdeletion" title="Bulk Deletion">Learn more about the bulk deletion</a>.</p>
