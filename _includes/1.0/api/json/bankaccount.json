@@ -1,0 +1,10 @@
+{
+  "id": 2769,
+  "account_number": "748-94288-928",
+  "name": "Bank of the West",
+  "currency": "USD",
+  "linked_to_provider": false,
+  "bank_balance": 32487.09,
+  "accounting_bank_balance": 59573.90,
+  "bank_balance_date": "2015-02-20"
+}
