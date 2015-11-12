@@ -1,0 +1,78 @@
+<div id="bankaccount" class="group">
+
+    <h2>Bank</h2>
+    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.bank_accounts.url}} {% endhighlight %}
+    <h3 id="bankaccountjsonformat">JSON Format</h3>
+    <p>Bank accounts are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned.</td>
+            </tr>
+            <tr>
+                <td>account_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The account number of the bank account.<br /></td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The way that bank account will appear in OneUp.<br /></td>
+            </tr>
+            <tr>
+                <td>currency</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ISO Code of one of <a href="/docs/1.0/api/#currency" title="">your Currencies</a>
+                    <br/>by default, the domain currency will be selected. 4 characters max.</td>
+            </tr>
+            <tr>
+                <td>linked_to_provider</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Does this account come from an external provider.</td>
+            </tr>
+            <tr>
+                <td>bank_balance</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The current balance of your bank account.</td>
+            </tr>
+            <tr>
+                <td>accounting_bank_balance</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The current balance of your bank account, according to the OneUp accounting.</td>
+            </tr>
+            <tr>
+                <td>bank_balance_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date the bank balance has been recorded.<br />Format: {{site.format.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="bankaccountjsonexample">JSON Example</h3>
+    {% highlight bash %} {% include 1.0/api/json/bankaccount.json %} {% endhighlight %}
+
+    <h3 id="bankaccountavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>
