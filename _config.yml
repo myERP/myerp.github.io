@@ -53,6 +53,8 @@ format:
     boolean: boolean
     date: date
     address: '<a href="/docs/1.0/api/#address" alt=""/>Address</a>'
+    payment_terms: '<a href="/docs/1.0/api/#paymentterm" alt=""/>Payment Terms</a>'
+    tax: '<a href="/docs/1.0/api/#tax" alt=""/>Tax</a>'
     contact: 'array[<a href="/docs/1.0/api/#contact" alt=""/>Contact</a>]'
     order_line: 'array[<a href="/docs/1.0/api/#orderline" alt=""/>Order Line</a>]'
     entry: 'array[<a href="/docs/1.0/api/#entry" alt=""/>Entry</a>]'
