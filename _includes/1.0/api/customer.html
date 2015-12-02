@@ -89,11 +89,20 @@
                 <td>An array containing the contacts of the customer</td>
             </tr>
             <tr>
-                <td>payment_terms_id</td>
+                <td>payment_terms_id <span class="deprecated">DEPRECATED<span></td>
                 <td>{{ site.format.type.integer}}</td>
                 <td>no</td>
                 <td>no</td>
                 <td>The ID of the <a href="/docs/1.0/api/#paymentterm" title="">Payment terms</a>
+                    <br/>by default, Due on receipt will be selected.
+                </td>
+            </tr>
+            <tr>
+                <td>payment_terms</td>
+                <td>{{ site.format.type.payment_terms}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The <a href="/docs/1.0/api/#paymentterm" title="">Payment terms</a> object
                     <br/>by default, Due on receipt will be selected.
                 </td>
             </tr>
@@ -107,12 +116,18 @@
                 </td>
             </tr>
             <tr>
-                <td>sales_tax_id</td>
+                <td>sales_tax_id <span class="deprecated">DEPRECATED<span></td>
                 <td>{{ site.format.type.integer}}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>IDs from <a href="/docs/1.0/api/#tax" title="">Taxes</a>
-                </td>
+                <td>See sales_tax</td>
+            </tr>
+            <tr>
+                <td>sales_tax</td>
+                <td>{{ site.format.type.tax}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A <a href="/docs/1.0/api/#tax" title="">Tax</a> object</td>
             </tr>
             <tr>
                 <td>user_code</td>
@@ -122,27 +137,89 @@
                 <td>The number assigned to this customer (i.e. CUS-002). If you don't specify a customer number, it will be automatically generated. 64 characters max.</td>
             </tr>
             <tr>
-                <td>opt_in_to_emails</td>
+                <td>opt_in_to_emails <span class="deprecated">DEPRECATED<span></td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>See opt_in_email.</td>
+            </tr>
+            <tr>
+                <td>opt_in_email</td>
                 <td>{{ site.format.type.boolean }}</td>
                 <td>no</td>
                 <td>no</td>
                 <td>Opt-in to Emails. Default: false</td>
             </tr>
             <tr>
-                <td>note</td>
+                <td>note <span class="deprecated">DEPRECATED<span></td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>See notes</td>
+            </tr>
+            <tr>
+                <td>notes</td>
                 <td>{{ site.format.type.string }}</td>
                 <td>no</td>
                 <td>no</td>
                 <td>A note about this customer</td>
             </tr>
             <tr>
-                <td>employee_id</td>
+                <td>employee_id <span class="deprecated">DEPRECATED<span></td>
                 <td>{{ site.format.type.integer }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>The ID of the employee. The authenticated user by default</td>
+                <td>See assigned_to</td>
             </tr>
-
+            <tr>
+                <td>assigned_to</td>
+                <td>Object</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The employee object. The authenticated user by default</td>
+            </tr>
+            <tr>
+                <td>employee_count</td>
+                <td>{{ site.format.type.integer}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The company's employee count</td>
+            </tr>
+            <tr>
+                <td>price_family</td>
+                <td>Object</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The price family applied to this customer</td>
+            </tr>
+            <tr>
+                <td>taxpayer_id</td>
+                <td>{{ site.format.type.string}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The customer's taxpayer id</td>
+            </tr>
+            <tr>
+                <td>industry</td>
+                <td>{{ site.format.type.string}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The customer's industry</td>
+            </tr>
+            <tr>
+                <td>incorporation_status</td>
+                <td>{{ site.format.type.string}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The customer's incorporation status</td>
+            </tr>
+            <tr>
+                <td>rating</td>
+                <td>{{ site.format.type.string}}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The lead's rating</td>
+            </tr>
         </tbody>
     </table>
 

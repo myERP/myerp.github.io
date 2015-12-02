@@ -290,3 +290,12 @@ th.mandatory {
     margin: 0px;
     padding: 0px;
 }
+
+span.deprecated {
+  padding: 2px;
+  color: white;
+  background-color: #d14;
+  border-radius: 5px;
+  font-size: 80%;
+  border: 1px solid #a94442;
+}
