@@ -2,31 +2,38 @@
   "id": 509878,
   "external_id": "EXT-API-079",
   "transaction_code": 1639,
+  "status": "Realized",
   "date": "2014-01-31",
   "journal_id": 7,
   "piece_number": "CINV-237",
   "entries": [
     {
+      "id": 1187484,
       "label": "Invoice Payment",
       "amount": 17578.65,
       "way": "debit",
       "account_id": 21,
       "account_label": "11100  ( Accounts Receivable - Trade )",
-      "lettering": "CINV-237"
+      "lettering": "CINV-237",
+      "locked": false
     },
     {
+      "id": 1187485,
       "label": "Invoice Payment - Before taxes",
       "amount": 16238.92,
       "way": "credit",
       "account_id": 85,
-      "account_label": "40150  ( Sales - Miscellaneous )"
+      "account_label": "40150  ( Sales - Miscellaneous )",
+      "locked": false
     },
     {
+      "id": 1187486,
       "label": "Invoice Payment - Taxes",
       "amount": 1339.73,
       "way": "credit",
       "account_id": 57,
-      "account_label": "21100  ( Sales Tax Payable )"
+      "account_label": "21100  ( Sales Tax Payable )",
+      "locked": false
     }
   ]
 }
