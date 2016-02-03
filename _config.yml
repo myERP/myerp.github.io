@@ -33,6 +33,8 @@ resource:
     url: /currencies
   transactions:
     url: /transactions
+  journals:
+    url: /journals
   accounts:
     url: /accounts
   units:
