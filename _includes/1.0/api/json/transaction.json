@@ -4,7 +4,11 @@
   "transaction_code": 1639,
   "status": "Realized",
   "date": "2014-01-31",
-  "journal_id": 7,
+  "journal": {
+    "id": 32,
+    "name": "Journal name",
+    "code": "JN"
+  },
   "piece_number": "CINV-237",
   "entries": [
     {

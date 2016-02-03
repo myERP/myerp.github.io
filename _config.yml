@@ -60,3 +60,4 @@ format:
     contact: 'array[<a href="/docs/1.0/api/#contact" alt=""/>Contact</a>]'
     order_line: 'array[<a href="/docs/1.0/api/#orderline" alt=""/>Order Line</a>]'
     entry: 'array[<a href="/docs/1.0/api/#entry" alt=""/>Entry</a>]'
+    journal: '<a href="/docs/1.0/api/#journal" alt=""/>Journal</a>'
