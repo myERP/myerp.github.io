@@ -32,7 +32,7 @@ body {
     float: left;
     text-align: center;
     display: block;
-    padding: .4em;
+    padding: .4em .4em .4em 0;
     text-transform: uppercase;
     margin-top: 10px;
     margin-right: 32px;
@@ -130,9 +130,20 @@ body {
     overflow-y: auto;  
 }
 
+.sidebar-nav li {
+    color: #777;
+}
+
+.sidebar-nav li:not(.item-header):hover, .sidebar-nav a.active li {
+    border-left: 2px solid #2e90c8;
+    color: #2e90c8;
+    padding-left: 7px;
+}
+
 .sidebar-nav ul {
     padding-left: 0;
-}.sidebar-nav li {
+}
+.sidebar-nav li {
     margin-bottom: 15px;
     padding-bottom: 0;
     padding-top: 0;
@@ -144,7 +155,8 @@ body {
     padding-bottom: 5px;
     padding-top: 5px;
     transition: all .15s;
-}.sidebar-nav ul ul {
+}
+.sidebar-nav ul ul {
     padding-left: 1em;
 }
 
@@ -169,22 +181,15 @@ a:link {
     color: #2e90c8;
     text-decoration: none;
 }
-/* unvisited link */
-
 a:visited {
     color: #2e90c8;
 }
-/* visited link */
-
 a:hover {
     color: #2e90c8;
 }
-/*text-decoration: underline}  /* mouse over link */
-
 a:active {
     color: #2e90c8;
 }
-/* selected link */
 
 .justify {
     text-align: justify;
