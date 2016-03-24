@@ -16,13 +16,13 @@
 //<![CDATA[ 
 $(window).load(function() {
     $('body').scrollspy({
-        target: '.bs-docs-sidebar',
-        offset: 60
+        target: '.sidebar-nav'
     });
-
-    if ($(location).attr('pathname') === '/') {
-        $('a#home-menu').addClass('selected');
-    }
+    $('.sidebar-nav').affix({
+        offset: {
+            top: 0
+        }
+    });
 
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {

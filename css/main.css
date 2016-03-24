@@ -17,7 +17,7 @@ body {
     background: hsla(0,0%,100%,.95);
     box-shadow: 0 1px 3px rgba(27,36,50,.15);
     height: 60px;
-    position: relative;
+    position: fixed;
     -webkit-transform: translateX(0);
     transform: translateX(0);
     transition: -webkit-transform .45s cubic-bezier(.33,0,.2,1);
@@ -109,11 +109,8 @@ body {
 }
 
 .layout-sidebar .post-wrapper {
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 40px;
-    padding-top: 30px;
     position: relative;
+    padding: 90px;
     margin-left: 2%;
     background: #fff;
     min-height: 1000px;
@@ -128,7 +125,9 @@ body {
 
 */
 .sidebar-nav {
-    margin-top: 55px;
+    margin-top: 115px;
+    max-height: 100%;
+    overflow-y: auto;  
 }
 
 .sidebar-nav ul {
