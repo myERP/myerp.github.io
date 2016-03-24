@@ -2,266 +2,234 @@
 layout: default
 title: "- REST API V1.0 Resources"
 ---
-<div class="sidebar" role="navigation">
-  <nav class="sidebar-nav">
-    <ul>
-      <a href="/">
-        <li class="item-header">Getting Started</li>    
-      </a>
-      <li class="item-header">REST API</li>
 
-
+<nav class="bs-docs-sidebar" role="navigation">
+  <li class="category">
+    <a href="/">Getting Started</a>
+  </li>
+  <li class="category">
+    <a class="category" href="/docs/1.0/api/">REST API</a>
+    <ul class="nav nav-stacked">
       <!-- customers -->
-      <a href="#customer"><li>Customers</li></a>
-      <ul class="nav nav-stacked">
-        <a href="#customerjsonformat"><li>JSON Format</li></a>
-        <a href="#customerjsonexample"><li>JSON Example</li></a>
-        <a href="#customeravailablemethods"><li>Available Methods</li></a>
-      </ul>
-   
+      <li class="active">
+          <a href="#customer">Customers</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#customerjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#customerjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#customeravailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- vendors -->
-      <a href="#vendor">
-        <li>Vendors</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#vendorjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#vendorjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#vendoravailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#vendor">Vendors</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#vendorjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#vendorjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#vendoravailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- productservices -->
-      <a href="#productservice">
-        <li>Products and Services</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#productservicejsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#productservicejsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#productserviceavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#productservice">Products and Services</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#productservicejsonformat">JSON Format</a>
+              </li>
+              <li><a href="#productservicejsonexample">JSON Example</a>
+              </li>
+              <li><a href="#productserviceavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- productservicefamilies -->
-      <a href="#productservicefamily">
-        <li>Products and Services Families</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#productservicefamilyjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#productservicefamilyjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#productservicefamilyavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#productservicefamily">Products and Services Families</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#productservicefamilyjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#productservicefamilyjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#productservicefamilyavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- projects -->
-      <a href="#project">
-        <li>Projects</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#projectjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#projectjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#projectavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#project">Projects</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#projectjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#projectjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#projectavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- sales orders -->
-      <a href="#salesorder">
-        <li>Sales orders</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#salesorderjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#salesorderjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#salesorderavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#salesorder">Sales orders</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#salesorderjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#salesorderjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#salesorderavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>   
       <!-- invoices -->
-      <a href="#invoice">
-        <li>Invoices</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#invoicejsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#invoicejsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#invoiceavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#invoice">Invoices</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#invoicejsonformat">JSON Format</a>
+              </li>
+              <li><a href="#invoicejsonexample">JSON Example</a>
+              </li>
+              <li><a href="#invoiceavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- payments -->
-      <a href="#payment">
-        <li>Payments</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#paymentjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#paymentjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#paymentavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#payment">Payments</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#paymentjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#paymentjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#paymentavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- transactions -->
-      <a href="#transaction">
-        <li>Accounting Transactions</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#transactionjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#transactionjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#transactionavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#transaction">Accounting Transactions</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#transactionjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#transactionjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#transactionavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
+      <!-- journals -->
+      <li>
+          <a href="#journal">Accounting Journals</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#journaljsonformat">JSON Format</a>
+              </li>
+              <li><a href="#journaljsonexample">JSON Example</a>
+              </li>
+              <li><a href="#journalavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- bank accounts -->
-      <a href="#bankaccount">
-        <li>Bank Accounts</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#bankaccountjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#bankaccountjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#bankaccountavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#bankaccount">Bank Accounts</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#bankaccountjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#bankaccountjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#bankaccountavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- bank entries -->
-      <a href="#bankentry">
-        <li>Bank Entries</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#bankentryjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#bankentryjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#bankentryavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#bankentry">Bank Entries</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#bankentryjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#bankentryjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#bankentryavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- accounts -->
-      <a href="#account">
-        <li>Accounts</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#accountjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#accountjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#accountavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#account">Accounts</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#accountjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#accountjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#accountavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- paymentterms -->
-      <a href="#paymentterm">
-        <li>Payment Terms <span>(Read-only)</span></li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#paymenttermjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#paymenttermjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#paymenttermavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#paymentterm">Payment Terms <span>(Read-only)</span></a>
+          <ul class="nav nav-stacked">
+              <li><a href="#paymenttermjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#paymenttermjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#paymenttermavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- taxes -->
-      <a href="#tax">
-        <li>Taxes <span>(Read-only)</span></li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#taxjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#taxjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#taxavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#tax">Taxes <span>(Read-only)</span></a>
+          <ul class="nav nav-stacked">
+              <li><a href="#taxjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#taxjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#taxavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- currencies -->
-      <a href="#currency">
-        <li>Currencies <span>(Read-only)</span></li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#currencyjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#currencyjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#currencyavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#currency">Currencies <span>(Read-only)</span></a>
+          <ul class="nav nav-stacked">
+              <li><a href="#currencyjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#currencyjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#currencyavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- units -->
-      <a href="#unit">
-        <li>Units <span>(Read-only)</span></li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#unitjsonformat">
-          <li>JSON Format</li>
-        </a>
-        <a href="#unitjsonexample">
-          <li>JSON Example</li>
-        </a>
-        <a href="#unitavailablemethods">
-          <li>Available Methods</li>
-        </a>
-      </ul>
+      <li>
+          <a href="#unit">Units <span>(Read-only)</span></a>
+          <ul class="nav nav-stacked">
+              <li><a href="#unitjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#unitjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#unitavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- nested elements -->
-      <a href="#nestedelements">
-        <li>Nested elements</li>
-      </a>
-      <ul class="nav nav-stacked">
-        <a href="#address">
-          <li>Address</li>
-        </a>
-        <a href="#contact">
-          <li>Contact</li>
-        </a>
-        <a href="#orderline">
-          <li>Order line</li>
-        </a>
+      <li>
+          <a href="#nestedelements">Nested elements</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#address">Address</a>
+              </li>
+              <li><a href="#contact">Contact</a>
+              </li>
+              <li><a href="#orderline">Order line</a>
+              </li>
+          </ul>
+      </li>
       </ul>
-    </ul>
-  </nav>
-</div>
+    </li>
+</nav> 
+
 <!--Main Content -->
 <main class="post-wrapper" role="main">
     <div>{% include 1.0/api/customer.html %}</div>
