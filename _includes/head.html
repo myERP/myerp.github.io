@@ -38,7 +38,7 @@ $(window).load(function() {
                 if (target.length) {
                     history.pushState({}, '', this.hash);
                     $('html,body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top - 115
                     }, 1000);
                     return false;
                 }
