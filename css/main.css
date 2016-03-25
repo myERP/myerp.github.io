@@ -34,7 +34,7 @@ body {
     display: block;
     padding: .4em .4em .4em 0;
     text-transform: uppercase;
-    margin-top: 10px;
+    margin-top: 8px;
     margin-right: 32px;
 }
 
@@ -131,6 +131,7 @@ body {
 
 .bs-docs-sidebar .nav>li {
     margin: 0;
+    padding: 0.7em 0 0.7em 0;
 }
 /* all links */
 
@@ -141,9 +142,10 @@ body {
 .bs-docs-sidebar .nav>li>a {
     border: none;
     color: #777;
-    padding: 0.6em 0 0.6em 0;
-    transition: all 250ms;
-    font-size: .85em;
+    transition: all 150ms;
+    font-size: .95em;
+    height: 17px;
+    padding: 0;
 }
 
 /* nested links */
@@ -165,6 +167,9 @@ body {
     padding-left: 95px;
     font-size: 12px;
     font-style: italic;
+}
+.bs-docs-sidebar .nav .nav > li:last-child {
+    padding-bottom: 0;
 }
 /* active & hover links */
 /* nested active links */
@@ -199,7 +204,7 @@ body {
 .bs-docs-sidebar li.category > a:first-child {
     color: #49505b !important;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 1.1px;
     text-transform: uppercase;
     display: block;
     min-height: 34px;

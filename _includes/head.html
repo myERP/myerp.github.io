@@ -23,12 +23,9 @@ $(window).load(function() {
     });
 
     $('body').scrollspy({
-        target: '.bs-docs-sidebar'
-    });
-    // $(document).ready(function(){
-    //     $('.group').scrollSpy();
-    // });
-         
+        target: '.bs-docs-sidebar',
+         offset: 135
+    });  
 
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
@@ -38,7 +35,7 @@ $(window).load(function() {
                 if (target.length) {
                     history.pushState({}, '', this.hash);
                     $('html,body').animate({
-                        scrollTop: target.offset().top - 115
+                        scrollTop: target.offset().top - 100
                     }, 1000);
                     return false;
                 }
