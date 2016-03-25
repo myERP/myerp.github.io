@@ -28,12 +28,33 @@
     "phone_number": "(415) 779-6536",
     "email": "support@oneup.com",
     "website": "www.oneup.com",
-    "payment_terms_id": 2,
-    "currency": "USD",
-    "sales_tax_id": 3,
-    "user_code_iso_code": "CUS-018",
-    "opt_in_to_emails": false,
-    "note": "- OneUp -\nRun your business in the Cloud",
-    "employee_id": 42,
-    "company_name": "OneUp"
+    "payment_terms": {
+        "id": 1,
+        "name": "Due on receipt"
+    },
+    "currency_iso_code": "USD",
+    "sales_tax": {
+        "id": 1,
+        "name": "0.0% Example of Sales Tax (Collected)",
+        "rate": 0.0
+    },
+    "user_code": "CUS-018",
+    "opt_in_email": false,
+    "notes": "- OneUp -\nRun your business in the Cloud",
+    "assigned_to": {
+        "id": 2,
+        "first_name": "John",
+        "last_name": "Smith",
+        "user_code": "EMP-002"
+    },
+    "company_name": "OneUp",
+    "employee_count": 1,
+    "taxpayer_id": "123456789",
+    "price_family": {
+        "id": 1,
+        "name": "Price Family"
+    },
+    "industry": "Apparel",
+    "incorporation_status": "C-Corporation",
+    "rating": "Cold"
 }
