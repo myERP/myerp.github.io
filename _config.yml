@@ -2,7 +2,7 @@ name: OneUp Developers
 markdown: redcarpet
 safe: true
 lsi: false
-highlighter: pygments
+highlighter: rouge
 
 api:
   v1: /v1
