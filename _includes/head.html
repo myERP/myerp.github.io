@@ -9,20 +9,23 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-2.0.2.js"></script>
 <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="//cdn.rawgit.com/Dogfalo/materialize/master/js/scrollspy.js"></script> -->
 
 <link rel="stylesheet" href="/css/main.css">
 
 <script type="text/javascript">
 //<![CDATA[ 
 $(window).load(function() {
-    $('body').scrollspy({
-        target: '.bs-docs-sidebar',
-        offset: 60
+    $('.bs-docs-sidebar').affix({
+        offset: {
+            top: 0
+        }
     });
 
-    if ($(location).attr('pathname') === '/') {
-        $('a#home-menu').addClass('selected');
-    }
+    $('body').scrollspy({
+        target: '.bs-docs-sidebar',
+         offset: 135
+    });  
 
     $(function() {
         $('a[href*=#]:not([href=#])').click(function() {
@@ -32,7 +35,7 @@ $(window).load(function() {
                 if (target.length) {
                     history.pushState({}, '', this.hash);
                     $('html,body').animate({
-                        scrollTop: target.offset().top
+                        scrollTop: target.offset().top - 115
                     }, 1000);
                     return false;
                 }
