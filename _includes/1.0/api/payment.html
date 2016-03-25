@@ -1,7 +1,7 @@
 <div id="payment" class="group">
 
     <h2>Payments</h2>
-    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payments.url}} {% endhighlight %}
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payments.url}}{% endhighlight %}
 	<p>Payment creation is restraint to Invoice's payments into the API. You have to provide an <i>invoice_id</i> while performing a POST request.
 		<br />That new payment will be applied on the first open settlement of that invoice. If all settlements are paid, an error message will be returned and the payment won't be created.
 		<br />Also, that new payment currency will be determined by the invoice's one.
@@ -82,7 +82,7 @@
     </table>
 
     <h3 id="paymentjsonexample">JSON Example</h3>
-    {% highlight bash %} {% include 1.0/api/json/payment.json %} {% endhighlight %}
+    {% highlight bash %}{% include 1.0/api/json/payment.json %}{% endhighlight %}
 
     <h3 id="paymentavailablemethods">Available Methods</h3>
     <table class="table table-bordered table-striped">

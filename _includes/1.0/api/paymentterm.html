@@ -1,7 +1,7 @@
 <div id="paymentterm" class="group">
 
     <h2>Payment Terms</h2>
-    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payment_terms.url}} {% endhighlight %}
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payment_terms.url}}{% endhighlight %}
     <p class="message bg-primary">This API is read only.</p>
     <h3 id="paymenttermjsonformat">JSON Format</h3>
     <p>Payment Terms are represented as JSON objects which have the following keys:</p>
@@ -25,7 +25,7 @@
     </table>
 
     <h3 id="paymenttermjsonexample">JSON Example</h3>
-    {% highlight bash %} {% include 1.0/api/json/paymentterm.json %} {% endhighlight %}
+    {% highlight bash %}{% include 1.0/api/json/paymentterm.json %}{% endhighlight %}
 
     <h3 id="paymenttermavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/readonly.html %}

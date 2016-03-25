@@ -2,10 +2,7 @@
 
     <h2>Customers</h2>
 
-
-    {% highlight bash %}
-    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}}
-    {% endhighlight %}
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}}{% endhighlight %}
 
     <h3 id="customerjsonformat">JSON Format</h3>
     <p>Customers are represented as JSON objects which have the following keys:</p>
@@ -239,7 +236,7 @@
     </table>
 
     <h3 id="customerjsonexample">JSON Example</h3>
-    {% highlight bash %} {% include 1.0/api/json/customer.json %} {% endhighlight %}
+    {% highlight bash %}{% include 1.0/api/json/customer.json %}{% endhighlight %}
 
     <h3 id="customeravailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}

@@ -1,9 +1,7 @@
 <div id="vendor" class="group">
 
     <h2>Vendors</h2>
-    {% highlight bash %}
-    Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.vendors.url}}
-    {% endhighlight %}
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.vendors.url}}{% endhighlight %}
     <h3 id="vendorjsonformat">JSON Format</h3>
     <p>Vendors are represented as JSON objects which have the following keys:</p>
 
@@ -168,7 +166,7 @@
 
 
     <h3 id="vendorjsonexample">JSON Example</h3>
-    {% highlight bash %} {% include 1.0/api/json/vendor.json %} {% endhighlight %}
+    {% highlight bash %}{% include 1.0/api/json/vendor.json %}{% endhighlight %}
 
     <h3 id="vendoravailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}

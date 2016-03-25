@@ -1,7 +1,7 @@
 <div id="bankentry" class="group">
 
     <h2>Bank Entries</h2>
-    {% highlight bash %} Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.bank_entries.url}} {% endhighlight %}
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.bank_entries.url}}{% endhighlight %}
     <p class="message bg-primary">This API doesn't handle PUT requests.</p>
     <h3 id="bankentryjsonformat">JSON Format</h3>
     <p>Bank entries are represented as JSON objects which have the following keys:</p>
@@ -78,7 +78,7 @@
     </table>
 
     <h3 id="bankentryjsonexample">JSON Example</h3>
-    {% highlight bash %} {% include 1.0/api/json/bankentry.json %} {% endhighlight %}
+    {% highlight bash %}{% include 1.0/api/json/bankentry.json %}{% endhighlight %}
 
     <h3 id="bankentryavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/noput.html %}
