@@ -49,6 +49,8 @@ resource:
     url: /opportunity_tasks
   project_tasks:
     url: /project_tasks
+  calls:
+    url: /calls
 
 format:
   date: yyyy-MM-dd (e.g. 2013-06-26)
