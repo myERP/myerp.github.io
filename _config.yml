@@ -45,6 +45,10 @@ resource:
     url: /bank_entries
   bank_accounts:
     url: /bank_accounts
+  opportunity_tasks:
+    url: /opportunity_tasks
+  project_tasks:
+    url: /project_tasks
 
 format:
   date: yyyy-MM-dd (e.g. 2013-06-26)
@@ -54,6 +58,7 @@ format:
     double: double
     boolean: boolean
     date: date
+    object: object
     address: '<a href="/docs/1.0/api/#address" alt=""/>Address</a>'
     payment_terms: '<a href="/docs/1.0/api/#paymentterm" alt=""/>Payment Terms</a>'
     tax: '<a href="/docs/1.0/api/#tax" alt=""/>Tax</a>'

@@ -1,0 +1,29 @@
+{
+  "id": 6,
+  "name": "Buy supplies",
+  "notes": "Let's buy the supplies.",
+  "status": "todo",
+  "due_date": "2016-03-17",
+  "done_date": null,
+  "time_spent": null,
+  "assigned_to": {
+    "id": 120,
+    "first_name": "John",
+    "last_name": "Doe",
+    "user_code": "EMP-005"
+  },
+  "customer": {
+    "id": 517001,
+    "name": "Smith Inc",
+    "user_code": "CUS-1108"
+  },
+  "contact": {
+    "id": 353659,
+    "name": "Jane Smith",
+    "user_code": "CCUS-1422"
+  },
+  "opportunity": {
+    "id": 2,
+    "name": "Opportunity 2"
+  }
+}
