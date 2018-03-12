@@ -2,7 +2,7 @@
   "id": 509878,
   "external_id": "EXT-API-079",
   "transaction_code": 1639,
-  "status": "Realized",
+  "status": "realized",
   "date": "2014-01-31",
   "journal": {
     "id": 32,
@@ -16,9 +16,14 @@
       "id": 1187484,
       "label": "Invoice Payment",
       "amount": 17578.65,
-      "way": "debit",
-      "account_id": 21,
-      "account_label": "11100  ( Accounts Receivable - Trade )",
+      "way": "DEBIT",
+      "account": {
+        "id": 21,
+        "number": "11100",
+        "name": "Accounts Receivable - Trade",
+        "is_family": false,
+        "family_id": 6
+      },
       "lettering": "CINV-237",
       "locked": false
     },
@@ -26,18 +31,30 @@
       "id": 1187485,
       "label": "Invoice Payment - Before taxes",
       "amount": 16238.92,
-      "way": "credit",
-      "account_id": 85,
-      "account_label": "40150  ( Sales - Miscellaneous )",
+      "way": "CREDIT",
+      "account": {
+        "id": 21,
+        "number": "11100",
+        "name": "Accounts Receivable - Trade",
+        "is_family": false,
+        "family_id": 6
+      },
+      "lettering": null,
       "locked": false
     },
     {
       "id": 1187486,
       "label": "Invoice Payment - Taxes",
       "amount": 1339.73,
-      "way": "credit",
-      "account_id": 57,
-      "account_label": "21100  ( Sales Tax Payable )",
+      "way": "CREDIT",
+      "account": {
+        "id": 57,
+        "number": "21100",
+        "name": "Sales Tax Payable",
+        "is_family": false,
+        "family_id": 9
+      },
+      "lettering": null,
       "locked": false
     }
   ]

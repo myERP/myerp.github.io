@@ -338,3 +338,12 @@ span.deprecated {
   font-size: 80%;
   border: 1px solid #a94442;
 }
+
+span.updated {
+  padding: 2px;
+  color: white;
+  background-color: #da1;
+  border-radius: 5px;
+  font-size: 80%;
+  border: 1px solid #a94442;
+}
