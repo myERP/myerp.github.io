@@ -99,13 +99,13 @@ body {
     margin-right: -15px;
 }
 
-.layout-sidebar .bs-docs-sidebar  {
-    min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: fixed;
-    margin-top: 115px;
-    width: 20.83333%;
+.layout-sidebar .bs-docs-sidebar {
+  min-height: 1px;
+  position: fixed;
+  width: 20.83333%;
+  height: 100%;
+  overflow: auto;
+  padding: 80px 15px 20px 15px;
 }
 
 .layout-sidebar .post-wrapper {
