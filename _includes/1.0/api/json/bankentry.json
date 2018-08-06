@@ -1,11 +1,30 @@
 {
   "id": 353,
   "external_id": "EXT-API-093",
-  "bank_account_id": 4,
+  "bank_account": {
+    "id": 4,
+    "name": "HSBC"
+  },
   "posted_date": "2014-05-05",
   "transaction_date": "2014-06-12",
   "amount": -133.94,
   "currency_iso_code": "USD",
   "description": "Walmart - Credit card payment",
-  "payment_method_id": 2
+  "payment_method": {
+    "id": 7,
+    "name": "Other"
+  },
+  "provider_name": "NONE",
+  "provider_category_id": null,
+  "status": "reconciled",
+  "reconciled_documents": [
+    {
+      "id": 848,
+      "type": "bank_payment",
+      "name": "Walmart expense - OPAY-106",
+      "auto_reconciled": false,
+      "reconciled_amount": 133.94,
+      "accounting_entry_code": 26243
+    }
+  ]
 }

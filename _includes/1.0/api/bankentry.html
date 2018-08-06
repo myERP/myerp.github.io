@@ -23,11 +23,11 @@
                 <td>{{ site.format.type.string }}</td>
                 <td>no</td>
                 <td>yes</td>
-                <td>Use primilary for Sync.<br /></td>
+                <td>Used primilary for sync purposes.<br /></td>
             </tr>
             <tr>
-                <td>bank_account_id</td>
-                <td>{{ site.format.type.integer }}</td>
+                <td>bank_account</td>
+                <td>{{ site.format.type.object }}</td>
                 <td>yes</td>
                 <td>yes</td>
                 <td>Code of the Bank Account that entry belongs to.<br /></td>
@@ -68,11 +68,39 @@
                 <td>Short description.</td>
             </tr>
             <tr>
-                <td>payment_method_id</td>
-                <td>{{ site.format.type.integer }}</td>
+                <td>payment_method</td>
+                <td>{{ site.format.type.object }}</td>
                 <td>no</td>
                 <td>yes</td>
                 <td>Code of the payment method.<br />Default: 1 (check)</td>
+            </tr>
+            <tr>
+                <td>provider_name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The source of the bank entry.<br />Values are: NONE, YODLEE or LINXO</td>
+            </tr>
+            <tr>
+                <td>provider_category_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The category id from the source provider (YODLEE, LINXO).</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The status of the bank entry.</td>
+            </tr>
+            <tr>
+                <td>reconciled_documents</td>
+                <td>array[{{ site.format.type.object }}]</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The list of documents reconciled to this entry.</td>
             </tr>
         </tbody>
     </table>
