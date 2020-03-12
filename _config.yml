@@ -67,3 +67,5 @@ format:
     entry: 'array[<a href="/docs/1.0/api/#entry" alt=""/>Entry</a>]'
     journal: '<a href="/docs/1.0/api/#journal" alt=""/>Journal</a>'
     account: '<a href="/docs/1.0/api/#account" alt=""/>Account</a>'
+    document: 'array[<a href="/docs/1.0/api/#document" alt=""/>Document</a>]'
+    kpi: 'array[<a href="/docs/1.0/api/#kpi" alt=""/>KPI</a>]'

@@ -1,0 +1,132 @@
+<div id="dashboards">
+    <div id="cash_flow_details" class="group">
+        <h2>Cash flow: details</h2>
+        <p>That endpoint returns a summary of all business documents involved within the period, along with some KPIs (facets). Each document type is embeded within a common JSON format.</p>
+        <h3>JSON Format</h3>
+        <div id="cash_flow_details_main" class="group">
+            <h4>Main structure</h4>
+            <p>The cash flow details is represented as JSON objects which have the following keys:</p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    {% include table-header-readonly.html %}
+                </thead>
+                <tr>
+                    <td>facets</td>
+                    <td>{{ site.format.type.kpi }}</td>
+                    <td>An array containing an array of KPIs of the dashboard. That list contains the two following sub-lists:<br />- all: the overall counts and totals<br />- status: the count and totals, grouped by document status</td>
+                </tr>
+                <tr>
+                    <td>results</td>
+                    <td>{{ site.format.type.document }}</td>
+                    <td>An array containing the documents summary.</td>
+                </tbody>
+            </table>
+	    </div>
+		
+        <div id="kpi" class="group">
+            <h4>KPI</h4>
+            <p>KPIs are represented as JSON objects which have the following keys:</p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    {% include table-header-readonly.html %}
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>key</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>The name of the facet. Depends on the grouping and dashboard type.</td>
+                    </tr>
+                    <tr>
+                        <td>count</td>
+                        <td>{{ site.format.type.integer }}</td>
+                        <td>The number of documents involved in that facet.</td>
+                    </tr>
+                    <tr>
+                        <td>sum</td>
+                        <td>{{ site.format.type.double }}</td>
+                        <td>The total amount of the documents involved in that facet.</td>
+                    </tr>
+                </tbody>
+            </table>
+    	</div>
+
+        <div id="document" class="group">
+            <h4>Document</h4>
+            <p>Documents are represented as JSON objects which have the following keys:</p>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    {% include table-header-readonly.html %}
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>id</td>
+                        <td>{{ site.format.type.integer }}</td>
+                        <td>The document id, that can be used in other APIs.</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>The document type, among :<br />- OPPORTUNITY<br />- QUOTE<br />- SALES_ORDER<br />- CUSTOMER_INVOICE<br />- VENDOR_CREDIT_MEMO<br />- VENDOR_QUOTE<br />- PURCHASE_ORDER<br />- VENDOR_BILL<br />- CREDIT_MEMO<br />- FORECAST<br />- BANK_ENTRY</td>
+                    </tr>
+                    <tr>
+                        <td>userCode</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>The document code, that can be search through the application by the end user.</td>
+                    </tr>
+                    <tr>
+                        <td>dueDate</td>
+                        <td>{{ site.format.type.date }}</td>
+                        <td>The due date of the document. Can be the document date for realized documents like payments or bank entries.</td>
+                    </tr>
+                    <tr>
+                        <td>baseCurrencyAmount</td>
+                        <td>{{ site.format.type.double }}</td>
+                        <td>The amount related to the document, converted into the accounting currency using the exchange rate at the document's date. Can be money received/due or paid/due, depending on the document type and status.</td>
+                    </tr>
+                    <tr>
+                        <td>amount</td>
+                        <td>{{ site.format.type.double }}</td>
+                        <td>The amount related to the document. Can be money received/due or paid/due, depending on the document type and status.</td>
+                    </tr>
+                    <tr>
+                        <td>payee</td>
+                        <td>{{ site.format.type.payee }}</td>
+                        <td>The Customer or Vendor involved by the document.</td>
+                    </tr>
+                    <tr>
+                        <td>currency_iso_code</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>The ISO code of the currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a></td>
+                    </tr>
+                    <tr>
+                        <td>status</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>The document status, among:<br />- COLLECT_SOON<br />- COLLECT_NOW<br />- COLLECTED<br />- PAY_SOON<br />- PAY_NOW<br />- PAID<br />- PROJECTIONS<br />- ONGOING<br />- DONE</td>
+                    </tr>
+                    <tr>
+                        <td>budget_category_id</td>
+                        <td>{{ site.format.type.integer }}</td>
+                        <td>The document category id. When multiple categories are involved, the main one is retrieved.</td>
+                    </tr>
+                    <tr>
+                        <td>description</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>A label related to the document. Depends on the document type.</td>
+                    </tr>
+                    <tr>
+                        <td>forecast_frequency</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>Describes the frequency for documents of the FORECAST type, among :<br />- MULTIPLE_TIMES_A_MONTH<br />- EVERY_MONTH<br />- EVERY_TWO_MONTHS<br />- EVERY_THREE_MONTHS<br />- EVERY_FOUR_MONTHS<br />- EVERY_FIVE_MONTHS<br />- EVERY_SIX_MONTHS<br />- EVERY_SEVEN_MONTHS<br />- EVERY_EIGHT_MONTHS<br />- EVERY_NINE_MONTHS<br />- EVERY_TEN_MONTHS<br />- EVERY_ELEVEN_MONTHS<br />- EVERY_TWELVE_MONTHS
+                    </tr>
+                        <td>transaction_id</td>
+                        <td>{{ site.format.type.string }}</td>
+                        <td>The bank entry label, if any.</td>
+                    </tr>
+                </tbody>
+            </table>
+	    </div>
+		
+        <h3>JSON Example</h3>
+        {% highlight bash %}{% include 1.0/api/json/cash_flow_details.json %}{% endhighlight %}
+    </div>
+</div>

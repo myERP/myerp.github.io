@@ -1,0 +1,152 @@
+{
+  "facets": {
+    "all": [
+      {
+        "key": "all",
+        "count": 7,
+        "sum": 7743.60
+      }
+    ],
+    "status": [
+      {
+        "key": "done",
+        "count": 5,
+        "sum": 3747.60
+      },
+      {
+        "key": "ongoing",
+        "count": 2,
+        "sum": 3996.00
+      }
+    ]
+  },
+  "results": [
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10438,
+      "type": "CUSTOMER_INVOICE",
+      "user_code": "PFAC-063",
+      "due_date": "2020-02-02",
+      "base_currency_amount": 2760.00,
+      "amount": 2760.00,
+      "payee": {
+        "id": 10037,
+        "name": "Killian",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10436,
+      "type": "CUSTOMER_INVOICE",
+      "user_code": "079",
+      "due_date": "2020-02-06",
+      "base_currency_amount": 2508.00,
+      "amount": 2508.00,
+      "payee": {
+        "id": 10037,
+        "name": "Killian",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "DONE"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10437,
+      "type": "CUSTOMER_INVOICE",
+      "user_code": "PFAC-062",
+      "due_date": "2020-02-06",
+      "base_currency_amount": 1236.00,
+      "amount": 1236.00,
+      "payee": {
+        "id": 10020,
+        "name": "Cartier",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10558,
+      "type": "SALES_RECEIPT",
+      "user_code": "ENC-190",
+      "due_date": "2020-02-07",
+      "base_currency_amount": 480.00,
+      "amount": 480.00,
+      "payee": {
+        "id": 10020,
+        "name": "Cartier",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "DONE",
+      "budget_category_id": 14,
+      "transaction_id": ""
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10557,
+      "type": "SALES_RECEIPT",
+      "user_code": "ENC-189",
+      "due_date": "2020-02-07",
+      "base_currency_amount": 360.00,
+      "amount": 360.00,
+      "payee": {
+        "id": 10020,
+        "name": "Cartier",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "DONE",
+      "budget_category_id": 14,
+      "transaction_id": ""
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10556,
+      "type": "SALES_RECEIPT",
+      "user_code": "ENC-188",
+      "due_date": "2020-02-03",
+      "base_currency_amount": 240.00,
+      "amount": 240.00,
+      "payee": {
+        "id": 10020,
+        "name": "Cartier",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "DONE",
+      "budget_category_id": 14,
+      "transaction_id": ""
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10555,
+      "type": "SALES_RECEIPT",
+      "user_code": "ENC-187",
+      "due_date": "2020-02-15",
+      "base_currency_amount": 159.60,
+      "amount": 159.60,
+      "payee": {
+        "id": 10020,
+        "name": "Cartier",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "DONE",
+      "budget_category_id": 13,
+      "transaction_id": ""
+    }
+  ]
+}
