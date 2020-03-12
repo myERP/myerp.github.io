@@ -1,6 +1,8 @@
 <div id="dashboards">
     <div id="cash_flow_details" class="group">
         <h2>Cash flow: details</h2>
+	    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.cash_flow_details.url}}{% endhighlight %}
+	    <p class="message bg-primary">This API is read only.</p>
         <p>That endpoint returns a summary of all business documents involved within the period, along with some KPIs (facets). Each document type is embeded within a common JSON format.</p>
         <h3>JSON Format</h3>
         <div id="cash_flow_details_main" class="group">
