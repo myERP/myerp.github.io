@@ -4,6 +4,32 @@
 	    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.cash_flow_details.url}}{% endhighlight %}
 	    <p class="message bg-primary">This API is read only.</p>
         <p>That endpoint returns a summary of all business documents involved within the period, along with some KPIs (facets). Each document type is embeded within a common JSON format.</p>
+        <h3>Options</h3>
+		<p>The following options are available for that endpoint:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+                {% include table-header-option.html %}
+            </thead>
+            <tr>
+                <td>mode</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The kind of data you want to retrieve, among "moneyin", "moneyout" or "sales".
+					<br />- moneyin: Shows money actually received during the period, and money you are likely to receive based on ongoing sales documents and smart forecasts.
+				    <br />- moneyout: Shows money actually paid during the period, and money you are likely to pay based on ongoing purchase documents and smart forecasts.
+					<br />- sales: Shows sales that are done, and sales that are likely to be closed during the period.</td>
+            </tr>
+            <tr>
+                <td>start_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>The starting date of the period you want to retrieve.</td>
+            </tr>
+            <tr>
+                <td>end_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>The ending date of the period you want to retrieve.</td>
+            </tr>
+            </tbody>
+        </table>
         <h3>JSON Format</h3>
         <div id="cash_flow_details_main" class="group">
             <h4>Main structure</h4>
@@ -21,6 +47,7 @@
                     <td>results</td>
                     <td>{{ site.format.type.document }}</td>
                     <td>An array containing the documents summary.</td>
+			    </tr>
                 </tbody>
             </table>
 	    </div>
