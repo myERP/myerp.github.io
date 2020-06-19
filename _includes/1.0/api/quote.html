@@ -1,0 +1,82 @@
+<div id="quote" class="group">
+
+    <h2>Quotes</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.quotes.url}}{% endhighlight %}
+    <h3 id="quotejsonformat">JSON Format</h3>
+    <p>Quotes are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header-readonly.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Automatically assigned.</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The number assigned to that quote (i.e. QOT-001).</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>The date that will be printed.<br />Format: {{ site.format.date }}<br /></td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The ISO code of the currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.</td>
+            </tr>
+            <tr>
+                <td>employee_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the Employee assigned to that order.<br /></td>
+            </tr>
+            <tr>
+                <td>private_note</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>A private note that won't be printed.</td>
+            </tr>
+            <tr>
+                <td>subtotal</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>Total before taxes and reduce. Based on the content of the order lines.</td>
+            </tr>
+            <tr>
+                <td>reduce_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>Amount of the reduce, based on the subtotal and reduce rate.</td>
+            </tr>
+            <tr>
+                <td>tax_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>Overall tax amount. Includes all taxes, discounts and reduce.</td>
+            </tr>
+            <tr>
+                <td>total</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The final total the customer needs to pay. All include (taxes, discounts, reduce).</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The status, among : Open (default), Won, Lost</td>
+            </tr>
+            <tr>
+                <td>customer</td>
+                <td>{{ site.format.type.customer }}</td>
+                <td>The <a href="/docs/1.0/api/#customer" title="">Customer</a> belong to the quote.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="quotejsonexample">JSON Example</h3>
+	<p>That example describe a quote.</p>
+    {% highlight bash %}{% include 1.0/api/json/quote.json %}{% endhighlight %}
+
+    <h3 id="quoteavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/readonly.html %}
+</div>

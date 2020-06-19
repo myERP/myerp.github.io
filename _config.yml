@@ -19,6 +19,8 @@ resource:
     url: /projects
   sales_orders:
     url: /sales_orders
+  quotes:
+    url: /quotes
   invoices:
     url: /invoices
   payments:
@@ -62,6 +64,7 @@ format:
     date: date
     object: object
     address: '<a href="/docs/1.0/api/#address" alt=""/>Address</a>'
+    customer: '<a href="/docs/1.0/api/#customer" alt=""/>Customer</a>'
     payment_terms: '<a href="/docs/1.0/api/#paymentterm" alt=""/>Payment Terms</a>'
     tax: '<a href="/docs/1.0/api/#tax" alt=""/>Tax</a>'
     contact: 'array[<a href="/docs/1.0/api/#contact" alt=""/>Contact</a>]'
