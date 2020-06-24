@@ -11,6 +11,92 @@
         </thead>
         <tbody>
             <tr>
+                <td>status</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The status, among : "open" (default), "won", "lost"</td>
+            </tr>
+            <tr>
+                <td>customer_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the <a href="/docs/1.0/api/#customer" title="">Customer.</a></td>
+            </tr>
+            <tr>
+                <td>billing_contact_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to bill.<br />Should belong to that invoice's Customer.</td>
+            </tr>
+            <tr>
+                <td>billing_address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>The billing address. The Contact address if any, the Customer one otherwise.</td>
+            </tr>
+            <tr>
+                <td>po_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The Customer own Order Reference.<br />64 characters max.</td>
+            </tr>
+            <tr>
+                <td>tax_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>US only.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply on that invoice.</td>
+            </tr>
+            <tr>
+                <td>reduce_rate</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The reduce rate (%) to apply. From 0 to 100.<br />Default: 0.00</td>
+            </tr>
+            <tr>
+                <td>order_lines</td>
+                <td>{{ site.format.type.order_line }}</td>
+                <td>An array containing the order lines of the invoice.</td>
+            </tr>
+            <tr>
+                <td>public_note</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>Comment that will be printed on the final document.</td>
+            </tr>
+            <tr>
+                <td>shipping_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>The date before which the goods should be delivered, if any.<br />Format: {{ site.format.date }}</a></td>
+            </tr>
+            <tr>
+                <td>shipping_contact_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> the goods should be shipped to, if different than the Customer.<br />Could be any Contact from any Customer.</td>
+            </tr>
+            <tr>
+                <td>shipping_address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>The shipping address. The shpping Contact address if any, the Customer one otherwise.</td>
+            </tr>
+            <tr>
+                <td>payment_terms_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a> to apply on that invoice. Will be used as a template to generate Settlements.</td>
+            </tr>
+            <tr>
+                <td>project_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the <a href="/docs/1.0/api/#project" title="">Project</a> related to that invoice, if any.</td>
+            </tr>
+            <tr>
+                <td>delivery_status</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>The delivery status, among :<br />
+                    1: Not Delivered (default)<br />
+                    2: Partially Delivered<br />
+                    3: Delivered</td>
+            </tr>
+            <tr>
+                <td>invoice_status</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>The invoice status, among :<br />
+                    1: Not invoiced (default)<br />
+                    2: Invoiced<br />
+                    3: Cancelled</td>
+            </tr>
+            <tr>
                 <td>id</td>
                 <td>{{ site.format.type.integer }}</td>
                 <td>Automatically assigned.</td>
@@ -23,17 +109,21 @@
             <tr>
                 <td>date</td>
                 <td>{{ site.format.type.date }}</td>
-                <td>The date that will be printed.<br />Format: {{ site.format.date }}<br /></td>
+                <td>The date that will be printed.<br/>Format: {{ site.format.date }}<br/></td>
             </tr>
             <tr>
                 <td>currency_iso_code</td>
                 <td>{{ site.format.type.string }}</td>
-                <td>The ISO code of the currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.</td>
+                <td>The ISO code of the currency
+                    <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.
+                    4 characters max.<br />That currency should have been previously added into your company settings.<br />
+                    Default: your company's currency.
+                </td>
             </tr>
             <tr>
                 <td>employee_id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>Id of the Employee assigned to that order.<br /></td>
+                <td>Id of the Employee assigned to that order.<br/></td>
             </tr>
             <tr>
                 <td>private_note</td>
@@ -60,21 +150,10 @@
                 <td>{{ site.format.type.double }}</td>
                 <td>The final total the customer needs to pay. All include (taxes, discounts, reduce).</td>
             </tr>
-            <tr>
-                <td>status</td>
-                <td>{{ site.format.type.string }}</td>
-                <td>The status, among : Open (default), Won, Lost</td>
-            </tr>
-            <tr>
-                <td>customer</td>
-                <td>{{ site.format.type.customer }}</td>
-                <td>The <a href="/docs/1.0/api/#customer" title="">Customer</a> belong to the quote.</td>
-            </tr>
         </tbody>
     </table>
 
     <h3 id="quotejsonexample">JSON Example</h3>
-	<p>That example describe a quote.</p>
     {% highlight bash %}{% include 1.0/api/json/quote.json %}{% endhighlight %}
 
     <h3 id="quoteavailablemethods">Available Methods</h3>
