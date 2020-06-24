@@ -18,12 +18,12 @@
             <tr>
                 <td>customer_id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>Id of the <a href="/docs/1.0/api/#customer" title="">Customer.</a></td>
+                <td>Id of the <a href="/docs/1.0/api/#customer" title="">Customer</a>.</td>
             </tr>
             <tr>
                 <td>billing_contact_id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to bill.<br />Should belong to that invoice's Customer.</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to bill.<br />Should belong to that quote's Customer.</td>
             </tr>
             <tr>
                 <td>billing_address</td>
@@ -38,7 +38,7 @@
             <tr>
                 <td>tax_id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>US only.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply on that invoice.</td>
+                <td>US only.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply on that quote.</td>
             </tr>
             <tr>
                 <td>reduce_rate</td>
@@ -48,7 +48,7 @@
             <tr>
                 <td>order_lines</td>
                 <td>{{ site.format.type.order_line }}</td>
-                <td>An array containing the order lines of the invoice.</td>
+                <td>An array containing the order lines of the quote.</td>
             </tr>
             <tr>
                 <td>public_note</td>
@@ -68,17 +68,17 @@
             <tr>
                 <td>shipping_address</td>
                 <td>{{ site.format.type.address }}</td>
-                <td>The shipping address. The shpping Contact address if any, the Customer one otherwise.</td>
+                <td>The shipping address. The shipping Contact address if any, the Customer one otherwise.</td>
             </tr>
             <tr>
                 <td>payment_terms_id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>Id of the <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a> to apply on that invoice. Will be used as a template to generate Settlements.</td>
+                <td>Id of the <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a> to apply on that quote. Will be used as a template to generate Settlements.</td>
             </tr>
             <tr>
                 <td>project_id</td>
                 <td>{{ site.format.type.integer }}</td>
-                <td>Id of the <a href="/docs/1.0/api/#project" title="">Project</a> related to that invoice, if any.</td>
+                <td>Id of the <a href="/docs/1.0/api/#project" title="">Project</a> related to that quote, if any.</td>
             </tr>
             <tr>
                 <td>delivery_status</td>
@@ -148,7 +148,7 @@
             <tr>
                 <td>total</td>
                 <td>{{ site.format.type.double }}</td>
-                <td>The final total the customer needs to pay. All include (taxes, discounts, reduce).</td>
+                <td>The final total the customer will have to pay. All include (taxes, discounts, reduce).</td>
             </tr>
         </tbody>
     </table>
