@@ -11,6 +11,11 @@
         </thead>
         <tbody>
             <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Automatically assigned.</td>
+            </tr>
+            <tr>
                 <td>status</td>
                 <td>{{ site.format.type.string }}</td>
                 <td>The status, among : "open" (default), "won", "lost"</td>
@@ -95,11 +100,6 @@
                     1: Not invoiced (default)<br />
                     2: Invoiced<br />
                     3: Cancelled</td>
-            </tr>
-            <tr>
-                <td>id</td>
-                <td>{{ site.format.type.integer }}</td>
-                <td>Automatically assigned.</td>
             </tr>
             <tr>
                 <td>user_code</td>
