@@ -76,6 +76,7 @@
   "paid": 770.1,
   "unpaid": 370.1,
   "delivery_status": 1,
+  "invoice_status": 1,
   "payments_id": [
     32,
     33

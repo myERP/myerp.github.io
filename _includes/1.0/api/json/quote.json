@@ -1,4 +1,5 @@
 {
+  "id": 10005,
   "status": "open",
   "customer_id": 10001,
   "billing_contact_id": 10001,
@@ -48,7 +49,6 @@
   "delivery_status": 1,
   "invoice_status": 1,
   "uuid": "5370cd91-8cb2-4311-a90b-d9b3151f75e7",
-  "id": 10005,
   "user_code": "QOT-001",
   "date": "2020-07-03",
   "currency_iso_code": "USD",
