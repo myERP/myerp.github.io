@@ -1,0 +1,63 @@
+{
+  "id": 10001,
+  "locked": true,
+  "sent": true,
+  "sent_at": "2020-07-08",
+  "paid": 0.0,
+  "unpaid": 998.0,
+  "customer_id": 10002,
+  "billing_contact_id": 10003,
+  "billing_address": {
+    "street_line1": "1600 Pennsylvania Avenue Northwest",
+    "street_line2": "",
+    "street_line3": "",
+    "postal_code": "20500",
+    "city": "Washington",
+    "country": "United States",
+    "country_iso_code": "US",
+    "locality": "District of Columbia",
+    "short_locality": "DC",
+    "full_address": "1600 Pennsylvania Avenue Northwest Washington DC 20500 United States"
+  },
+  "tax_id": 1,
+  "reduce_rate": 0.2,
+  "order_lines": [
+    {
+      "id": 10008,
+      "item_id": 10003,
+      "description": "It is a nice service",
+      "quantity": 1.0,
+      "unit_price_wt": 1000.0,
+      "discount_rate": 0.0,
+      "tax_id": null,
+      "is_taxable": false,
+      "total": 1000.0
+    }
+  ],
+  "public_note": "This is a credit memo",
+  "shipping_contact_id": 10003,
+  "shipping_address": {
+    "street_line1": "1600 Pennsylvania Avenue Northwest",
+    "street_line2": "",
+    "street_line3": "",
+    "postal_code": "20500",
+    "city": "Washington",
+    "country": "United States",
+    "country_iso_code": "US",
+    "locality": "District of Columbia",
+    "short_locality": "DC",
+    "full_address": "1600 Pennsylvania Avenue Northwest Washington DC 20500 United States"
+  },
+  "payment_terms_id": 1,
+  "project_id": 10003,
+  "uuid": "a797b18e-2bd0-4fe0-85e9-289eda012fb5",
+  "user_code": "CCN-001",
+  "date": "2020-07-08",
+  "currency_iso_code": "USD",
+  "employee_id": 10024,
+  "private_note": "Private thoughts here",
+  "subtotal": 1000.0,
+  "reduce_amount": 2.0,
+  "tax_amount": 0.0,
+  "total": 998.0
+}

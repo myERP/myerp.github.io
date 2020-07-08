@@ -25,6 +25,8 @@ resource:
     url: /invoices
   payments:
     url: /payments
+  credit_memos:
+    url: /credit_memos
   items:
     url: /items
   payment_terms:
