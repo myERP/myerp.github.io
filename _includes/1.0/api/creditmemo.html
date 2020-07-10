@@ -29,7 +29,7 @@
                 <td>{{ site.format.type.boolean }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>As the document been finalized or sent to the Customer.</td>
+                <td>Hqs the document been finalized or sent to the Customer.</td>
             </tr>
             <tr>
                 <td>sent_at</td>
@@ -45,7 +45,7 @@
                 <td>{{ site.format.type.double }}</td>
                 <td>no</td>
                 <td>yes</td>
-                <td>Total of the payments made on that invoice.</td>
+                <td>Total of the payments made on that credit memo.</td>
             </tr>
             <tr>
                 <td>unpaid</td>
@@ -66,7 +66,7 @@
                 <td>{{ site.format.type.integer }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to bill.<br />Should belong to that invoice's Customer.</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to credit memo.<br />Should belong to that invoice's Customer.</td>
             </tr>
             <tr>
                 <td>billing_address</td>
@@ -80,7 +80,7 @@
                 <td>{{ site.format.type.integer }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>US only.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply on that invoice.</td>
+                <td>US only.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply on that credit memo.</td>
             </tr>
             <tr>
                 <td>reduce_rate</td>
@@ -94,7 +94,7 @@
                 <td>{{ site.format.type.order_line }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>An array containing the order lines of the invoice.</td>
+                <td>An array containing the order lines of the credit memo.</td>
             </tr>
             <tr>
                 <td>public_note</td>
@@ -136,7 +136,7 @@
                 <td>{{ site.format.type.string }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>The number assigned to that invoice (i.e. INV-002). If you don't specify an order number, it will be automatically generated.<br />64 characters max.</td>
+                <td>The number assigned to that credit memo (i.e. CCN-001). If you don't specify an order number, it will be automatically generated.<br />64 characters max.</td>
             </tr>
             <tr>
                 <td>date</td>
