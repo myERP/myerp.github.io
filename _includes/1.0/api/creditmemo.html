@@ -29,7 +29,7 @@
                 <td>{{ site.format.type.boolean }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>Hqs the document been finalized or sent to the Customer.</td>
+                <td>Has the document been finalized or sent to the Customer.</td>
             </tr>
             <tr>
                 <td>sent_at</td>
@@ -66,7 +66,7 @@
                 <td>{{ site.format.type.integer }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to credit memo.<br />Should belong to that invoice's Customer.</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to bill.<br />Should belong to that credit memo's Customer.</td>
             </tr>
             <tr>
                 <td>billing_address</td>
@@ -122,14 +122,14 @@
                 <td>{{ site.format.type.integer }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>Id of the <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a> to apply on that invoice. Will be used as a template to generate Settlements.</td>
+                <td>Id of the <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a> to apply on that credit memo. Will be used as a template to generate Settlements.</td>
             </tr>
             <tr>
                 <td>project_id</td>
                 <td>{{ site.format.type.integer }}</td>
                 <td>no</td>
                 <td>no</td>
-                <td>Id of the <a href="/docs/1.0/api/#project" title="">Project</a> related to that invoice, if any.</td>
+                <td>Id of the <a href="/docs/1.0/api/#project" title="">Project</a> related to that credit memo, if any.</td>
             </tr>
             <tr>
                 <td>user_code</td>
