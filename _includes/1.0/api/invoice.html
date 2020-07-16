@@ -96,13 +96,6 @@
                 <td>Comment that will be printed on the final document.</td>
             </tr>
             <tr>
-                <td>shipping_date</td>
-                <td>{{ site.format.type.date }}</td>
-                <td>no</td>
-                <td>no</td>
-                <td>The date before which the goods should be delivered, if any.<br />Format: {{ site.format.date }}</a></td>
-            </tr>
-            <tr>
                 <td>shipping_contact_id</td>
                 <td>{{ site.format.type.integer }}</td>
                 <td>no</td>
@@ -114,7 +107,7 @@
                 <td>{{ site.format.type.address }}</td>
                 <td>no</td>
                 <td>yes</td>
-                <td>The shipping address. The shpping Contact address if any, the Customer one otherwise.</td>
+                <td>The shipping address. The shipping Contact address if any, the Customer one otherwise.</td>
             </tr>
             <tr>
                 <td>payment_terms_id</td>
@@ -163,7 +156,7 @@
                 <td>{{ site.format.type.double }}</td>
                 <td>no</td>
                 <td>yes</td>
-                <td>Overall tax amount. Inludes all taxes, discounts and reduce.</td>
+                <td>Overall tax amount. Includes all taxes, discounts and reduce.</td>
             </tr>
             <tr>
                 <td>total</td>
@@ -185,7 +178,7 @@
                 <td>no</td>
                 <td>yes</td>
                 <td>Remaining amount to be paid.</td>
-            </tr>			
+            </tr>
             <tr>
                 <td>delivery_status</td>
                 <td>{{ site.format.type.integer }}</td>
@@ -197,15 +190,24 @@
 				    3: Delivered</td>
             </tr>
             <tr>
+                <td>invoice_status</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The invoice status, among :<br />
+                    2: Invoiced (default)<br />
+                    3: Cancelled</td>
+            </tr>
+            <tr>
                 <td>payments_id</td>
                 <td>array[{{ site.format.type.integer }}]</td>
                 <td>no</td>
                 <td>yes</td>
                 <td>Array of Ids of <a href="/docs/1.0/api/#payment" title="">Payments</a> made on that invoice.</td>
-            </tr>			
+            </tr>
         </tbody>
     </table>
-			
+
     <h3 id="invoicejsonexample">JSON Example</h3>
 	<p>That example describe a US invoice.</p>
     {% highlight bash %}{% include 1.0/api/json/invoice.json %}{% endhighlight %}
