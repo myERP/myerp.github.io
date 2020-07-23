@@ -1,0 +1,34 @@
+<div id="domain" class="group">
+
+    <h2>Domain</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.domains.url}}{% endhighlight %}
+    <p>This endpoint will delete your account and cancel your subscription. The access to that endpoint is restricted to administrators only.</p>
+    <p class="message bg-danger">
+        Deleting your domain is a definitive action that cannot be undone. Be advised that all users will no longer be able to use the application nor access datas through the api.
+    </p>
+
+    <h3 id="domainoptions">Options</h3>
+    <p>The following options are available for that endpoint:</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-option.html %}
+        </thead>
+        <tr>
+            <td>reason</td>
+            <td>{{ site.format.type.string }}</td>
+            <td>The reason why the domain is deleted <b>(mandatory)</b>.</td>
+        </tr>
+        <tr>
+            <td>additionalInfo</td>
+            <td>{{ site.format.type.string }}</td>
+            <td>More information about the reason of the deletion.</td>
+        </tr>
+    </table>
+
+    <h3 id="domainjsonexample">JSON Example</h3>
+    <p>This enpoint will return the domain unique id after a successful deletion: </p>
+    {% highlight bash %}{% include 1.0/api/json/domain.json %}{% endhighlight %}
+
+    <h3 id="domainavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/delete-no-id.html %}
+</div>

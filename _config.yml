@@ -55,6 +55,8 @@ resource:
     url: /project_tasks
   cash_flow_details:
     url: /dashboards/accounting/cash_flow/details
+  domains:
+    url: /domains
 
 format:
   date: yyyy-MM-dd (e.g. 2013-06-26)
