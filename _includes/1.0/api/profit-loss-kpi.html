@@ -1,0 +1,71 @@
+<div id="profit_loss_kpi" class="group">
+    <h2>Profit loss : kpi</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.profit_loss_kpi.url}}{% endhighlight %}
+    <p class="message bg-primary">This API is read only.</p>
+    <p>This endpoint retrieve the overall income, expense and profit / loss for a period.</p>
+    <h3>Options</h3>
+    <p>The following options are available for that endpoint:</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-option.html %}
+        </thead>
+        <tr>
+            <td>start_date</td>
+            <td>{{ site.format.type.date }}</td>
+            <td>The starting date of the period you want to retrieve.</td>
+        </tr>
+        <tr>
+            <td>end_date</td>
+            <td>{{ site.format.type.date }}</td>
+            <td>The ending date of the period you want to retrieve.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3>JSON Format</h3>
+    <div id="profit_loss_kpi_main" class="group">
+        <h4>Main structure</h4>
+        <p>The profit loss kpi is represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+            {% include table-header-readonly.html %}
+            </thead>
+            <tr>
+                <td>currency</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The currency code (i.e. EUR)</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>The object that contains the overall KPI.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="profit_loss_overall_kpi" class="group">
+        <h4>Overall KPI</h4>
+        <p>Overall KPI are represented as a JSON object which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+            {% include table-header-readonly.html %}
+            </thead>
+            <tbody>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The amount of the same period last year.</td>
+            </tr>
+            <tr>
+                <td>progress</td>
+                <td>{{ site.format.type.progress }}</td>
+                <td>Showing the progress between the current and the last year.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/profit_loss_kpi.json %}{% endhighlight %}
+</div>

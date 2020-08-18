@@ -1,0 +1,52 @@
+{
+  "period": {
+    "start_date": "2020-02-14",
+    "end_date": "2020-08-14"
+  },
+  "options": {
+    "limit": 5
+  },
+  "rows": [
+    {
+      "amount": 1130.00,
+      "amount_currency": "EUR",
+      "name": "Colombo ",
+      "uri": "product_and_service/10022/edit",
+      "value": 22.00,
+      "previous_value": 1.00,
+      "change_percentage": 2100.00
+    },
+    {
+      "amount": 4200.00,
+      "amount_currency": "EUR",
+      "name": "Retouches",
+      "uri": "product_and_service/10028/edit",
+      "value": 7.00,
+      "previous_value": 1.00,
+      "change_percentage": 600.00
+    },
+    {
+      "amount": 5800.00,
+      "amount_currency": "EUR",
+      "name": "Collection été ",
+      "uri": "product_and_service/10027/edit",
+      "value": 5.00,
+      "previous_value": 1.00,
+      "change_percentage": 400.00
+    },
+    {
+      "amount": 120.00,
+      "amount_currency": "EUR",
+      "name": "Vestes",
+      "uri": "product_and_service/10029/edit",
+      "value": 3.00
+    },
+    {
+      "amount": 990.44,
+      "amount_currency": "EUR",
+      "name": "MP3",
+      "uri": "product_and_service/10033/edit",
+      "value": 5.00
+    }
+  ]
+}

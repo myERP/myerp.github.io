@@ -1,0 +1,105 @@
+<div id="sales_top_invoiced" class="group">
+    <h2>Sales: top invoiced items</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_top_invoiced.url}}{% endhighlight %}
+    <p class="message bg-primary">This API is read only.</p>
+    <p>That endpoint allow you to retrieve the list of your top invoiced items during a specific period</p>
+    <h3>Options</h3>
+    <p>The following options are available for that endpoint:</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-option.html %}
+        </thead>
+        <tr>
+            <td>start_date</td>
+            <td>{{ site.format.type.date }}</td>
+            <td>The starting date of the period you want to retrieve.</td>
+        </tr>
+        <tr>
+            <td>end_date</td>
+            <td>{{ site.format.type.date }}</td>
+            <td>The ending date of the period you want to retrieve.</td>
+        </tr>
+        <tr>
+            <td>limit</td>
+            <td>{{ site.format.type.integer }}</td>
+            <td>The limit of rows that will be returned (default 5).</td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>JSON Format</h3>
+    <div id="sales_top_invoiced_main" class="group">
+        <h4>Main structure</h4>
+        <p>Sales overtime are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+            {% include table-header-readonly.html %}
+            </thead>
+            <tr>
+                <td>options</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>Options used for the call on this endpoint</td>
+            </tr>
+            <tr>
+                <td>period</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>Start and end date used for the call on this endpoint.</td>
+            </tr>
+            <tr>
+                <td>rows</td>
+                <td>{{ site.format.type.top_invoiced }}</td>
+                <td>An array containing the details of top invoiced items.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="top_invoiced" class="group">
+        <h4>Top customer</h4>
+        <p>Top customer are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+            {% include table-header-readonly.html %}
+            </thead>
+            <tbody>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The amount invoiced for the period.</td>
+            </tr>
+            <tr>
+                <td>amount_currency</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The currency code (i.e. EUR).</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The name of the product / service.</td>
+            </tr>
+            <tr>
+                <td>uri</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The uri to going to the product / service.</td>
+            </tr>
+            <tr>
+                <td>value</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The number of product / service invoiced for the period.</td>
+            </tr>
+            <tr>
+                <td>previous_value</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The value of the same period last year.</td>
+            </tr>
+            <tr>
+                <td>change_percentage</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The ratio between the current and the last year.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/sales_top_invoiced.json %}{% endhighlight %}
+</div>

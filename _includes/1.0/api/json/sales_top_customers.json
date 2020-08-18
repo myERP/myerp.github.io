@@ -1,0 +1,43 @@
+{
+  "period": {
+    "start_date": "2020-02-14",
+    "end_date": "2020-08-14"
+  },
+  "options": {
+    "limit": 5
+  },
+  "rows": [
+    {
+      "currency": "EUR",
+      "name": "La boite à couleur",
+      "uri": "account/10025",
+      "value": 6134.98,
+      "previous_value": 6500.00,
+      "change_percentage": -5.00
+    },
+    {
+      "currency": "EUR",
+      "name": "My-orcycle",
+      "uri": "account/10024",
+      "value": 4000.00
+    },
+    {
+      "currency": "EUR",
+      "name": "Collins",
+      "uri": "account/10015",
+      "value": 3400.00
+    },
+    {
+      "currency": "EUR",
+      "name": "Sarah McLaoud",
+      "uri": "account/10014",
+      "value": 1430.00
+    },
+    {
+      "currency": "EUR",
+      "name": "ABC",
+      "uri": "account/10032",
+      "value": 1025.44
+    }
+  ]
+}

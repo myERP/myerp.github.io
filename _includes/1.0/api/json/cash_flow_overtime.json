@@ -1,0 +1,168 @@
+{
+  "periods": {
+    "2020-02": {
+      "amount_total": 4500.00,
+      "count_total": 1,
+      "data": {
+        "trend_invoices": {
+          "amount": 4500.00,
+          "count": 1
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    },
+    "2020-03": {
+      "amount_total": 3400.00,
+      "count_total": 2,
+      "data": {
+        "trend_invoices": {
+          "amount": 3400.00,
+          "count": 2
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    },
+    "2020-04": {
+      "amount_total": 3720.00,
+      "count_total": 2,
+      "data": {
+        "trend_invoices": {
+          "amount": 3720.00,
+          "count": 2
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    },
+    "2020-05": {
+      "amount_total": 1900.47,
+      "count_total": 4,
+      "data": {
+        "trend_invoices": {
+          "amount": 1900.47,
+          "count": 4
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    },
+    "2020-06": {
+      "amount_total": 3950.00,
+      "count_total": 6,
+      "data": {
+        "trend_invoices": {
+          "amount": 3950.00,
+          "count": 6
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    },
+    "2020-07": {
+      "amount_total": 3019.95,
+      "count_total": 6,
+      "data": {
+        "trend_invoices": {
+          "amount": 3019.95,
+          "count": 6
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    },
+    "2020-08": {
+      "amount_total": 0.00,
+      "count_total": 0,
+      "data": {
+        "trend_invoices": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    },
+    "2020-09": {
+      "amount_total": 0.00,
+      "count_total": 0,
+      "data": {
+        "trend_invoices": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_quotes": {
+          "amount": 0.00,
+          "count": 0
+        },
+        "trend_due_sales_orders": {
+          "amount": 0.00,
+          "count": 0
+        }
+      }
+    }
+  },
+  "kpis": {
+    "amount_total": 20490.42,
+    "count_total": 21,
+    "data": {
+      "trend_invoices": {
+        "amount": 20490.42,
+        "count": 21
+      },
+      "trend_due_quotes": {
+        "amount": 0.00,
+        "count": 0
+      },
+      "trend_due_sales_orders": {
+        "amount": 0.00,
+        "count": 0
+      }
+    }
+  },
+  "period_breakdown": "MONTH",
+  "currency": "EUR"
+}

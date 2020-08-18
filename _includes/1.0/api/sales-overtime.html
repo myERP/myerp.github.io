@@ -1,0 +1,95 @@
+<div id="sales_overtime" class="group">
+    <h2>Sales: overtime</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_overtime.url}}{% endhighlight %}
+    <p class="message bg-primary">This API is read only.</p>
+    <p>This endpoint summaries all your invoices breakdown for a period.</p>
+    <h3>Options</h3>
+    <p>The following options are available for that endpoint:</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-option.html %}
+        </thead>
+        <tr>
+            <td>start_date</td>
+            <td>{{ site.format.type.date }}</td>
+            <td>The starting date of the period you want to retrieve.</td>
+        </tr>
+        <tr>
+            <td>end_date</td>
+            <td>{{ site.format.type.date }}</td>
+            <td>The ending date of the period you want to retrieve.</td>
+        </tr>
+        <tr>
+            <td>start_day_of_week</td>
+            <td>{{ site.format.type.integer }}</td>
+            <td>Field number indicating the day of the week.</td>
+        </tr>
+        <tr>
+            <td>timezone</td>
+            <td>{{ site.format.type.date }}</td>
+            <td>The timezone (i.e "Europe/Paris").</td>
+        </tr>
+        </tbody>
+    </table>
+    <h3>JSON Format</h3>
+    <div id="sales_overtime_main" class="group">
+        <h4>Main structure</h4>
+        <p>Sales overtime are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+            {% include table-header-readonly.html %}
+            </thead>
+            <tr>
+                <td>periods</td>
+                <td>{{ site.format.type.periods }}</td>
+                <td>The object that containing the cash flow breakdown daily, weekly or monthly.</td>
+            </tr>
+            <tr>
+                <td>kpis</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>This object contains the overall counts and totals.</td>
+            </tr>
+            <tr>
+                <td>currency</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The currency code (i.e. EUR).</td>
+            </tr>
+            <tr>
+                <td>period_breakdown</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The period breakdown currently used (i.e. MONTH).</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="sales_overtime_kpi" class="group">
+        <h4>Sales overtime KPI</h4>
+        <p>KPIs are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+            {% include table-header-readonly.html %}
+            </thead>
+            <tbody>
+            <tr>
+                <td>amount_total</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The total amount of documents involved in the period.</td>
+            </tr>
+            <tr>
+                <td>count_total</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>The number of documents involved in the period.</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>The object containing the amount and the count of each documents involved for the period.</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/sales_overtime.json %}{% endhighlight %}
+</div>
