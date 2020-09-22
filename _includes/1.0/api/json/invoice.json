@@ -1,5 +1,8 @@
 {
   "id": 19,
+  "locked": true,
+  "sent": true,
+  "sent_at": "2014-07-15",
   "customer_id": 2,
   "billing_contact_id": 1,
   "billing_address": {
