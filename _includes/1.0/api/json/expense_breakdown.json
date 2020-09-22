@@ -1,0 +1,28 @@
+{
+  "progress": {
+    "previous_amount": 1982.71,
+    "change_percentage": -85.00
+  },
+  "currency": "EUR",
+  "values": [
+    {
+      "id": 622,
+      "amount": 270.00,
+      "label": "LOCATIONS MOBILIERES",
+      "progress": {
+        "previous_amount": 1700.00,
+        "change_percentage": -84.00
+      }
+    },
+    {
+      "id": 594,
+      "amount": 12.00,
+      "label": "ACH.NON STOCK.MAT.& FOURN",
+      "progress": {
+        "previous_amount": 282.71,
+        "change_percentage": -95.00
+      }
+    }
+  ],
+  "amount_total": 282.00
+}

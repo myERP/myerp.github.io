@@ -55,6 +55,20 @@ resource:
     url: /project_tasks
   cash_flow_details:
     url: /dashboards/accounting/cash_flow/details
+  cash_flow_overtime:
+    url: /dashboards/accounting/cash_flow/overtime
+  profit_loss_kpi:
+    url: /dashboards/accounting/profit_loss/kpi
+  expense_breakdown:
+    url: /dashboards/accounting/expense/breakdown
+  sales_goal:
+    url: /dashboards/sales/sales/goal
+  sales_overtime:
+    url: /dashboards/sales/sales/overtime
+  sales_top_customers:
+    url: /dashboards/sales/top_customers
+  sales_top_invoiced:
+    url: /dashboards/sales/top_invoiced_items
   domains:
     url: /domains
 
@@ -67,6 +81,7 @@ format:
     boolean: boolean
     date: date
     object: object
+    objects: array[object]
     address: '<a href="/docs/1.0/api/#address" alt=""/>Address</a>'
     customer: '<a href="/docs/1.0/api/#customer" alt=""/>Customer</a>'
     payment_terms: '<a href="/docs/1.0/api/#paymentterm" alt=""/>Payment Terms</a>'
@@ -76,5 +91,11 @@ format:
     entry: 'array[<a href="/docs/1.0/api/#entry" alt=""/>Entry</a>]'
     journal: '<a href="/docs/1.0/api/#journal" alt=""/>Journal</a>'
     account: '<a href="/docs/1.0/api/#account" alt=""/>Account</a>'
-    document: 'array[<a href="/docs/1.0/api/#document" alt=""/>Document</a>]'
-    kpi: 'array[<a href="/docs/1.0/api/#kpi" alt=""/>KPI</a>]'
+    documents: 'array[<a href="/docs/1.0/api/#document" alt=""/>Document</a>]'
+    sales_documents: 'array[<a href="/docs/1.0/api/#sales_document" alt=""/>Sales document</a>]'
+    kpis: 'array[<a href="/docs/1.0/api/#kpi" alt=""/>KPI</a>]'
+    expenses: 'array[<a href="/docs/1.0/api/#expense" alt=""/>Expense</a>]'
+    progress: '<a href="/docs/1.0/api/#progress" alt=""/>Progress</a>'
+    periods: '<a href="/docs/1.0/api/#cash_flow_overtime_periods" alt=""/>Periods</a>'
+    top_customers: 'array[<a href="/docs/1.0/api/#top_customer" alt=""/>Top customer</a>]'
+    top_invoiced: 'array[<a href="/docs/1.0/api/#top_invoiced" alt=""/>Top invoiced</a>]'

@@ -1,0 +1,122 @@
+{
+  "facets": {
+    "all": [
+      {
+        "key": "all",
+        "count": 6,
+        "sum": 5184.00
+      }
+    ],
+    "status": [
+      {
+        "key": "ongoing",
+        "count": 6,
+        "sum": 5184.00
+      }
+    ]
+  },
+  "results": [
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10044,
+      "type": "QUOTE",
+      "user_code": "DEV-028",
+      "due_date": "2020-08-14",
+      "base_currency_amount": 1440.00,
+      "amount": 1440.00,
+      "payee": {
+        "id": 10025,
+        "name": "La boite à couleur",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10038,
+      "type": "QUOTE",
+      "user_code": "DEV-023",
+      "due_date": "2020-08-14",
+      "base_currency_amount": 1440.00,
+      "amount": 1440.00,
+      "payee": {
+        "id": 10021,
+        "name": "Clairance ",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10043,
+      "type": "QUOTE",
+      "user_code": "DEV-027",
+      "due_date": "2020-08-14",
+      "base_currency_amount": 1200.00,
+      "amount": 1200.00,
+      "payee": {
+        "id": 10025,
+        "name": "La boite à couleur",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10037,
+      "type": "QUOTE",
+      "user_code": "DEV-022",
+      "due_date": "2020-08-14",
+      "base_currency_amount": 720.00,
+      "amount": 720.00,
+      "payee": {
+        "id": 10024,
+        "name": "My-orcycle",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10048,
+      "type": "QUOTE",
+      "user_code": "DEV-029",
+      "due_date": "2020-08-14",
+      "base_currency_amount": 360.00,
+      "amount": 360.00,
+      "payee": {
+        "id": 10015,
+        "name": "Collins",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    },
+    {
+      "attachment_count": 0,
+      "attachments": [],
+      "id": 10035,
+      "type": "QUOTE",
+      "user_code": "DEV-020",
+      "due_date": "2020-08-14",
+      "base_currency_amount": 24.00,
+      "amount": 24.00,
+      "payee": {
+        "id": 10014,
+        "name": "Sarah McLaoud",
+        "type": "CUSTOMER"
+      },
+      "currency_iso_code": "EUR",
+      "status": "ONGOING"
+    }
+  ]
+}

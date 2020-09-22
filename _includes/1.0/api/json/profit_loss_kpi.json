@@ -1,0 +1,26 @@
+{
+  "currency": "EUR",
+  "data": {
+    "income": {
+      "amount": 3729.95,
+      "progress": {
+        "previous_amount": 14695.46,
+        "change_percentage": -74.00
+      }
+    },
+    "expense": {
+      "amount": 13655.92,
+      "progress": {
+        "previous_amount": 109234.39,
+        "change_percentage": -87.00
+      }
+    },
+    "profit_loss": {
+      "amount": 9925.97,
+      "progress": {
+        "previous_amount": 94538.93,
+        "change_percentage": -89.00
+      }
+    }
+  }
+}
