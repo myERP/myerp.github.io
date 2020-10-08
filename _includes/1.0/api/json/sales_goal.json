@@ -9,9 +9,19 @@
     ],
     "status": [
       {
+        "key": "projections",
+        "count": 2,
+        "sum": 2880.00
+      },
+      {
         "key": "ongoing",
-        "count": 6,
-        "sum": 5184.00
+        "count": 2,
+        "sum": 1920.00
+      },
+      {
+        "key": "done",
+        "count": 2,
+        "sum": 384.00
       }
     ]
   },
@@ -31,7 +41,7 @@
         "type": "CUSTOMER"
       },
       "currency_iso_code": "EUR",
-      "status": "ONGOING"
+      "status": "PROJECTIONS"
     },
     {
       "attachment_count": 0,
@@ -48,7 +58,7 @@
         "type": "CUSTOMER"
       },
       "currency_iso_code": "EUR",
-      "status": "ONGOING"
+      "status": "PROJECTIONS"
     },
     {
       "attachment_count": 0,
@@ -99,7 +109,7 @@
         "type": "CUSTOMER"
       },
       "currency_iso_code": "EUR",
-      "status": "ONGOING"
+      "status": "DONE"
     },
     {
       "attachment_count": 0,
@@ -116,7 +126,7 @@
         "type": "CUSTOMER"
       },
       "currency_iso_code": "EUR",
-      "status": "ONGOING"
+      "status": "DONE"
     }
   ]
 }

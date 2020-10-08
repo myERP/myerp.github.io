@@ -1,168 +1,98 @@
 {
-  "periods": {
-    "2020-02": {
-      "amount_total": 4500.00,
-      "count_total": 1,
-      "data": {
-        "trend_invoices": {
-          "amount": 4500.00,
-          "count": 1
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
-    },
-    "2020-03": {
-      "amount_total": 3400.00,
-      "count_total": 2,
-      "data": {
-        "trend_invoices": {
-          "amount": 3400.00,
-          "count": 2
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
-    },
-    "2020-04": {
-      "amount_total": 3720.00,
-      "count_total": 2,
-      "data": {
-        "trend_invoices": {
-          "amount": 3720.00,
-          "count": 2
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
-    },
-    "2020-05": {
-      "amount_total": 1900.47,
-      "count_total": 4,
-      "data": {
-        "trend_invoices": {
-          "amount": 1900.47,
-          "count": 4
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
-    },
-    "2020-06": {
-      "amount_total": 3950.00,
-      "count_total": 6,
-      "data": {
-        "trend_invoices": {
-          "amount": 3950.00,
-          "count": 6
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
-    },
-    "2020-07": {
-      "amount_total": 3019.95,
-      "count_total": 6,
-      "data": {
-        "trend_invoices": {
-          "amount": 3019.95,
-          "count": 6
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
-    },
-    "2020-08": {
-      "amount_total": 0.00,
-      "count_total": 0,
-      "data": {
-        "trend_invoices": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
-    },
-    "2020-09": {
-      "amount_total": 0.00,
-      "count_total": 0,
-      "data": {
-        "trend_invoices": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_quotes": {
-          "amount": 0.00,
-          "count": 0
-        },
-        "trend_due_sales_orders": {
-          "amount": 0.00,
-          "count": 0
-        }
-      }
+  "kpis": {
+    "starting_balance_date": "2021-03-01",
+    "first_entry_date": "2018-07-06",
+    "last_bank_entry_date": "2020-01-02",
+    "starting_balance": {
+      "amount": 28471.32
     }
   },
-  "kpis": {
-    "amount_total": 20490.42,
-    "count_total": 21,
-    "data": {
-      "trend_invoices": {
-        "amount": 20490.42,
-        "count": 21
+  "datas": {
+    "2021-03-31": {
+      "money_in": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
       },
-      "trend_due_quotes": {
-        "amount": 0.00,
-        "count": 0
+      "money_out": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      }
+    },
+    "2021-04-30": {
+      "money_in": {
+        "total": 60.00,
+        "forecast": 60.00,
+        "scheduled": 0,
+        "completed": 0
       },
-      "trend_due_sales_orders": {
-        "amount": 0.00,
-        "count": 0
+      "money_out": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      }
+    },
+    "2021-05-31": {
+      "money_in": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      },
+      "money_out": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      }
+    },
+    "2021-06-30": {
+      "money_in": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      },
+      "money_out": {
+        "total": -12.00,
+        "forecast": -12.00,
+        "scheduled": 0,
+        "completed": 0
+      }
+    },
+    "2021-07-31": {
+      "money_in": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      },
+      "money_out": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      }
+    },
+    "2021-08-31": {
+      "money_in": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
+      },
+      "money_out": {
+        "total": 0,
+        "forecast": 0,
+        "scheduled": 0,
+        "completed": 0
       }
     }
   },
   "period_breakdown": "MONTH",
-  "currency": "EUR"
+  "currency": "GBP"
 }
