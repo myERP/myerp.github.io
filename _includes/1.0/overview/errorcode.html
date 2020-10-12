@@ -35,14 +35,114 @@
       <td>The request does not respect the specification. Please see the documentation and double-check each field.</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td><a href="http://tools.ietf.org/html/rfc6585#section-4" target="_blank">429</a></td>
-      <td>Rate limited.</td>
+        <td>30</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Business logic violation. The request cannot be fulfilled.</td>
     </tr>
     <tr>
-      <td>5</td>
-      <td><a href="https://tools.ietf.org/html/rfc2616#section-10.4.1" target="_blank">400</a></td>
-      <td>The request was not parsed. Please double-check the content of the request.</td>
+        <td>3001</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Date is not included in the validity interval.</td>
+    </tr>
+    <tr>
+        <td>3002</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Your entries are not balanced.</td>
+    </tr>
+    <tr>
+        <td>3003</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>The accounting entry is closed and cannot be edited nor deleted.</td>
+    </tr>
+    <tr>
+        <td>3004</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>The accounting entry is locked and cannot be edited nor deleted.</td>
+    </tr>
+    <tr>
+        <td>3005</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>The accounting entry is reconciled and cannot be edited nor deleted.</td>
+    </tr>
+    <tr>
+        <td>3006</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Bank Entries with zero amount are not recorded.</td>
+    </tr>
+    <tr>
+        <td>3007</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Payment balance on Closing is negative.</td>
+    </tr>
+    <tr>
+        <td>3008</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Not enough quantity in inventory.</td>
+    </tr>
+    <tr>
+        <td>3009</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>This document has no installments.</td>
+    </tr>
+    <tr>
+        <td>3010</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>This document has been sent and cannot be edited nor deleted.</td>
+    </tr>
+    <tr>
+        <td>3011</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Due date should be after the document date.</td>
+    </tr>
+    <tr>
+        <td>3012</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Payment date should be after the document date.</td>
+    </tr>
+    <tr>
+        <td>3013</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>A mandatory field is missing.</td>
+    </tr>
+    <tr>
+        <td>3014</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>A field that should be left empty contains an actual value.</td>
+    </tr>
+    <tr>
+        <td>3015</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Family accounts are not allowed.</td>
+    </tr>
+    <tr>
+        <td>3016</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Mismatched categories</td>
+    </tr>
+    <tr>
+        <td>3017</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>The tax entry is closed and cannot be edited nor deleted.</td>
+    </tr>
+    <tr>
+        <td>3018</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Bank transfer requires two different bank accounts.</td>
+    </tr>
+    <tr>
+        <td>3019</td>
+        <td><a href="http://tools.ietf.org/html/rfc4918#section-11.2" target="_blank">422</a></td>
+        <td>Amount should be strictly positive.</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><a href="http://tools.ietf.org/html/rfc6585#section-4" target="_blank">429</a></td>
+        <td>Rate limited.</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><a href="https://tools.ietf.org/html/rfc2616#section-10.4.1" target="_blank">400</a></td>
+        <td>The request was not parsed. Please double-check the content of the request.</td>
     </tr>
   </tbody>
 </table>
