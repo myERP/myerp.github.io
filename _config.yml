@@ -93,7 +93,7 @@ format:
     account: '<a href="/docs/1.0/api/#account" alt=""/>Account</a>'
     documents: 'array[<a href="/docs/1.0/api/#document" alt=""/>Document</a>]'
     sales_documents: 'array[<a href="/docs/1.0/api/#sales_document" alt=""/>Sales document</a>]'
-    kpis: 'array[<a href="/docs/1.0/api/#kpi" alt=""/>KPI</a>]'
+    kpis: 'array[<a href="/docs/1.0/api/#cash_flow_detail_kpi" alt=""/>KPI</a>]'
     expenses: 'array[<a href="/docs/1.0/api/#expense" alt=""/>Expense</a>]'
     progress: '<a href="/docs/1.0/api/#progress" alt=""/>Progress</a>'
     periods: '<a href="/docs/1.0/api/#cash_flow_overtime_periods" alt=""/>Periods</a>'
