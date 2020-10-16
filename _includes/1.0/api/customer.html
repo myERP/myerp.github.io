@@ -238,6 +238,32 @@
     <h3 id="customerjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/customer.json %}{% endhighlight %}
 
+    <h3 id="customerfilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>assigned_to</td>
+            <td>Filter by employee id that is assigned to the customer (e.g. ?assigned_to=3).</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>Filter by the creation date.</td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>
+                Filter by status among :<br />
+                - lead<br />
+                - customer<br />
+                (e.g. ?status=lead).
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="customersorting">Available Sorting Options</h3>
     <table class="table table-bordered table-striped">
         <thead>

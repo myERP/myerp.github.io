@@ -212,6 +212,19 @@
 	<p>That example describe a US sales order.</p>
     {% highlight bash %}{% include 1.0/api/json/salesorder.json %}{% endhighlight %}
 
+    <h3 id="salesorderfilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>customer_id</td>
+            <td>Filter by one or multiple customer ids (e.g. ?customer_id=1,2,3).</td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="salesorderavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}
 </div>
