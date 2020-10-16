@@ -3,6 +3,7 @@
     <h2>Bank Entries</h2>
     {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.bank_entries.url}}{% endhighlight %}
     <p class="message bg-primary">This API doesn't handle PUT requests.</p>
+
     <h3 id="bankentryjsonformat">JSON Format</h3>
     <p>Bank entries are represented as JSON objects which have the following keys:</p>
 
@@ -107,6 +108,31 @@
 
     <h3 id="bankentryjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/bankentry.json %}{% endhighlight %}
+
+    <h3 id="bankentrysorting">Available Sorting Options</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-sorting.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>Sorts by id field.</td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>Sorts by posted date field.</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>Sorts by label field.</td>
+        </tr>
+        <tr>
+            <td>absolute_amount</td>
+            <td>Sorts by the absolute value of the amount field.</td>
+        </tr>
+        </tbody>
+    </table>
 
     <h3 id="bankentryavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/noput.html %}
