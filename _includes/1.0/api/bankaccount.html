@@ -2,6 +2,7 @@
 
     <h2>Bank</h2>
     {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.bank_accounts.url}}{% endhighlight %}
+
     <h3 id="bankaccountjsonformat">JSON Format</h3>
     <p>Bank accounts are represented as JSON objects which have the following keys:</p>
 
@@ -72,6 +73,23 @@
 
     <h3 id="bankaccountjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/bankaccount.json %}{% endhighlight %}
+
+    <h3 id="bankaccountsorting">Available Sorting Options</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-sorting.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>name</td>
+            <td>Sorts by account name field.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>Sorts by the creation date field.</td>
+        </tr>
+        </tbody>
+    </table>
 
     <h3 id="bankaccountavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}

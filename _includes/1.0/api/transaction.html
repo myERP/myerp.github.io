@@ -194,6 +194,27 @@
     <h3 id="transactionjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/transaction.json %}{% endhighlight %}
 
+    <h3 id="transactionsorting">Available Sorting Options</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-sorting.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>Sorts by id field.</td>
+        </tr>
+        <tr>
+            <td>transaction_code</td>
+            <td>Sorts by user code field.</td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>Sorts by date field.</td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="transactionavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}
 </div>

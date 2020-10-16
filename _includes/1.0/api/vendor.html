@@ -5,7 +5,6 @@
     <h3 id="vendorjsonformat">JSON Format</h3>
     <p>Vendors are represented as JSON objects which have the following keys:</p>
 
-
     <table class="table table-bordered table-striped">
         <thead>
             {% include table-header.html %}
@@ -167,6 +166,31 @@
 
     <h3 id="vendorjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/vendor.json %}{% endhighlight %}
+
+    <h3 id="vendorsorting">Available Sorting Options</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-sorting.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>Sorts by id field.</td>
+        </tr>
+        <tr>
+            <td>user_code</td>
+            <td>Sorts by user code field.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>Sorts by the creation date field.</td>
+        </tr>
+        <tr>
+            <td>full_name</td>
+            <td>Sorts by full name field.</td>
+        </tr>
+        </tbody>
+    </table>
 
     <h3 id="vendoravailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}

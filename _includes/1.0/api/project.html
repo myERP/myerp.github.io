@@ -26,7 +26,7 @@
             </tr>
             <tr>
                 <td>description</td>
-                <td>{{ site.format.type.text }}</td>
+                <td>{{ site.format.type.string }}</td>
                 <td>no</td>
                 <td>no</td>
                 <td>The Project Description</td>
@@ -36,6 +36,27 @@
 
     <h3 id="projectjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/project.json %}{% endhighlight %}
+
+    <h3 id="projectsorting">Available Sorting Options</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-sorting.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>Sorts by id field.</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>Sorts by name field.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>Sorts by the creation date field.</td>
+        </tr>
+        </tbody>
+    </table>
 
     <h3 id="projectavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}
