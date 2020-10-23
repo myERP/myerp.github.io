@@ -99,3 +99,4 @@ format:
     periods: '<a href="/docs/1.0/api/#cash_flow_overtime_periods" alt=""/>Periods</a>'
     top_customers: 'array[<a href="/docs/1.0/api/#top_customer" alt=""/>Top customer</a>]'
     top_invoiced: 'array[<a href="/docs/1.0/api/#top_invoiced" alt=""/>Top invoiced</a>]'
+    snippet: '<a href="/docs/1.0/api/#snippet" title="">Snippet</a>'

@@ -42,11 +42,24 @@
                 </td>
             </tr>
             <tr>
-                <td>customer_id</td>
+                <td>customer_id <span class="deprecated">DEPRECATED</span></td>
                 <td>{{ site.format.type.integer }}</td>
                 <td>yes</td>
                 <td>no</td>
                 <td>Id of the <a href="/docs/1.0/api/#customer" title="">Customer.</a></td>
+            </tr>
+            <tr>
+                <td>customer</td>
+                <td>{{ site.format.type.snippet }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>
+                    The Snippet of the invoice <a href="/docs/1.0/api/#customer" title="">Customer.</a><br />
+                    Where :<br />
+                    - id = customer.id<br />
+                    - name = customer.full_name<br />
+                    - user_code = customer.user_code
+                </td>
             </tr>
             <tr>
                 <td>billing_contact_id</td>
