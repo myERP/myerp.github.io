@@ -23,6 +23,8 @@ resource:
     url: /quotes
   invoices:
     url: /invoices
+  installments:
+    url: /installments
   payments:
     url: /payments
   credit_memos:
