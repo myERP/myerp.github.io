@@ -5,7 +5,6 @@
         <h3>JSON Format</h3>
         <p>Addresses are represented as JSON objects which have the following keys:</p>
 
-
         <table class="table table-bordered table-striped">
             <thead>
                 {% include table-header.html %}
@@ -243,5 +242,38 @@
         </table>
         <h3>JSON Example</h3>
         {% highlight bash %}{% include 1.0/api/json/orderline.json %}{% endhighlight %}
+    </div>
+
+    <div id="snippet" class="group">
+        <h2>Snippet</h2>
+    	<p>A Snippet is a generic type that encapsulates an object and aggregates common information.</p>
+
+        <h3>JSON Format</h3>
+        <p>Snippets are represented as JSON objects which have the following keys:</p>
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                {% include table-header-readonly.html %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>The id of the encapsulated object </td>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>The label of the encapsulated object</td>
+                </tr>
+                <tr>
+                    <td>user_code</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>The user_code of the encapsulated object</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>JSON Example</h3>
+        {% highlight bash %}{% include 1.0/api/json/snippet.json %}{% endhighlight %}
     </div>
 </div>
