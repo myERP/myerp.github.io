@@ -1,0 +1,9 @@
+{
+  "id": 10004,
+  "invoice_id": 10004,
+  "due_date": "2020-10-27",
+  "amount": 5859.22,
+  "outstanding_amount": 1251.49,
+  "currency_iso_code": "GBP",
+  "payment_request_id": 10001
+}

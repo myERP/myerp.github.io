@@ -1,0 +1,61 @@
+<div id="installment" class="group">
+
+    <h2>Installments</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.installments.url}}{% endhighlight %}
+    <h3 id="installmentjsonformat">JSON Format</h3>
+    <p>Installments are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header-readonly.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Automatically assigned.</td>
+            </tr>
+            <tr>
+                <td>invoice_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the related <a href="/docs/1.0/api/#invoice" title="">Invoice</a>.</td>
+            </tr>
+            <tr>
+                <td>due_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>The expected payment date.<br/>Format: {{ site.format.date }}<br/></td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>The installment initial amount.</td>
+            </tr>
+            <tr>
+                <td>outstanding_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>
+                    Amount left to settle.<br />
+                    An outstanding amount of 0.00 means that the Installment has been fully paid.
+                </td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>The ISO code of the currency
+                    <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.
+                </td>
+            </tr>
+            <tr>
+                <td>payment_request_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>Id of the related PaymentRequest used with integrated payment solutions.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="installmentjsonexample">JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/installment.json %}{% endhighlight %}
+
+    <h3 id="installmentavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/readonly.html %}
+</div>
