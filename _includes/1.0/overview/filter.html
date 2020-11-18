@@ -2,14 +2,14 @@
     <h2>Filter</h2>
     <p>
         Comparators can be used to combine allowed parameters and create advanced filters.
-        Check the "Available Filter Options" section of each EndPoint for available filter names and fields. 
+        Check the "Available Filter Fields" section of each EndPoint for available filter names and fields. 
     </p>
     <p>
         Thanks to comparison and conjunction operators filter, you're allowed to retrieve and shape data the way you need.
         For instance, to retrieve realized accounting of a certain journal within 2020 first quarter,
         you can pass the following parameters to the "transactions" end point :
     </p>
-    {% highlight bash %} ?date=gte:2020-01-01%20AND%20lte:2020-03-31&journal_id=4&status=closed {% endhighlight %}
+    {% highlight bash %} ?date=gte:2020-01-01%20AND%20lte:2020-03-31&journal_id=4&status=realized {% endhighlight %}
 
     <h3 id="comparisonfilter">Comparison operators</h3>
     <table class="table table-bordered table-striped">
