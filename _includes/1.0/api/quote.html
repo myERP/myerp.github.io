@@ -177,6 +177,19 @@
     <h3 id="quotejsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/quote.json %}{% endhighlight %}
 
+    <h3 id="quotefilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>customer_id</td>
+            <td>Filter by customer id.</td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="quoteavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/readonly.html %}
 </div>

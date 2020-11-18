@@ -109,6 +109,48 @@
     <h3 id="bankentryjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/bankentry.json %}{% endhighlight %}
 
+    <h3 id="bankentryfilter">Available Filter Field</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>Filter by one or multiple ids (e.g. ?id=1,2,3).</td>
+        </tr>
+        <tr>
+            <td>external_id</td>
+            <td>Filter by one or multiple external ids (e.g. ?external_id=1,2,3).</td>
+        </tr>
+        <tr>
+            <td>bank_account</td>
+            <td>Filter by one or multiple bank_account ids (e.g. ?bank_account=1,2,3).</td>
+        </tr>
+        <tr>
+            <td>posted_date</td>
+            <td>Filter by posted_date.</td>
+        </tr>
+        <tr>
+            <td>transaction_date</td>
+            <td>Filter by transaction_date.</td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>
+                Filter by one or multiple status among :<br />
+                - unprocessed<br />
+                - unreconciled<br />
+                - partially_reconciled<br />
+                - to_review<br />
+                - reconciled<br />
+                - closed<br />
+                (e.g. ?status=partially_reconciled,reconciled).
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="bankentrysorting">Available Sorting Options</h3>
     <table class="table table-bordered table-striped">
         <thead>

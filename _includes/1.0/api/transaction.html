@@ -194,6 +194,34 @@
     <h3 id="transactionjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/transaction.json %}{% endhighlight %}
 
+    <h3 id="transactionfilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>date</td>
+            <td>Filter by date.</td>
+        </tr>
+        <tr>
+            <td>journal_id</td>
+            <td>Filter by journal_id.</td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>
+                Filter by status among :<br />
+                - forecast<br />
+                - realized<br />
+                - closed<br />
+                - draft<br />
+                (e.g. ?status=realized).
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="transactionsorting">Available Sorting Options</h3>
     <table class="table table-bordered table-striped">
         <thead>
@@ -206,7 +234,7 @@
         </tr>
         <tr>
             <td>transaction_code</td>
-            <td>Sorts by user code field.</td>
+            <td>Sorts by transaction code field.</td>
         </tr>
         <tr>
             <td>date</td>
