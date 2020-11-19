@@ -8,7 +8,21 @@ title: "- Getting Started"
     <ul class="nav nav-stacked">
         <li class="active"><a href="#general">General</a>
         </li>
-        <li><a href="#security">Security and Authentication</a>
+        <li>
+            <a href="#security">Security and Authentication</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#apikey">API key</a></li>
+                <li>
+                    <a href="#oauth2">OAuth2</a>
+                    <ul class="nav nav-stacked">
+                        <li><a href="#credentials">Client Credentials</a></li>
+                        <li><a href="#authorization">Obtain an Authorization Code</a></li>
+                        <li><a href="#exchange">Exchange the Authorization Code</a></li>
+                        <li><a href="#refresh">Refresh the Access Token</a></li>
+                        <li><a href="#pkce">PKCE Flow</a></li>
+                    </ul>
+                </li>
+            </ul>
         </li>
         <li><a href="#pagination">Pagination</a>
         </li>
@@ -32,6 +46,13 @@ title: "- Getting Started"
 <main class="post-wrapper" role="main">
   {% include 1.0/overview/general.html %}
   {% include 1.0/overview/security.html %}
+  {% include 1.0/overview/security/apikey.html %}
+  {% include 1.0/overview/security/oauth2.html %}
+  {% include 1.0/overview/security/oauth2/credentials.html %}
+  {% include 1.0/overview/security/oauth2/authorization.html %}
+  {% include 1.0/overview/security/oauth2/exchange.html %}
+  {% include 1.0/overview/security/oauth2/refresh.html %}
+  {% include 1.0/overview/security/oauth2/pkce.html %}
   {% include 1.0/overview/pagination.html %}
   {% include 1.0/overview/ratelimiting.html %}
   {% include 1.0/overview/errorcode.html %}

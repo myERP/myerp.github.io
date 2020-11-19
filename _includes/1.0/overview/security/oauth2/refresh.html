@@ -1,0 +1,81 @@
+<div id="refresh" class="group">
+
+    <h2>Refresh the Access Token</h2>
+
+    <p>The <code>refresh_token</code> received when exchanging the authorization code for an access token can be used to exchange for a new access token.</p>
+
+    <p>This is particularly useful in the case of the original access token has expired and the application does not want to start a new authorization flow.</p>
+
+    <p>If you make a request to OneUp API and the token has expired already, you’ll get back a response indicating as such. You can check for this specific error message, and then refresh the token and try the request again.</p>
+
+    <p>To exchange the <code>refresh_token</code> for a new access token, your application calls the same endpoint used before, sending the following new parameters:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Valid Values</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>grant_type</td>
+                <td><b>refresh_token *</b></td>
+                <td>Indicates that the client wants to exchange a refresh token for a new access token</td>
+            </tr>
+            <tr>
+                <td>client_id</td>
+                <td><i>your_client_id</i></td>
+                <td>The unique id that was provided to you after your client credential was created</td>
+            </tr>
+            <tr>
+                <td>client_secret</td>
+                <td><i>your_client_secret</i></td>
+                <td>The client secret that was provided to you after your client credential was created</td>
+            </tr>
+            <tr>
+                <td>refresh_token</td>
+                <td><i>refresh_token</i></td>
+                <td>The refresh token your application received in the last step</td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
+
+{% highlight http %}
+POST {{site.oauth2.endpoints.token.url}} HTTP/1.1
+Host: {{ site.oauth2.base_url }}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=refresh_token
+&client_id=xxxxxxxxxx
+&client_secret=xxxxxxxxxx
+&refresh_token=xxxxxxxxxx
+{% endhighlight %}
+
+{% highlight bash %}
+curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.base_url }}{{site.oauth2.endpoints.token.url}}' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=refresh_token' \
+--data-urlencode 'client_id=xxxxxxxxxx' \
+--data-urlencode 'client_secret=xxxxxxxxxx' \
+--data-urlencode 'refresh_token=xxxxxxxxxx'
+{% endhighlight %}
+
+    <p>The OneUp Authorization Server will respond with a <code>JSON</code> containing the new access token and a new refresh token.</p>
+
+{% highlight json %}
+{
+    "access_token":"xxxxxxxxxx",
+    "expires_in":3600,
+    "refresh_token":"xxxxxxxxxx",
+    "scope":"offline",
+    "token_type":"bearer"
+}
+{% endhighlight %}
+
+    <p>The new <code>access_token</code> can be used for resuming the calls to the OneUp API.</p>
+
+    <p>The new <code>refresh_token</code> can be used again to request a new access token.</p>
+</div>

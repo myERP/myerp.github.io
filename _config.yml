@@ -10,6 +10,14 @@ api:
   auth_pattern: -u "email:api-key"
   bulk_deletion_limit: 50
 
+oauth2:
+  protocol: https
+  base_url: oauth-staging.oneup.com
+  endpoints:
+    authorization:
+      url: /oauth2/auth/
+    token:
+      url: /oauth2/token/
 resource:
   customers:
     url: /customers

@@ -1,0 +1,117 @@
+<div id="exchange" class="group">
+
+    <h2>Exchange the Authorization Code</h2>
+
+    {% highlight bash %}Endpoint: {{site.oauth2.protocol}}://{{ site.oauth2.base_url }}{{site.oauth2.endpoints.token.url}}{% endhighlight %}
+
+    <p>After receiving the Authorization code, your application has to exchange it for an access token.</p>
+
+    <p>To do that, your application has to make an HTTP <code>POST</code> call to the endpoint shown above.</p>
+
+    <p>The following parameters must be provided with the call:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Valid Values</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>grant_type</td>
+            <td style="white-space: nowrap;"><b>authorization_code *</b></td>
+            <td>Indicates that the client wants to exchange an authorization code for an access token</td>
+        </tr>
+        <tr>
+            <td>client_id</td>
+            <td><i>your_client_id</i></td>
+            <td>The unique id that was provided to you after your client credential was created</td>
+        </tr>
+        <tr>
+            <td>client_secret</td>
+            <td><i>your_client_secret</i></td>
+            <td>The client secret that was provided to you after your client credential was created</td>
+        </tr>
+        <tr>
+            <td>code</td>
+            <td><i>authorization_code</i></td>
+            <td>The authorization code your application received in the last step</td>
+        </tr>
+        <tr>
+            <td>redirect_uri</td>
+            <td><i>your_redirect_uri</i></td>
+            <td>The callback url that was provided to us when you requested your client credential</td>
+        </tr>
+        </tbody>
+    </table>
+    <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
+
+{% highlight http %}
+POST {{site.oauth2.endpoints.token.url}} HTTP/1.1
+Host: {{ site.oauth2.base_url }}
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=authorization_code
+&client_id=xxxxxxxxxx
+&client_secret=xxxxxxxxxx
+&code=xxxxxxxxxx
+&redirect_uri=xxxxxxxxxx
+{% endhighlight %}
+
+{% highlight bash %}
+curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.base_url }}{{site.oauth2.endpoints.token.url}}' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=authorization_code' \
+--data-urlencode 'client_id=xxxxxxxxxx' \
+--data-urlencode 'client_secret=xxxxxxxxxx' \
+--data-urlencode 'code=xxxxxxxxxx' \
+--data-urlencode 'redirect_uri=xxxxxxxxxx'
+{% endhighlight %}
+
+    <p>The OneUp Authorization Server will respond with a <code>JSON</code> containing the access token and a refresh token.</p>
+
+{% highlight json %}
+{
+    "access_token":"xxxxxxxxxx",
+    "expires_in":3600,
+    "refresh_token":"xxxxxxxxxx",
+    "scope":"offline",
+    "token_type":"bearer"
+}
+{% endhighlight %}
+
+    <p>Here is a simple description of the fields returned in the <code>JSON</code>:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Field</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>access_token</td>
+            <td>The token that your application will use to authenticate with OneUp API</td>
+        </tr>
+        <tr>
+            <td>expires_in</td>
+            <td>The number of seconds that the access token will be valid<br>After that, the access token will expire</td>
+        </tr>
+        <tr>
+            <td>refresh_token</td>
+            <td>A refresh token that your application can exchange for a new access token<br>This flow will be covered in the next section of this document</td>
+        </tr>
+        <tr>
+            <td>scope</td>
+            <td>The scope granted to your application. Right now the only scope supported is <code>offline</code></td>
+        </tr>
+        <tr>
+            <td>token_type</td>
+            <td>The token type which will always be <code>bearer</code></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
