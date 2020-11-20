@@ -45,25 +45,17 @@
     <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
 
 {% highlight http %}
-POST {{site.oauth2.endpoints.authorization.url}} HTTP/1.1
+GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline&state=xxxxxxxxxx HTTP/1.1
 Host: {{ site.oauth2.domain }}
-Content-Type: application/x-www-form-urlencoded
-
-response_type=code
-&client_id=xxxxxxxxxx
-&redirect_uri=xxxxxxxxxx
-&scope=offline
-&state=xxxxxxxxxx
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'response_type=code' \
---data-urlencode 'client_id=xxxxxxxxxx' \
---data-urlencode 'redirect_uri=xxxxxxxxxx' \
---data-urlencode 'scope=offline' \
---data-urlencode 'state=xxxxxxxxxx'
+curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}'\
+'?response_type=code'\
+'&client_id=xxxxxxxxxx'\
+'&redirect_uri=xxxxxxxxxx'\
+'&scope=offline_access'\
+'&state=xxxxxxxxxx'
 {% endhighlight %}
 
     <p>The OneUp Authorization Server response will be a redirect to the login page:</p>
@@ -83,7 +75,7 @@ curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{si
     <p>The authorization flow is finished and the Authorization Server sends the authorization code through your <kbd>callback</kbd> url:</p>
 
 {% highlight http %}
-GET /your_callback/?code=xxxxxxxxxx HTTP/1.1
+GET /xxxxxxxxxx?code=xxxxxxxxxx HTTP/1.1
 Host: your.host
 {% endhighlight %}
 </div>

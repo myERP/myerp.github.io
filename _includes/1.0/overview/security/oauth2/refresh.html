@@ -44,7 +44,7 @@
     <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
 
 {% highlight http %}
-POST {{site.oauth2.endpoints.token.url}} HTTP/1.1
+POST {{site.oauth2.endpoints.token.url}}/ HTTP/1.1
 Host: {{ site.oauth2.domain }}
 Content-Type: application/x-www-form-urlencoded
 
@@ -55,7 +55,7 @@ grant_type=refresh_token
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.token.url}}' \
+curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.token.url}}/' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=refresh_token' \
 --data-urlencode 'client_id=xxxxxxxxxx' \

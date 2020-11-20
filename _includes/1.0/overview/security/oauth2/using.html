@@ -11,26 +11,26 @@
     <p><b>OneUp API</b></p>
 
 {% highlight http %}
-GET {{site.api.v1}}/xxxxxxxxxx/ HTTP/1.1
+GET {{site.api.v1}}/xxxxxxxxxx HTTP/1.1
 Host: {{ site.api.domain }}
 Authorization: Bearer xxxxxxxxxx
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request GET '{{site.api.protocol}}://{{ site.api.domain }}{{site.api.v1}}/xxxxxxxxxx/' \
+curl -D- --request GET '{{site.api.protocol}}://{{ site.api.domain }}{{site.api.v1}}/xxxxxxxxxx' \
 --header 'Authorization: Bearer xxxxxxxxxx'
 {% endhighlight %}
 
     <p><b>OneUp WEB Portal</b></p>
 
 {% highlight http %}
-POST {{site.web.endpoints.authorization.url}} HTTP/1.1
+POST {{site.web.endpoints.authorization.url}}/ HTTP/1.1
 Host: {{ site.web.domain }}
 Authorization: Bearer xxxxxxxxxx
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request POST '{{site.web.protocol}}://{{ site.web.domain }}{{site.web.endpoints.authorization.url}}' \
+curl -D- --request POST '{{site.web.protocol}}://{{ site.web.domain }}{{site.web.endpoints.authorization.url}}/' \
 --header 'Authorization: Bearer xxxxxxxxxx'
 {% endhighlight %}
 

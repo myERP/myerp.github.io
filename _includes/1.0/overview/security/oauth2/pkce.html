@@ -36,29 +36,19 @@
     </table>
 
 {% highlight http %}
-POST {{site.oauth2.endpoints.authorization.url}} HTTP/1.1
+GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&code_challenge=xxxxxxxxxx&code_challenge_method=S256&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline&state=xxxxxxxxxx HTTP/1.1
 Host: {{ site.oauth2.domain }}
-Content-Type: application/x-www-form-urlencoded
-
-response_type=code
-&client_id=xxxxxxxxxx
-&redirect_uri=xxxxxxxxxx
-&scope=offline
-&code_challenge=xxxxxxxxxx
-&code_challenge_method=S256
-&state=xxxxxxxxxx
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'response_type=code' \
---data-urlencode 'client_id=xxxxxxxxxx' \
---data-urlencode 'redirect_uri=xxxxxxxxxx' \
---data-urlencode 'scope=offline' \
---data-urlencode 'code_challenge=xxxxxxxxxx' \
---data-urlencode 'code_challenge_method=S256' \
---data-urlencode 'state=xxxxxxxxxx'
+curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}'\
+'?response_type=code'\
+'&code_challenge=xxxxxxxxxx'\
+'&code_challenge_method=S256'\
+'&client_id=xxxxxxxxxx'\
+'&redirect_uri=xxxxxxxxxx'\
+'&scope=offline_access'\
+'&state=xxxxxxxxxx'
 {% endhighlight %}
 
     <p>The authorization server will save the <code>code_challenge</code> and <code>code_challenge_method</code> to later verify a token request from the client application.
@@ -81,7 +71,7 @@ curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{si
     </table>
 
 {% highlight http %}
-POST {{site.oauth2.endpoints.token.url}} HTTP/1.1
+POST {{site.oauth2.endpoints.token.url}}/ HTTP/1.1
 Host: {{ site.oauth2.domain }}
 Content-Type: application/x-www-form-urlencoded
 
@@ -94,7 +84,7 @@ grant_type=authorization_code
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.token.url}}' \
+curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.token.url}}/' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=authorization_code' \
 --data-urlencode 'client_id=xxxxxxxxxx' \

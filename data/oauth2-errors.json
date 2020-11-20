@@ -1,0 +1,167 @@
+[
+  {
+    "id": "error",
+    "description": "The handler is not responsible for this request.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "request_forbidden",
+    "description": "The request is not allowed.",
+    "http_status": "403 Forbidden"
+  },
+  {
+    "id": "invalid_request",
+    "description": "The request is missing a required parameter, includes an invalid parameter value, includes a parameter more than once, or is otherwise malformed.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "unauthorized_client",
+    "description": "The client is not authorized to request a token using this method.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "access_denied",
+    "description": "The resource owner or authorization server denied the request.",
+    "http_status": "403 Forbidden"
+  },
+  {
+    "id": "unsupported_response_type",
+    "description": "The authorization server does not support obtaining a token using this method.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "unsupported_response_mode",
+    "description": "The authorization server does not support obtaining a response using this response mode.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "invalid_scope",
+    "description": "The requested scope is invalid, unknown, or malformed.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "server_error",
+    "description": "The authorization server encountered an unexpected condition that prevented it from fulfilling the request.",
+    "http_status": "500 Internal Server Error"
+  },
+  {
+    "id": "temporarily_unavailable",
+    "description": "The authorization server is currently unable to handle the request due to a temporary overloading or maintenance of the server.",
+    "http_status": "503 Service Unavailable"
+  },
+  {
+    "id": "unsupported_grant_type",
+    "description": "The authorization grant type is not supported by the authorization server.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "invalid_grant",
+    "description": "The provided authorization grant (e.g., authorization code, resource owner credentials) or refresh token is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "invalid_client",
+    "description": "Client authentication failed (e.g., unknown client, no client authentication included, or unsupported authentication method).",
+    "http_status": "401 Unauthorized"
+  },
+  {
+    "id": "invalid_state",
+    "description": "The state is missing or does not have enough characters and is therefore considered too weak.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "misconfiguration",
+    "description": "The request failed because of an internal error that is probably caused by misconfiguration.",
+    "http_status": "500 Internal Server Error"
+  },
+  {
+    "id": "insufficient_entropy",
+    "description": "The request used a security parameter (e.g., anti-replay, anti-csrf) with insufficient entropy.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "not_found",
+    "description": "Could not find the requested resource(s).",
+    "http_status": "404 Not Found"
+  },
+  {
+    "id": "request_unauthorized",
+    "description": "The request could not be authorized.",
+    "http_status": "401 Unauthorized"
+  },
+  {
+    "id": "token_signature_mismatch",
+    "description": "Token signature mismatch.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "invalid_token",
+    "description": "Invalid token format.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "id": "token_expired",
+    "description": "Token expired.",
+    "http_status": "401 Unauthorized"
+  },
+  {
+    "id": "scope_not_granted",
+    "description": "The token was not granted the requested scope.",
+    "http_status": "403 Forbidden"
+  },
+  {
+    "id": "token_claim",
+    "description": "The token failed validation due to a claim mismatch.",
+    "http_status": "401 Unauthorized"
+  },
+  {
+    "id": "token_inactive",
+    "description": "Token is inactive because it is malformed, expired or otherwise invalid.",
+    "http_status": "401 Unauthorized"
+  },
+  {
+    "id": "login_required",
+    "description": "The Authorization Server requires End-User authentication.",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The Authorization Server requires End-User interaction of some form to proceed.",
+    "id": "interaction_required",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The Authorization Server requires End-User consent.",
+    "id": "consent_required",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The OP does not support use of the request parameter.",
+    "id": "request_not_supported",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The OP does not support use of the request_uri parameter.",
+    "id": "request_uri_not_supported",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The OP does not support use of the registration parameter.",
+    "id": "registration_not_supported",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The request_uri in the Authorization Request returns an error or contains invalid data.",
+    "id": "invalid_request_uri",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The request parameter contains an invalid Request Object.",
+    "id": "invalid_request_object",
+    "http_status": "400 Bad Request"
+  },
+  {
+    "description": "The jti was already used.",
+    "id": "jti_known",
+    "http_status": "400 Bad Request"
+  }
+]
