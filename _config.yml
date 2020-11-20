@@ -17,7 +17,7 @@ web:
   domain: www.oneup.com
   endpoints:
     authorization:
-      url: /auth
+      url: /auth/
 
 oauth2:
   protocol: https
