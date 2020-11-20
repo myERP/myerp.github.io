@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "fb1b89bd-49a6-4a69-ac26-5232925fbc74",
+		"name": "oneup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://stagingapi.oneup.com/v1/me",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "scope",
+							"value": "offline",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "SDdfvHJikLoi34ed6F45GgFQxcdpo",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "oneup-token",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://oauth-staging.oneup.com/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://oauth-staging.oneup.com/oauth2/auth",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "body",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"url": {
+					"raw": "https://stagingapi.oneup.com/v1/me",
+					"protocol": "https",
+					"host": [
+						"stagingapi",
+						"oneup",
+						"com"
+					],
+					"path": [
+						"v1",
+						"me"
+					]
+				},
+				"description": "Example of an OneUp API call using Oauth2"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

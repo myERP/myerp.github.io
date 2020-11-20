@@ -2,7 +2,7 @@
 
     <h2>Obtain an Authorization Code</h2>
 
-    {% highlight bash %}Endpoint: {{site.oauth2.protocol}}://{{ site.oauth2.base_url }}{{site.oauth2.endpoints.authorization.url}}{% endhighlight %}
+    {% highlight bash %}Endpoint: {{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}{% endhighlight %}
 
     <p>The OAuth2 Flow is initiated by pointing the end-user's browser to the endpoint shown above. All the following query parameters are required:</p>
 
@@ -46,7 +46,7 @@
 
 {% highlight http %}
 POST {{site.oauth2.endpoints.authorization.url}} HTTP/1.1
-Host: {{ site.oauth2.base_url }}
+Host: {{ site.oauth2.domain }}
 Content-Type: application/x-www-form-urlencoded
 
 response_type=code
@@ -57,7 +57,7 @@ response_type=code
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.base_url }}{{site.oauth2.endpoints.authorization.url}}' \
+curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'response_type=code' \
 --data-urlencode 'client_id=xxxxxxxxxx' \
