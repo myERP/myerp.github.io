@@ -262,4 +262,8 @@
 
     <h3 id="invoiceavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}
+
+    <h3 id="invoiceprint">Print an Invoice as PDF</h3>
+    {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.invoices.url}}/:id/print{% endhighlight %}
+    {% include table-print-http-headers.html %}
 </div>
