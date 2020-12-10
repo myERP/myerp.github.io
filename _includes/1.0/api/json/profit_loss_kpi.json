@@ -1,5 +1,6 @@
 {
   "currency": "EUR",
+  "hint": "Based on your banking activity, your loss is <b>10K €</b> for this period.",
   "data": {
     "income": {
       "amount": 3729.95,
