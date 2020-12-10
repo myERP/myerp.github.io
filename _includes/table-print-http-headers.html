@@ -1,0 +1,26 @@
+<h4>Headers</h4>
+<table class="table table-bordered table-striped">
+  <thead>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Response type</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content-Type</td>
+      <td>application/json</td>
+      <td>
+        URL to the PDF reprensentation of the document. The URL is valid for 5 minutes.<br><br>
+        Example:
+        {% highlight json %}{"url": "https://s3.amazonaws.com/documents/1/1.pdf"}{% endhighlight %}
+      </td>
+    </tr>
+    <tr>
+      <td>Content-Type</td>
+      <td>application/pdf</td>
+      <td>
+        The PDF reprensentation of the document.
+      </td>
+    </tr>
+  </tbody>
+</table>
