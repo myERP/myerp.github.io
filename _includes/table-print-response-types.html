@@ -1,13 +1,19 @@
-<h4>Headers</h4>
+<h4>Reponse types</h4>
+This endpoint supports two types of response JSON and PDF. 
+<br>
+Response type can be changed by adding <span class="code-inline">.pdf</span> or <span class="code-inline">.json</span> to the URL.
+<br><br>
 <table class="table table-bordered table-striped">
   <thead>
-    <th>Key</th>
-    <th>Value</th>
+    <th>Type</th>
+    <th>Content-Type</th>
     <th>Response type</th>
   </thead>
   <tbody>
     <tr>
-      <td>Content-Type</td>
+      <td>JSON
+        <br> (Default)
+      </td>
       <td>application/json</td>
       <td>
         URL to the PDF reprensentation of the document. The URL is valid for 5 minutes.<br><br>
@@ -16,7 +22,7 @@
       </td>
     </tr>
     <tr>
-      <td>Content-Type</td>
+      <td>PDF</td>
       <td>application/pdf</td>
       <td>
         The PDF reprensentation of the document.

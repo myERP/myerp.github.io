@@ -194,6 +194,6 @@
     {% include 1.0/api/methods/readonly.html %}
 
     <h3 id="quoteprint">Print a Quote as PDF</h3>
-    {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.quotes.url}}/:id/print{% endhighlight %}
-    {% include table-print-http-headers.html %}
+    {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.quotes.url}}/:id/print[.pdf|.json]{% endhighlight %}
+    {% include table-print-response-types.html %}
 </div>

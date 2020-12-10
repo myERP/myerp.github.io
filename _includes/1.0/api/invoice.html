@@ -264,6 +264,6 @@
     {% include 1.0/api/methods/full.html %}
 
     <h3 id="invoiceprint">Print an Invoice as PDF</h3>
-    {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.invoices.url}}/:id/print{% endhighlight %}
-    {% include table-print-http-headers.html %}
+    {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.invoices.url}}/:id/print[.pdf|.json]{% endhighlight %}
+    {% include table-print-response-types.html %}
 </div>

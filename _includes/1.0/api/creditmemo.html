@@ -217,6 +217,6 @@
     {% include 1.0/api/methods/full.html %}
 
     <h3 id="creditmemoprint">Print a Credit memo as PDF</h3>
-    {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.credit_memos.url}}/:id/print{% endhighlight %}
-    {% include table-print-http-headers.html %}
+    {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.credit_memos.url}}/:id/print[.pdf|.json]{% endhighlight %}
+    {% include table-print-response-types.html %}
 </div>

@@ -347,3 +347,11 @@ span.updated {
   font-size: 80%;
   border: 1px solid #a94442;
 }
+
+span.code-inline {
+  padding: 2px 4px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(226 226 226);
+  border-radius: 4px;
+  font-size: 90%;
+}
