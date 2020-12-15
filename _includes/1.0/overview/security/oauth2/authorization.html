@@ -78,4 +78,16 @@ curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{sit
 GET /xxxxxxxxxx?code=xxxxxxxxxx HTTP/1.1
 Host: your.host
 {% endhighlight %}
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">Note</div>
+        <div class="panel-body">
+            In case the user press the <kbd>deny</kbd> button. The Authorization will reply with the following response to your <kbd>callback</kbd> url:</p>
+
+{% highlight http %}
+GET error=access_denied&error_description=the+resource+owner+denied+the+request&state=xxxxxxxxxx HTTP/1.1
+Host: your.host
+{% endhighlight %}
+        </div>
+    </div>
 </div>

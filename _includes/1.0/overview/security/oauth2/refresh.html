@@ -6,7 +6,17 @@
 
     <p>This is particularly useful in the case of the original access token has expired and the application does not want to start a new authorization flow.</p>
 
-    <p>If you make a request to OneUp API and the token has expired already, you’ll get back a response indicating as such. You can check for this specific error message, and then refresh the token and try the request again.</p>
+    <p>If you make a request to OneUp API and the token has expired already, you’ll get back a response indicating as such. You can check for this specific error message, and then refresh the token and try the request again:</p>
+
+{% highlight json %}
+{
+    "error": {
+        "status": 401,
+        "code": "1",
+        "message": "Unauthorized: the provided token is not active"
+    }
+}
+{% endhighlight %}
 
     <p>To exchange the <code>refresh_token</code> for a new access token, your application calls the same endpoint used before, sending the following new parameters:</p>
 
