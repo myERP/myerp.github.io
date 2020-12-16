@@ -36,7 +36,7 @@
     </table>
 
 {% highlight http %}
-GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&code_challenge=xxxxxxxxxx&code_challenge_method=S256&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline&state=xxxxxxxxxx HTTP/1.1
+GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&code_challenge=xxxxxxxxxx&code_challenge_method=S256&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline_access&state=xxxxxxxxxx HTTP/1.1
 Host: {{ site.oauth2.domain }}
 {% endhighlight %}
 

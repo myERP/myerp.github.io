@@ -32,7 +32,7 @@
             </tr>
             <tr>
                 <td>scope</td>
-                <td><b>offline *</b></td>
+                <td style="white-space: nowrap;"><b>offline_access *</b></td>
                 <td>The only scope available. It indicates that you will have read access to user's data and you will receive a <i>refresh token</i> when exchanging the authentication code</td>
             </tr>
             <tr>
@@ -45,7 +45,7 @@
     <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
 
 {% highlight http %}
-GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline&state=xxxxxxxxxx HTTP/1.1
+GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline_access&state=xxxxxxxxxx HTTP/1.1
 Host: {{ site.oauth2.domain }}
 {% endhighlight %}
 
