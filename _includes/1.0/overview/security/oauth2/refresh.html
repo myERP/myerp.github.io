@@ -2,7 +2,7 @@
 
     <h2>Refresh the Access Token</h2>
 
-    <p>The <code>refresh_token</code> received when exchanging the authorization code for an access token can be used to exchange for a new access token.</p>
+    <p>The <code>refresh_token</code> received when exchanging the authorization code for an access token can be used to obtain a new access token.</p>
 
     <p>This is particularly useful in the case of the original access token has expired and the application does not want to start a new authorization flow.</p>
 
@@ -18,7 +18,7 @@
 }
 {% endhighlight %}
 
-    <p>To exchange the <code>refresh_token</code> for a new access token, your application calls the same endpoint used before, sending the following new parameters:</p>
+    <p>To exchange the <code>refresh_token</code> for a new access token, your application calls the same endpoint used to obtain the access token, sending the following new parameters:</p>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -53,17 +53,6 @@
     </table>
     <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
 
-{% highlight http %}
-POST {{site.oauth2.endpoints.token.url}}/ HTTP/1.1
-Host: {{ site.oauth2.domain }}
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=refresh_token
-&client_id=xxxxxxxxxx
-&client_secret=xxxxxxxxxx
-&refresh_token=xxxxxxxxxx
-{% endhighlight %}
-
 {% highlight bash %}
 curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.token.url}}/' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -87,5 +76,5 @@ curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{si
 
     <p>The new <code>access_token</code> can be used for resuming the calls to the OneUp API.</p>
 
-    <p>The new <code>refresh_token</code> can be used again to request a new access token.</p>
+    <p>The new <code>refresh_token</code> can be used later to refresh the access token.</p>
 </div>

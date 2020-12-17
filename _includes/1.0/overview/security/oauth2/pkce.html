@@ -4,11 +4,11 @@
 
     <p>The OneUp Authorization Server supports authorization code flow with <a href="https://tools.ietf.org/html/rfc7636" target="_blank">Proof Key for Code Exchange (PKCE)</a></p>
 
-    <p>In case you want to add additional security in the authorization flow, you can implement PKCE.</p>
+    <p>In you want to add additional security in the authorization flow, you can implement PKCE.</p>
 
     <p>The PKCE-enhanced Authorization Code Flow builds upon the standard Authorization Code Flow, so the steps are the same as described above.</p>
 
-    <p>The difference is that your application should send more parameters when starting the authorization flow and when exchanging the authorization token.</p>
+    <p>The difference is that your application have to send more parameters when starting the authorization flow and when exchanging the authorization token.</p>
 
     <p>The following new parameters should be send when starting the flow:</p>
 
@@ -35,11 +35,6 @@
         </tbody>
     </table>
 
-{% highlight http %}
-GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&code_challenge=xxxxxxxxxx&code_challenge_method=S256&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline_access&state=xxxxxxxxxx HTTP/1.1
-Host: {{ site.oauth2.domain }}
-{% endhighlight %}
-
 {% highlight bash %}
 curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}'\
 '?response_type=code'\
@@ -53,7 +48,7 @@ curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{sit
 
     <p>The authorization server will save the <code>code_challenge</code> and <code>code_challenge_method</code> to later verify a token request from the client application.
 
-    <p>The response from the authorization endpoint has nothing special for PKCE. It’s a normal response as usual, however the following parameter must be send when exchanging the authentication code:</p>
+    <p>The response from the authorization endpoint remains the same. However the following parameter must be send when exchanging the authentication code:</p>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -69,19 +64,6 @@ curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{sit
         </tr>
         </tbody>
     </table>
-
-{% highlight http %}
-POST {{site.oauth2.endpoints.token.url}}/ HTTP/1.1
-Host: {{ site.oauth2.domain }}
-Content-Type: application/x-www-form-urlencoded
-
-grant_type=authorization_code
-&client_id=xxxxxxxxxx
-&client_secret=xxxxxxxxxx
-&code=xxxxxxxxxx
-&code_verifier=xxxxxxxxxx
-&redirect_uri=xxxxxxxxxx
-{% endhighlight %}
 
 {% highlight bash %}
 curl -D- --request POST '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.token.url}}/' \

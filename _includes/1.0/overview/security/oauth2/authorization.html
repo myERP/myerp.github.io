@@ -4,7 +4,7 @@
 
     {% highlight bash %}Endpoint: {{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}{% endhighlight %}
 
-    <p>The OAuth2 Flow is initiated by pointing the end-user's browser to the endpoint shown above. All the following query parameters are required:</p>
+    <p>The OAuth2 Flow is initiated by redirecting to the endpoint shown above. All the following query parameters are required:</p>
 
     <table class="table table-bordered table-striped">
         <thead>
@@ -44,10 +44,6 @@
     </table>
     <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
 
-{% highlight http %}
-GET {{site.oauth2.endpoints.authorization.url}}?response_type=code&client_id=xxxxxxxxxx&redirect_uri=xxxxxxxxxx&scope=offline_access&state=xxxxxxxxxx HTTP/1.1
-Host: {{ site.oauth2.domain }}
-{% endhighlight %}
 
 {% highlight bash %}
 curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}'\
@@ -58,36 +54,24 @@ curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{sit
 '&state=xxxxxxxxxx'
 {% endhighlight %}
 
-    <p>The OneUp Authorization Server response will be a redirect to the login page:</p>
+    <p>The OneUp Authorization Server will redirect to OneUp login page:</p>
 
     <img alt="login page" src="/img/login_page.png" style="height: 100%; width: 100%; object-fit: contain; margin-bottom: 10px"/>
 
-    <p>The user fills the login information and press the <kbd>sign in</kbd> button.</p>
-
-    <p>The authentication server authenticates the user and redirects him back to the Authorization Server.</p>
-
-    <p>The OneUp Authorization Server redirects the user to the consent page:</p>
+    <p>Once the user entered his credentials and click the "<b>Sign In</b>" button, he will be redirected to the consent page to allow your application to access his information:</p>
 
     <img alt="consent page" src="/img/consent_page.png" style="height: 100%; width: 100%; object-fit: contain; margin-bottom: 10px"/>
 
-    <p>The user press the <kbd>allow</kbd> button. The web application redirects the user to the Authorization Server.</p>
-
-    <p>The authorization flow is finished and the Authorization Server sends the authorization code through your <kbd>callback</kbd> url:</p>
+    <p>If the user click "<b>Allow</b>", the authorization flow is finished and the Authorization Server sends the authorization code through your <code>redirect_uri</code>:</p>
 
 {% highlight http %}
-GET /xxxxxxxxxx?code=xxxxxxxxxx HTTP/1.1
+GET /your_redirect_uri?code=xxxxxxxxxx HTTP/1.1
 Host: your.host
 {% endhighlight %}
 
-    <div class="panel panel-warning">
-        <div class="panel-heading">Note</div>
-        <div class="panel-body">
-            In case the user press the <kbd>deny</kbd> button. The Authorization will reply with the following response to your <kbd>callback</kbd> url:</p>
-
+<p> In case the user press the "<b>Deny</b> button. The Authorization server will redirect with the following parameters to your <code>redirect_uri</code>:</p></p>
 {% highlight http %}
-GET error=access_denied&error_description=the+resource+owner+denied+the+request&state=xxxxxxxxxx HTTP/1.1
+GET /your_redirect_uri?error=access_denied&error_description=the+resource+owner+denied+the+request&state=xxxxxxxxxx HTTP/1.1
 Host: your.host
 {% endhighlight %}
-        </div>
-    </div>
 </div>

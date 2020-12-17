@@ -2,26 +2,26 @@
 
     <h2>Using the Access Token</h2>
 
-    <p>The Application can use the access token to authenticate requests to OneUp API as well as transparently login the user in OneUp WEB Portal.</p>
+    <p>Your application can use the access token to authenticate requests to OneUp API as well as transparently login the user in OneUp <a href="https://app.oneup.com/" target="_blank">web application</a>.</p>
 
-    <p>For both cases, the application must provide the token in the <code>Authorization</code> request header field.</p>
+    <p>For both cases, the application must provide the token in the header <code>Authorization</code> of the request.</p>
 
     <p>The application uses the <code>Bearer</code> authentication scheme to transmit the access token, as shown in the examples below:</p>
 
     <p><b>OneUp API</b></p>
 
 {% highlight http %}
-GET {{site.api.v1}}/xxxxxxxxxx HTTP/1.1
+GET {{site.api.v1}}/me HTTP/1.1
 Host: {{ site.api.domain }}
 Authorization: Bearer xxxxxxxxxx
 {% endhighlight %}
 
 {% highlight bash %}
-curl -D- --request GET '{{site.api.protocol}}://{{ site.api.domain }}{{site.api.v1}}/xxxxxxxxxx' \
+curl -D- --request GET '{{site.api.protocol}}://{{ site.api.domain }}{{site.api.v1}}/me' \
 --header 'Authorization: Bearer xxxxxxxxxx'
 {% endhighlight %}
 
-    <p><b>OneUp WEB Portal</b></p>
+    <p><b>OneUp web application</b></p>
 
 {% highlight http %}
 POST {{site.web.endpoints.authorization.url}}/ HTTP/1.1
