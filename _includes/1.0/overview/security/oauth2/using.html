@@ -2,14 +2,8 @@
 
     <h2>Using the Access Token</h2>
 
-    <p>Your application can use the access token to authenticate requests to OneUp API as well as transparently login the user in OneUp <a href="https://app.oneup.com/" target="_blank">web application</a>.</p>
-
-    
-
-   
-
-    <p><b>OneUp API</b></p>
-    <p>Your application must provide the access token in the header <code>Authorization</code> for each request to the API.</p>
+    <p>Your application can use the access token to authenticate requests against OneUp API.</p>
+    <p>For that, simply add the access token in the header <code>Authorization</code> for each request to the API.</p>
     <p>The application uses the <code>Bearer</code> authentication scheme to transmit the access token, as shown in the examples below:</p>
 
 {% highlight http %}
@@ -21,12 +15,6 @@ Authorization: Bearer xxxxxxxxxx
 {% highlight bash %}
 curl -D- --request GET '{{site.api.protocol}}://{{ site.api.domain }}{{site.api.v1}}/me' \
 --header 'Authorization: Bearer xxxxxxxxxx'
-{% endhighlight %}
-
-    <p><b>OneUp web application</b></p>
-You can redirect the user to our web application and automatically log the user in, by redirecting him to the URL below and using the query parameter <code>authentication_token</code>:
-{% highlight http %}
-GET https://app.oneup.com{{site.web.endpoints.authorization.url}}?authentication_token=xxxxx
 {% endhighlight %}
 
 </div>
