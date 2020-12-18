@@ -1,22 +1,6 @@
 <div id="security" class="group">
 <h2>Security and Authentication</h2>
 
-<p>This API is an SSL-only API, regardless of how you may have your account configured. You must be a verified user to make API requests. You can authorize against the API using the basic authentication with the API email and an API key.</p>
+<p>This API is an SSL-only API, regardless of how you may have your account configured. You must be a verified user to make API requests. You can authorize against the API using an oauth2 access token or basic authentication with the API email and an API key.</p>
 
-<h3>Retrieving the API key</h3>
-
-<p>To retrieve your API email and your API key, you have to log in into your account, then go to <b>Settings > API settings</b> and click on the <b>Generate Key</b> button.</p>
-
-<img src="/img/api_settings.png" alt="api settings" />
-
-<h3>Authenticating using curl</h3>
-
-{% highlight bash %}
-curl {{ site.api.base_url }}{{ site.api.v1}}.. {{site.api.auth_pattern}}
-{% endhighlight %}
-
-Example:
-{% highlight bash %}
-curl {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.customers.url}} -u "api_12_e3ab@api.oneup.com:34a352e421d03a4qXqc91f9b48ed7eb02e5"
-{% endhighlight %}
 </div>

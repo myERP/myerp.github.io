@@ -1,0 +1,57 @@
+<div id="errors" class="group">
+
+    <h2>Handling Errors</h2>
+
+    <p><b>Note:</b> When your application starts the flow, <b>omitting</b> or sending an <b>invalid</b> <code>redirect_uri</code> or <code>client_id</code>,
+        an error page will be displayed to the user given that the Authorization Server cannot trust the <code>redirect_uri</code>.
+    </p>
+
+    <p>When an error occurs during the OAuth2, the user will be redirected to the <code>redirect_uri</code> with the following query parameters:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>error</td>
+                <td>A unique string id indicating which error occurred<br>
+                    Your application can use this id to map possible errors and handle it<br>
+                    See the table below for possible values for this field</td>
+            </tr>
+            <tr>
+                <td>error_description</td>
+                <td>A description of the error that occurred</td>
+            </tr>
+            <tr>
+                <td>error_hint</td>
+                <td>A possible hint to fix the error</td>
+            </tr>
+            <tr>
+                <td>state</td>
+                <td>The <code>state</code> parameter value which was sent during the start of the flow</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The same parameters listed above will be returned for requests made without user interaction (i.e: code exchange, refresh token) in a <code>JSON</code> format.</p>
+
+    <table
+        class="table table-bordered table-striped"
+        data-toggle="table"
+        data-url="data/oauth2-errors.json"
+        data-pagination="true"
+        data-search="true">
+        <thead>
+            <tr>
+                <th data-field="id" data-sortable="true">ID</th>
+                <th data-field="http_status" data-sortable="true" class="http-status">Http Status</th>
+                <th data-field="description">Description</th>
+            </tr>
+        </thead>
+    </table>
+
+</div>

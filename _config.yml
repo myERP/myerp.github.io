@@ -6,9 +6,27 @@ highlighter: rouge
 
 api:
   v1: /v1
+  protocol: https
+  domain: api.oneup.com
   base_url: https://api.oneup.com
   auth_pattern: -u "email:api-key"
   bulk_deletion_limit: 50
+
+web:
+  protocol: https
+  domain: www.oneup.com
+  endpoints:
+    authorization:
+      url: /auth
+
+oauth2:
+  protocol: https
+  domain: oauth-staging.oneup.com
+  endpoints:
+    authorization:
+      url: /oauth2/auth
+    token:
+      url: /oauth2/token
 
 resource:
   customers:

@@ -1,0 +1,44 @@
+<div id="downloads" class="group">
+
+    <h2>Support Downloads for Development</h2>
+
+    <p>The following downloads can be used by developers to validate the client against OneUp <code>staging</code> environment</p>
+        <form method="get" action="{{ site.url }}/downloads/postman_collection.zip">
+            <button type="submit" class="btn btn-outline-primary">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                    <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+                </svg>
+            </button>
+               Request example with OAuth2 Authorization for <a href="https://www.postman.com" target="_blank">Postman</a>
+        </form>
+    </p>
+    <p>
+        <form method="get" action="{{ site.url }}/downloads/http-client.zip">
+            <button type="submit" class="btn btn-outline-primary">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                    <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+                </svg>
+            </button>
+               Example for the entire OAuth2 flow using <a href="https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html" target="_blank">Intellij's HTTP Request</a>
+        </form>
+    </p>
+    <p>You can download the files by clicking in the above
+        <button class="btn btn-outline-primary">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+            </svg>
+        </button> image.</p>
+    </p>
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">Note</div>
+        <div class="panel-body">
+            <p>You must disable <b>automatically follow redirects</b> option in Postman to be able to run all the requests in the collection.</p>
+            <p>This option is under Postman > Preferences > General > Headers tab, as shown in the image below:</p>
+            <img alt="postman options" src="/img/postman_options.png" style="height: 100%; width: 100%; object-fit: contain; margin-bottom: 10px"/>
+        </div>
+    </div>
+</div>

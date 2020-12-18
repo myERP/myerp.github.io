@@ -1,0 +1,77 @@
+<div id="authorization" class="group">
+
+    <h2>Obtain an Authorization Code</h2>
+
+    {% highlight bash %}Endpoint: {{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}{% endhighlight %}
+
+    <p>The OAuth2 Flow is initiated by redirecting to the endpoint shown above. All the following query parameters are required:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Valid Values</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>response_type</td>
+                <td><b>code *</b></td>
+                <td>Indicates that the client expects to receive an authentication code that will later be exchanged by an access token</td>
+            </tr>
+            <tr>
+                <td>client_id</td>
+                <td><i>your_client_id</i></td>
+                <td>The unique id that was provided to you after your client credential was created</td>
+            </tr>
+            <tr>
+                <td>redirect_uri</td>
+                <td><i>your_redirect_uri</i></td>
+                <td>The callback url that was provided to us when you requested your client credential</td>
+            </tr>
+            <tr>
+                <td>scope</td>
+                <td style="white-space: nowrap;"><b>offline_access *</b></td>
+                <td>The only scope available. It indicates that you will have read access to user's data and you will receive a <i>refresh token</i> when exchanging the authentication code</td>
+            </tr>
+            <tr>
+                <td>state</td>
+                <td><i>any_string</i></td>
+                <td>This value must be present in the authorization response and must be the same as the one you sent in the request. <br>For more information on how to take advantage of this parameter, check <a href="https://auth0.com/docs/protocols/state-parameters" target="_blank">this article</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="text-align: right"><small><b>* only one possible valid value</b></small></p>
+
+
+{% highlight bash %}
+curl -D- --request GET '{{site.oauth2.protocol}}://{{ site.oauth2.domain }}{{site.oauth2.endpoints.authorization.url}}'\
+'?response_type=code'\
+'&client_id=xxxxxxxxxx'\
+'&redirect_uri=xxxxxxxxxx'\
+'&scope=offline_access'\
+'&state=xxxxxxxxxx'
+{% endhighlight %}
+
+    <p>The OneUp Authorization Server will redirect to OneUp login page:</p>
+
+    <img alt="login page" src="/img/login_page.png" style="height: 100%; width: 100%; object-fit: contain; margin-bottom: 10px"/>
+
+    <p>Once the user entered his credentials and click the "<b>Sign In</b>" button, he will be redirected to the consent page to allow your application to access his information:</p>
+
+    <img alt="consent page" src="/img/consent_page.png" style="height: 100%; width: 100%; object-fit: contain; margin-bottom: 10px"/>
+
+    <p>If the user click "<b>Allow</b>", the authorization flow is finished and the Authorization Server sends the authorization code through your <code>redirect_uri</code>:</p>
+
+{% highlight http %}
+GET /your_redirect_uri?code=xxxxxxxxxx HTTP/1.1
+Host: your.host
+{% endhighlight %}
+
+<p> In case the user press the "<b>Deny</b> button. The Authorization server will redirect with the following parameters to your <code>redirect_uri</code>:</p></p>
+{% highlight http %}
+GET /your_redirect_uri?error=access_denied&error_description=the+resource+owner+denied+the+request&state=xxxxxxxxxx HTTP/1.1
+Host: your.host
+{% endhighlight %}
+</div>

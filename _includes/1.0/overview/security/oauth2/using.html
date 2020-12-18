@@ -1,0 +1,20 @@
+<div id="using" class="group">
+
+    <h2>Using the Access Token</h2>
+
+    <p>Your application can use the access token to authenticate requests against OneUp API.</p>
+    <p>For that, simply add the access token in the header <code>Authorization</code> for each request to the API.</p>
+    <p>The application uses the <code>Bearer</code> authentication scheme to transmit the access token, as shown in the examples below:</p>
+
+{% highlight http %}
+GET {{site.api.v1}}/me HTTP/1.1
+Host: {{ site.api.domain }}
+Authorization: Bearer xxxxxxxxxx
+{% endhighlight %}
+
+{% highlight bash %}
+curl -D- --request GET '{{site.api.protocol}}://{{ site.api.domain }}{{site.api.v1}}/me' \
+--header 'Authorization: Bearer xxxxxxxxxx'
+{% endhighlight %}
+
+</div>
