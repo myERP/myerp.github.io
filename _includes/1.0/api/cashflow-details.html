@@ -134,7 +134,21 @@
             <tr>
                 <td>status</td>
                 <td>{{ site.format.type.string }}</td>
-                <td>The document status, among:<br />- COLLECT_SOON<br />- COLLECT_NOW<br />- COLLECTED<br />- PAY_SOON<br />- PAY_NOW<br />- PAID<br />- PROJECTIONS<br />- ONGOING<br />- DONE</td>
+                <td>The document status, for <b>moneyin</b> mode will be among:
+                    <br />- PROJECTIONS
+                    <br />- COLLECT_SOON
+                    <br />- COLLECT_NOW
+                    <br />- COLLECTED<br />
+                    <br />For <b>moneyout</b> mode it will be among:
+                    <br />- PROJECTIONS
+                    <br />- PAY_SOON
+                    <br />- PAY_NOW
+                    <br />- PAID<br />
+                    <br />For <b>sales</b> mode it will be among:
+                    <br />- PROJECTIONS
+                    <br />- ONGOING
+                    <br />- DONE
+                </td>
             </tr>
             <tr>
                 <td>budget_category_id</td>
