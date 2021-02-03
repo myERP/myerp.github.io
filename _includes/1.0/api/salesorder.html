@@ -252,4 +252,14 @@
 
     <h3 id="salesorderavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}
+
+    <h3 id="salesordertodelivery">Create a delivery note from a sales order</h3>
+    {% highlight bash %} PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_orders.url}}/:id/deliver{% endhighlight %}
+
+    <p>On success, the sales order gets delivered and the resulting <a href="#deliverynote">Delivery Note</a> is returned.</p>
+
+    <h3 id="salesordertoinvoice">Create an invoice from a sales order</h3>
+    {% highlight bash %} PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.sales_orders.url}}/:id/invoice{% endhighlight %}
+
+    <p>On success, the sales order gets closed and the resulting <a href="#invoice">Invoice</a> is returned.</p>
 </div>

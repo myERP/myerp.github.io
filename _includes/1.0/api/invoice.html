@@ -291,4 +291,9 @@
     <h3 id="invoiceprint">Print an Invoice as PDF</h3>
     {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.invoices.url}}/:id/print[.pdf|.json]{% endhighlight %}
     {% include table-print-response-types.html %}
+
+    <h3 id="invoicetocreditmemo">Create a credit memo from an invoice</h3>
+    {% highlight bash %} PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.invoices.url}}/:id/cancel{% endhighlight %}
+
+    <p>On success, the invoice gets cancelled and the resulting <a href="#creditmemo">Credit memo</a> is returned.</p>
 </div>

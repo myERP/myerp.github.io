@@ -1,0 +1,18 @@
+{
+  "locked": false,
+  "sent": false,
+  "sent_at": "2021-01-12",
+  "paid": 0.0,
+  "unpaid": 27014.4,
+  "id": 10002,
+  "user_code": "VINV-001",
+  "date": "2021-01-12",
+  "currency_iso_code": "GBP",
+  "employee_id": 10028,
+  "private_note": "A vendor bill",
+  "subtotal": 22512.0,
+  "reduce_amount": 0.0,
+  "tax_amount": 4502.4,
+  "total": 27014.4,
+  "attachments": []
+}

@@ -1,0 +1,131 @@
+<div id="vendorcreditmemo" class="group">
+
+    <h2>Vendor credit memos</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.vendor_credit_memos.url}}{% endhighlight %}
+    <h3 id="vendorcreditmemojsonformat">JSON Format</h3>
+    <p>Vendor bills are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating customers</td>
+            </tr>
+            <tr>
+                <td>locked</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Indicates that the document can no longer be edited nor deleted.</td>
+            </tr>
+            <tr>
+                <td>sent</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Has the document been finalized or sent to the Customer.</td>
+            </tr>
+            <tr>
+                <td>sent_at</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date the document has been finalized or sent to the Customer.
+                    <br />Format: {{ site.format.date }}<br />
+                </td>
+            </tr>
+            <tr>
+                <td>paid</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Total of the payments made on that bill.</td>
+            </tr>
+            <tr>
+                <td>unpaid</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Remaining amount to be paid.</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The number assigned to this bill (i.e. SCN-001). If you don't specify a a credit memo number, it will be automatically generated. 64 characters max.</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date that will be printed.<br />Format: {{ site.format.date }}<br />Default: date of the day.</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ISO Code of one of <a href="/docs/1.0/api/#currency" title="">your Currencies</a>
+                    <br/>by default, the domain currency will be selected. 4 characters max.
+                </td>
+            </tr>
+            <tr>
+                <td>employee_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the Employee assigned to that bill.<br />Default: the authenticated user.</td>
+            </tr>
+            <tr>
+                <td>private_note</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A private note that won't be printed.</td>
+            </tr>
+            <tr>
+                <td>subtotal</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Total before taxes and reduce. Based on the content of the order lines.</td>
+            </tr>
+            <tr>
+                <td>reduce_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Amount of the reduce, based on the subtotal and reduce rate.</td>
+            </tr>
+            <tr>
+                <td>tax_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Overall tax amount. Includes all taxes, discounts and reduce.</td>
+            </tr>
+            <tr>
+                <td>total</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The final total the customer needs to pay. All include (taxes, discounts, reduce).</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <h3 id="vendorbilljsonexample">JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/vendor_bill.json %}{% endhighlight %}
+
+    <h3 id="vendorbillavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+</div>
