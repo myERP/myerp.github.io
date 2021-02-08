@@ -19,10 +19,16 @@
             </tr>
             <tr>
                 <td>vendor</td>
-                <td>{{ site.format.type.vendor }}</td>
-                <td>no</td>
+                <td>{{ site.format.type.snippet }}</td>
                 <td>yes</td>
-                <td>Vendor of this order.</td>
+                <td>no</td>
+                <td>
+                    The Snippet of the purchase order's <a href="/docs/1.0/api/#vendor" title="">Vendor.</a><br />
+                    Where :<br />
+                    - id = vendor.id<br />
+                    - name = vendor.full_name<br />
+                    - user_code = vendor.user_code
+                </td>
             </tr>
             <tr>
                 <td>user_code</td>
@@ -85,7 +91,7 @@
                 <td>{{ site.format.type.double }}</td>
                 <td>no</td>
                 <td>yes</td>
-                <td>The final total the customer needs to pay. All include (taxes, discounts, reduce).</td>
+                <td>The final total that gets billed by the vendor. All include (taxes, discounts, reduce).</td>
             </tr>
         </tbody>
     </table>

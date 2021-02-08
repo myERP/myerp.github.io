@@ -2,77 +2,9 @@
   "id": 10001,
   "uuid": "f67691ec-fa87-4971-b300-c0b0ca1d1015",
   "vendor": {
-    "id": 10001,
-    "type": 1,
-    "full_name": "The best vendor",
-    "address": {
-      "street_line1": "6 Garden Lane",
-      "street_line2": "",
-      "street_line3": "",
-      "postal_code": "BD9 5QJ",
-      "city": "Bradford",
-      "country": "United Kingdom",
-      "country_iso_code": "GB",
-      "locality": "West Yorkshire",
-      "short_locality": "YSW",
-      "full_address": "6 Garden Lane Bradford YSW BD9 5QJ United Kingdom"
-    },
-    "phone_number": "0612345678",
-    "email": "goat@best-vebdor.com",
-    "website": "retails.best-vendor.com",
-    "contacts": [
-      {
-        "id": 10000,
-        "first_name": "Best",
-        "last_name": "Contact",
-        "full_name": "Best Contact",
-        "cell_phone": "",
-        "work_phone": "0697867564",
-        "home_phone": "",
-        "email": "contact@best-vendor.com",
-        "address": {
-          "street_line1": "Westernmoor",
-          "street_line2": "",
-          "street_line3": "",
-          "postal_code": "NE37",
-          "city": "Washington",
-          "country": "United Kingdom",
-          "country_iso_code": "GB",
-          "locality": "Tyne and Wear",
-          "short_locality": "TWR",
-          "full_address": "Westernmoor Washington TWR NE37 United Kingdom"
-        },
-        "note": "",
-        "notes": "",
-        "position": "None",
-        "department": "None"
-      }
-    ],
-    "currency_iso_code": "GBP",
-    "payment_terms_id": 1,
-    "payment_terms": {
-      "id": 1,
-      "name": "Due on receipt"
-    },
-    "taxpayer_id": "019283847465",
-    "taxpayer_id_number": "",
-    "user_code": "1234",
-    "note": "",
-    "notes": "",
-    "category": "Purchase Vendor",
-    "company_name": "The best vendor",
-    "first_name": null,
-    "last_name": null,
-    "middle_name": null,
-    "is_account_creation_triggered": null,
-    "accounting_account": {
-      "id": 40,
-      "number": "20001",
-      "name": "Accounts Payable:Miscellaneous Suppliers",
-      "is_family": false,
-      "family_id": 39
-    },
-    "tax_id": ""
+    "user_code": "SUP-001",
+    "id": 1,
+    "name": "Miscellaneous Supplier"
   },
   "user_code": "SORD-002",
   "date": "2021-02-03",
