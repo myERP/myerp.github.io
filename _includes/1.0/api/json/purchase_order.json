@@ -1,0 +1,19 @@
+{
+  "id": 10001,
+  "uuid": "f67691ec-fa87-4971-b300-c0b0ca1d1015",
+  "vendor": {
+    "user_code": "SUP-001",
+    "id": 1,
+    "name": "Miscellaneous Supplier"
+  },
+  "user_code": "SORD-002",
+  "date": "2021-02-03",
+  "currency_iso_code": "GBP",
+  "employee_id": 10028,
+  "private_note": "",
+  "subtotal": 161336.0,
+  "reduce_amount": 37107.28,
+  "tax_amount": 24845.74,
+  "total": 149074.46,
+  "attachments": []
+}

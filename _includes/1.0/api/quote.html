@@ -221,4 +221,14 @@
     <h3 id="quoteprint">Print a Quote as PDF</h3>
     {% highlight bash %} GET {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.quotes.url}}/:id/print[.pdf|.json]{% endhighlight %}
     {% include table-print-response-types.html %}
+
+    <h3 id="quotetoinvoice">Create a invoice from a quote</h3>
+    {% highlight bash %} PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.quotes.url}}/:id/invoice{% endhighlight %}
+
+    <p>On success, the quote gets invoiced and the resulting <a href="#invoice">Invoice</a> is returned.</p>
+
+    <h3 id="quotetosalesorder">Create a sales order from a quote</h3>
+    {% highlight bash %} PUT {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.quotes.url}}/:id/order{% endhighlight %}
+
+    <p>On success, the quote gets ordered and the resulting <a href="#salesorder">Sales Order</a> is returned.</p>
 </div>

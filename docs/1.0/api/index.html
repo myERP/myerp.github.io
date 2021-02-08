@@ -120,8 +120,24 @@ title: "- REST API V1.0 Resources"
               </li>
               <li><a href="#salesorderavailablemethods">Available Methods</a>
               </li>
+              <li><a href="#salesordertodelivery">Sales Order to delivery note</a>
+              </li>
+              <li><a href="#salesordertoinvoice">Sales Order to invoice</a>
+              </li>
           </ul>
       </li>
+        <!-- purchase order -->
+        <li>
+            <a href="#purchaseorder">Purchase orders</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#purchaseorderjsonformat">JSON Format</a>
+                </li>
+                <li><a href="#purchaseorderjsonexample">JSON Example</a>
+                </li>
+                <li><a href="#purchaseorderavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
       <!-- quotes -->
       <li>
           <a href="#quote">Quotes</a>
@@ -136,7 +152,12 @@ title: "- REST API V1.0 Resources"
               </li>
               <li><a href="#quoteavailablemethods">Available Methods</a>
               </li>
-              <li><a href="#quoteprint">Print as PDF</a></li>
+              <li><a href="#quoteprint">Print as PDF</a>
+              </li>
+              <li><a href="#quotetoinvoice">Quote to invoice</a>
+              </li>
+              <li><a href="#quotetosalesorder">Quote to sales order</a>
+              </li>
           </ul>
       </li>
       <!-- invoices -->
@@ -153,10 +174,25 @@ title: "- REST API V1.0 Resources"
               </li>
               <li><a href="#invoiceavailablemethods">Available Methods</a>
               </li>
-              <li><a href="#invoiceprint">Print as PDF</a></li>
+              <li><a href="#invoiceprint">Print as PDF</a>
+              </li>
+              <li><a href="#invoicetocreditmemo">Invoice to credit memo</a>
+              </li>
           </ul>
       </li>
-      <!-- invoices -->
+        <!-- vendor bills -->
+        <li>
+            <a href="#vendorbill">Vendor bills</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#vendorbilljsonformat">JSON Format</a>
+                </li>
+                <li><a href="#vendorbilljsonexample">JSON Example</a>
+                </li>
+                <li><a href="#vendorbillavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
+      <!-- installment -->
       <li>
           <a href="#installment">Installments <span>(Read-only)</span></a>
           <ul class="nav nav-stacked">
@@ -197,6 +233,18 @@ title: "- REST API V1.0 Resources"
               <li><a href="#creditmemoprint">Print as PDF</a></li>
           </ul>
       </li>
+        <!-- vendor credit memos -->
+        <li>
+            <a href="#vendorcreditmemo">Vendor credit memos</a>
+            <ul class="nav nav-stacked">
+                <li><a href="#vendorcreditmemojsonformat">JSON Format</a>
+                </li>
+                <li><a href="#vendorcreditmemojsonexample">JSON Example</a>
+                </li>
+                <li><a href="#vendorcreditmemoavailablemethods">Available Methods</a>
+                </li>
+            </ul>
+        </li>
       <!-- transactions -->
       <li>
           <a href="#transaction">Accounting Transactions</a>
@@ -449,11 +497,14 @@ title: "- REST API V1.0 Resources"
     <div>{% include 1.0/api/projecttask.html %}</div>
     <div>{% include 1.0/api/opportunitytask.html %}</div>
     <div>{% include 1.0/api/salesorder.html %}</div>
+    <div>{% include 1.0/api/purchase-order.html %}</div>
     <div>{% include 1.0/api/quote.html %}</div>
     <div>{% include 1.0/api/invoice.html %}</div>
+    <div>{% include 1.0/api/vendor-bill.html %}</div>
     <div>{% include 1.0/api/installment.html %}</div>
     <div>{% include 1.0/api/payment.html %}</div>
     <div>{% include 1.0/api/creditmemo.html %}</div>
+    <div>{% include 1.0/api/vendor-credit-memo.html %}</div>
     <div>{% include 1.0/api/transaction.html %}</div>
     <div>{% include 1.0/api/journal.html %}</div>
     <div>{% include 1.0/api/account.html %}</div>

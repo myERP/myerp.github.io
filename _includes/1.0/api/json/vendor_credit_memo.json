@@ -1,0 +1,18 @@
+{
+  "locked": true,
+  "sent": true,
+  "sent_at": "2021-02-03",
+  "paid": 2251.2,
+  "unpaid": 0.0,
+  "id": 10000,
+  "user_code": "SCN-001",
+  "date": "2020-10-06",
+  "currency_iso_code": "GBP",
+  "employee_id": 10028,
+  "private_note": "",
+  "subtotal": 1876.0,
+  "reduce_amount": 0.0,
+  "tax_amount": 375.2,
+  "total": 2251.2,
+  "attachments": []
+}

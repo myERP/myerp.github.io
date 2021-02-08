@@ -37,16 +37,22 @@ resource:
     url: /projects
   sales_orders:
     url: /sales_orders
+  purchase_orders:
+    url: /purchase_orders
   quotes:
     url: /quotes
   invoices:
     url: /invoices
+  vendor_bills:
+    url: /vendor_bills
   installments:
     url: /installments
   payments:
     url: /payments
   credit_memos:
     url: /credit_memos
+  vendor_credit_memos:
+    url: /vendor_credit_memos
   items:
     url: /items
   payment_terms:
@@ -120,3 +126,4 @@ format:
     top_customers: 'array[<a href="/docs/1.0/api/#top_customer" alt=""/>Top customer</a>]'
     top_invoiced: 'array[<a href="/docs/1.0/api/#top_invoiced" alt=""/>Top invoiced</a>]'
     snippet: '<a href="/docs/1.0/api/#snippet" title="">Snippet</a>'
+    vendor: '<a href="/docs/1.0/api/#vendor" title="">Vendor</a>'
