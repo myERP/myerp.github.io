@@ -2,17 +2,28 @@
 
     <h2>Domain</h2>
     {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.domains.url}}{% endhighlight %}
-    <p>This endpoint will delete your account and cancel your subscription. The access to that endpoint is restricted to administrators only.</p>
+    <p class="message bg-primary">X-API-Authorization header required cf the following <a href="/#xapi" style="color: inherit; text-decoration: underline">section</a>.</p>
+    <p>This endpoint will delete your account and cancel your subscription.</p>
     <p class="message bg-danger">
         Deleting your domain is a definitive action that cannot be undone. Be advised that all users will no longer be able to use the application nor access datas through the api.
     </p>
 
-    <h3 id="domainoptions">Options</h3>
+    <h3 id="domainoptions">Options as body json</h3>
     <p>The following options are available for that endpoint:</p>
     <table class="table table-bordered table-striped">
         <thead>
         {% include table-header-option.html %}
         </thead>
+        <tr>
+            <td>provider</td>
+            <td>{{ site.format.type.string }}</td>
+            <td>The provider associated with the account to delete <b>(mandatory)</b>.</td>
+        </tr>
+        <tr>
+            <td>account_id</td>
+            <td>{{ site.format.type.integer }}</td>
+            <td>Id of the account that will be deleted <b>(mandatory)</b>.</td>
+        </tr>
         <tr>
             <td>reason</td>
             <td>{{ site.format.type.string }}</td>
