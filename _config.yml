@@ -82,7 +82,7 @@ resource:
   cash_flow_details:
     url: /dashboards/accounting/cash_flow/details
   cash_flow_overtime:
-    url: /dashboards/accounting/cash_flow/overtime
+    url: /dashboards/accounting/cash_flow/over_time
   profit_loss_kpi:
     url: /dashboards/accounting/profit_loss/kpi
   expense_breakdown:
@@ -90,7 +90,7 @@ resource:
   sales_goal:
     url: /dashboards/sales/sales/goal
   sales_overtime:
-    url: /dashboards/sales/sales/overtime
+    url: /dashboards/sales/sales/over_time
   sales_top_customers:
     url: /dashboards/sales/top_customers
   sales_top_invoiced:
