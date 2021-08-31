@@ -79,22 +79,6 @@ resource:
     url: /opportunity_tasks
   project_tasks:
     url: /project_tasks
-  cash_flow_details:
-    url: /dashboards/accounting/cash_flow/details
-  cash_flow_overtime:
-    url: /dashboards/accounting/cash_flow/over_time
-  profit_loss_kpi:
-    url: /dashboards/accounting/profit_loss/kpi
-  expense_breakdown:
-    url: /dashboards/accounting/expense/breakdown
-  sales_goal:
-    url: /dashboards/sales/sales/goal
-  sales_overtime:
-    url: /dashboards/sales/sales/over_time
-  sales_top_customers:
-    url: /dashboards/sales/top_customers
-  sales_top_invoiced:
-    url: /dashboards/sales/top_invoiced_items
   domains:
     url: /domains
 
