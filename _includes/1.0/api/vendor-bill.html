@@ -126,6 +126,23 @@
     <h3 id="vendorbilljsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/vendor_bill.json %}{% endhighlight %}
 
+    <h3 id="vendorbillsorting">Available Sorting Options</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-sorting.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>created_at</td>
+            <td>Sorts by the creation date field.</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>Sorts by the update date field.</td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="vendorbillavailablemethods">Available Methods</h3>
     {% include 1.0/api/methods/full.html %}
 
