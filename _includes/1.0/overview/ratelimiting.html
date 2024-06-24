@@ -7,11 +7,18 @@
 
     <h4>15 Minute Windows</h4>
 
-    <p>Rate limits in version 1.0 of the API are divided into 15 minute intervals. Additionally, all 1.0 endpoints require authentication. API v1.0's rate limiting model allows for a wider ranger of requests through per-method request limits. There is one initial bucket available: **1800 calls every 15 minutes**.</p>
+    <p>Rate limits in version 1.0 of the API are divided into 15 minute intervals. Additionally, all 1.0 endpoints require authentication. API v1.0's rate limiting model allows for a wider ranger of requests through per-method request limits. There is one initial bucket available: <b>3600 calls every 15 minutes</b>.</p>
+    <p>Each response from the API contains informational headers about the current usage of your limit:</p>
+    <ul>
+        <li><b>X-Ratelimit-Limit</b>: Your rate limit</li>
+        <li><b>X-Ratelimit-Remaining</b>: How many calls are remaining before reaching the limit.</li>
+        <li><b>X-Ratelimit-Used</b>: How many calls have already been made.</li>
+    </ul>
 
     <h3>HTTP Response Code</h3>
 
-    <p>If the rate limit is exceeded, OneUp will respond with a **HTTP 429 Too Many Requests** response code and a body that details the reason for the rate limiter kicking in. You should anticipate this in your API client for the smoothest possible ride.</p>
+    <p>If the rate limit is exceeded, OneUp will respond with a <b>HTTP 429 Too Many Requests</b> response code and a body that details the reason for the rate limiter kicking in. You should anticipate this in your API client for the smoothest possible ride.</p>
+    <p>Complementary to the HTTP Error 429, the header <b>Retry-After</b> will be present in the response. The header value indicates the date and time when the limit will be reset.</p>
 
     <h3>Tips to avoid being Rate Limited</h3>
 
