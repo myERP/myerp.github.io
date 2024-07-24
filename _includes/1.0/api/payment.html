@@ -84,6 +84,19 @@
     <h3 id="paymentjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/payment.json %}{% endhighlight %}
 
+    <h3 id="invoicefilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>invoice_id</td>
+            <td>Filter by invoice ID. Only available for GET operation to retrieve the list of payments for specific invoice.</td>
+        </tr>
+        </tbody>
+    </table>
+
     <h3 id="paymentavailablemethods">Available Methods</h3>
     <table class="table table-bordered table-striped">
         <thead>
