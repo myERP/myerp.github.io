@@ -4,6 +4,11 @@
   "sent_at": "2026-01-12",
   "paid": 0.0,
   "unpaid": 528.31,
+  "vendor": {
+    "user_code": "VEN-001",
+    "id": 1,
+    "name": "MISC VENDOR"
+  },
   "id": 10002,
   "user_code": "VINV-001",
   "date": "2026-01-12",
@@ -22,10 +27,12 @@
       "total": 450.0
     },
     {
+      "id" : 70,
       "accountancy_id": 586,
       "description": "",
       "quantity": 1.0,
-      "discount_rate": 0.0,
+      "unit_price_wt": 45.0,
+      "discount_rate": 5.0,
       "tax_id": 6,
       "tax": {
         "id": 6
