@@ -41,6 +41,40 @@
                 </td>
             </tr>
             <tr>
+                <td>vendor_id <span class="deprecated">DEPRECATED</span></td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#vendor" title="">Vendor.</a></td>
+            </tr>
+            <tr>
+                <td>vendor</td>
+                <td>{{ site.format.type.snippet }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>
+                    The Snippet of the bill <a href="/docs/1.0/api/#vendor" title="">Vendor.</a><br />
+                    Where :<br />
+                    - id = vendor.id<br />
+                    - name = vendor.full_name<br />
+                    - user_code = vendor.user_code
+                </td>
+            </tr>
+            <tr>
+                <td>billing_contact_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> to bill.<br />Should belong to that bill's Vendor.</td>
+            </tr>
+            <tr>
+                <td>billing_address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The billing address. The Contact address if any, the Vendor one otherwise.</td>
+            </tr>
+            <tr>
                 <td>paid</td>
                 <td>{{ site.format.type.double }}</td>
                 <td>no</td>
@@ -85,6 +119,34 @@
                 <td>Id of the Employee assigned to that bill.<br />Default: the authenticated user.</td>
             </tr>
             <tr>
+                <td>order_lines</td>
+                <td>{{ site.format.type.order_line }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>An array containing the order lines of the bill.</td>
+            </tr>
+            <tr>
+                <td>shipping_contact_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#contact" title="">Contact</a> the goods should be shipped to, if different than the Vendor.<br />Could be any Contact from any Vendor. By default the user's address.</td>
+            </tr>
+            <tr>
+                <td>shipping_address</td>
+                <td>{{ site.format.type.address }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The shipping address. The shipping Contact address if any, the User's one otherwise.</td>
+            </tr>
+            <tr>
+                <td>payment_terms_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Id of the <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a> to apply on that bill. Will be used as a template to generate Settlements.</td>
+            </tr>
+            <tr>
                 <td>private_note</td>
                 <td>{{ site.format.type.string }}</td>
                 <td>no</td>
@@ -117,7 +179,7 @@
                 <td>{{ site.format.type.double }}</td>
                 <td>no</td>
                 <td>yes</td>
-                <td>The final total the customer needs to pay. All include (taxes, discounts, reduce).</td>
+                <td>The final total the user needs to pay to the vendor. All include (taxes, discounts, reduce).</td>
             </tr>
 
         </tbody>
