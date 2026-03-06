@@ -28,7 +28,7 @@
     },
     {
       "id" : 70,
-      "accountancy_id": 586,
+      "accounting_account_id": 586,
       "description": "",
       "quantity": 1.0,
       "unit_price_wt": 45.0,
