@@ -28,7 +28,7 @@
     },
     {
       "id" : 70,
-      "accountancy_id": 586,
+      "accounting_account_id": 586,
       "description": "",
       "quantity": 1.0,
       "unit_price_wt": 45.0,
@@ -39,13 +39,29 @@
       },
       "is_taxable": null,
       "total": 42.75
+    },
+    {
+      "id" : 71,
+      "budget_category": {
+        "id": 102
+      },
+      "description": "",
+      "quantity": 1.0,
+      "unit_price_wt": 50.0,
+      "discount_rate": 0.0,
+      "tax_id": 6,
+      "tax": {
+        "id": 6
+      },
+      "is_taxable": null,
+      "total": 49.50
     }
   ],
   "employee_id": 10028,
   "private_note": "A vendor bill",
-  "subtotal": 492.75,
-  "reduce_amount": 49.28,
-  "tax_amount": 84.84,
-  "total": 528.31,
+  "subtotal": 542.75,
+  "reduce_amount": 54.28,
+  "tax_amount": 89.34,
+  "total": 577.81,
   "attachments": []
 }
