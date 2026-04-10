@@ -49,6 +49,8 @@ resource:
     url: /installments
   payments:
     url: /payments
+  bill_payments:
+    url: /bill_payments
   credit_memos:
     url: /credit_memos
   vendor_credit_memos:
