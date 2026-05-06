@@ -1,0 +1,11 @@
+{
+  "id": 28,
+  "user_code": "CMPAY-028",
+  "credit_memo_id": 10001,
+  "date": "2020-08-11",
+  "amount": 99.0,
+  "currency_iso_code": "USD",
+  "payment_method_id": 1,
+  "bank_reference": "BK-XCT-094843904 PAY",
+  "bank_id": 5
+}
