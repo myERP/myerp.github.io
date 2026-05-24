@@ -14,5 +14,15 @@
   "reduce_amount": 0.0,
   "tax_amount": 375.2,
   "total": 2251.2,
-  "attachments": []
+  "attachments": [],
+  "installments": [
+    {
+      "id": 10005,
+      "vendor_credit_memo_id": 10000,
+      "due_date": "2020-11-06",
+      "amount": 2251.2,
+      "outstanding_amount": 0.0,
+      "currency_iso_code": "GBP"
+    }
+  ]
 }
