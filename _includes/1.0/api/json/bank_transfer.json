@@ -1,0 +1,17 @@
+{
+  "id": 7,
+  "user_code": "BTRF-007",
+  "date": "2024-03-15",
+  "notes": "Monthly reserve top-up",
+  "from": {
+    "bank_account": { "id": 1, "name": "Main Checking" },
+    "amount": 5000.00,
+    "currency_iso_code": "EUR"
+  },
+  "to": {
+    "bank_account": { "id": 2, "name": "Savings Reserve" },
+    "amount": 5000.00,
+    "currency_iso_code": "EUR"
+  },
+  "budget_category": { "id": 3, "name": "Internal transfer" }
+}

@@ -83,6 +83,12 @@ resource:
     url: /project_tasks
   domains:
     url: /domains
+  sales_receipts:
+    url: /sales_receipts
+  expenses:
+    url: /expenses
+  bank_transfers:
+    url: /bank_transfers
 
 format:
   date: yyyy-MM-dd (e.g. 2013-06-26)
@@ -113,3 +119,4 @@ format:
     top_invoiced: 'array[<a href="/docs/1.0/api/#top_invoiced" alt=""/>Top invoiced</a>]'
     snippet: '<a href="/docs/1.0/api/#snippet" title="">Snippet</a>'
     vendor: '<a href="/docs/1.0/api/#vendor" title="">Vendor</a>'
+    category_line: 'array[<a href="/docs/1.0/api/#categoryline" title="">Category Line</a>]'

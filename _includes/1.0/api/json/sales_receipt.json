@@ -1,0 +1,37 @@
+{
+  "id": 12,
+  "user_code": "REC-012",
+  "status": "deposited",
+  "type": "multi-line",
+  "payee_type": "CUSTOMER",
+  "payee": { "id": 5, "name": "ACME Corp", "user_code": "CLI-005" },
+  "date": "2024-03-15",
+  "payment_date": "2024-03-20",
+  "payment_method": "CHECK",
+  "bank_account": { "id": 1, "name": "Main Checking" },
+  "transaction_id": null,
+  "notes": null,
+  "currency_iso_code": "EUR",
+  "total_amount": 120.00,
+  "assigned_to": { "id": 1, "first_name": "Jane", "last_name": "Doe" },
+  "project": null,
+  "locked": false,
+  "bank_reconciled": false,
+  "lines": [
+    {
+      "id": 1,
+      "total_amount": 120.00,
+      "sub_total_amount": 100.00,
+      "tax_amount": 20.00,
+      "price_mode": "withTaxes",
+      "tax": { "id": 1, "name": "TVA 20%", "rate": 20.0 },
+      "accounting_account": { "id": 2, "name": "Sales revenue", "number": "706000" },
+      "budget_category": { "id": 1, "name": "Services" },
+      "notes": "Q1 consulting services"
+    }
+  ],
+  "metadata": {
+    "document_status": "SALES_RECEIPT_OPEN",
+    "payment_status": "SALES_RECEIPT_PAID"
+  }
+}
