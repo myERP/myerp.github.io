@@ -271,6 +271,38 @@ title: "- REST API V1.0 Resources"
                 </li>
             </ul>
         </li>
+      <!-- sales receipts -->
+      <li>
+          <a href="#salesreceipt">Sales Receipts</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#salesreceiptjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#salesreceiptjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#salesreceiptfilter">Available Filter Fields</a>
+              </li>
+              <li><a href="#salesreceiptsorting">Available Sorting Options</a>
+              </li>
+              <li><a href="#salesreceiptavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
+      <!-- expenses -->
+      <li>
+          <a href="#expense">Expenses</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#expensejsonformat">JSON Format</a>
+              </li>
+              <li><a href="#expensejsonexample">JSON Example</a>
+              </li>
+              <li><a href="#expensefilter">Available Filter Fields</a>
+              </li>
+              <li><a href="#expensesorting">Available Sorting Options</a>
+              </li>
+              <li><a href="#expenseavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- transactions -->
       <li>
           <a href="#transaction">Accounting Transactions</a>
@@ -326,6 +358,20 @@ title: "- REST API V1.0 Resources"
               <li><a href="#bankentrysorting">Available Sorting Options</a>
               </li>
               <li><a href="#bankentryavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
+      <!-- bank transfers -->
+      <li>
+          <a href="#banktransfer">Bank Transfers</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#banktransferjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#banktransferdirection">Transfer Direction</a>
+              </li>
+              <li><a href="#banktransferjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#banktransferavailablemethods">Available Methods</a>
               </li>
           </ul>
       </li>
@@ -399,6 +445,8 @@ title: "- REST API V1.0 Resources"
               </li>
               <li><a href="#orderline">Order line</a>
               </li>
+              <li><a href="#categoryline">Category Line</a>
+              </li>
               <li><a href="#snippet">Snippet</a>
               </li>
           </ul>
@@ -438,11 +486,14 @@ title: "- REST API V1.0 Resources"
     <div>{% include 1.0/api/bill-payment.html %}</div>
     <div>{% include 1.0/api/creditmemo.html %}</div>
     <div>{% include 1.0/api/vendor-credit-memo.html %}</div>
+    <div>{% include 1.0/api/sales-receipt.html %}</div>
+    <div>{% include 1.0/api/expense.html %}</div>
     <div>{% include 1.0/api/transaction.html %}</div>
     <div>{% include 1.0/api/journal.html %}</div>
     <div>{% include 1.0/api/account.html %}</div>
     <div>{% include 1.0/api/bankaccount.html %}</div>
     <div>{% include 1.0/api/bankentry.html %}</div>
+    <div>{% include 1.0/api/bank-transfer.html %}</div>
     <div>{% include 1.0/api/paymentterm.html %}</div>
     <div>{% include 1.0/api/tax.html %}</div>
     <div>{% include 1.0/api/currency.html %}</div>

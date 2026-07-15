@@ -258,6 +258,83 @@
         {% highlight bash %}{% include 1.0/api/json/orderline.json %}{% endhighlight %}
     </div>
 
+    <div id="categoryline" class="group">
+        <h2>Category Line</h2>
+        <p>Category lines are embedded within <a href="/docs/1.0/api/#salesreceipt" title="">Sales Receipts</a> and <a href="/docs/1.0/api/#expense" title="">Expenses</a>. They split the total amount of a document across accounting accounts and budget categories, each optionally carrying a tax.<br />While adding, removing or updating a category line, the parent document's <i>total_amount</i> is updated accordingly.</p>
+        <h3>JSON Format</h3>
+        <p>Category lines are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+                {% include table-header.html %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>Automatically assigned.</td>
+                </tr>
+                <tr>
+                    <td>total_amount</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>yes</td>
+                    <td>no</td>
+                    <td>Line total including tax. The sum of all lines must be strictly positive.</td>
+                </tr>
+                <tr>
+                    <td>sub_total_amount</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Line total excluding tax.</td>
+                </tr>
+                <tr>
+                    <td>tax_amount</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Tax amount for this line.</td>
+                </tr>
+                <tr>
+                    <td>price_mode</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Determines which amount field is authoritative when computing the tax breakdown. Values: <code>withTaxes</code> (uses <i>total_amount</i>), <code>withoutTaxes</code> (uses <i>sub_total_amount</i>).</td>
+                </tr>
+                <tr>
+                    <td>tax</td>
+                    <td>{{ site.format.type.object }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply on this line. Contains <i>id</i>, <i>name</i>, and <i>rate</i>.</td>
+                </tr>
+                <tr>
+                    <td>accounting_account</td>
+                    <td>{{ site.format.type.object }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The <a href="/docs/1.0/api/#account" title="">Accounting Account</a> to assign this line to. Contains <i>id</i>, <i>name</i>, and <i>number</i>.</td>
+                </tr>
+                <tr>
+                    <td>budget_category</td>
+                    <td>{{ site.format.type.object }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The budget category to assign this line to. Contains <i>id</i> and <i>name</i>.</td>
+                </tr>
+                <tr>
+                    <td>notes</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>A description for this line. 255 characters max.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <div id="snippet" class="group">
         <h2>Snippet</h2>
     	<p>A Snippet is a generic type that encapsulates an object and aggregates common information.</p>

@@ -1,0 +1,107 @@
+<div id="banktransfer" class="group">
+
+    <h2>Bank Transfers</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.bank_transfers.url}}{% endhighlight %}
+    <p>A Bank Transfer records a movement of money between two bank accounts.
+        <br />You can specify both the source (<i>from</i>) and destination (<i>to</i>) accounts, or only one of the two — for example, if you are only the receiving party and do not manage the sending account in OneUp, or vice versa.
+        <br />Multi-currency transfers are supported: if <i>from</i> and <i>to</i> use different currencies, exchange rates are computed automatically.</p>
+
+    <h3 id="banktransferjsonformat">JSON Format</h3>
+    <p>Bank Transfers are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating a Bank Transfer.</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The number automatically assigned to this Bank Transfer (e.g. BTRF-007).</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date of the transfer.<br />Format: {{ site.format.date }}<br />Default: date of the day.</td>
+            </tr>
+            <tr>
+                <td>notes</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A description of the transfer purpose. 255 characters max.</td>
+            </tr>
+            <tr>
+                <td>from</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The debit side of the transfer. See <i>Transfer Direction</i> table below. Can be omitted if you are only the receiving party.</td>
+            </tr>
+            <tr>
+                <td>to</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The credit side of the transfer. See <i>Transfer Direction</i> table below. Can be omitted if you are only the sending party.</td>
+            </tr>
+            <tr>
+                <td>budget_category</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The budget category associated with this transfer. Contains <i>id</i> and <i>name</i>.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="banktransferdirection">Transfer Direction (<code>from</code> / <code>to</code>)</h3>
+    <p>Both <i>from</i> and <i>to</i> share the same structure:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>bank_account</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The bank account on this side of the transfer. Contains <i>id</i> and <i>name</i>.<br /><i>from.bank_account</i> and <i>to.bank_account</i> must be different when both are provided.</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>yes</td>
+                <td>no</td>
+                <td>The transfer amount on this side. Must be greater than 0.</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The ISO code of the currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>. Derived from the bank account's currency.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="banktransferjsonexample">JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/bank_transfer.json %}{% endhighlight %}
+
+    <h3 id="banktransferavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+
+</div>

@@ -1,0 +1,227 @@
+<div id="expense" class="group">
+
+    <h2>Expenses</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.expenses.url}}{% endhighlight %}
+    <p>An Expense represents a categorized outgoing payment made to a vendor, employee, or any other payee — without going through a vendor bill.
+        <br />It is made up of one or more <a href="/docs/1.0/api/#categoryline" title="">Category Lines</a> that split the total amount across accounting accounts and budget categories.
+        <br />Setting a <i>payment_date</i> (or a <i>bank_account</i>) marks the document as paid. Clearing them reverts it to unpaid.
+        <br />
+        <br />Expenses share the same structure as <a href="/docs/1.0/api/#salesreceipt" title="">Sales Receipts</a>, with the distinction that expense lines use deductible taxes instead of collected taxes.
+        <br />
+        <br />A <i>POST /v1/expenses/search</i> endpoint is also available for advanced filtering.</p>
+
+    <h3 id="expensejsonformat">JSON Format</h3>
+    <p>Expenses are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating an Expense.</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The number automatically assigned to this Expense (e.g. EXP-008). 64 characters max.</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Payment status of the document. <code>paid</code> when a <i>payment_date</i> is set, <code>not_paid</code> otherwise.</td>
+            </tr>
+            <tr>
+                <td>type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Whether the document has a single line or multiple lines. Values: <code>simple</code>, <code>multi-line</code>.</td>
+            </tr>
+            <tr>
+                <td>payee_type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Type of the payee. Values: <code>CUSTOMER</code>, <code>VENDOR</code>, <code>EMPLOYEE</code>, <code>BANK_ACCOUNT</code>, <code>NO_PAYEE</code>.</td>
+            </tr>
+            <tr>
+                <td>payee</td>
+                <td>{{ site.format.type.snippet }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The payee of this Expense. Must belong to the type specified by <i>payee_type</i>.</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date of the Expense.<br />Format: {{ site.format.date }}<br />Default: date of the day.</td>
+            </tr>
+            <tr>
+                <td>due_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The due date for payment (for unpaid documents).<br />Format: {{ site.format.date }}</td>
+            </tr>
+            <tr>
+                <td>payment_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The date the payment was debited from the bank account. Setting this field marks the document as <code>paid</code>.<br />Format: {{ site.format.date }}</td>
+            </tr>
+            <tr>
+                <td>payment_method</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The payment method used (e.g. <code>CHECK</code>, <code>WIRE_TRANSFER</code>, <code>CREDIT_CARD</code>).</td>
+            </tr>
+            <tr>
+                <td>bank_account</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The bank account the amount was debited from. Contains <i>id</i> and <i>name</i>.</td>
+            </tr>
+            <tr>
+                <td>transaction_id</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>A free reference label (e.g. a bank statement reference). 255 characters max.</td>
+            </tr>
+            <tr>
+                <td>notes</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Free notes attached to this Expense. 255 characters max.</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The ISO code of the currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.<br />Default: your company's currency.</td>
+            </tr>
+            <tr>
+                <td>total_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Total amount including taxes. Computed from the sum of all category lines.</td>
+            </tr>
+            <tr>
+                <td>assigned_to</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The employee assigned to this document. Contains <i>id</i>, <i>first_name</i>, <i>last_name</i>.<br />Default: the authenticated user.</td>
+            </tr>
+            <tr>
+                <td>project</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The project this Expense is linked to, if any. Contains <i>id</i> and <i>name</i>.</td>
+            </tr>
+            <tr>
+                <td>locked</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Indicates that the document can no longer be edited nor deleted (e.g. due to a locked accounting period or VAT reconciliation).</td>
+            </tr>
+            <tr>
+                <td>bank_reconciled</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Indicates whether this Expense has been matched against a bank entry.</td>
+            </tr>
+            <tr>
+                <td>lines</td>
+                <td>{{ site.format.type.category_line }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The category lines of this Expense. Adding, updating or removing a line updates <i>total_amount</i> accordingly.</td>
+            </tr>
+            <tr>
+                <td>metadata</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Extended status information. Contains <i>document_status</i> and <i>payment_status</i> keys.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="expensejsonexample">JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/expense.json %}{% endhighlight %}
+
+    <h3 id="expensefilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>date</td>
+            <td>Filter by document date. Supports range queries.</td>
+        </tr>
+        <tr>
+            <td>payee_type</td>
+            <td>Filter by payee type (CUSTOMER, VENDOR, EMPLOYEE, BANK_ACCOUNT, NO_PAYEE).</td>
+        </tr>
+        <tr>
+            <td>status</td>
+            <td>Filter by payment status: <code>paid</code> or <code>not_paid</code>.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="expensesorting">Available Sorting Options</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-sorting.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>Sorts by id field.</td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>Sorts by date field.</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>Sorts by the creation date field.</td>
+        </tr>
+        <tr>
+            <td>updated_at</td>
+            <td>Sorts by the update date field.</td>
+        </tr>
+        <tr>
+            <td>user_code</td>
+            <td>Sorts by the user_code field.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="expenseavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/full.html %}
+
+</div>

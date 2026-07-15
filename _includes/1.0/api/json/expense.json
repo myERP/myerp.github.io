@@ -1,0 +1,37 @@
+{
+  "id": 8,
+  "user_code": "EXP-008",
+  "status": "paid",
+  "type": "multi-line",
+  "payee_type": "VENDOR",
+  "payee": { "id": 3, "name": "Office Supplies Co.", "user_code": "FOU-003" },
+  "date": "2024-03-10",
+  "payment_date": "2024-03-10",
+  "payment_method": "CREDIT_CARD",
+  "bank_account": { "id": 2, "name": "Corporate Card" },
+  "transaction_id": "TXN-20240310-004",
+  "notes": null,
+  "currency_iso_code": "EUR",
+  "total_amount": 59.99,
+  "assigned_to": { "id": 1, "first_name": "Jane", "last_name": "Doe" },
+  "project": null,
+  "locked": false,
+  "bank_reconciled": false,
+  "lines": [
+    {
+      "id": 1,
+      "total_amount": 59.99,
+      "sub_total_amount": 49.99,
+      "tax_amount": 10.00,
+      "price_mode": "withTaxes",
+      "tax": { "id": 2, "name": "TVA 20%", "rate": 20.0 },
+      "accounting_account": { "id": 7, "name": "Office supplies", "number": "606300" },
+      "budget_category": { "id": 5, "name": "Office supplies" },
+      "notes": "Printer paper and pens"
+    }
+  ],
+  "metadata": {
+    "document_status": "EXPENSE_OPEN",
+    "payment_status": "EXPENSE_PAID"
+  }
+}
