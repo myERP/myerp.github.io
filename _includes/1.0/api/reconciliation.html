@@ -388,23 +388,38 @@
     <div id="reconciliation-vendor-bill" class="group">
         <h4>vendor_bill</h4>
         <p>
-            Reconciles a debit bank entry with a <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> (user_code: VINV-xxx). The vendor bill can be an existing one or created inline via the <i>document</i> field.
+            Reconciles a debit bank entry with a <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> (user_code: VINV-xxx).
             <br />Bank entry direction: <strong>negative (debit)</strong>.
+            <br />
+            <br /><strong>Inline creation</strong>: omit <i>document.id</i> and provide a full <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> object in the <i>document</i> field. The vendor bill is created as part of the reconciliation and its <i>source_type</i> is automatically set to <code>bank_entry</code>.
+            <br /><strong>Reference an existing vendor bill</strong>: provide <code>{id, user_code}</code> in the <i>document</i> field.
         </p>
         <table class="table table-bordered table-striped">
             <thead><tr><th>Field</th><th>Value</th></tr></thead>
             <tbody>
                 <tr><td>document_type</td><td><code>vendor_bill</code></td></tr>
                 <tr><td>document</td><td>Full <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> object (inline creation) or <code>{id, user_code}</code> to reference an existing one.</td></tr>
-                <tr><td>document_status</td><td>Status of the vendor bill.</td></tr>
+                <tr><td>document.source_type</td><td>Set automatically to <code>bank_entry</code> on inline creation. Read-only once set.</td></tr>
+                <tr><td>document_status</td><td>Status of the vendor bill (e.g. <code>VENDOR_BILL_PAID_IN_FULL</code>).</td></tr>
                 <tr><td>cash_flow_status</td><td>Cash flow classification of the vendor bill.</td></tr>
             </tbody>
         </table>
+        <p>Example — inline creation (a new vendor bill with <code>source_type: bank_entry</code> is created and returned in the response):</p>
         {% highlight bash %}{
   "id": 161,
   "bank_entry": { "id": 358, "label": "Office supply invoice" },
   "document_type": "vendor_bill",
-  "document": { "id": 18, "user_code": "VINV-018" },
+  "document": {
+    "id": 18,
+    "user_code": "VINV-018",
+    "source_type": "bank_entry",
+    "vendor": { "id": 3, "name": "Office Supplies Co." },
+    "date": "2024-03-01",
+    "total_amount": 250.00,
+    "category_lines": [
+      { "budget_category": { "id": 5, "name": "Office supplies" }, "amount": 250.00 }
+    ]
+  },
   "document_date": "2024-03-01",
   "user_code": "VINV-018",
   "amount": 250.00,
@@ -418,8 +433,8 @@
   "auto_reconciled": false,
   "delete_on_unmatch": false,
   "bank_entry_reconciled": true,
-  "document_status": "VENDOR_BILL_PAID",
-  "cash_flow_status": "OPERATING"
+  "document_status": "VENDOR_BILL_PAID_IN_FULL",
+  "cash_flow_status": "PAID"
 }{% endhighlight %}
     </div>
 
