@@ -1,10 +1,21 @@
 {
   "id": 156,
-  "bank_entry_id": 353,
-  "document_id": 25,
+  "bank_entry": { "id": 353, "label": "Walmart - Credit card payment" },
   "document_type": "bank_payment",
-  "document_name": "IPAY-025",
-  "reconciled_amount": 330.00,
+  "document": { "id": 8, "user_code": "EXP-008" },
+  "document_date": "2024-03-10",
+  "user_code": "EXP-008",
+  "amount": 59.99,
+  "budget_category": { "id": 5, "name": "Office supplies" },
+  "secondary_budget_categories": [],
+  "tax": { "id": 2, "name": "TVA 20%" },
+  "secondary_taxes": [],
+  "payee_type": "VENDOR",
+  "payee": { "id": 3, "name": "Office Supplies Co.", "type": "VENDOR" },
+  "locked": false,
   "auto_reconciled": false,
-  "accounting_entry_code": 26243
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true,
+  "document_status": "EXPENSE_PAID",
+  "cash_flow_status": "OPERATING"
 }
