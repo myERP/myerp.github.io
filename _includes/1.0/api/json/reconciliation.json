@@ -1,0 +1,10 @@
+{
+  "id": 156,
+  "bank_entry_id": 353,
+  "document_id": 25,
+  "document_type": "bank_payment",
+  "document_name": "IPAY-025",
+  "reconciled_amount": 330.00,
+  "auto_reconciled": false,
+  "accounting_entry_code": 26243
+}
