@@ -1,0 +1,19 @@
+{
+  "id": 162,
+  "bank_entry": { "id": 359, "label": "Customer invoice payment" },
+  "document_type": "customer_invoice",
+  "document": { "id": 14, "user_code": "INV-014" },
+  "document_date": "2024-02-28",
+  "user_code": "INV-014",
+  "amount": 500.00,
+  "budget_category": { "id": 10, "name": "Invoice payments" },
+  "secondary_budget_categories": [],
+  "tax": null,
+  "secondary_taxes": [],
+  "payee_type": "CUSTOMER",
+  "payee": { "id": 5, "name": "ACME Corp", "type": "CUSTOMER" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true
+}

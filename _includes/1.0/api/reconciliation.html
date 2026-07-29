@@ -204,27 +204,7 @@
                 <tr><td>cash_flow_status</td><td>Cash flow classification of the expense.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 156,
-  "bank_entry": { "id": 353, "label": "Walmart - Credit card payment" },
-  "document_type": "bank_payment",
-  "document": { "id": 8, "user_code": "EXP-008" },
-  "document_date": "2024-03-10",
-  "user_code": "EXP-008",
-  "amount": 59.99,
-  "budget_category": { "id": 5, "name": "Office supplies" },
-  "secondary_budget_categories": [],
-  "tax": { "id": 2, "name": "TVA 20%" },
-  "secondary_taxes": [],
-  "payee_type": "VENDOR",
-  "payee": { "id": 3, "name": "Office Supplies Co.", "type": "VENDOR" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true,
-  "document_status": "EXPENSE_PAID",
-  "cash_flow_status": "OPERATING"
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-bank-payment.json %}{% endhighlight %}
     </div>
 
     <!-- sales_receipt -->
@@ -244,27 +224,7 @@
                 <tr><td>cash_flow_status</td><td>Cash flow classification of the sales receipt.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 157,
-  "bank_entry": { "id": 355, "label": "ACME Corp - deposit" },
-  "document_type": "sales_receipt",
-  "document": { "id": 12, "user_code": "REC-012" },
-  "document_date": "2024-03-15",
-  "user_code": "REC-012",
-  "amount": 120.00,
-  "budget_category": { "id": 1, "name": "Services" },
-  "secondary_budget_categories": [],
-  "tax": { "id": 1, "name": "TVA 20%" },
-  "secondary_taxes": [],
-  "payee_type": "CUSTOMER",
-  "payee": { "id": 5, "name": "ACME Corp", "type": "CUSTOMER" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true,
-  "document_status": "SALES_RECEIPT_PAID",
-  "cash_flow_status": "OPERATING"
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-sales-receipt.json %}{% endhighlight %}
     </div>
 
     <!-- bank_transfer -->
@@ -283,25 +243,7 @@
                 <tr><td>payee</td><td>The counterpart bank account. Contains <i>id</i>, <i>name</i>, and <i>type</i> (<code>BANK_ACCOUNT</code>).</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 158,
-  "bank_entry": { "id": 357, "label": "Monthly reserve top-up" },
-  "document_type": "bank_transfer",
-  "document": { "id": 7, "user_code": "BTRF-007" },
-  "document_date": "2024-03-15",
-  "user_code": "BTRF-007",
-  "amount": 5000.00,
-  "budget_category": { "id": 3, "name": "Internal transfer" },
-  "secondary_budget_categories": [],
-  "tax": null,
-  "secondary_taxes": [],
-  "payee_type": "BANK_ACCOUNT",
-  "payee": { "id": 2, "name": "Savings Reserve", "type": "BANK_ACCOUNT" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-bank-transfer.json %}{% endhighlight %}
     </div>
 
     <!-- customer_payment -->
@@ -321,27 +263,7 @@
                 <tr><td>document_private_note</td><td>Optional private note written back to the linked invoice. 10 000 characters max.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 159,
-  "bank_entry": { "id": 353, "label": "Invoice payment from ACME" },
-  "document_type": "customer_payment",
-  "document": { "id": 25, "user_code": "IPAY-025" },
-  "document_date": "2014-07-25",
-  "user_code": "IPAY-025",
-  "amount": 330.00,
-  "budget_category": { "id": 10, "name": "Invoice payments" },
-  "secondary_budget_categories": [],
-  "tax": null,
-  "secondary_taxes": [],
-  "payee_type": "CUSTOMER",
-  "payee": { "id": 14, "name": "ACME Corp", "type": "CUSTOMER" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true,
-  "document_status": "INVOICE_PAID",
-  "cash_flow_status": "OPERATING"
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-customer-payment.json %}{% endhighlight %}
     </div>
 
     <!-- vendor_payment -->
@@ -361,27 +283,7 @@
                 <tr><td>document_private_note</td><td>Optional private note written back to the linked vendor bill. 10 000 characters max.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 160,
-  "bank_entry": { "id": 354, "label": "Walmart supplier payment" },
-  "document_type": "vendor_payment",
-  "document": { "id": 28, "user_code": "BPAY-028" },
-  "document_date": "2014-08-11",
-  "user_code": "BPAY-028",
-  "amount": 99.00,
-  "budget_category": { "id": 11, "name": "Bill payments" },
-  "secondary_budget_categories": [],
-  "tax": null,
-  "secondary_taxes": [],
-  "payee_type": "VENDOR",
-  "payee": { "id": 18, "name": "Walmart", "type": "VENDOR" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true,
-  "document_status": "VENDOR_BILL_PAID",
-  "cash_flow_status": "OPERATING"
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-payment.json %}{% endhighlight %}
     </div>
 
     <!-- vendor_bill -->
@@ -405,37 +307,7 @@
             </tbody>
         </table>
         <p>Example — inline creation (a new vendor bill with <code>source_type: bank_entry</code> is created and returned in the response):</p>
-        {% highlight bash %}{
-  "id": 161,
-  "bank_entry": { "id": 358, "label": "Office supply invoice" },
-  "document_type": "vendor_bill",
-  "document": {
-    "id": 18,
-    "user_code": "VINV-018",
-    "source_type": "bank_entry",
-    "vendor": { "id": 3, "name": "Office Supplies Co." },
-    "date": "2024-03-01",
-    "total_amount": 250.00,
-    "category_lines": [
-      { "budget_category": { "id": 5, "name": "Office supplies" }, "amount": 250.00 }
-    ]
-  },
-  "document_date": "2024-03-01",
-  "user_code": "VINV-018",
-  "amount": 250.00,
-  "budget_category": { "id": 5, "name": "Office supplies" },
-  "secondary_budget_categories": [],
-  "tax": { "id": 2, "name": "TVA 20%" },
-  "secondary_taxes": [],
-  "payee_type": "VENDOR",
-  "payee": { "id": 3, "name": "Office Supplies Co.", "type": "VENDOR" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true,
-  "document_status": "VENDOR_BILL_PAID_IN_FULL",
-  "cash_flow_status": "PAID"
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-bill.json %}{% endhighlight %}
     </div>
 
     <!-- customer_invoice -->
@@ -452,25 +324,7 @@
                 <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#invoice" title="">Invoice</a> to reconcile.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 162,
-  "bank_entry": { "id": 359, "label": "Customer invoice payment" },
-  "document_type": "customer_invoice",
-  "document": { "id": 14, "user_code": "INV-014" },
-  "document_date": "2024-02-28",
-  "user_code": "INV-014",
-  "amount": 500.00,
-  "budget_category": { "id": 10, "name": "Invoice payments" },
-  "secondary_budget_categories": [],
-  "tax": null,
-  "secondary_taxes": [],
-  "payee_type": "CUSTOMER",
-  "payee": { "id": 5, "name": "ACME Corp", "type": "CUSTOMER" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-customer-invoice.json %}{% endhighlight %}
     </div>
 
     <!-- credit_memo -->
@@ -490,27 +344,7 @@
                 <tr><td>document_private_note</td><td>Optional private note written back to the linked credit memo. 10 000 characters max.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 163,
-  "bank_entry": { "id": 360, "label": "Refund to customer" },
-  "document_type": "credit_memo",
-  "document": { "id": 10001, "user_code": "CN-10001" },
-  "document_date": "2024-03-05",
-  "user_code": "CN-10001",
-  "amount": 99.00,
-  "budget_category": { "id": 1, "name": "Services" },
-  "secondary_budget_categories": [],
-  "tax": null,
-  "secondary_taxes": [],
-  "payee_type": "CUSTOMER",
-  "payee": { "id": 5, "name": "ACME Corp", "type": "CUSTOMER" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true,
-  "document_status": "CREDIT_MEMO_PAID",
-  "cash_flow_status": "OPERATING"
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-credit-memo.json %}{% endhighlight %}
     </div>
 
     <!-- vendor_credit_memo -->
@@ -527,25 +361,7 @@
                 <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#vendorcreditmemo" title="">Vendor Credit Memo</a> to reconcile.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{
-  "id": 164,
-  "bank_entry": { "id": 361, "label": "Vendor refund" },
-  "document_type": "vendor_credit_memo",
-  "document": { "id": 10000, "user_code": "SCN-10000" },
-  "document_date": "2024-03-12",
-  "user_code": "SCN-10000",
-  "amount": 2251.20,
-  "budget_category": { "id": 11, "name": "Bill payments" },
-  "secondary_budget_categories": [],
-  "tax": null,
-  "secondary_taxes": [],
-  "payee_type": "VENDOR",
-  "payee": { "id": 3, "name": "Office Supplies Co.", "type": "VENDOR" },
-  "locked": false,
-  "auto_reconciled": false,
-  "delete_on_unmatch": false,
-  "bank_entry_reconciled": true
-}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-credit-memo.json %}{% endhighlight %}
     </div>
 
     <!-- bank_deposit -->

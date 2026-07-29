@@ -1,0 +1,21 @@
+{
+  "id": 163,
+  "bank_entry": { "id": 360, "label": "Refund to customer" },
+  "document_type": "credit_memo",
+  "document": { "id": 10001, "user_code": "CN-10001" },
+  "document_date": "2024-03-05",
+  "user_code": "CN-10001",
+  "amount": 99.00,
+  "budget_category": { "id": 1, "name": "Services" },
+  "secondary_budget_categories": [],
+  "tax": null,
+  "secondary_taxes": [],
+  "payee_type": "CUSTOMER",
+  "payee": { "id": 5, "name": "ACME Corp", "type": "CUSTOMER" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true,
+  "document_status": "CREDIT_MEMO_PAID",
+  "cash_flow_status": "OPERATING"
+}
