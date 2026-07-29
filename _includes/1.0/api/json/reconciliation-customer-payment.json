@@ -1,0 +1,21 @@
+{
+  "id": 159,
+  "bank_entry": { "id": 353, "label": "Invoice payment from ACME" },
+  "document_type": "customer_payment",
+  "document": { "id": 25, "user_code": "IPAY-025" },
+  "document_date": "2014-07-25",
+  "user_code": "IPAY-025",
+  "amount": 330.00,
+  "budget_category": { "id": 10, "name": "Invoice payments" },
+  "secondary_budget_categories": [],
+  "tax": null,
+  "secondary_taxes": [],
+  "payee_type": "CUSTOMER",
+  "payee": { "id": 14, "name": "ACME Corp", "type": "CUSTOMER" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true,
+  "document_status": "INVOICE_PAID",
+  "cash_flow_status": "OPERATING"
+}

@@ -1,0 +1,19 @@
+{
+  "id": 158,
+  "bank_entry": { "id": 357, "label": "Monthly reserve top-up" },
+  "document_type": "bank_transfer",
+  "document": { "id": 7, "user_code": "BTRF-007" },
+  "document_date": "2024-03-15",
+  "user_code": "BTRF-007",
+  "amount": 5000.00,
+  "budget_category": { "id": 3, "name": "Internal transfer" },
+  "secondary_budget_categories": [],
+  "tax": null,
+  "secondary_taxes": [],
+  "payee_type": "BANK_ACCOUNT",
+  "payee": { "id": 2, "name": "Savings Reserve", "type": "BANK_ACCOUNT" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true
+}

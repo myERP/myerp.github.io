@@ -1,0 +1,21 @@
+{
+  "id": 157,
+  "bank_entry": { "id": 355, "label": "ACME Corp - deposit" },
+  "document_type": "sales_receipt",
+  "document": { "id": 12, "user_code": "REC-012" },
+  "document_date": "2024-03-15",
+  "user_code": "REC-012",
+  "amount": 120.00,
+  "budget_category": { "id": 1, "name": "Services" },
+  "secondary_budget_categories": [],
+  "tax": { "id": 1, "name": "TVA 20%" },
+  "secondary_taxes": [],
+  "payee_type": "CUSTOMER",
+  "payee": { "id": 5, "name": "ACME Corp", "type": "CUSTOMER" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true,
+  "document_status": "SALES_RECEIPT_PAID",
+  "cash_flow_status": "OPERATING"
+}

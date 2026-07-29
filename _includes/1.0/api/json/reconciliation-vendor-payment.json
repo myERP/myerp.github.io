@@ -1,0 +1,21 @@
+{
+  "id": 160,
+  "bank_entry": { "id": 354, "label": "Walmart supplier payment" },
+  "document_type": "vendor_payment",
+  "document": { "id": 28, "user_code": "BPAY-028" },
+  "document_date": "2014-08-11",
+  "user_code": "BPAY-028",
+  "amount": 99.00,
+  "budget_category": { "id": 11, "name": "Bill payments" },
+  "secondary_budget_categories": [],
+  "tax": null,
+  "secondary_taxes": [],
+  "payee_type": "VENDOR",
+  "payee": { "id": 18, "name": "Walmart", "type": "VENDOR" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true,
+  "document_status": "VENDOR_BILL_PAID",
+  "cash_flow_status": "OPERATING"
+}

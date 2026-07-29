@@ -375,6 +375,40 @@ title: "- REST API V1.0 Resources"
               </li>
           </ul>
       </li>
+      <!-- reconciliations -->
+      <li>
+          <a href="#reconciliation">Reconciliations</a>
+          <ul class="nav nav-stacked">
+              <li><a href="#reconciliationjsonformat">JSON Format</a>
+              </li>
+              <li><a href="#reconciliationjsonexample">JSON Example</a>
+              </li>
+              <li><a href="#reconciliation-auto-detection">Auto-detection</a>
+              </li>
+              <li><a href="#reconciliationdoctypes">Reconcilable Document Types</a>
+                  <ul class="nav nav-stacked">
+                      <li><a href="#reconciliation-bank-payment">bank_payment</a></li>
+                      <li><a href="#reconciliation-sales-receipt">sales_receipt</a></li>
+                      <li><a href="#reconciliation-bank-transfer">bank_transfer</a></li>
+                      <li><a href="#reconciliation-customer-payment">customer_payment</a></li>
+                      <li><a href="#reconciliation-vendor-payment">vendor_payment</a></li>
+                      <li><a href="#reconciliation-vendor-bill">vendor_bill</a></li>
+                      <li><a href="#reconciliation-customer-invoice">customer_invoice</a></li>
+                      <li><a href="#reconciliation-credit-memo">credit_memo</a></li>
+                      <li><a href="#reconciliation-vendor-credit-memo">vendor_credit_memo</a></li>
+                      <li><a href="#reconciliation-bank-deposit">bank_deposit</a></li>
+                      <li><a href="#reconciliation-accounting-receipt">accounting_receipt</a></li>
+                      <li><a href="#reconciliation-accounting-entry">accounting_entry</a></li>
+                      <li><a href="#reconciliation-fixed-asset">fixed_asset</a></li>
+                      <li><a href="#reconciliation-cash-drawer-closing">cash_drawer_closing</a></li>
+                  </ul>
+              </li>
+              <li><a href="#reconciliationfilter">Available Filter Fields</a>
+              </li>
+              <li><a href="#reconciliationavailablemethods">Available Methods</a>
+              </li>
+          </ul>
+      </li>
       <!-- accounts -->
       <li>
           <a href="#account">Accounts</a>
@@ -494,6 +528,7 @@ title: "- REST API V1.0 Resources"
     <div>{% include 1.0/api/bankaccount.html %}</div>
     <div>{% include 1.0/api/bankentry.html %}</div>
     <div>{% include 1.0/api/bank-transfer.html %}</div>
+    <div>{% include 1.0/api/reconciliation.html %}</div>
     <div>{% include 1.0/api/paymentterm.html %}</div>
     <div>{% include 1.0/api/tax.html %}</div>
     <div>{% include 1.0/api/currency.html %}</div>

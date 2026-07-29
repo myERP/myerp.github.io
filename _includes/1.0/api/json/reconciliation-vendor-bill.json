@@ -1,0 +1,31 @@
+{
+  "id": 161,
+  "bank_entry": { "id": 358, "label": "Office supply invoice" },
+  "document_type": "vendor_bill",
+  "document": {
+    "id": 18,
+    "user_code": "VINV-018",
+    "source_type": "bank_entry",
+    "vendor": { "id": 3, "name": "Office Supplies Co." },
+    "date": "2024-03-01",
+    "total_amount": 250.00,
+    "category_lines": [
+      { "budget_category": { "id": 5, "name": "Office supplies" }, "amount": 250.00 }
+    ]
+  },
+  "document_date": "2024-03-01",
+  "user_code": "VINV-018",
+  "amount": 250.00,
+  "budget_category": { "id": 5, "name": "Office supplies" },
+  "secondary_budget_categories": [],
+  "tax": { "id": 2, "name": "TVA 20%" },
+  "secondary_taxes": [],
+  "payee_type": "VENDOR",
+  "payee": { "id": 3, "name": "Office Supplies Co.", "type": "VENDOR" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true,
+  "document_status": "VENDOR_BILL_PAID_IN_FULL",
+  "cash_flow_status": "PAID"
+}

@@ -1,0 +1,473 @@
+<div id="reconciliation" class="group">
+
+    <h2>Reconciliations</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.reconciliations.url}}{% endhighlight %}
+    <p class="message bg-primary">This API doesn't handle PUT requests.</p>
+    <p>Reconciliations link a <a href="/docs/1.0/api/#bankentry" title="">Bank Entry</a> to an accounting document, confirming that the bank transaction and the document represent the same financial event.
+        <br />
+        <br />You must provide a <i>bank_entry</i> id and a <i>budget_category</i> id when creating a reconciliation. Providing a <i>document_type</i> is optional: if omitted, the type is inferred automatically from the bank entry amount and budget category type (see <a href="#reconciliation-auto-detection">Auto-detection</a> below).
+        <br />Deleting a reconciliation unreconciles the document from the bank entry and updates the bank entry status accordingly.</p>
+
+    <h3 id="reconciliationjsonformat">JSON Format</h3>
+    <p>Reconciliations are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating a Reconciliation.</td>
+            </tr>
+            <tr>
+                <td>bank_entry</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>The <a href="/docs/1.0/api/#bankentry" title="">Bank Entry</a> being reconciled. Contains <i>id</i> and <i>label</i>.</td>
+            </tr>
+            <tr>
+                <td>document_type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>
+                    Type of the document being reconciled. If omitted, inferred automatically (see <a href="#reconciliation-auto-detection">Auto-detection</a>). Accepted values:<br />
+                    - bank_payment<br />
+                    - bank_deposit<br />
+                    - bank_transfer<br />
+                    - sales_receipt<br />
+                    - accounting_receipt<br />
+                    - customer_invoice<br />
+                    - customer_payment<br />
+                    - credit_memo<br />
+                    - vendor_bill<br />
+                    - vendor_payment<br />
+                    - vendor_credit_memo<br />
+                    - accounting_entry<br />
+                    - fixed_asset<br />
+                    - cash_drawer_closing
+                </td>
+            </tr>
+            <tr>
+                <td>document</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The reconciled document. Its structure depends on <i>document_type</i> — either a full embedded document object (for types that support inline creation) or a simple <code>{id, user_code}</code> reference. See per-type sections below.</td>
+            </tr>
+            <tr>
+                <td>document_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Date of the reconciled document.<br />Format: {{ site.format.date }}</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>User code of the reconciled document (e.g. IPAY-025, EXP-008). Automatically derived.</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Amount matched between the bank entry and the document. Must not be 0.00.</td>
+            </tr>
+            <tr>
+                <td>budget_category</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>The primary budget category applied to this reconciliation. Contains <i>id</i> and <i>name</i>.<br />Its type (EXPENSE, INCOME, TRANSFER) drives auto-detection of <i>document_type</i> when not provided.</td>
+            </tr>
+            <tr>
+                <td>secondary_budget_categories</td>
+                <td>array[{{ site.format.type.object }}]</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Additional budget categories applied to this reconciliation.</td>
+            </tr>
+            <tr>
+                <td>tax</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Primary tax applied to the reconciliation. Contains <i>id</i> and <i>name</i>.</td>
+            </tr>
+            <tr>
+                <td>secondary_taxes</td>
+                <td>array[{{ site.format.type.object }}]</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Additional taxes applied to the reconciliation.</td>
+            </tr>
+            <tr>
+                <td>payee_type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Type of the payee. Values: <code>CUSTOMER</code>, <code>VENDOR</code>, <code>EMPLOYEE</code>, <code>BANK_ACCOUNT</code>, <code>NO_PAYEE</code>.</td>
+            </tr>
+            <tr>
+                <td>payee</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The payee of this reconciliation. Contains <i>id</i>, <i>name</i>, and <i>type</i>. Must match <i>payee_type</i>.</td>
+            </tr>
+            <tr>
+                <td>locked</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Indicates whether the reconciliation is locked and can no longer be modified.</td>
+            </tr>
+            <tr>
+                <td>auto_reconciled</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Indicates whether this reconciliation was created automatically by the system.</td>
+            </tr>
+            <tr>
+                <td>delete_on_unmatch</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>When <code>true</code>, deleting this reconciliation also deletes the linked document.</td>
+            </tr>
+            <tr>
+                <td>bank_entry_reconciled</td>
+                <td>{{ site.format.type.boolean }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Whether the associated bank entry is fully reconciled after this operation.</td>
+            </tr>
+            <tr>
+                <td>document_status</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Status of the reconciled document (e.g. <code>EXPENSE_PAID</code>, <code>SALES_RECEIPT_OPEN</code>). Returned for applicable types. Read-only.</td>
+            </tr>
+            <tr>
+                <td>cash_flow_status</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>Cash flow classification of the reconciled document. Returned for applicable types. Read-only.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="reconciliationjsonexample">JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/reconciliation.json %}{% endhighlight %}
+
+    <h3 id="reconciliation-auto-detection">Auto-detection of Document Type</h3>
+    <p>When <i>document_type</i> is omitted from a POST request, the type is inferred automatically from the bank entry amount and budget category type:</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr><th>Bank Entry Amount</th><th>Budget Category Type</th><th>Inferred Type</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Negative (debit)</td><td>EXPENSE, INCOME, or UNCATEGORIZED</td><td><code>bank_payment</code> — creates an Expense</td></tr>
+            <tr><td>Positive (credit)</td><td>EXPENSE, INCOME, or UNCATEGORIZED</td><td><code>sales_receipt</code> — creates a Sales Receipt</td></tr>
+            <tr><td>Any non-zero</td><td>TRANSFER</td><td><code>bank_transfer</code> — creates a Bank Transfer</td></tr>
+        </tbody>
+    </table>
+    <p>To reconcile with any other document type, <i>document_type</i> must be provided explicitly.</p>
+
+    <h3 id="reconciliationdoctypes">Reconcilable Document Types</h3>
+    <p>The <i>document_type</i> determines which resource the <i>document</i> references and what specific fields are available. The <i>document</i> field contains either a full embedded object (for types that support inline creation) or a simple <code>{id, user_code}</code> reference to an existing document.</p>
+
+    <!-- bank_payment -->
+    <div id="reconciliation-bank-payment" class="group">
+        <h4>bank_payment</h4>
+        <p>
+            Reconciles a debit bank entry with an <a href="/docs/1.0/api/#expense" title="">Expense</a> (user_code: EXP-xxx). The expense can be an existing one (provide <i>document.id</i>) or created inline (provide a full <a href="/docs/1.0/api/#expense" title="">Expense</a> object in <i>document</i>).
+            <br />Bank entry direction: <strong>negative (debit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>bank_payment</code></td></tr>
+                <tr><td>document</td><td>Full <a href="/docs/1.0/api/#expense" title="">Expense</a> object (inline creation) or <code>{id, user_code}</code> to reference an existing one.</td></tr>
+                <tr><td>document_status</td><td>ExpenseStatus of the linked expense.</td></tr>
+                <tr><td>cash_flow_status</td><td>Cash flow classification of the expense.</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-bank-payment.json %}{% endhighlight %}
+    </div>
+
+    <!-- sales_receipt -->
+    <div id="reconciliation-sales-receipt" class="group">
+        <h4>sales_receipt</h4>
+        <p>
+            Reconciles a credit bank entry with a <a href="/docs/1.0/api/#salesreceipt" title="">Sales Receipt</a> (user_code: REC-xxx). The sales receipt can be an existing one or created inline via the <i>document</i> field.
+            <br />Bank entry direction: <strong>positive (credit)</strong>.
+            <br />Once reconciled, the sales receipt's <i>bank_reconciled</i> field is set to <code>true</code>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>sales_receipt</code></td></tr>
+                <tr><td>document</td><td>Full <a href="/docs/1.0/api/#salesreceipt" title="">Sales Receipt</a> object (inline creation) or <code>{id, user_code}</code> to reference an existing one.</td></tr>
+                <tr><td>document_status</td><td>SalesReceiptStatus of the linked sales receipt.</td></tr>
+                <tr><td>cash_flow_status</td><td>Cash flow classification of the sales receipt.</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-sales-receipt.json %}{% endhighlight %}
+    </div>
+
+    <!-- bank_transfer -->
+    <div id="reconciliation-bank-transfer" class="group">
+        <h4>bank_transfer</h4>
+        <p>
+            Reconciles a bank entry with a <a href="/docs/1.0/api/#banktransfer" title="">Bank Transfer</a> (user_code: BTRF-xxx). The transfer can be an existing one or created inline via the <i>document</i> field.
+            <br />Bank entry direction: <strong>positive or negative</strong> depending on which side of the transfer is being reconciled.
+            <br />The <i>payee</i> field is automatically set to the counterpart bank account of the transfer.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>bank_transfer</code></td></tr>
+                <tr><td>document</td><td>Full <a href="/docs/1.0/api/#banktransfer" title="">Bank Transfer</a> object (inline creation) or <code>{id, user_code}</code> to reference an existing one.</td></tr>
+                <tr><td>payee</td><td>The counterpart bank account. Contains <i>id</i>, <i>name</i>, and <i>type</i> (<code>BANK_ACCOUNT</code>).</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-bank-transfer.json %}{% endhighlight %}
+    </div>
+
+    <!-- customer_payment -->
+    <div id="reconciliation-customer-payment" class="group">
+        <h4>customer_payment</h4>
+        <p>
+            Reconciles a credit bank entry with a <a href="/docs/1.0/api/#payment" title="">Payment</a> on a customer invoice (user_code: IPAY-xxx). Reference an existing payment by <i>document.id</i>.
+            <br />Bank entry direction: <strong>positive (credit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>customer_payment</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#payment" title="">Payment</a> to reconcile.</td></tr>
+                <tr><td>document_status</td><td>Invoice status of the payment's invoice.</td></tr>
+                <tr><td>cash_flow_status</td><td>Cash flow classification.</td></tr>
+                <tr><td>document_private_note</td><td>Optional private note written back to the linked invoice. 10 000 characters max.</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-customer-payment.json %}{% endhighlight %}
+    </div>
+
+    <!-- vendor_payment -->
+    <div id="reconciliation-vendor-payment" class="group">
+        <h4>vendor_payment</h4>
+        <p>
+            Reconciles a debit bank entry with a <a href="/docs/1.0/api/#billpayment" title="">Bill Payment</a> on a vendor bill (user_code: BPAY-xxx). Reference an existing bill payment by <i>document.id</i>.
+            <br />Bank entry direction: <strong>negative (debit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>vendor_payment</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#billpayment" title="">Bill Payment</a> to reconcile.</td></tr>
+                <tr><td>document_status</td><td>Status of the vendor bill payment.</td></tr>
+                <tr><td>cash_flow_status</td><td>Cash flow classification.</td></tr>
+                <tr><td>document_private_note</td><td>Optional private note written back to the linked vendor bill. 10 000 characters max.</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-payment.json %}{% endhighlight %}
+    </div>
+
+    <!-- vendor_bill -->
+    <div id="reconciliation-vendor-bill" class="group">
+        <h4>vendor_bill</h4>
+        <p>
+            Reconciles a debit bank entry with a <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> (user_code: VINV-xxx).
+            <br />Bank entry direction: <strong>negative (debit)</strong>.
+            <br />
+            <br /><strong>Inline creation</strong>: omit <i>document.id</i> and provide a full <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> object in the <i>document</i> field. The vendor bill is created as part of the reconciliation and its <i>source_type</i> is automatically set to <code>bank_entry</code>.
+            <br /><strong>Reference an existing vendor bill</strong>: provide <code>{id, user_code}</code> in the <i>document</i> field.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>vendor_bill</code></td></tr>
+                <tr><td>document</td><td>Full <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> object (inline creation) or <code>{id, user_code}</code> to reference an existing one.</td></tr>
+                <tr><td>document.source_type</td><td>Set automatically to <code>bank_entry</code> on inline creation. Read-only once set.</td></tr>
+                <tr><td>document_status</td><td>Status of the vendor bill (e.g. <code>VENDOR_BILL_PAID_IN_FULL</code>).</td></tr>
+                <tr><td>cash_flow_status</td><td>Cash flow classification of the vendor bill.</td></tr>
+            </tbody>
+        </table>
+        <p>Example — inline creation (a new vendor bill with <code>source_type: bank_entry</code> is created and returned in the response):</p>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-bill.json %}{% endhighlight %}
+    </div>
+
+    <!-- customer_invoice -->
+    <div id="reconciliation-customer-invoice" class="group">
+        <h4>customer_invoice</h4>
+        <p>
+            Reconciles a credit bank entry directly with an <a href="/docs/1.0/api/#invoice" title="">Invoice</a>. Reference an existing invoice by <i>document.id</i>.
+            <br />Bank entry direction: <strong>positive (credit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>customer_invoice</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#invoice" title="">Invoice</a> to reconcile.</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-customer-invoice.json %}{% endhighlight %}
+    </div>
+
+    <!-- credit_memo -->
+    <div id="reconciliation-credit-memo" class="group">
+        <h4>credit_memo</h4>
+        <p>
+            Reconciles a debit bank entry with a <a href="/docs/1.0/api/#creditmemo" title="">Credit Memo</a> (refund issued to a customer). Reference an existing credit memo by <i>document.id</i>.
+            <br />Bank entry direction: <strong>negative (debit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>credit_memo</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#creditmemo" title="">Credit Memo</a> to reconcile.</td></tr>
+                <tr><td>document_status</td><td>Status of the linked credit memo.</td></tr>
+                <tr><td>cash_flow_status</td><td>Cash flow classification.</td></tr>
+                <tr><td>document_private_note</td><td>Optional private note written back to the linked credit memo. 10 000 characters max.</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-credit-memo.json %}{% endhighlight %}
+    </div>
+
+    <!-- vendor_credit_memo -->
+    <div id="reconciliation-vendor-credit-memo" class="group">
+        <h4>vendor_credit_memo</h4>
+        <p>
+            Reconciles a credit bank entry with a <a href="/docs/1.0/api/#vendorcreditmemo" title="">Vendor Credit Memo</a> (refund received from a vendor). Reference an existing vendor credit memo by <i>document.id</i>.
+            <br />Bank entry direction: <strong>positive (credit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>vendor_credit_memo</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#vendorcreditmemo" title="">Vendor Credit Memo</a> to reconcile.</td></tr>
+            </tbody>
+        </table>
+        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-credit-memo.json %}{% endhighlight %}
+    </div>
+
+    <!-- bank_deposit -->
+    <div id="reconciliation-bank-deposit" class="group">
+        <h4>bank_deposit</h4>
+        <p>
+            Reconciles a credit bank entry with a bank deposit. Reference an existing deposit by <i>document.id</i>.
+            <br />Bank entry direction: <strong>positive (credit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>bank_deposit</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the deposit to reconcile.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- accounting_receipt -->
+    <div id="reconciliation-accounting-receipt" class="group">
+        <h4>accounting_receipt</h4>
+        <p>
+            Reconciles a credit bank entry with an accounting receipt. Reference an existing accounting receipt by <i>document.id</i>.
+            <br />Bank entry direction: <strong>positive (credit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>accounting_receipt</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the accounting receipt to reconcile.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- accounting_entry -->
+    <div id="reconciliation-accounting-entry" class="group">
+        <h4>accounting_entry</h4>
+        <p>
+            Reconciles a bank entry with an <a href="/docs/1.0/api/#transaction" title="">Accounting Transaction</a> entry. Reference an existing entry by <i>document.id</i>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>accounting_entry</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#transaction" title="">Accounting Transaction</a> entry.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- fixed_asset -->
+    <div id="reconciliation-fixed-asset" class="group">
+        <h4>fixed_asset</h4>
+        <p>
+            Reconciles a debit bank entry with a fixed asset acquisition. Reference an existing fixed asset by <i>document.id</i>.
+            <br />Bank entry direction: <strong>negative (debit)</strong>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>fixed_asset</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the fixed asset to reconcile.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- cash_drawer_closing -->
+    <div id="reconciliation-cash-drawer-closing" class="group">
+        <h4>cash_drawer_closing</h4>
+        <p>
+            Reconciles a bank entry with a cash drawer closing (cash deposit to bank account). Reference an existing cash drawer closing by <i>document.id</i>.
+        </p>
+        <table class="table table-bordered table-striped">
+            <thead><tr><th>Field</th><th>Value</th></tr></thead>
+            <tbody>
+                <tr><td>document_type</td><td><code>cash_drawer_closing</code></td></tr>
+                <tr><td>document</td><td><code>{id, user_code}</code> — id of the cash drawer closing to reconcile.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 id="reconciliationfilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>Filter by one or multiple ids (e.g. ?id=1,2,3).</td>
+        </tr>
+        <tr>
+            <td>bank_entry_id</td>
+            <td>Filter by one or multiple bank entry ids (e.g. ?bank_entry_id=1,2,3).</td>
+        </tr>
+        <tr>
+            <td>document_id</td>
+            <td>Filter by one or multiple document ids (e.g. ?document_id=1,2,3).</td>
+        </tr>
+        <tr>
+            <td>document_type</td>
+            <td>Filter by one or multiple document types (e.g. ?document_type=bank_payment,sales_receipt).</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="reconciliationavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/noput.html %}
+
+</div>

@@ -89,6 +89,8 @@ resource:
     url: /expenses
   bank_transfers:
     url: /bank_transfers
+  reconciliations:
+    url: /reconciliations
 
 format:
   date: yyyy-MM-dd (e.g. 2013-06-26)

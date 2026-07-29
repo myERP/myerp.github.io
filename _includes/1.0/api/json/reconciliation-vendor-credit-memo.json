@@ -1,0 +1,19 @@
+{
+  "id": 164,
+  "bank_entry": { "id": 361, "label": "Vendor refund" },
+  "document_type": "vendor_credit_memo",
+  "document": { "id": 10000, "user_code": "SCN-10000" },
+  "document_date": "2024-03-12",
+  "user_code": "SCN-10000",
+  "amount": 2251.20,
+  "budget_category": { "id": 11, "name": "Bill payments" },
+  "secondary_budget_categories": [],
+  "tax": null,
+  "secondary_taxes": [],
+  "payee_type": "VENDOR",
+  "payee": { "id": 3, "name": "Office Supplies Co.", "type": "VENDOR" },
+  "locked": false,
+  "auto_reconciled": false,
+  "delete_on_unmatch": false,
+  "bank_entry_reconciled": true
+}
