@@ -2,10 +2,9 @@
 
     <h2>Reconciliations</h2>
     {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.reconciliations.url}}{% endhighlight %}
-    <p class="message bg-primary">This API doesn't handle PUT requests.</p>
     <p>Reconciliations link a <a href="/docs/1.0/api/#bankentry" title="">Bank Entry</a> to an accounting document, confirming that the bank transaction and the document represent the same financial event.
         <br />
-        <br />You must provide a <i>bank_entry</i> id and a <i>budget_category</i> id when creating a reconciliation. Providing a <i>document_type</i> is optional: if omitted, the type is inferred automatically from the bank entry amount and budget category type (see <a href="#reconciliation-auto-detection">Auto-detection</a> below).
+        <br />You must provide a <i>bank_entry</i> id and a <i>budget_category</i> id when creating a reconciliation. Providing a <i>document_type</i> is obligatory for matching an existing document, optional otherwise: if omitted, the type is inferred automatically from the bank entry amount and budget category type (see <a href="#reconciliation-auto-detection">Auto-detection</a> below).
         <br />Deleting a reconciliation unreconciles the document from the bank entry and updates the bank entry status accordingly.</p>
 
     <h3 id="reconciliationjsonformat">JSON Format</h3>
@@ -36,7 +35,7 @@
                 <td>no</td>
                 <td>yes</td>
                 <td>
-                    Type of the document being reconciled. If omitted, inferred automatically (see <a href="#reconciliation-auto-detection">Auto-detection</a>). Accepted values:<br />
+                    Type of the document being reconciled. Obligatory when matching an existing document, because several documents can have the same document_id, a distinction to identify them is necessary. If omitted, inferred automatically (see <a href="#reconciliation-auto-detection">Auto-detection</a>). Accepted values:<br />
                     - bank_payment<br />
                     - bank_deposit<br />
                     - bank_transfer<br />
@@ -178,7 +177,7 @@
             <tr><th>Bank Entry Amount</th><th>Budget Category Type</th><th>Inferred Type</th></tr>
         </thead>
         <tbody>
-            <tr><td>Negative (debit)</td><td>EXPENSE, INCOME, or UNCATEGORIZED</td><td><code>bank_payment</code> — creates an Expense</td></tr>
+            <tr><td>Negative (debit)</td><td>EXPENSE, INCOME, or UNCATEGORIZED</td><td><code>vendor_bill</code> — creates a Vendor Bill</td></tr>
             <tr><td>Positive (credit)</td><td>EXPENSE, INCOME, or UNCATEGORIZED</td><td><code>sales_receipt</code> — creates a Sales Receipt</td></tr>
             <tr><td>Any non-zero</td><td>TRANSFER</td><td><code>bank_transfer</code> — creates a Bank Transfer</td></tr>
         </tbody>
