@@ -168,7 +168,7 @@
     </table>
 
     <h3 id="reconciliationjsonexample">JSON Example</h3>
-    {% highlight bash %}{% include 1.0/api/json/reconciliation.json %}{% endhighlight %}
+    {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation.json %}{% endhighlight %}
 
     <h3 id="reconciliation-auto-detection">Auto-detection of Document Type</h3>
     <p>When <i>document_type</i> is omitted from a POST request, the type is inferred automatically from the bank entry amount and budget category type:</p>
@@ -203,7 +203,7 @@
                 <tr><td>cash_flow_status</td><td>Cash flow classification of the expense.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-bank-payment.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-bank-payment.json %}{% endhighlight %}
     </div>
 
     <!-- sales_receipt -->
@@ -223,7 +223,7 @@
                 <tr><td>cash_flow_status</td><td>Cash flow classification of the sales receipt.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-sales-receipt.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-sales-receipt.json %}{% endhighlight %}
     </div>
 
     <!-- bank_transfer -->
@@ -242,7 +242,7 @@
                 <tr><td>payee</td><td>The counterpart bank account. Contains <i>id</i>, <i>name</i>, and <i>type</i> (<code>BANK_ACCOUNT</code>).</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-bank-transfer.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-bank-transfer.json %}{% endhighlight %}
     </div>
 
     <!-- customer_payment -->
@@ -262,7 +262,7 @@
                 <tr><td>document_private_note</td><td>Optional private note written back to the linked invoice. 10 000 characters max.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-customer-payment.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-customer-payment.json %}{% endhighlight %}
     </div>
 
     <!-- vendor_payment -->
@@ -282,7 +282,7 @@
                 <tr><td>document_private_note</td><td>Optional private note written back to the linked vendor bill. 10 000 characters max.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-payment.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-vendor-payment.json %}{% endhighlight %}
     </div>
 
     <!-- vendor_bill -->
@@ -306,7 +306,7 @@
             </tbody>
         </table>
         <p>Example — inline creation (a new vendor bill with <code>source_type: bank_entry</code> is created and returned in the response):</p>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-bill.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-vendor-bill.json %}{% endhighlight %}
     </div>
 
     <!-- customer_invoice -->
@@ -323,7 +323,7 @@
                 <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#invoice" title="">Invoice</a> to reconcile.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-customer-invoice.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-customer-invoice.json %}{% endhighlight %}
     </div>
 
     <!-- credit_memo -->
@@ -343,7 +343,7 @@
                 <tr><td>document_private_note</td><td>Optional private note written back to the linked credit memo. 10 000 characters max.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-credit-memo.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-credit-memo.json %}{% endhighlight %}
     </div>
 
     <!-- vendor_credit_memo -->
@@ -360,7 +360,7 @@
                 <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#vendorcreditmemo" title="">Vendor Credit Memo</a> to reconcile.</td></tr>
             </tbody>
         </table>
-        {% highlight bash %}{% include 1.0/api/json/reconciliation-vendor-credit-memo.json %}{% endhighlight %}
+        {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-vendor-credit-memo.json %}{% endhighlight %}
     </div>
 
     <!-- bank_deposit -->
