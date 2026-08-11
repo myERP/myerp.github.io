@@ -6,6 +6,7 @@
   "unpaid": 0.0,
   "id": 10000,
   "user_code": "SCN-001",
+  "ref_number": "REF-5678",
   "date": "2020-10-06",
   "currency_iso_code": "GBP",
   "employee_id": 10028,
