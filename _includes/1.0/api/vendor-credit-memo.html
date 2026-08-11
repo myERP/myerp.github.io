@@ -62,6 +62,13 @@
                 <td>The number assigned to this bill (i.e. SCN-001). If you don't specify a a credit memo number, it will be automatically generated. 64 characters max.</td>
             </tr>
             <tr>
+                <td>ref_number</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The vendor's own reference number for this credit memo. 64 characters max.</td>
+            </tr>
+            <tr>
                 <td>date</td>
                 <td>{{ site.format.type.date }}</td>
                 <td>no</td>
@@ -124,7 +131,7 @@
     </table>
 
     <h3 id="vendorcreditmemojsonexample">JSON Example</h3>
-    {% highlight bash %}{% include 1.0/api/json/vendor_bill.json %}{% endhighlight %}
+    {% highlight bash %}{% include 1.0/api/json/vendor_credit_memo.json %}{% endhighlight %}
 
     <h3 id="vendorcreditmemosorting">Available Sorting Options</h3>
     <table class="table table-bordered table-striped">

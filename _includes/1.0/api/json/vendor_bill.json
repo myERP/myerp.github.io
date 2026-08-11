@@ -11,6 +11,7 @@
   },
   "id": 10002,
   "user_code": "VINV-001",
+  "ref_number": "REF-1234",
   "date": "2026-01-12",
   "currency_iso_code": "GBP",
   "reduce_rate": 10.0,
