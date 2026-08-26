@@ -1,0 +1,8 @@
+{
+  "id": 12,
+  "percentage": 50.0,
+  "days": 30,
+  "x_day": 0,
+  "precision": "due_on_receipt",
+  "payment_method": "check"
+}

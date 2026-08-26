@@ -258,6 +258,75 @@
         {% highlight bash %}{% include 1.0/api/json/orderline.json %}{% endhighlight %}
     </div>
 
+    <div id="paymenttermline" class="group">
+        <h2>Payment Term Line</h2>
+        <p>Payment term lines are the installments of a <a href="/docs/1.0/api/#paymentterm" title="">Payment Term</a>: which share of a document is due, and when. A Payment Term needs at least one of them, and their percentages must add up to 100.</p>
+        <h3>JSON Format</h3>
+        <p>Payment term lines are represented as JSON objects which have the following keys:</p>
+        <table class="table table-bordered table-striped">
+            <thead>
+                {% include table-header.html %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Automatically assigned.<br />Send it back to update an existing installment, leave it out to create a new one.</td>
+                </tr>
+                <tr>
+                    <td>percentage</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>yes</td>
+                    <td>no</td>
+                    <td>The share (%) of the document due on that installment. Greater than 0 and up to 100.</td>
+                </tr>
+                <tr>
+                    <td>days</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The number of days between the document and that installment.<br />Default: 0</td>
+                </tr>
+                <tr>
+                    <td>precision</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>How the due date is worked out, once the days above have been counted:
+                        <br />due_on_receipt: that very day
+                        <br />x_days_before_end_of_month: x days before the end of that month
+                        <br />x_days_after_start_of_month: x days after the start of that month
+                        <br />x_days_before_end_of_next_month: x days before the end of the following month
+                        <br />x_days_after_start_of_next_month: x days after the start of the following month
+                        <br />Default: due_on_receipt
+                    </td>
+                </tr>
+                <tr>
+                    <td>x_day</td>
+                    <td>{{ site.format.type.integer }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>The x of the precision above. Ignored when the precision is due_on_receipt.<br />Default: 0</td>
+                </tr>
+                <tr>
+                    <td>payment_method</td>
+                    <td>{{ site.format.type.string }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>How that installment is expected to be paid:
+                        <br />check, debit_credit_card, cash, direct_debit_ach, wire_transfer, gift_certificate, credit_note, other
+                        <br />France only: tip, traite, meal_ticket, change_letter, billet_ordre
+                        <br />Default: check
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>JSON Example</h3>
+        {% highlight bash %}{% include 1.0/api/json/paymenttermline.json %}{% endhighlight %}
+    </div>
+
     <div id="categoryline" class="group">
         <h2>Category Line</h2>
         <p>Category lines are embedded within <a href="/docs/1.0/api/#salesreceipt" title="">Sales Receipts</a> and <a href="/docs/1.0/api/#expense" title="">Expenses</a>. They split the total amount of a document across accounting accounts and budget categories, each optionally carrying a tax.<br />While adding, removing or updating a category line, the parent document's <i>total_amount</i> is updated accordingly.</p>

@@ -1,4 +1,22 @@
 {
   "id": 4,
-  "name": "In two installments"
+  "name": "In two installments",
+  "lines": [
+    {
+      "id": 11,
+      "percentage": 50.0,
+      "days": 0,
+      "x_day": 0,
+      "precision": "due_on_receipt",
+      "payment_method": "wire_transfer"
+    },
+    {
+      "id": 12,
+      "percentage": 50.0,
+      "days": 30,
+      "x_day": 0,
+      "precision": "due_on_receipt",
+      "payment_method": "check"
+    }
+  ]
 }

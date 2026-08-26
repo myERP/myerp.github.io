@@ -2,31 +2,53 @@
 
     <h2>Payment Terms</h2>
     {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.payment_terms.url}}{% endhighlight %}
-    <p class="message bg-primary">This API is read only.</p>
+    <p class="message bg-primary">This API doesn't handle DELETE requests. Payment Terms are referred to by Customers, Vendors and documents, so they cannot be removed through the API.</p>
     <h3 id="paymenttermjsonformat">JSON Format</h3>
     <p>Payment Terms are represented as JSON objects which have the following keys:</p>
 
     <table class="table table-bordered table-striped">
         <thead>
-            {% include table-header-readonly.html %}
+            {% include table-header.html %}
         </thead>
         <tbody>
             <tr>
                 <td>id</td>
                 <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
                 <td>Automatically assigned</td>
             </tr>
             <tr>
                 <td>name</td>
                 <td>{{ site.format.type.string }}</td>
+                <td>yes on creation</td>
+                <td>no</td>
                 <td>The Payment Term Name. 64 characters max.</td>
+            </tr>
+            <tr>
+                <td>lines</td>
+                <td>{{ site.format.type.payment_term_line }}</td>
+                <td>yes on creation</td>
+                <td>no</td>
+                <td>
+                    An array containing the installments of the Payment Term.<br />
+                    A Payment Term needs at least one installment, and the percentages of its installments must add up to 100.
+                </td>
             </tr>
         </tbody>
     </table>
+
+    <h3 id="paymenttermupdatingtheinstallments">Updating the installments</h3>
+    <p>On a PUT request, <code>lines</code> is optional and behaves as follows:</p>
+    <ul>
+        <li>Leave <code>lines</code> out and the schedule is left untouched, so you can rename a Payment Term on its own.</li>
+        <li>Send <code>lines</code> and it becomes the whole schedule. An installment sent with its <code>id</code> is updated, one sent without an <code>id</code> is created, and any installment of the Payment Term missing from the array is removed.</li>
+    </ul>
+    <p>An <code>id</code> sent in <code>lines</code> has to be the id of an installment of that very Payment Term.</p>
 
     <h3 id="paymenttermjsonexample">JSON Example</h3>
     {% highlight bash %}{% include 1.0/api/json/paymentterm.json %}{% endhighlight %}
 
     <h3 id="paymenttermavailablemethods">Available Methods</h3>
-    {% include 1.0/api/methods/readonly.html %}
+    {% include 1.0/api/methods/no-delete.html %}
 </div>
