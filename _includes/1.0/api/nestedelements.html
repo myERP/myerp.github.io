@@ -183,25 +183,39 @@
                     <td>Automatically assigned</td>
                 </tr>
                 <tr>
-                    <td>item_id</td>
+                    <td>item_id <span class="deprecated">DEPRECATED</span></td>
                     <td>{{ site.format.type.integer }}</td>
                     <td>yes for sales documents, no for purchase documents</td>
-                    <td>yes</td>
-                    <td>Id of the ordered <a href="/docs/1.0/api/#productservice" title="">Product or Service.</a></td>
+                    <td>no</td>
+                    <td>Deprecated. See item.<br />Id of the ordered <a href="/docs/1.0/api/#productservice" title="">Product or Service.</a></td>
+                </tr>
+                <tr>
+                    <td>item</td>
+                    <td>{{ site.format.type.object }}</td>
+                    <td>yes for sales documents, no for purchase documents</td>
+                    <td>no</td>
+                    <td>The ordered <a href="/docs/1.0/api/#productservice" title="">Product or Service.</a> Send at least its <i>id</i> to set it; the full object is returned when reading.<br />For purchase documents, at least one of <i>item</i>, <i>accounting_account</i> or <i>budget_category</i> is required. Not editable once the line has been created.</td>
                 </tr>
                 <tr>
                     <td>accounting_account_id</td>
                     <td>{{ site.format.type.integer }}</td>
                     <td>no</td>
-                    <td>yes</td>
-                    <td>Only for purchase documents. Id of the ordered <a href="/docs/1.0/api/#account" title="">Accounting Account.</a></td>
+                    <td>no</td>
+                    <td>Only for purchase documents. Id of the ordered <a href="/docs/1.0/api/#account" title="">Accounting Account.</a> Alternative to accounting_account.</td>
+                </tr>
+                <tr>
+                    <td>accounting_account</td>
+                    <td>{{ site.format.type.account }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Only for purchase documents. The ordered Accounting Account. Send at least its <i>id</i> to set it; the full object is returned when reading. Alternative to accounting_account_id.<br />For purchase documents, at least one of <i>item</i>, <i>accounting_account</i> or <i>budget_category</i> is required. Not editable once the line has been created.</td>
                 </tr>
                 <tr>
                     <td>budget_category</td>
                     <td>{{ site.format.type.object }}</td>
                     <td>no</td>
-                    <td>yes</td>
-                    <td>Only for purchase documents. Id of the ordered Budget Category.</td>
+                    <td>no</td>
+                    <td>Only for purchase documents. The ordered Budget Category. Contains <i>id</i> and <i>name</i>. Send at least its <i>id</i> to set it.<br />For purchase documents, at least one of <i>item</i>, <i>accounting_account</i> or <i>budget_category</i> is required. Not editable once the line has been created.</td>
                 </tr>
                 <tr>
                     <td>description</td>
@@ -232,25 +246,53 @@
                     <td>Discount rate for this line.<br />Default: 0.00</td>
                 </tr>
                 <tr>
-                    <td>tax_id</td>
+                    <td>tax_id <span class="deprecated">DEPRECATED</span></td>
                     <td>{{ site.format.type.integer }}</td>
                     <td>no</td>
                     <td>no</td>
-                    <td>Not available for US.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply.</td>
+                    <td>Deprecated. See tax.<br />Not available for US purchase documents.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply.</td>
+                </tr>
+                <tr>
+                    <td>tax</td>
+                    <td>{{ site.format.type.tax }}</td>
+                    <td>no</td>
+                    <td>no</td>
+                    <td>Not available for US purchase documents.<br />The Tax to apply. Send at least its <i>id</i> to set it; the full object (<i>id</i>, <i>name</i>, <i>rate</i>, <i>enabled</i>, <i>exempted</i>) is returned when reading. Alternative to tax_id.</td>
                 </tr>
                 <tr>
                     <td>is_taxable</td>
                     <td>{{ site.format.type.boolean }}</td>
                     <td>no</td>
                     <td>no</td>
-                    <td>US only.<br />Shall the tax be applied ?</td>
+                    <td>US sales documents only.<br />Shall the tax be applied ?</td>
+                </tr>
+                <tr>
+                    <td>subtotal</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>Total before taxes, after discount.</td>
+                </tr>
+                <tr>
+                    <td>discount_amount</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>The amount deducted by the discount.</td>
+                </tr>
+                <tr>
+                    <td>tax_amount</td>
+                    <td>{{ site.format.type.double }}</td>
+                    <td>no</td>
+                    <td>yes</td>
+                    <td>The tax amount applied to this line.</td>
                 </tr>
                 <tr>
                     <td>total</td>
                     <td>{{ site.format.type.double }}</td>
                     <td>no</td>
                     <td>yes</td>
-                    <td>Total before taxes and discount.</td>
+                    <td>Total including taxes.</td>
                 </tr>
             </tbody>
         </table>
