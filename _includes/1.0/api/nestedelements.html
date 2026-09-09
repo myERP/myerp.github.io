@@ -246,18 +246,18 @@
                     <td>Discount rate for this line.<br />Default: 0.00</td>
                 </tr>
                 <tr>
-                    <td>tax_id</td>
+                    <td>tax_id <span class="deprecated">DEPRECATED</span></td>
                     <td>{{ site.format.type.integer }}</td>
                     <td>no</td>
                     <td>no</td>
-                    <td>Not available for US purchase documents.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply. Alternative to tax.</td>
+                    <td>Deprecated. See tax.<br />Not available for US purchase documents.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply.</td>
                 </tr>
                 <tr>
                     <td>tax</td>
-                    <td>{{ site.format.type.object }}</td>
+                    <td>{{ site.format.type.tax }}</td>
                     <td>no</td>
                     <td>no</td>
-                    <td>Not available for US purchase documents.<br />The <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply. Contains <i>id</i>. Alternative to tax_id.</td>
+                    <td>Not available for US purchase documents.<br />The Tax to apply. Send at least its <i>id</i> to set it; the full object (<i>id</i>, <i>name</i>, <i>rate</i>, <i>enabled</i>, <i>exempted</i>) is returned when reading. Alternative to tax_id.</td>
                 </tr>
                 <tr>
                     <td>is_taxable</td>

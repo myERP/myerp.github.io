@@ -14,7 +14,11 @@
   "discount_rate": 5.0,
   "tax_id": 2,
   "tax": {
-    "id": 2
+    "id": 2,
+    "name": "VAT",
+    "rate": 10.0,
+    "enabled": true,
+    "exempted": false
   },
   "is_taxable": false,
   "subtotal": 569.89,
