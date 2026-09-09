@@ -20,7 +20,7 @@
     "enabled": true,
     "exempted": false
   },
-  "is_taxable": false,
+  "is_taxable": true,
   "subtotal": 569.89,
   "discount_amount": 29.99,
   "tax_amount": 56.99,
