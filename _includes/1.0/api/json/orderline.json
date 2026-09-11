@@ -1,11 +1,28 @@
 {
   "id": 56,
   "item_id": 130,
+  "item": {
+    "id": 130,
+    "type": 2,
+    "name": "Red Wine - high quality",
+    "unit_id": 2,
+    "sales_price": 49.99
+  },
   "description": "Red Wine - high quality",
   "quantity": 12.0,
   "unit_price_wt": 49.99,
   "discount_rate": 5.0,
   "tax_id": 2,
-  "is_taxable": false,
-  "total": 569.89
+  "tax": {
+    "id": 2,
+    "name": "VAT",
+    "rate": 10.0,
+    "enabled": true,
+    "exempted": false
+  },
+  "is_taxable": true,
+  "subtotal": 569.89,
+  "discount_amount": 29.99,
+  "tax_amount": 56.99,
+  "total": 626.88
 }
