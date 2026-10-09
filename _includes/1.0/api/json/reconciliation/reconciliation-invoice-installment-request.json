@@ -1,0 +1,7 @@
+{
+  "bank_entry": { "id": 361 },
+  "document_type": "invoice_installment",
+  "document": { "id": 10004 },
+  "amount": 250.00,
+  "budget_category": { "id": 10 }
+}
