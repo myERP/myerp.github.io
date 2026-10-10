@@ -59,5 +59,15 @@
   "subtotal": 1000.0,
   "reduce_amount": 2.0,
   "tax_amount": 0.0,
-  "total": 998.0
+  "total": 998.0,
+  "installments": [
+    {
+      "id": 10004,
+      "credit_memo_id": 10001,
+      "due_date": "2020-08-08",
+      "amount": 998.0,
+      "outstanding_amount": 998.0,
+      "currency_iso_code": "USD"
+    }
+  ]
 }

@@ -1,0 +1,104 @@
+<div id="creditmemopayment" class="group">
+
+    <h2>Credit Memo Payments</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.credit_memo_payments.url}}{% endhighlight %}
+    <p>Credit Memo Payment creation is restrained to Credit Memo payments into the API. You have to provide a <i>credit_memo_id</i> while performing a POST request.
+        <br />That new payment will be applied on the first open installment of that credit memo. If all installments are paid, an error message will be returned and the payment won't be created.
+        <br />Also, that new payment currency will be determined by the credit memo's one.
+        <br /><i>bank_id</i> is mandatory when creating a credit memo payment.
+        <br />
+        <br />Unlike creation, GET requests are not restrained to credit memo payments only and return any kind of credit memo payments.</p>
+    <h3 id="creditmemopaymentjsonformat">JSON Format</h3>
+    <p>Credit Memo Payments are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating a Credit Memo Payment.</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The number that was automatically assigned to this credit memo payment (i.e. CMPAY-002).</td>
+            </tr>
+            <tr>
+                <td>credit_memo_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Id of the <a href="/docs/1.0/api/#creditmemo" title="">Credit Memo</a> that payment is about.</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The date the payment has occurred.<br />Format: {{ site.format.date }}<br />Default: date of the day.</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Amount of the payment.<br />Default: remaining unpaid amount of the first open installment.<br />Should not be 0.00.</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The ISO code of that payment currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.<br />Derived from the credit memo's currency.</td>
+            </tr>
+            <tr>
+                <td>payment_method_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Id of the Payment method.<br />Default: the one of the installment that payment has been applied.</td>
+            </tr>
+            <tr>
+                <td>bank_reference</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>A bank reference label that can freely be assigned. Could be a bank statement reference, a transfer ID, etc...</td>
+            </tr>
+            <tr>
+                <td>bank_id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes</td>
+                <td>yes</td>
+                <td>Id of the bank account that payment was made from.<br />That bank account currency must match the credit memo's currency.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="creditmemopaymentjsonexample">JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/credit_memo_payment.json %}{% endhighlight %}
+
+    <h3 id="creditmemopaymentfilter">Available Filter Fields</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+        {% include table-header-filter.html %}
+        </thead>
+        <tbody>
+        <tr>
+            <td>credit_memo_id</td>
+            <td>Filter by credit memo ID. Only available for GET operation to retrieve the list of payments for a specific credit memo.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 id="creditmemopaymentavailablemethods">Available Methods</h3>
+    {% include 1.0/api/methods/noput.html %}
+
+</div>

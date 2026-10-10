@@ -1,0 +1,11 @@
+{
+  "id": 29,
+  "user_code": "SCNPAY-029",
+  "vendor_credit_memo_id": 10000,
+  "date": "2020-11-06",
+  "amount": 2251.2,
+  "currency_iso_code": "GBP",
+  "payment_method_id": 1,
+  "bank_reference": "BK-XCT-094843905 PAY",
+  "bank_id": 5
+}

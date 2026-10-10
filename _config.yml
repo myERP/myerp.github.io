@@ -53,8 +53,16 @@ resource:
     url: /bill_payments
   credit_memos:
     url: /credit_memos
+  credit_memo_installments:
+    url: /credit_memo_installments
+  credit_memo_payments:
+    url: /credit_memo_payments
   vendor_credit_memos:
     url: /vendor_credit_memos
+  vendor_credit_memo_installments:
+    url: /vendor_credit_memo_installments
+  vendor_credit_memo_payments:
+    url: /vendor_credit_memo_payments
   items:
     url: /items
   payment_terms:
