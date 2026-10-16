@@ -82,9 +82,9 @@
             <tr>
                 <td>amount</td>
                 <td>{{ site.format.type.double }}</td>
+                <td>no</td>
                 <td>yes</td>
-                <td>yes</td>
-                <td>Amount matched between the bank entry and the document. Must not be 0.00.</td>
+                <td>Amount matched between the bank entry and the document. Always positive, in requests and responses, whatever the document type: a negative <i>amount</i> is refused (error <a href="/#errorcode">3033</a>) before anything is matched or changed. The <i>document_type</i> gives the direction of the match, incoming (e.g. <code>customer_invoice</code>, <code>customer_payment</code>, <code>sales_receipt</code>) or outgoing (e.g. <code>vendor_bill</code>, <code>vendor_payment</code>, <code>bank_payment</code>). A <code>bank_transfer</code>, an <code>accounting_entry</code> or a <code>cash_drawer_closing</code> can go either way: its direction follows the bank entry, incoming for a positive bank entry, outgoing for a negative one. Omitted or 0.00, the match covers what is left to reconcile on the bank entry, within what the document still owes.<br />For an <a href="#reconciliation-customer-invoice">invoice</a>, a <a href="#reconciliation-vendor-bill">vendor bill</a> or one of their <a href="#reconciliation-installments">installments</a>, on an unpaid document, it is the amount the match pays (see <a href="#reconciliation-match-amount">Matched Amount</a>). Once matched, it returns what the match reconciled, the whole document or only a part of it.</td>
             </tr>
             <tr>
                 <td>budget_category</td>
@@ -202,6 +202,26 @@
         <li>An existing <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> keeps its lines: <i>budget_category</i> and <i>tax</i> only change the main account line of a vendor bill created from a bank entry (<i>source_type</i> <code>bank_entry</code>). Changing its tax keeps its total, paid by the bank entry: only its price without taxes is computed again.</li>
     </ul>
 
+    <h4 id="reconciliation-match-amount">Matched Amount</h4>
+    <p>When an unpaid <a href="/docs/1.0/api/#invoice" title="">Invoice</a> or <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a>, or one of their <a href="#reconciliation-installments">installments</a>, is matched, the <i>amount</i> of the request is the amount the match pays on it. This lets a single bank entry pay several documents, or only a part of one.</p>
+    <ul>
+        <li>The <i>amount</i> must be positive, for an invoice as for a vendor bill, as for every other document type: a negative <i>amount</i> is refused (error <a href="/#errorcode">3033</a>) and nothing is saved.</li>
+        <li>The match pays at most what is left to reconcile on the bank entry and what is left to pay on the document, or on the installment when one is matched: a larger <i>amount</i> is reduced to the smaller of the two.</li>
+        <li>An <i>amount</i> of 0.00, or omitted, covers what is left to reconcile on the bank entry, within what the document or installment still owes, as before.</li>
+        <li>The <i>amount</i> only applies to the match of an unpaid document, through its forecast entry. When the document is matched through one of its existing payments, the payment is matched as a whole and the <i>amount</i> is ignored.</li>
+        <li>Credit memos, vendor credit memos and the other document types are always matched in full: their <i>amount</i> is not used to choose what the match pays.</li>
+    </ul>
+    <p>Example — a credit bank entry of 300.00, with 500.00 left to pay on the invoice, of which the request pays 200.00 (the 100.00 left on the bank entry can then be matched with another document):</p>
+    {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-invoice-partial.json %}{% endhighlight %}
+
+    <h4 id="reconciliation-match-order">Matching a Bank Entry with Several Documents</h4>
+    <p>A bank entry can be matched with several documents, one reconciliation each. As each match is capped at what is left to reconcile on the bank entry, <strong>match first the documents going in the opposite direction to the bank entry</strong>: they increase what is left to reconcile on it.</p>
+    <ul>
+        <li><strong>Positive (credit) bank entry</strong>: match the expenses first, e.g. the bank fees deducted from a customer payment, then the invoices. For a bank entry of 126.94 paying an invoice of 129.00 minus 2.06 of bank fees, match the fees of 2.06 first: 129.00 is then left to reconcile, and the invoice can be matched with an <i>amount</i> of 129.00. Matched first, the invoice would only be paid 126.94, what is left on the bank entry.</li>
+        <li><strong>Negative (debit) bank entry</strong>: the mirror case, match the receipts or discounts first, then the vendor bills.</li>
+    </ul>
+    <p>The documents matched with a bank entry are listed by direction, then from the largest amount. A bank transfer, an accounting entry or a cash drawer closing counts on the bank entry's side: incoming on a positive bank entry, outgoing on a negative one.</p>
+
     <h3 id="reconciliationdoctypes">Reconcilable Document Types</h3>
     <p>The <i>document_type</i> determines which resource the <i>document</i> references and what specific fields are available. The <i>document</i> field contains either a full embedded object (for types that support inline creation) or a simple <code>{id, user_code}</code> reference to an existing document.</p>
 
@@ -316,6 +336,7 @@
             <br /><strong>Inline creation</strong>: omit <i>document.id</i> and provide a full <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> object in the <i>document</i> field. The vendor bill is created as part of the reconciliation and its <i>source_type</i> is automatically set to <code>bank_entry</code>.
             <br /><strong>Reference an existing vendor bill</strong>: provide <code>{id, user_code}</code> in the <i>document</i> field. The vendor bill must be finalized, unless it was created from a bank entry (see <a href="#reconciliation-matching-existing">Matching an Existing Document</a>).
             <br />A positive (credit) bank entry can also be matched with a vendor bill, e.g. for the fees the bank kept on a customer payment, with a vendor bill in a bank fees category.
+            <br />The <i>amount</i> of a vendor bill is positive: before the match, its total; once matched, what the match reconciled. To pay only a part of an unpaid vendor bill, send a smaller <i>amount</i> (see <a href="#reconciliation-match-amount">Matched Amount</a>).
         </p>
         <table class="table table-bordered table-striped">
             <thead><tr><th>Field</th><th>Value</th></tr></thead>
@@ -337,6 +358,7 @@
         <p>
             Reconciles a credit bank entry directly with an <a href="/docs/1.0/api/#invoice" title="">Invoice</a>. Reference an existing invoice by <i>document.id</i>.
             <br />Bank entry direction: <strong>positive (credit)</strong>.
+            <br />The <i>amount</i> of an invoice is positive: before the match, its total; once matched, what the match reconciled. To pay only a part of an unpaid invoice, send a smaller <i>amount</i> (see <a href="#reconciliation-match-amount">Matched Amount</a>).
         </p>
         <table class="table table-bordered table-striped">
             <thead><tr><th>Field</th><th>Value</th></tr></thead>
@@ -467,6 +489,7 @@
     <p>
         A bank entry can be matched with a single installment of a finalized document (or one created from a bank entry), instead of the document as a whole. Use one of the <code>*_installment</code> document types and give the id of the installment as <i>document.id</i> (or <i>document_id</i>).
         <br />The installment is matched like its document, with the same budget category, through the forecast accounting entry of the installment. A bank entry smaller than the installment pays it partially.
+        <br />For an <code>invoice_installment</code> or a <code>vendor_bill_installment</code>, the <i>amount</i> of the request is the amount paid on the installment, at most what is left to pay on it and what is left to reconcile on the bank entry (see <a href="#reconciliation-match-amount">Matched Amount</a>).
         <br />Like any match through a payment of the document, the reconciliation is saved on the payment it generates: it is then returned with the type of the document (e.g. <code>customer_invoice</code> for an <code>invoice_installment</code>).    </p>
     <table class="table table-bordered table-striped">
         <thead><tr><th>document_type</th><th>document.id</th><th>Bank entry direction</th><th>Returned document_type</th></tr></thead>
@@ -483,9 +506,20 @@
         <li>An installment already paid has no accounting entry anymore: the request is refused (error <a href="/#errorcode">3031</a>).</li>
         <li>An installment of a document that is not finalized is refused (error <a href="/#errorcode">3030</a>), unless the document was created from a bank entry.</li>
         <li>A bank entry in another currency than the document is refused (error <a href="/#errorcode">3032</a>).</li>
+        <li>A negative <i>amount</i> on an <code>invoice_installment</code> or a <code>vendor_bill_installment</code> is refused (error <a href="/#errorcode">3033</a>).</li>
     </ul>
     <p>Example — a match requested on an <code>invoice_installment</code>, returned on the invoice:</p>
     {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-invoice-installment.json %}{% endhighlight %}
+
+    <h3 id="reconciliation-update">Updating a Reconciliation</h3>
+    <p>A PUT on <code>{{ site.resource.reconciliations.url}}/{id}</code> takes the same JSON as a POST and returns the reconciliation after the update. An unknown id returns a 404.</p>
+    <ul>
+        <li>A negative <i>amount</i> is refused (error <a href="/#errorcode">3033</a>) before anything is changed, as on a POST.</li>
+        <li><strong>Same <i>document_type</i></strong>: the match is kept. Only <i>budget_category</i>, <i>payee_type</i> and <i>payee</i>, and <i>tax</i> are updated. Omitting <i>tax</i> keeps the tax of the document, sending <code>null</code> (or an id of 0) removes it. The <i>amount</i> does not change what is already matched.</li>
+        <li>A <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> created from a bank entry (<i>source_type</i> <code>bank_entry</code>) stands for it, as an expense does: when its total changes through its lines, here or with a PUT on the vendor bill, its payment and its match follow the new total, within what the bank entry can take. A smaller total leaves the bank entry partially reconciled; a total larger than the bank entry is matched up to the bank entry, the rest of the bill being left to pay. This only applies to a vendor bill with a single payment and a single match.</li>
+        <li>Changing the <i>budget_category</i> of an automatic match (<i>auto_reconciled</i> <code>true</code>) turns it into a manual one.</li>
+        <li><strong>Different <i>document_type</i></strong>: the existing match is cancelled and a new one is built from the request, document included, as a POST would. To match an existing document, give its id as <i>document.id</i>: the top-level <i>document_id</i> is only read for the <a href="#reconciliation-installments"><code>*_installment</code></a> types. The rules of <a href="#reconciliation-matching-existing">Matching an Existing Document</a> and <a href="#reconciliation-match-amount">Matched Amount</a> apply.</li>
+    </ul>
 
     <h3 id="reconciliationfilter">Available Filter Fields</h3>
     <table class="table table-bordered table-striped">
@@ -513,6 +547,6 @@
     </table>
 
     <h3 id="reconciliationavailablemethods">Available Methods</h3>
-    {% include 1.0/api/methods/noput.html %}
+    {% include 1.0/api/methods/full.html %}
 
 </div>
