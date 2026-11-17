@@ -4,6 +4,14 @@
   "sent_at": "2021-02-03",
   "paid": 2251.2,
   "unpaid": 0.0,
+  "vendor": {
+    "user_code": "VEN-001",
+    "id": 1,
+    "name": "MISC VENDOR"
+  },
+  "payee_type": "VENDOR",
+  "customer_payee": null,
+  "employee_payee": null,
   "id": 10000,
   "user_code": "SCN-001",
   "ref_number": "REF-5678",

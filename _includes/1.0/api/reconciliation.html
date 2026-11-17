@@ -325,6 +325,7 @@
                 <tr><td>document.source_type</td><td>Set automatically to <code>bank_entry</code> on inline creation. Read-only once set.</td></tr>
                 <tr><td>document_status</td><td>Status of the vendor bill (e.g. <code>VENDOR_BILL_PAID_IN_FULL</code>).</td></tr>
                 <tr><td>cash_flow_status</td><td>Cash flow classification of the vendor bill.</td></tr>
+                <tr><td>payee_type, payee</td><td>Who the vendor bill is paid to: its vendor, or the customer or employee it is paid to, as for an <a href="/docs/1.0/api/#expense" title="">Expense</a> (see <a href="/docs/1.0/api/#vendorbill" title="">Vendor Bill</a> <i>payee_type</i>). A vendor bill created from a bank entry without a <i>document</i> is paid to the payee given. Another payee given for an existing vendor bill becomes its payee while it can change: at any time for a vendor bill created from a bank entry, its payment following it, otherwise until it is paid; it is refused otherwise (<code>NOT_EDITABLE</code>).</td></tr>
             </tbody>
         </table>
         <p>Example — inline creation (a new vendor bill with <code>source_type: bank_entry</code> is created and returned in the response):</p>
@@ -380,6 +381,7 @@
             <tbody>
                 <tr><td>document_type</td><td><code>vendor_credit_memo</code></td></tr>
                 <tr><td>document</td><td><code>{id, user_code}</code> — id of the <a href="/docs/1.0/api/#vendorcreditmemo" title="">Vendor Credit Memo</a> to reconcile.</td></tr>
+                <tr><td>payee_type, payee</td><td>Who the vendor credit memo is for: its vendor, or the customer or employee it is for (see <a href="/docs/1.0/api/#vendorcreditmemo" title="">Vendor Credit Memo</a> <i>payee_type</i>).</td></tr>
             </tbody>
         </table>
         {% highlight bash %}{% include 1.0/api/json/reconciliation/reconciliation-vendor-credit-memo.json %}{% endhighlight %}
