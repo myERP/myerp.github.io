@@ -47,6 +47,7 @@
                 <td>no</td>
                 <td>
                     The Snippet of the bill <a href="/docs/1.0/api/#vendor" title="">Vendor.</a> None when the bill is paid to a customer or an employee (see <i>payee_type</i>).<br />
+                    Sent alone, without <i>payee</i>: a bill paid to its vendor stays paid to it, the new one. A bill paid to another vendor, its creditor, stays paid to the creditor, unless the new vendor is the creditor: the bill is then paid to its vendor, and follows later changes of it.<br />
                     Where :<br />
                     - id = vendor.id<br />
                     - name = vendor.full_name<br />
@@ -71,7 +72,7 @@
                 <td>no</td>
                 <td>
                     Who the bill is paid to: a <a href="/docs/1.0/api/#vendor" title="">Vendor</a>, a <a href="/docs/1.0/api/#customer" title="">Customer</a> or an Employee, as <i>payee_type</i> says. Always returned, except with <code>NO_PAYEE</code>.<br />
-                    - <code>VENDOR</code>: the vendor owed the bill. It is the <i>vendor</i> itself, unless the bill is owed to another vendor, its creditor, whose account then takes the payable. A creditor is set at creation only. A bill sent without a <i>vendor</i> takes this one as its vendor.<br />
+                    - <code>VENDOR</code>: the vendor owed the bill. It is the <i>vendor</i> itself, unless the bill is owed to another vendor, its creditor, whose account then takes the payable. A creditor is set at creation only. Sent alone, without <i>vendor</i>, it never changes the <i>vendor</i>: the same as the vendor, the bill is paid to its vendor; a bill without a vendor stays without one. To have one vendor both sell and be paid, send it as both <i>vendor</i> and <i>payee</i>.<br />
                     - <code>CUSTOMER</code>: the bill then has no <i>vendor</i>, and its payable is posted on the customer's account, in the sales journal.<br />
                     - <code>EMPLOYEE</code>: e.g. to refund an expense they paid. The bill then has no <i>vendor</i>, and its payable is posted on the employee's account.<br />
                     Sent without <i>payee_type</i>, it is a vendor.<br />
