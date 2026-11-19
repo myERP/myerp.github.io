@@ -10,8 +10,11 @@
     "name": "MISC VENDOR"
   },
   "payee_type": "VENDOR",
-  "customer_payee": null,
-  "employee_payee": null,
+  "payee": {
+    "user_code": "VEN-001",
+    "id": 1,
+    "name": "MISC VENDOR"
+  },
   "id": 10002,
   "user_code": "VINV-001",
   "ref_number": "REF-1234",
