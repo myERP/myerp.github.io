@@ -1,0 +1,24 @@
+{
+  "error": {
+    "status": 422,
+    "code": "3029",
+    "message": "A similar forecast already exists.",
+    "reason": "A forecast for the category: Rent and payee: N/A already exist. Please replace or merge these forecasts.",
+    "details": {
+      "type": "BUSINESS_LOGIC_EXISTING_FORECAST",
+      "existing": [
+        { "id": 398, "due_date": "2027-01-31", "payee_type": "NO_PAYEE", "payee": null, "amount": -300.00, "base_currency_amount": -300.00, "currency_iso_code": "EUR", "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" } }
+      ],
+      "replace": [
+        { "id": 0, "due_date": "2026-12-31", "payee_type": "NO_PAYEE", "payee": null, "amount": -1200.00, "base_currency_amount": -1200.00, "currency_iso_code": "EUR", "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" } },
+        { "id": 0, "due_date": "2027-01-31", "payee_type": "NO_PAYEE", "payee": null, "amount": -1200.00, "base_currency_amount": -1200.00, "currency_iso_code": "EUR", "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" } },
+        { "id": 0, "due_date": "2027-02-28", "payee_type": "NO_PAYEE", "payee": null, "amount": -1200.00, "base_currency_amount": -1200.00, "currency_iso_code": "EUR", "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" } }
+      ],
+      "merge": [
+        { "id": 0, "due_date": "2026-12-31", "payee_type": "NO_PAYEE", "payee": null, "amount": -1200.00, "base_currency_amount": -1200.00, "currency_iso_code": "EUR", "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" } },
+        { "id": 0, "due_date": "2027-01-31", "payee_type": "NO_PAYEE", "payee": null, "amount": -1500.00, "base_currency_amount": -1500.00, "currency_iso_code": "EUR", "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" } },
+        { "id": 0, "due_date": "2027-02-28", "payee_type": "NO_PAYEE", "payee": null, "amount": -1200.00, "base_currency_amount": -1200.00, "currency_iso_code": "EUR", "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" } }
+      ]
+    }
+  }
+}

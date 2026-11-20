@@ -1,0 +1,11 @@
+{
+  "id": 412,
+  "user_code": null,
+  "due_date": "2026-12-31",
+  "payee_type": "VENDOR",
+  "payee": { "id": 18, "name": "Office Rental Ltd", "user_code": "FOU-018" },
+  "amount": -1200.00,
+  "base_currency_amount": -1200.00,
+  "currency_iso_code": "EUR",
+  "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" }
+}
