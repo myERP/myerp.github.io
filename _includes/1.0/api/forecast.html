@@ -55,7 +55,7 @@
                 <td>{{ site.format.type.object }}</td>
                 <td>no</td>
                 <td>yes</td>
-                <td>The budget category of the forecast. Contains <i>id</i> and <i>name</i>.</td>
+                <td>The budget category of the forecast. Contains <i>id</i>, <i>name</i> and <i>user_code</i>, the unique id of the category.</td>
             </tr>
             <tr>
                 <td>payee_type</td>
@@ -171,7 +171,7 @@ POST {{ site.api.v1}}{{ site.resource.forecasts.url}}
     <h3 id="forecastexisting">Existing Forecasts</h3>
     <p>Forecasts that already exist for the same budget category, payee and direction, from the month of <i>start_date</i> onwards, conflict with the new ones. A forecast without a payee only conflicts with forecasts without a payee. The <i>action</i> says what to do with them:</p>
     <ul>
-        <li><b>CREATE</b>: if there is no such forecast, the new forecasts are created. Otherwise nothing is saved, and the request is refused with error <a href="/#errorcode">3029</a>. The error <i>details</i> list the conflicting forecasts (<i>existing</i>) and what the request would give with REPLACE (<i>replace</i>) and with MERGE (<i>merge</i>), so the choice can be shown before sending the request again. Forecasts that would be new have the <i>id</i> 0.</li>
+        <li><b>CREATE</b>: if there is no such forecast, the new forecasts are created. Otherwise nothing is saved, and the request is refused with error <a href="/#errorcode">3029</a>. The error <i>details</i> list the conflicting forecasts (<i>existing</i>) and what the request would give with REPLACE (<i>replace</i>) and with MERGE (<i>merge</i>), so the choice can be shown before sending the request again. Every forecast of <i>replace</i> and <i>merge</i> has the <i>id</i> 0, a merged month included: it matches its forecast in <i>existing</i> by <i>due_date</i>.</li>
         <li><b>REPLACE</b>: every conflicting forecast is deleted, including those after the last new occurrence, then the new forecasts are created.</li>
         <li><b>MERGE</b>: in a month that already has a forecast, the new amount is added to it, and its day of the month becomes the one of <i>start_date</i>. In the other months, a new forecast is created.</li>
     </ul>

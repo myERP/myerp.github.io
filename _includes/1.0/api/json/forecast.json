@@ -7,5 +7,5 @@
   "amount": -1200.00,
   "base_currency_amount": -1200.00,
   "currency_iso_code": "EUR",
-  "budget_category": { "id": 7, "name": "Rent" }
+  "budget_category": { "id": 7, "name": "Rent", "user_code": "business_rent_or_lease" }
 }
