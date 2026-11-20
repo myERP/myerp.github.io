@@ -134,6 +134,18 @@
                 <td>The number of forecasts to create, the first one included. Ignored when <i>frequency</i> is ONCE.<br />Occurrences after the end of the sixth month from today are not created.</td>
             </tr>
             <tr>
+                <td>payee_type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes, when <i>payee</i> is given</td>
+                <td>The kind of payee of the forecast.<br />Allowed values: NO_PAYEE, CUSTOMER, VENDOR, EMPLOYEE.<br />Default: NO_PAYEE.</td>
+            </tr>
+            <tr>
+                <td>payee</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>yes, unless <i>payee_type</i> is NO_PAYEE or not given</td>
+                <td>Who the money comes from or goes to. Only its <i>id</i> is read, and it must be an existing customer, vendor or employee, as given by <i>payee_type</i>.</td>
+            </tr>
+            <tr>
                 <td>action</td>
                 <td>{{ site.format.type.string }}</td>
                 <td>no</td>
@@ -157,7 +169,7 @@ POST {{ site.api.v1}}{{ site.resource.forecasts.url}}
 {% endhighlight %}
 
     <h3 id="forecastexisting">Existing Forecasts</h3>
-    <p>Forecasts that already exist for the same budget category and direction, without a payee, from the month of <i>start_date</i> onwards, conflict with the new ones. The <i>action</i> says what to do with them:</p>
+    <p>Forecasts that already exist for the same budget category, payee and direction, from the month of <i>start_date</i> onwards, conflict with the new ones. A forecast without a payee only conflicts with forecasts without a payee. The <i>action</i> says what to do with them:</p>
     <ul>
         <li><b>CREATE</b>: if there is no such forecast, the new forecasts are created. Otherwise nothing is saved, and the request is refused with error <a href="/#errorcode">3029</a>. The error <i>details</i> list the conflicting forecasts (<i>existing</i>) and what the request would give with REPLACE (<i>replace</i>) and with MERGE (<i>merge</i>), so the choice can be shown before sending the request again. Forecasts that would be new have the <i>id</i> 0.</li>
         <li><b>REPLACE</b>: every conflicting forecast is deleted, including those after the last new occurrence, then the new forecasts are created.</li>
