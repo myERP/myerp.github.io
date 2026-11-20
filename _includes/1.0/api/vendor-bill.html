@@ -62,7 +62,7 @@
                 <td>Who the bill is paid to, as for an <a href="/docs/1.0/api/#expense" title="">Expense</a>, given by <i>payee</i>. Values: <code>VENDOR</code>, <code>CUSTOMER</code>, <code>EMPLOYEE</code>, <code>NO_PAYEE</code>.<br />
                     Always returned: <code>VENDOR</code> for a bill paid to a vendor, <code>NO_PAYEE</code> for a bill without any payee.<br />
                     Sent without <i>payee</i>: <code>VENDOR</code> has the bill paid to its <i>vendor</i>, <code>NO_PAYEE</code> leaves it without any payee. Left out, the bill keeps its payee, or is paid to the <i>vendor</i> sent.<br />
-                    The payee can change from or to a customer or an employee until the bill is paid, or at any time on a bill created from a bank entry (<i>source_type</i> <code>bank_entry</code>), whose payment follows the new payee. Otherwise the change is refused (<code>NOT_EDITABLE</code>).
+                    The payee, a vendor, a customer or an employee, can change until the bill is paid, or at any time on a bill created from a bank entry (<i>source_type</i> <code>bank_entry</code>), whose payment follows the new payee. Otherwise the change is refused (<code>NOT_EDITABLE</code>).
                 </td>
             </tr>
             <tr>
@@ -72,7 +72,7 @@
                 <td>no</td>
                 <td>
                     Who the bill is paid to: a <a href="/docs/1.0/api/#vendor" title="">Vendor</a>, a <a href="/docs/1.0/api/#customer" title="">Customer</a> or an Employee, as <i>payee_type</i> says. Always returned, except with <code>NO_PAYEE</code>.<br />
-                    - <code>VENDOR</code>: the vendor owed the bill. It is the <i>vendor</i> itself, unless the bill is owed to another vendor, its creditor, whose account then takes the payable. A creditor is set at creation only. Sent alone, without <i>vendor</i>, it never changes the <i>vendor</i>: the same as the vendor, the bill is paid to its vendor; a bill without a vendor stays without one. To have one vendor both sell and be paid, send it as both <i>vendor</i> and <i>payee</i>.<br />
+                    - <code>VENDOR</code>: the vendor owed the bill. It is the <i>vendor</i> itself, unless the bill is owed to another vendor, its creditor, whose account then takes the payable. Sent alone, without <i>vendor</i>, it never changes the <i>vendor</i>: the same as the vendor, the bill is paid to its vendor; a bill without a vendor stays without one. To have one vendor both sell and be paid, send it as both <i>vendor</i> and <i>payee</i>.<br />
                     - <code>CUSTOMER</code>: the bill then has no <i>vendor</i>, and its payable is posted on the customer's account, in the sales journal.<br />
                     - <code>EMPLOYEE</code>: e.g. to refund an expense they paid. The bill then has no <i>vendor</i>, and its payable is posted on the employee's account.<br />
                     Sent without <i>payee_type</i>, it is a vendor.<br />
