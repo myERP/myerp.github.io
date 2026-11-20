@@ -91,6 +91,8 @@ resource:
     url: /bank_transfers
   reconciliations:
     url: /reconciliations
+  forecasts:
+    url: /forecasts
 
 format:
   date: yyyy-MM-dd (e.g. 2013-06-26)
