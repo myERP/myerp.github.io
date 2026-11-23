@@ -1,0 +1,231 @@
+<div id="forecast" class="group">
+
+    <h2>Forecasts</h2>
+    {% highlight bash %}Endpoint: {{ site.api.base_url }}{{ site.api.v1}}{{ site.resource.forecasts.url}}{% endhighlight %}
+    <p>A Forecast is an amount of money expected to come in or go out of the bank accounts during one month, for a budget category and, optionally, a payee.
+        <br />OneUp generates forecasts automatically from the history of the bank entries and documents. You can also create forecasts manually, once or recurring, then move, change or delete them.
+        <br />Every forecast covers one calendar month. Its <i>amount</i> is what is still expected: the part already paid or due on documents is deducted from it.
+        <br />Access to this endpoint requires the cash flow feature.</p>
+
+    <h3 id="forecastjsonformat">JSON Format</h3>
+    <p>Forecasts are represented as JSON objects which have the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            {% include table-header.html %}
+        </thead>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Automatically assigned when creating a Forecast.</td>
+            </tr>
+            <tr>
+                <td>due_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The last day of the month the forecast covers.<br />Format: {{ site.format.date }}<br />Set it on update to move the forecast to another month, see <i>Updating a Forecast</i> below.</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>no</td>
+                <td>The amount still expected this month, in the currency of the company.<br />Positive for money in, negative for money out.<br />On update, the sign is ignored: the direction of a forecast never changes.</td>
+            </tr>
+            <tr>
+                <td>base_currency_amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The <i>amount</i> converted into the base currency.</td>
+            </tr>
+            <tr>
+                <td>currency_iso_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The ISO code of the currency <a href="http://www.iso.org/iso/catalogue_detail?csnumber=46121" target="_blank" title="ISO 4217">(ISO 4217)</a>.</td>
+            </tr>
+            <tr>
+                <td>budget_category</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The budget category of the forecast. Contains <i>id</i>, <i>name</i> and <i>user_code</i>, the unique id of the category.</td>
+            </tr>
+            <tr>
+                <td>payee_type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>The kind of payee of the forecast.<br />Allowed values: NO_PAYEE, CUSTOMER, VENDOR, EMPLOYEE, BANK_ACCOUNT.</td>
+            </tr>
+            <tr>
+                <td>payee</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Who the money comes from or goes to. Contains <i>id</i>, <i>name</i> and <i>user_code</i>.<br /><i>null</i> when <i>payee_type</i> is NO_PAYEE.</td>
+            </tr>
+            <tr>
+                <td>user_code</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>Not used by forecasts, always <i>null</i>.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="forecastjsonexample">JSON Example</h3>
+    {% highlight bash %}{% include 1.0/api/json/forecast.json %}{% endhighlight %}
+
+    <h3 id="forecastcreation">Creating Forecasts</h3>
+    <p>A <code>POST</code> on <code>{{ site.api.v1}}{{ site.resource.forecasts.url}}</code> creates a manual forecast, once or recurring. The request does not use the format above, but the following keys:</p>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="name">Field Name</th>
+                <th class="type">Type</th>
+                <th class="mandatory">Mandatory</th>
+                <th class="description">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>The direction of the forecast.<br />Allowed values: IN (money in), OUT (money out).</td>
+            </tr>
+            <tr>
+                <td>budget_category</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>yes</td>
+                <td>The budget category of the forecast. Only its <i>id</i> is read, and it must exist.</td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td>{{ site.format.type.double }}</td>
+                <td>yes</td>
+                <td>The amount expected for each occurrence, as a positive number. The direction is given by <i>type</i>.</td>
+            </tr>
+            <tr>
+                <td>start_date</td>
+                <td>{{ site.format.type.date }}</td>
+                <td>yes</td>
+                <td>The date of the first occurrence. The forecast covers the month of this date, and keeps its day of the month.<br />Format: {{ site.format.date }}</td>
+            </tr>
+            <tr>
+                <td>frequency</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes</td>
+                <td>How often the forecast recurs.<br />Allowed values: ONCE, MULTIPLE_TIMES_A_MONTH, EVERY_MONTH, EVERY_TWO_MONTHS, EVERY_THREE_MONTHS, EVERY_FOUR_MONTHS, EVERY_FIVE_MONTHS, EVERY_SIX_MONTHS, EVERY_SEVEN_MONTHS, EVERY_EIGHT_MONTHS, EVERY_NINE_MONTHS, EVERY_TEN_MONTHS, EVERY_ELEVEN_MONTHS, EVERY_TWELVE_MONTHS.<br />MULTIPLE_TIMES_A_MONTH creates one forecast a month, like EVERY_MONTH.</td>
+            </tr>
+            <tr>
+                <td>occurrences</td>
+                <td>{{ site.format.type.integer }}</td>
+                <td>yes, unless <i>frequency</i> is ONCE</td>
+                <td>The number of forecasts to create, the first one included. Ignored when <i>frequency</i> is ONCE.<br />Occurrences after the end of the sixth month from today are not created, except the first one.</td>
+            </tr>
+            <tr>
+                <td>payee_type</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>yes, when <i>payee</i> is given</td>
+                <td>The kind of payee of the forecast.<br />Allowed values: NO_PAYEE, CUSTOMER, VENDOR, EMPLOYEE.<br />Default: NO_PAYEE.</td>
+            </tr>
+            <tr>
+                <td>payee</td>
+                <td>{{ site.format.type.object }}</td>
+                <td>yes, unless <i>payee_type</i> is NO_PAYEE or not given</td>
+                <td>Who the money comes from or goes to. Only its <i>id</i> is read, and it must be an existing customer, vendor or employee, as given by <i>payee_type</i>.</td>
+            </tr>
+            <tr>
+                <td>action</td>
+                <td>{{ site.format.type.string }}</td>
+                <td>no</td>
+                <td>What to do with the forecasts that already exist, see <i>Existing Forecasts</i> below.<br />Allowed values: CREATE, REPLACE, MERGE.<br />Default: CREATE.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>The response is the array of the forecasts created or updated, in the format above.</p>
+
+    {% highlight bash %}
+POST {{ site.api.v1}}{{ site.resource.forecasts.url}}
+{
+  "type": "OUT",
+  "budget_category": { "id": 7 },
+  "amount": 1200.00,
+  "start_date": "2026-12-05",
+  "frequency": "EVERY_MONTH",
+  "occurrences": 3
+}
+{% endhighlight %}
+
+    <h3 id="forecastexisting">Existing Forecasts</h3>
+    <p>Forecasts that already exist for the same budget category, payee and direction, from the month of <i>start_date</i> onwards, conflict with the new ones. A forecast without a payee only conflicts with forecasts without a payee. The <i>action</i> says what to do with them:</p>
+    <ul>
+        <li><b>CREATE</b>: if there is no such forecast, the new forecasts are created. Otherwise nothing is saved, and the request is refused with error <a href="/#errorcode">3029</a>. The error <i>details</i> list the conflicting forecasts (<i>existing</i>) and what the request would give with REPLACE (<i>replace</i>) and with MERGE (<i>merge</i>), so the choice can be shown before sending the request again. Every forecast of <i>replace</i> and <i>merge</i> has the <i>id</i> 0, a merged month included: it matches its forecast in <i>existing</i> by <i>due_date</i>.</li>
+        <li><b>REPLACE</b>: every conflicting forecast is deleted, including those after the last new occurrence, then the new forecasts are created.</li>
+        <li><b>MERGE</b>: in a month that already has a forecast, the new amount is added to it, and its day of the month becomes the one of <i>start_date</i>. In the other months, a new forecast is created.</li>
+    </ul>
+
+    {% highlight bash %}{% include 1.0/api/json/forecast_conflict.json %}{% endhighlight %}
+
+    <h3 id="forecastupdate">Updating a Forecast</h3>
+    <p>A <code>PUT</code> on <code>{{ site.api.v1}}{{ site.resource.forecasts.url}}/{id}</code> changes one forecast, whether it was generated by OneUp or created manually. Only these keys are read:</p>
+    <ul>
+        <li><b>amount</b>: the new amount still expected this month. The part already paid or due is kept.</li>
+        <li><b>due_date</b>: any date in another month moves the amount still expected to that month. It is added to the forecast of that month for the same budget category, payee and direction if there is one, or makes a new forecast otherwise. The updated forecast keeps only what is already paid or due. A date in the same month changes nothing.</li>
+    </ul>
+    <p>The response is the updated forecast.</p>
+
+    <h3 id="forecastcancelseries">Stopping a Series</h3>
+    <p>A <code>PUT</code> on <code>{{ site.api.v1}}{{ site.resource.forecasts.url}}/{id}/cancel_series</code>, with an empty body, deletes this forecast and all the forecasts of the following months for the same budget category, payee and direction. To delete only this forecast, use <code>DELETE</code> on <code>{{ site.api.v1}}{{ site.resource.forecasts.url}}/{id}</code>.</p>
+
+    <h3 id="forecastavailablemethods">Available Methods</h3>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="type">HTTP Verb</th>
+                <th>Endpoint</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>POST</td>
+                <td>{{ site.resource.forecasts.url}}</td>
+                <td>Create one or several forecasts, see <i>Creating Forecasts</i></td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>{{ site.resource.forecasts.url}}/{id}</td>
+                <td>Retrieve a forecast</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>{{ site.resource.forecasts.url}}/{id}</td>
+                <td>Change the amount of a forecast or move it to another month, see <i>Updating a Forecast</i></td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>{{ site.resource.forecasts.url}}/{id}</td>
+                <td>Delete a forecast</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>{{ site.resource.forecasts.url}}/{id}/cancel_series</td>
+                <td>Delete a forecast and the following ones of its series, see <i>Stopping a Series</i></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Listing forecasts (<code>GET</code> on {{ site.resource.forecasts.url}}) and deleting several at once are not available.</p>
+
+</div>
