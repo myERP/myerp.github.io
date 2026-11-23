@@ -250,14 +250,14 @@
                     <td>{{ site.format.type.integer }}</td>
                     <td>no</td>
                     <td>no</td>
-                    <td>Deprecated. See tax.<br />Not available for US purchase documents.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply.</td>
+                    <td>Deprecated. See tax.<br />Not available for US purchase documents.<br />Id of the <a href="/docs/1.0/api/#tax" title="">Tax</a> to apply. Send <code>0</code> for no tax.<br />Default: The Product or Service default tax</td>
                 </tr>
                 <tr>
                     <td>tax</td>
                     <td>{{ site.format.type.tax }}</td>
                     <td>no</td>
                     <td>no</td>
-                    <td>Not available for US purchase documents.<br />The Tax to apply. Send at least its <i>id</i> to set it; the full object (<i>id</i>, <i>name</i>, <i>rate</i>, <i>enabled</i>, <i>exempted</i>) is returned when reading. Alternative to tax_id.</td>
+                    <td>Not available for US purchase documents.<br />The Tax to apply. Send at least its <i>id</i> to set it; the full object (<i>id</i>, <i>name</i>, <i>rate</i>, <i>enabled</i>, <i>exempted</i>) is returned when reading. Alternative to tax_id.<br />Default: The Product or Service default tax<br />Send an <i>id</i> of <code>0</code> for no tax: a new line is then created without the tax of its Product or Service, and the tax of an existing line is removed. Omitting the tax, or sending <code>null</code>, keeps the tax of the line, or the default one on a new line.<br />A line without tax is returned with <i>tax_id</i> and <i>tax</i> set to <code>null</code>.</td>
                 </tr>
                 <tr>
                     <td>is_taxable</td>
